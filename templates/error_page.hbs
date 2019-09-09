@@ -1,0 +1,23 @@
+<div class="error-page-wrapper">
+	<div class="error-page">
+		<center>
+			<br>
+			<h3>Sorry, Item Not Found</h3>
+			<h4>Please return the product to the shelf or cooler</h4><br>
+			<img class="error-page-frown" src='{{asset 'SadKiosk.png'}}'>
+		</center>
+		<div>
+			{{#is error 'unauthorized'}}
+				{{link 'sign_in'}}
+			{{/is}}
+
+			{{#is error 'forbidden'}}
+				{{t 'not_authorized'}}
+			{{/is}}
+
+			{{#is error 'not_found'}}
+				{{t 'nonexistent_page'}}
+				<p>{{t 'mistyped_address_or_moved_page'}}</p>
+			{{/is}}
+
+			<a class="button" {{#link 'help_center'}} Return to the 365 Help Center {{/link}} </div> </div> </div>

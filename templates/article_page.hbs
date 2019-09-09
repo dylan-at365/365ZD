@@ -1,0 +1,132 @@
+ <!-- 365 - All other articles!--------------->
+ <section class="article-hero">
+ 	<div class="article-hero-filter">
+ 		<div class="col-6 hero-text-inner-hero" style="display:none;">
+ 			{{section.name}}
+ 		</div>
+ 	</div>
+ </section>
+ <div class="article-wrapper container-fluid">
+ 	<div class="row">
+ 		<article class="col-lg-8 col-md-9 col-xs-12 article">
+ 			<header class="article-header">
+ 				{{breadcrumbs}}
+ 				<h1 class="article-title" title="{{article.title}}">
+ 					{{article.title}} {{#if article.internal}}<i class="fas fa-unlock-alt"></i> {{/if}}
+ 				</h1>
+ 				<div class="article-timestamp-block">
+ 					{{subscribe}}
+ 					<div class="article-author">
+ 						<div class="avatar article-avatar">
+ 							<img class="user-avatar" src="https://theme.zdassets.com/theme_assets/2031453/12b4be60e519a04eba4f0c9a25be87f430762f53.png" alt="Avatar" />
+ 						</div>
+ 						<div class="article-meta">
+ 							<strong>
+ 								365 Support
+ 							</strong>
+ 							<ul class="meta-group">
+ 								<li>{{#is article.created_at article.updated_at}} {{date article.created_at timeago=true}}</li>
+ 								{{else}}
+ 									<li class="meta-data">
+ 										{{t 'updated'}} {{date article.updated_at timeago=true}}
+ 									</li>
+ 									{{/is}}
+ 							</ul>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</header>
+ 			<section class="article-info">
+ 				<div class="article-content">
+ 					<div class="article-body">
+ 						{{article.body}}
+ 					</div>
+ 					<div class="article-attachments">
+ 						<ul class="attachments">
+ 							{{#each attachments}}
+ 								<a href="{{url}}" target="_blank" rel="noopener" name="{{name}}">
+ 									<li class="attachment-item doc-library">
+ 										<img id="preview-image" src="http://ds.365smartshop.com/Knowledge/Documents/{{id}}.PNG" />
+ 								</a>
+ 								<a href="{{url}}" target="_blank" rel="noopener">{{name}}</a>
+ 								<div class="attachment-meta meta-group">
+ 									<a class="attachment-meta-item meta-data download-link" href="{{url}}" target="_blank" rel="noopener">Download</a>
+ 									<span class="attachment-meta-item meta-data">{{size}}</span>
+ 								</div>
+ 								</li>
+ 							{{/each}}
+ 						</ul>
+ 					</div>
+ 				</div>
+ 				{{#with article}}
+ 					<div class="article-questions">
+ 						<h3>
+ 							Have a question?</h3>
+ 						<h4>Our world-class technical support team is here to help 24 hours a day, 7 days a week.</h4>
+ 						<a class="button article-questions-cta" href="#">
+ 							Submit a Ticket
+ 						</a>
+ 					</div>
+ 					<div class="article-votes-container">
+ 						<span class="article-votes-question">
+ 							{{t 'was_this_article_helpful'}}
+ 						</span>
+ 						<div class="article-votes-controls" role="radiogroup">
+ 							{{vote 'up' role='radio' class='button article-vote article-vote-up'}} {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
+ 						</div>
+ 						<small class="article-votes-count">
+ 							{{vote 'label' class='article-vote-label'}}
+ 						</small>
+ 				{{/with}}
+ 	</div>
+ 	</section>
+ 	<footer>
+ 	</footer>
+ 	</article>
+
+ 	<div class="sidebar">
+ 		<!------------Search Bar ----------->
+ 		<div class="col-md-2 col-xs-12 article-search-container">
+ 			<form class="article-search-small" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search"
+ 				 name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="article-search-small-button"><i
+ 					 class="glyphicon glyphicon-search form-group"></i></button></form>
+ 		</div>
+
+ 		<!------------Related Articles ----------->
+ 		<div class="col-md-2 col-xs-12 related-articles">
+ 			<section class="related-article-container">
+ 				<div class="sidebar-header-block">
+ 					<h3>
+ 						RELATED ARTICLES
+ 					</h3>
+ 				</div>
+ 				<ul>
+ 					{{#each section.articles}}
+ 						<li>
+ 							<a {{#is id ../article.id}}current-article{{/is}} href="{{url}}">
+ 								{{title}}
+ 							</a>
+ 						</li>
+ 					{{/each}}
+ 				</ul>
+ 			</section>
+ 			{{#if section.more_articles}}
+ 				<a class="related-articles-cta button" href="{{section.url}}">
+ 					View More
+ 				</a>
+ 			{{/if}}
+ 		</div>
+
+ 		<!------------Featured Content ----------->
+ 		<div class="col-md-2 col-xs-12 article-featured-content">
+ 			<a href="https://www.365retailmarkets.com/products/#MicroMarkets">
+ 				<img class="featured-content-image" src="{{asset 'nanomarket_tab.png'}}" />
+ 			</a>
+ 			<div>
+ 				<a class="button featured-content-cta" href="https://www.365retailmarkets.com/products/">
+ 					Learn More <i class="fas fa-external-link-alt"></i>
+ 				</a>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>

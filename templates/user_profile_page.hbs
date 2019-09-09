@@ -1,0 +1,158 @@
+<section class="container-fluid dashboard-hero">
+	<div class="row dashboard-hero-filter">
+		<div class="col-6 hero-text-inner-hero">Dashboard<br>
+			<header class="page-header-description"></header>
+		</div>
+	</div>
+</section>
+<header class="profile-header">
+	<div class="container">
+		<div class="profile-info">
+			<div class="avatar profile-avatar">
+				{{#if user.agent}}
+					<span class="icon-agent"></span>
+				{{/if}}
+				<img class="user-avatar" src="{{user.avatar_url}}" alt="Avatar" />
+			</div>
+			<div class="basic-info">
+				<h1 class="name">
+					{{#if user.url}}
+						<a href="{{user.url}}" target="_zendesk_lotus" title="{{t 'open_user_in_support'}}">{{user.name}}</a>
+					{{else}}
+						{{user.name}}
+					{{/if}}
+
+					<a role="button" class="profile-edit-dialog" title="Opens a dialog" data-action="edit-profile" href="#"><i class="far fa-edit"></i></a>
+				</h1>
+			</div>
+			<div>
+				<div class="community-follow">{{subscribe}}</div>
+			</div>
+
+			{{#if description}}
+				<p class="description">{{description}}</p>
+			{{/if}}
+
+			<ul class="profile-stats profile-stats-activity">
+				<li class="stat">
+					<span class="stat-label">{{t 'member_since'}}</span>
+					<span class="stat-value">
+						{{#if member_since}}
+							{{date member_since format='medium'}}
+						{{else}}
+							{{t 'no_activity_yet'}}
+						{{/if}}
+					</span>
+				</li>
+				<li class="stat">
+					<span class="stat-label">{{t 'last_activity'}}</span>
+					<span class="stat-value">
+						{{#if last_activity_at}}
+							{{date last_activity_at timeago=true}}
+						{{else}}
+							{{t 'no_activity_yet'}}
+						{{/if}}
+					</span>
+				</li>
+				<li class="stat">
+					<span class="stat-label">{{t 'votes'}}</span>
+					<span class="stat-value">{{vote_count}}</span>
+				</li>
+				<li class="stat">
+					<span class="stat-label">Saved Articles</span>
+					<span class="stat-value">{{subscription_count}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+{{dc 'alert'}}
+<div class="search-results-background">
+	<div class="search-results-container container">
+		<div class="col-lg-12">
+			<h3><i class="far fa-paper-plane"></i> My Tickets <a class="button floatRight" style="margin-left:10px;" href="https://365retailmarkets.zendesk.com/hc/en-us/requests">All
+					Tickets</a>{{#link 'new_request' class='submit-a-request button floatRight'}}<i class="fas fa-plus"></i> New Ticket{{/link}}</h3>
+			<div id="ajax-content" class="col-lg-12">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-sm-12 my-resources-container" style="margin-right:2%;">
+				<div>
+					<h3><i class="far fa-bookmark"></i> My Resources <a class="button floatRight" href="https://365retailmarkets.zendesk.com/hc/en-us/subscriptions"><i class="fas fa-heart"></i> Saved Articles</a></h3>
+				</div>
+				{{recent_articles}}
+
+			</div>
+			<div class="my-resources-container dashboard-toolbox col-lg-6 col-md-12">
+				<div class="row dashboard-toolbox-block">
+					<h3><i class="fas fa-link"></i> Quick Links</h3>
+					<div class="col-lg-6 col-xs-12"><a href="https://adm.365retailmarkets.com/public/login">ADM</a><br>
+						<a href="https://smarthq.365retailmarkets.com/smarthq/">SmartHQ</a><br>
+						<A HREF="https://live.air-vend.com/authentication-page?__AUTHURL=https%3a%2f%2flive.app.air-vend.com%2fAccount%2fVerifyAuth">AirVend Live</a><br>
+						<A HREF="https://www.mymarketaccount.com/Login.aspx">MyMarketAccount User Portal</A><br>
+						<A HREF="https://adminportal.365retailmarkets.com/Login.aspx">MyMarketAccount - Admin Portal</A><br>
+						<A HREF="http://365mobileinventory.com/">365Inventory (Mobile Inventory)</A><br>
+						<A HREF="https://365smartinventory.com/R3/">Smart Inventory</a><br>
+					</div>
+
+					<div class="col-lg-6 col-xs-6">
+						<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/115000381293-Help-Support">Help</a><br>
+						<a href="https://365retailmarkets.zendesk.com/access/help">Reset Password</a><br>
+						<A HREF="https://ideas.365retailmarkets.com/ideas/new">Share Your Ideas</a><br>
+						{{#link 'new_request' class='submit-a-request'}}Submit New Ticket{{/link}}<br>
+						{{#link 'new_request' class='submit-a-request'}}Contact Us{{/link}}</div>
+				</div>
+
+				<div id="internal-support-links" class="internal-support-links" style="display:none;">
+					<div class="row dashboard-toolbox-block">
+						<div class="col-lg-6 col-xs-12">INTERNAL SUPPORT<br>
+							<a href="https://login.salesforce.com/img/logo198.png">Salesforce</a><br>
+							<A HREF="https://lastpass.com/misc_download2.php?cmp=1">LastPass</a><br>
+							<A HREF="https://host.sensor-swarm.com/login/">SensorSwarm Host</a><br>
+							<A HREF="https://www.c9pg.com/cloud9/web/">Cloud9 Payment Gateway</a><br>
+							<a href="https://www.imonnit.com/Account/Logon?ReturnUrl=/">iMonnit</a><br>
+							<a href="https://365retailmarkets.atlassian.net/">JIRA</a><br>
+							<A HREF="https://www.fedex.com/shipping/shipmentConfirmationAction.handle?method=doContinue">FedEx Ship Manager</a><br>
+							<A HREF="http://status.serenova.com/">Serenova</a><br>
+							<A HREF="https://docs.google.com/spreadsheets/d/1QyG-8v55vC5kF4wwcRi5QPxkCheIbdiA-GeYBUDgNjg/edit?ts=563228aa#gid=0">LMI Alert Contact List</a><br>
+							<A HREF="https://docs.google.com/spreadsheets/d/1Vm3bJ9M46pkRm6bI0fd7E1YOZh32_vMnidepWkEX18Y/edit#gid=982652738">RMA Tracking Log</A><br>
+						</div>
+
+						<div class="col-lg-6 col-xs-12">NETWORK & REMOTE TOOLS<br>
+							<A HREF="https://secure.logmein.com/central/Central.aspx">LogMeIn</a><br>
+							<a href="https://get.teamviewer.com/ut6utx4">TeamViewer</a><br>
+							<A HREF="https://dashboard.optconnect.com/customer/index/3663">OptConnect Summit</a><br>
+							<A HREF="https://opensignal.com/networks/usa/at&t-coverage">AT&T Signal Coverage</a><br>
+							<A HREF="https://opensignal.com/networks/usa/verizon-coverage">Verizon Signal Coverage</a><br>
+							<A HREF="https://my.nayax.com/DCS/LoginPage.aspx?ReturnUrl=%2fdcs%2fLogoutPage.aspx">NayaxVend Authentication</A><br>
+							<A HREF="https://dashweb.readytouch.com/login?next=/">Dashweb</a><br>
+							<A HREF="https://moki-marbles.appspot.com/aem?tenantid=728a20c5-a76b-4467-a5d7-af117dcb36c2#/?mdm=t">Moki Dashboard</a><br>
+							<A HREF="https://n158.meraki.com/o/a_MCdb/manage/users/sms_auth_config/">Meraki Dashboard</a><br>
+						</div>
+					</div>
+
+
+					<div class="row internal-support-links dashboard-toolbox-block">
+						<div class="col-lg-6 col-xs-12">EMULATORS<br>
+							<A HREF="https://www.cisco.com/assets/sol/sb/RV215W_Emulators/RV215W_Emulator_v1.0.0.16/default_EN.asp.htm">Cisco RV215W Emulator</a><br>
+							<A HREF="https://www.cisco.com/assets/sol/sb/RV110W_Emulators/RV110W_Emulator_v1.0.0.2/default.asp.htm">Cisco RV110W Emulator</a><br>
+							<a href="http://ui.linksys.com/E1200/1.0.00/index.html">Linksys E1200 Emulator</a><br>
+						</div>
+
+						<div class="col-lg-6 col-xs-12">HUMAN RESOURCES<br>
+							<A HREF="https://93721.wheniwork.com/login">WhenIWork</a><br>
+							<a href="https://www.principal.com/">Principal 401K</a><br>
+							<a href="https://access.paylocity.com/">Paylocity</a><br>
+							<a
+							 href="https://radioactive.auth0.com/login?client=jasrTnsnH1ghRRkk7Rlz8E8TllfthIkp&protocol=oauth2&redirect_uri=https%3A%2F%2F365smartshop.1-goal.com%2Fcallback&response_type=token%20id_token&scope=openid%20name%20email%20given_name%20family_name%20nickname%20user_metadata%20picture%20user_id%20email_verified%20updated_at%20created_at%20app_metadata&theme_logo=https%3A%2F%2Fwww.1-goal.com%2Fonegoal-icon-color-1.svg&theme_primary_color=%23865cd6&title=OneGoal&allow_sign_up=false&closable=false&nonce=cw~FEYISs1cmevG5g_m0jqDj6rE5Ubfi&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOC44LjAifQ%3D%3D&state=FCfYRa-AkEabWs001slQEaMJWeZYEb9j">OneGoal</a><br>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>

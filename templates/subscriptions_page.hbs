@@ -1,0 +1,51 @@
+<section class="container-fluid dashboard-hero">
+	<div class="row dashboard-hero-filter">
+		<div style="display:none;" class="col-6 hero-text-inner-hero">Saved Articles<br>
+		</div>
+	</div>
+</section>
+
+<div class="container subscriptions-page-container">
+	<nav class="sub-nav">
+		<a href="https://365retailmarkets.zendesk.com/hc/en-us">365 Retail Markets</a> > <a href="https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=articles">Saved Articles</a>
+	</nav>
+	Here's a list of articles, resources, and topics you've saved for later!
+
+	<div class="requests" id="subscription-list">
+		{{#if subscriptions}}
+			<table class="table subscriptions-table">
+				<thead>
+					<tr>
+						<th>{{t 'title'}}</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each subscriptions}}
+						<tr>
+							<td>
+								{{#is type 'user'}}
+									<img class="user-avatar" src="{{avatar_url}}" alt="Avatar">
+								{{/is}}
+								<a href="{{url}}" title="{{title}}" class="striped-list-title">
+									{{excerpt title characters=60}}
+								</a>
+							</td>
+							<td class="subscriptions-unsubscribe">{{unsubscribe}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+
+			<div style="display:none;" id="ajax-subscriptions"></div>
+
+
+			{{pagination}}
+		{{else}}
+			<p class="no-activities">
+				<h4>You haven't saved anything</h4>
+				Did you know you can save your favorite resources? Select "Follow" button in the top right hand corner of any article or category and we'll keep it right here for you.
+			</p>
+		{{/if}}
+	</div>

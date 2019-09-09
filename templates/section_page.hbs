@@ -1,0 +1,59 @@
+<section class="article-hero">
+	<div class="article-hero-filter">
+		<div style="display:none;" class="col-6 hero-text-inner-hero">{{section.name}}</div>
+	</div>
+</section>
+<div class="section-page-background">
+	<section class="container">
+		<div class="col-md-12 section-category-box">
+			<header class="section-page-header">
+				<ol class="breadcrumbs section-page-breadcrumbs">{{breadcrumbs}}</ol>
+				<div class="clear"></div>
+				<section class="col-lg-12 category-section-block">
+					<div style="display:none;" id="section.name {{section.name}}">
+						<span style="display:none;"> {{#if section.description}}
+								{{section.description}}</span>
+						{{/if}}</div>
+				</section>
+			</header>
+			<div class="section-container">
+				<div> {{#if section.articles}}
+						<ul class="section-article-list">
+							{{#each section.articles}}
+								<li class="section-article-list-item {{#if promoted}} article-promoted{{/if}}">
+									{{#if promoted}}
+										<span data-title="{{t 'promoted'}}" class="icon-star"></span>
+									{{/if}}
+									<div class="section-listheader"><a href="{{url}}" class="section-listheader">{{title}}</a> {{#if internal}}<i class="fas fa-unlock-alt"></i> {{/if}}</div>
+									<div class="clear"></div>
+									<div class="section-timestamp">Updated {{date updated_at timeago=true}}</div>
+									<div class="clear"></div>
+									<div class="section-excerpt">{{excerpt body characters=300}} <a href="{{url}}">Read More
+										</a></div>
+								</li>
+							{{/each}}
+						</ul>
+					{{else}}
+						<i class="section-empty">
+							<a href="{{section.url}}">{{t 'empty'}}</a>
+						</i>
+					{{/if}}
+
+
+					<div class="pagination">{{pagination}}</div>
+				</div>
+			</div>
+			<div class="section-category-search-again-message">
+				<div class="section-category-search-again-message-wrapper">
+					<h2>
+						How can we help?</h2>
+					<h4>Search the Help Center or <a href="https://365retailmarkets.zendesk.com/hc/en-us">browse</a> our resources. </h4>
+					<div class="section-category-search-bar-container">
+						<form class="search-results-search-bar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input
+							 type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="search-results-search-bar-small-button"><i
+								 class="glyphicon glyphicon-search form-group"></i></button></form>
+					</div>
+				</div>
+			</div>
+
+		</div>
