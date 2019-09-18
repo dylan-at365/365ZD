@@ -5199,6 +5199,17 @@ width: 10px;
 
 /*****NEW HEADER CLASS CUSTOMIZATION *******/
 /*****New Header ****/
+.alert_banner {
+  width: 100%;
+  height: 24px;
+  color: #fff;
+  background-color: #2555d9;
+  font-family: "Roboto";
+  font-weight: bold;
+  text-align: center;
+  line-height: 24px;
+}
+
 .hc-header {
 	position: -webkit-sticky;
 	position: sticky !important;
