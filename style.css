@@ -5454,6 +5454,7 @@ width: 10px;
 	width: 300px;
 	background-color: #2555d9;
 	border-radius: 3px;
+	overflow: scroll;
 }
 
 .resource-header a, .resource-header a:hover {
@@ -5482,9 +5483,9 @@ width: 10px;
 }
 
 .nav-submenu-item a {
-	background: TRANSPARENT;
+	background: transparent;
 	display: block;
-	padding: 15px;
+	padding: 10px;
 	text-decoration: none;
 	cursor: pointer;
 	font-family: 'Roboto', sans-serif;
@@ -5496,7 +5497,6 @@ width: 10px;
 }
 
 .nav-column-left {
-
 }
 
 .nav-column-right {
