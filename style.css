@@ -6077,9 +6077,9 @@ New Header Menu Styles Here
 }
 
 .sub-menu .menu-item {
-	padding: 8px;
-	height: 32px;
-	font-size: 10pt;
+	padding: 4px;
+	height: 24px;
+	font-size: 8pt;
 	line-height: initial;
 	background: #2555d9;
 	opacity: 0;

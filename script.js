@@ -5,7 +5,6 @@ var name;
 var userId;
 var userRole;
 
-
 $(document).ready(function() {
 	$("form.search input[type=submit]").attr("value", "Search");
 	if (HelpCenter.user.role != 'anonymous') {
@@ -302,8 +301,8 @@ $(document).ready(function() {
 				currentYear = currentTime.getFullYear();
 
 				notesYear = parseInt(notes.articles[0].updated_at.substring(0, 4));
-				notesMonth = parseInt(notes.articles[0].updated_at.substring(6, 7));
-				notesDay = parseInt(notes.articles[0].updated_at.substring(9, 10));
+				notesMonth = parseInt(notes.articles[0].updated_at.substring(5, 7));
+				notesDay = parseInt(notes.articles[0].updated_at.substring(8, 10));
 
 				if(currentYear === notesYear && currentMonth === notesMonth && currentDay - notesDay < 7) {
 					notifyBlock.classList.remove('no_notes');
