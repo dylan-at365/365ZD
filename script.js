@@ -321,3 +321,25 @@ $(document).ready(function() {
 		}
 	})
 });
+
+$(document).ready(function() {
+	$.ajax({
+		type: 'GET',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360001964953/articles.json',
+		dataType: 'json',
+		async: true,
+		success: function(requested) {
+
+			for (var i = 0; i < requested.articles.length; i++) {
+
+				if (requested.articles[i].id != '360037144093') {
+					requested.articles.splice(i, 1);
+					messageBody = requested.articles[0].title;
+
+					$(".hc-header > div").html(messageBody);
+
+				}
+			}
+		}
+	})
+});
