@@ -6144,7 +6144,7 @@ New Header Menu Styles Here
 	}
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 959px) {
 	.menu {
 		height: 72px;
 	}
@@ -6157,7 +6157,22 @@ New Header Menu Styles Here
 		height: 56px;
 	}
 
-	.menu>ol>.menu-item:nth-child(2), .menu>ol>.menu-item:nth-child(3), .menu>ol>.menu-item:nth-child(4) {
+	.menu>ol>.menu-item:nth-child(2), .menu>ol>.menu-item:nth-child(3),  .release_notes_notify {
+		display: none;
+	}
+
+	.release_notes_notify {
+		position: relative;
+		top: 25px;
+		right: 105px;
+		width: 10px;
+		height: 10px;
+		border-radius: 100%;
+	}
+}
+
+@media screen and (max-width: 439px) {
+	.menu>ol>.menu-item:nth-child(5), .release_notes_notify {
 		display: none;
 	}
 }
