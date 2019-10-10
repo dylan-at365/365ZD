@@ -223,11 +223,18 @@ $(document).ready(function() {
 		dataType: 'json',
 		async: true,
 		success: function(requested) {
+
+			for (var i = 0; i < requested.articles.length; i++) {
+
+				if (requested.articles[i].user_segment_id == '321294') {
+					requested.articles.splice(i, 1);
+				}
+			}
+
 			{
 				articleTitle1 = requested.articles[0].title;
 				articleLink1 = requested.articles[0].html_url;
 				articleTime1 = requested.articles[0].updated_at.substring(0, 10);
-				//articleBody1 = requested.articles[0].body.substring(0, 150);
 
 				articleTitle2 = requested.articles[1].title;
 				articleLink2 = requested.articles[1].html_url;
@@ -248,7 +255,6 @@ $(document).ready(function() {
 				$(".new-articles > li:first-child > .newarticles_title").text(articleTitle1);
 				$(".new-articles > li:first-child > .newarticles_published").text(articleTime1);
 				$(".new-articles > li:first-child > .newarticles_cta > a").attr("href", articleLink1);
-				//$(".new-articles > li:first-child > .newarticles_body").text(articleBody1);
 
 				$(".new-articles > li:nth-child(2) > .newarticles_title").text(articleTitle2);
 				$(".new-articles > li:nth-child(2) > .newarticles_published").text(articleTime2);
