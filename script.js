@@ -336,7 +336,7 @@ $(document).ready(function() {
 					requested.articles.splice(i, 1);
 					messageBody = requested.articles[0].title;
 
-					$(".hc-header > div").html(messageBody);
+					$(".hc-header > #alert_container").html(messageBody);
 
 				}
 			}
