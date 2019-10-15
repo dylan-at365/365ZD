@@ -6015,6 +6015,7 @@ New Header Menu Styles Here
 .menu {
 	background: #fff;
 	height: 96px;
+	border-bottom: 1px solid #000;
 }
 
 .menu ol {
@@ -6168,10 +6169,52 @@ New Header Menu Styles Here
 		height: 10px;
 		border-radius: 100%;
 	}
+
+	#resources_dropdown ol {
+		width: 25%;
+	}
 }
 
 @media screen and (max-width: 439px) {
 	.menu>ol>.menu-item:nth-child(5), .release_notes_notify {
 		display: none;
+	}
+}
+
+/*
+Resources Dropdown Styles
+========================= */
+#resources_dropdown {
+	width: 100%;
+	color: #000;
+	background-color: #f0f0f0;
+
+	display: none;
+}
+
+#resources_dropdown ol {
+	display: inline-block;
+	width: 33%;
+	list-style: none;
+	vertical-align: top;
+	padding-top: 12px;
+}
+
+#resources_dropdown li {
+	padding: 4px;
+	border-bottom: 1px solid #9f9f9f;
+}
+
+#resources_dropdown li:last-child {
+	border-bottom: 0px;
+}
+
+#resources_dropdown li a {
+	font-size: 12px;
+}
+
+@media screen and (max-width: 800px) {
+	#resources_dropdown ol {
+		width: 25%;
 	}
 }
