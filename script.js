@@ -325,7 +325,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$.ajax({
 		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360001964953/articles.json',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360002185914/articles.json',
 		dataType: 'json',
 		async: true,
 		success: function(requested) {
