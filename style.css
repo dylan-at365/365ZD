@@ -245,7 +245,7 @@ ul {
 
 .header-filter {
 	background-color: #2555D9;
-	filter: alpha(opacity=50);
+	filter: opacity(50%);
 	max-width: 1600px;
 	margin: 0 auto;
 	padding: 0 5%;
@@ -551,7 +551,6 @@ ul {
 	font-size: 16px;
 	margin-left: -39px;
 	/*margin-bottom: 1px;*/
-	-moz-box-shadow: none;
 	box-shadow: none !important;
 	text-shadow: none;
 }
@@ -780,7 +779,7 @@ width: 10px;
 .alert:after {
 	content: '';
 	text-align: center;
-	color: "white";
+	color: white;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -1308,13 +1307,13 @@ width: 10px;
 	.intro-text {
 		padding-left: 33%;
 		padding-right: 0%;
-		padding-top: 3% border-top: 1px #525f79;
+		padding-top: 3%;
+		border-top: 1px #525f79;
 	}
 }
 
 @media screen and (max-width: 1266px) {
 	.intro-toc {
-		float: center;
 		position: relative;
 		overflow: hidden;
 		width: auto;
@@ -1416,7 +1415,6 @@ width: 10px;
 	position: relative;
 	display: block;
 	margin: auto;
-	float: center;
 	padding-left: 4%;
 	min-width: 120px;
 }
@@ -1480,7 +1478,8 @@ width: 10px;
 }
 
 .article-content table {
-	background-color: rgba(78, 81, 87, 0.03) width:90%;
+	background-color: rgba(78, 81, 87, 0.03);
+	width:90%;
 	margin-left: 5%;
 	margin-right: 5%;
 	border-radius: 2px 2px 2px 2px;
@@ -1567,7 +1566,7 @@ width: 10px;
 	box-shadow: none !important;
 }
 
-.article-vote[aria-selected="true"]::focus {
+.article-vote[aria-selected="true"]:focus {
 	color: #525f79;
 	box-shadow: none !important;
 }
@@ -1578,7 +1577,6 @@ width: 10px;
 	content: "\e084";
 	font-weight: normal;
 	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -1588,8 +1586,6 @@ width: 10px;
 	content: "\e083";
 	font-weight: normal;
 	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
 	box-shadow: none !important;
 }
 
@@ -1809,12 +1805,6 @@ width: 10px;
 
 .lb-md {
 	font-size: 14px;
-}
-
-/********* Tabs 5/17 (Rollback to previous day) ******************/
-@mixin tab-active() {
-	background: #22212d;
-	color: #2555d9;
 }
 
 .tabbed-content-container {
@@ -2117,7 +2107,7 @@ width: 10px;
 }
 
 .breadcrumbs ol {
-	padding-left: 1% !important;
+	padding-left: 4px !important;
 }
 
 @media (min-width: 768px) {
@@ -2135,7 +2125,7 @@ width: 10px;
 	text-overflow: ellipsis;
 }
 
-.breadcrumbs li:a {
+.breadcrumbs li a {
 	color: #2555d9;
 	display: inline;
 	font-weight: 300;
@@ -2145,7 +2135,7 @@ width: 10px;
 	text-decoration: none;
 }
 
-.breadcrumbs li:a::hover {
+.breadcrumbs li a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
