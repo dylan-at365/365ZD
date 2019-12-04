@@ -203,10 +203,9 @@ $(document).ready(function() {
 				$("#user-profile-link").attr("href", "https://365retailmarkets.zendesk.com/hc/en-us/profiles/" + userId);
 				$("#user-info-name").text(name);
 
-				if (userRole == 'admin' || userRole == 'agent')
-
-				{
+				if (userRole == 'admin' || userRole == 'agent') {
 					document.getElementById("internal-support-links").style.display = "block";
+
 				} else {
 					console.log('Active user is not an Agent/Admin.')
 				}
@@ -283,11 +282,9 @@ $(document).ready(function() {
 	if (HelpCenter.user.role === 'anonymous') {
 		navUserFunctions.style.cssText = "display: none;";
 		navUserSignIn.style.cssText = "display: inline-block;";
-		console.log('user not logged in');
 	} else if (HelpCenter.user.role !== 'anonymous') {
 		navUserFunctions.style.cssText = "display: inline-block;";
 		navUserSignIn.style.cssText = "display: none;";
-		console.log('user is active');
 	}
 });
 
@@ -322,7 +319,7 @@ $(document).ready(function() {
 	})
 });
 
-$(document).ready(function() {
+$(document).ready(function() { //Gets the content of an article specifically set up to run banners across Zendesk.
 	$.ajax({
 		type: 'GET',
 		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360002185914/articles.json',
@@ -338,6 +335,132 @@ $(document).ready(function() {
 
 					$(".hc-header > #alert_container").html(messageBody);
 
+				}
+			}
+		}
+	})
+});
+
+$(document).ready(function() { //Grab articles by creation date and throw them in an empty category to fake a "New Articles" page
+	$.ajax({
+		type: 'GET',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
+		dataType: 'json',
+		async: true,
+		success: function(newArticles) {
+
+			var headerText = document.querySelectorAll('.category-header-text > a');
+			var articleList = document.getElementsByClassName('article-list');
+
+			if (headerText[0].innerHTML == 'New Articles This Month!') {
+
+				if ( (HelpCenter.user.role !== 'agent') || (HelpCenter.user.role !== 'manager') ) {
+
+					for (var i = 0; i < newArticles.articles.length; i++) {
+
+						if (newArticles.articles[i].user_segment_id == '321294') {
+
+							newArticles.articles.splice(i, 1);
+
+						} else {
+
+							var liNode = document.createElement('li');
+							articleList[0].appendChild(liNode);
+							liNode.setAttribute('class', 'article-list-item');
+
+							liNode.appendChild(document.createElement('a'));
+						}
+					}
+
+					var singleArticle = document.querySelectorAll('.article-list-item > a');
+
+					for (var x = 0; x < newArticles.articles.length; x++) {
+
+						singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
+						singleArticle[x].textContent = newArticles.articles[x].title;
+					}
+
+				} else {
+
+					for (var i = 0; i < newArticles.articles.length; i++) {
+
+						var liNode = document.createElement('li');
+						articleList[0].appendChild(liNode);
+						liNode.setAttribute('class', 'article-list-item');
+
+						liNode.appendChild(document.createElement('a'));
+					}
+
+					var singleArticle = document.querySelectorAll('.article-list-item > a');
+
+					for (var x = 0; x < newArticles.articles.length; x++) {
+
+						singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
+						singleArticle[x].textContent = newArticles.articles[x].title;
+					}
+				}
+			}
+		}
+	})
+});
+
+$(document).ready(function() { //Does like the "New Articles" page but is for updated ones instead.
+	$.ajax({
+		type: 'GET',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=updated_at',
+		dataType: 'json',
+		async: true,
+		success: function(updatedArticles) {
+
+			var headerText = document.querySelectorAll('.category-header-text > a');
+			var articleList = document.getElementsByClassName('article-list');
+
+			if (headerText[1].innerHTML == 'Updated Articles!') {
+
+				if ( (HelpCenter.user.role !== 'agent') || (HelpCenter.user.role !== 'manager') ) {
+
+					for (var i = 0; i < updatedArticles.articles.length; i++) {
+
+						if (updatedArticles.articles[i].user_segment_id == '321294') {
+
+							updatedArticles.articles.splice(i, 1);
+
+						} else {
+
+							var liNode = document.createElement('li');
+							articleList[1].appendChild(liNode);
+							liNode.setAttribute('class', 'article-list-item');
+
+							liNode.appendChild(document.createElement('a'));
+						}
+					}
+
+					var singleArticle = document.querySelectorAll('.article-list-item > a');
+
+					for (var x = 0; x < updatedArticles.articles.length; x++) {
+
+						singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
+						singleArticle[x].textContent = updatedArticles.articles[x].title;
+					}
+
+				} else {
+
+					for (var i = 0; i < updatedArticles.articles.length; i++) {
+
+						var liNode = document.createElement('li');
+						articleList[1].appendChild(liNode);
+						liNode.setAttribute('class', 'article-list-item');
+
+						liNode.appendChild(document.createElement('a'));
+					}
+
+					var singleArticle = document.querySelectorAll('.article-list-item > a');
+
+					for (var x = 0; x < updatedArticles.articles.length; x++) {
+
+						singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
+						singleArticle[x].textContent = updatedArticles.articles[x].title;
+					}
 				}
 			}
 		}
