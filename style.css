@@ -1434,16 +1434,21 @@ ul {
 }
 
 .article-body tbody tr:nth-child(odd) {
-	background-color: rgba(78, 81, 87, 0.05);
+	background-color: #eaeaeb;
 }
 
-.article-body>table>tbody>tr {}
+.article-body tbody tr:nth-child(even) {
+	background-color: #fafafb;
+}
 
-.article-body table tbody tr:first-child {
+.article-body table thead tr {
 	background-color: #2555d9;
 	color: white;
 	font-weight: 600;
-	padding: 0px !important;
+}
+
+.article-body table thead tr td {
+	padding: 12px 8px;
 }
 
 .article-body table tbody tr td {
