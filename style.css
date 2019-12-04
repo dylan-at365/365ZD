@@ -2036,7 +2036,6 @@ width: 10px;
 	margin-right: 1px !important;
 	margin-top: 0px !important;
 }
-}
 
 /***** Tiny Search field *****/
 .search-small {
@@ -2100,7 +2099,6 @@ width: 10px;
 	margin: 0 0 0;
 	padding-bottom: 10px;
 	float: left;
-	padding-left: -40px;
 	font-size: 14px;
 	/*font-family: 'Roboto', sans-serif;*/
 	font-weight: bold;
@@ -2142,7 +2140,6 @@ width: 10px;
 
 .breadcrumbs li:first-child a:before {
 	display: inline-block;
-	padding-left: -40px;
 }
 
 .breadcrumbs li+li::before {
@@ -2687,7 +2684,7 @@ width: 10px;
 	text-decoration: none !important;
 }
 
-.section-listheader a::visited {
+.section-listheader a:visited {
 	color: #193fa5;
 	text-decoration: none;
 }
@@ -2988,7 +2985,8 @@ width: 10px;
 /***** User Profile Page (DASHBOARD) *****/
 .dashboard-hero {
 	height: 150px;
-	width: 100% color: #ffffff;
+	width: 100%;
+	color: #ffffff;
 	display: block;
 	background-image: url(https://theme.zdassets.com/theme_assets/2031453/455c797d1e912953dec45dcdeaa06410af8fc670.jpg);
 }
@@ -3804,7 +3802,7 @@ width: 10px;
 	box-shadow: none !important;
 }
 
-.profile-edit-dialog[aria-selected="true"]::focus {
+.profile-edit-dialog[aria-selected="true"]:focus {
 	color: #525f79;
 	box-shadow: none !important;
 }
@@ -3812,7 +3810,6 @@ width: 10px;
 .aprofile-edit-dialog::before {
 	font-weight: normal;
 	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -4628,7 +4625,7 @@ width: 10px;
 	text-align: right;
 }
 
-.subscriptions-unsubscribe[aria-selected="true"]::focus {
+.subscriptions-unsubscribe[aria-selected="true"]:focus {
 	color: #525f79 !important;
 	box-shadow: none !important;
 	text-align: right;
@@ -4855,8 +4852,8 @@ width: 10px;
 }
 
 .tile-links {
-	padding-left: auto;
-	padding-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .contact-us-2nd-options {
@@ -5139,8 +5136,8 @@ width: 10px;
 }
 
 .status-label-pending:after {
-	content: "•"
-		padding-left:2px;
+	content: "•";
+	padding-left: 2px;
 }
 
 .status-label-open {
@@ -5596,7 +5593,6 @@ width: 10px;
 	.nav-mobile-open {
 		border-radius: 5px 5px 0 0;
 		-webkit-border-radius: 5px 5px 0 0;
-		-moz-border-radius: 5px 5px 0 0;
 	}
 
 	.nav-item:hover .nav-submenu {
@@ -5862,7 +5858,7 @@ width: 10px;
 
 html[dir="rtl"] .notification-left-aligned {
 	text-align: right;
-	padding-left: auto;
+	/*padding-left: auto;*/
 	padding-right: 0;
 }
 
