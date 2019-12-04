@@ -428,7 +428,7 @@ $(document).ready(function() { //Does like the "New Articles" page but is for up
 						} else {
 
 							var liNode = document.createElement('li');
-							articleList[1].appendChild(liNode);
+							articleList[0].appendChild(liNode);
 							liNode.setAttribute('class', 'article-list-item');
 
 							liNode.appendChild(document.createElement('a'));
@@ -448,7 +448,7 @@ $(document).ready(function() { //Does like the "New Articles" page but is for up
 					for (var i = 0; i < updatedArticles.articles.length; i++) {
 
 						var liNode = document.createElement('li');
-						articleList[1].appendChild(liNode);
+						articleList[0].appendChild(liNode);
 						liNode.setAttribute('class', 'article-list-item');
 
 						liNode.appendChild(document.createElement('a'));
