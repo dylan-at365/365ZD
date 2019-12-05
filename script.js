@@ -11,8 +11,7 @@ $(document).ready(function() {
 		$('#support-toolbox').text('' + HelpCenter.user.name.split(" ")[0] + ', did you know you can submit and track support tickets online?');
 		$('#ajax-content').load('https://365retailmarkets.zendesk.com/hc/en-us/requests/ #requests-table-iframe'); //Pulls My Activities table from Requests page to User Profile page
 		$('#subscription-list .subscriptions-unsubscribe a').text(''); //Change Unfollow link text on Saved Articles (Subscriptions) page
-		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list');
-		//Pulls subscribed topics to Dashboard
+		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
 	}
 
 	// Adds fadeout to the notification window upon follow/unfollow of an article/section
@@ -96,6 +95,13 @@ $(document).ready(function() {
 		}
 	});
 
+$(document).ready(function() {
+	currentDate = new Date();
+	currentYear = currentDate.getFullYear();
+	timeLoc = document.getElementById('footer-copyright text');
+
+	timeLoc.innerHTML = `© ${currentYear} 365 Retail Markets | All Rights Reserved`;
+});
 	function search() {
 		window.location.search = $.param({
 			query: $("#quick-search").val(),
@@ -114,7 +120,6 @@ $(document).ready(function() {
 	if ($("#user-nav").children().length === 0) {
 		$(".header .icon-menu").hide();
 	}
-
 
 	// Submit organization form in the request page
 	$("#request-organization select").on("change", function() {
@@ -209,7 +214,6 @@ $(document).ready(function() {
 				} else {
 					console.log('Active user is not an Agent/Admin.')
 				}
-
 			}
 		}
 	})
