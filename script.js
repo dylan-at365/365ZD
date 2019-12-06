@@ -323,7 +323,7 @@ $(document).ready(function() {
 	})
 });
 
-$(document).ready(function() { //Gets the content of an article specifically set up to run banners across Zendesk.
+/* $(document).ready(function() { //Gets the content of an article specifically set up to run banners across Zendesk.
 	$.ajax({
 		type: 'GET',
 		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360002185914/articles.json',
@@ -343,7 +343,7 @@ $(document).ready(function() { //Gets the content of an article specifically set
 			}
 		}
 	})
-});
+}); */
 
 $(document).ready(function() { //Grab articles by creation date and throw them in an empty category to fake a "New Articles" page
 	$.ajax({
