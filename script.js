@@ -354,54 +354,37 @@ $(document).ready(function() { //Grab articles by creation date and throw them i
 		success: function(newArticles) {
 
 			var headerText = document.querySelectorAll('.category-header-text > a');
-			var articleList = document.getElementsByClassName('article-list');
+			var articleList = document.getElementsByClassName('article-list')[0];
 
 			if (headerText[0].innerHTML == 'New Articles This Month!') {
 
-				if ( (HelpCenter.user.role !== 'agent') || (HelpCenter.user.role !== 'manager') ) {
+				if ( (HelpCenter.user.role !== 'agent') && (HelpCenter.user.role !== 'manager') ) {
 
-					for (var i = 0; i < newArticles.articles.length; i++) {
+					for (var y = 0; y < newArticles.articles.length; y++) {
 
-						if (newArticles.articles[i].user_segment_id == '321294') {
+						if (newArticles.articles[y].user_segment_id == '321294') {
 
-							newArticles.articles.splice(i, 1);
-
-						} else {
-
-							var liNode = document.createElement('li');
-							articleList[0].appendChild(liNode);
-							liNode.setAttribute('class', 'article-list-item');
-
-							liNode.appendChild(document.createElement('a'));
+							newArticles.articles.splice(y, 1);
+							console.log('Length is ' + newArticles.articles.length + ' and an article was removed!');
 						}
 					}
+				}
 
-					var singleArticle = document.querySelectorAll('.article-list-item > a');
+				for (var i = 0; i < newArticles.articles.length; i++) {
 
-					for (var x = 0; x < newArticles.articles.length; x++) {
+					var liNode = document.createElement('li');
+					articleList.appendChild(liNode);
+					liNode.setAttribute('class', 'article-list-item');
 
-						singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
-						singleArticle[x].textContent = newArticles.articles[x].title;
-					}
+					liNode.appendChild(document.createElement('a'));
+				}
 
-				} else {
+				var singleArticle = document.querySelectorAll('.article-list-item > a');
 
-					for (var i = 0; i < newArticles.articles.length; i++) {
+				for (var x = 0; x < newArticles.articles.length; x++) {
 
-						var liNode = document.createElement('li');
-						articleList[0].appendChild(liNode);
-						liNode.setAttribute('class', 'article-list-item');
-
-						liNode.appendChild(document.createElement('a'));
-					}
-
-					var singleArticle = document.querySelectorAll('.article-list-item > a');
-
-					for (var x = 0; x < newArticles.articles.length; x++) {
-
-						singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
-						singleArticle[x].textContent = newArticles.articles[x].title;
-					}
+					singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
+					singleArticle[x].textContent = newArticles.articles[x].title;
 				}
 			}
 		}
@@ -417,54 +400,36 @@ $(document).ready(function() { //Does like the "New Articles" page but is for up
 		success: function(updatedArticles) {
 
 			var headerText = document.querySelectorAll('.category-header-text > a');
-			var articleList = document.getElementsByClassName('article-list');
+			var articleList = document.getElementsByClassName('article-list')[1];
 
 			if (headerText[1].innerHTML == 'Updated Articles!') {
 
-				if ( (HelpCenter.user.role !== 'agent') || (HelpCenter.user.role !== 'manager') ) {
+				if ( (HelpCenter.user.role !== 'agent') && (HelpCenter.user.role !== 'manager') ) {
 
-					for (var i = 0; i < updatedArticles.articles.length; i++) {
+					for (var y = 0; y < updatedArticles.articles.length; y++) {
 
-						if (updatedArticles.articles[i].user_segment_id == '321294') {
+						if (updatedArticles.articles[y].user_segment_id == '321294') {
 
-							updatedArticles.articles.splice(i, 1);
-
-						} else {
-
-							var liNode = document.createElement('li');
-							articleList[0].appendChild(liNode);
-							liNode.setAttribute('class', 'article-list-item');
-
-							liNode.appendChild(document.createElement('a'));
+							updatedArticles.articles.splice(y, 1);
 						}
 					}
+				}
 
-					var singleArticle = document.querySelectorAll('.article-list-item > a');
+				for (var i = 0; i < updatedArticles.articles.length; i++) {
 
-					for (var x = 0; x < updatedArticles.articles.length; x++) {
+					var liNode = document.createElement('li');
+					articleList.appendChild(liNode);
+					liNode.setAttribute('class', 'article-list-item');
 
-						singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
-						singleArticle[x].textContent = updatedArticles.articles[x].title;
-					}
+					liNode.appendChild(document.createElement('a'));
+				}
 
-				} else {
+				var singleArticle = document.querySelectorAll('.article-list-item > a');
 
-					for (var i = 0; i < updatedArticles.articles.length; i++) {
+				for (var x = 0; x < updatedArticles.articles.length; x++) {
 
-						var liNode = document.createElement('li');
-						articleList[0].appendChild(liNode);
-						liNode.setAttribute('class', 'article-list-item');
-
-						liNode.appendChild(document.createElement('a'));
-					}
-
-					var singleArticle = document.querySelectorAll('.article-list-item > a');
-
-					for (var x = 0; x < updatedArticles.articles.length; x++) {
-
-						singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
-						singleArticle[x].textContent = updatedArticles.articles[x].title;
-					}
+					singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
+					singleArticle[x].textContent = updatedArticles.articles[x].title;
 				}
 			}
 		}
