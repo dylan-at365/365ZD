@@ -1001,6 +1001,10 @@ ul {
 	max-width: 100%;
 }
 
+.article-body img.fancybox {
+	cursor: pointer;
+}
+
 .article-body ul, .article-body ol {
 	padding-left: 20px;
 	list-style-position: outside;

@@ -14,6 +14,16 @@ $(document).ready(function() {
 		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
 	}
 
+	//FancyBox lightbox
+	$('.article-body img.fancybox').click(function() {
+		$.fancybox.open([
+			{
+				src : $(this).attr("src"),
+				opts : {},
+			},
+		]);
+	});
+
 	// Adds fadeout to the notification window upon follow/unfollow of an article/section
 	$(".notification-dismiss")
 	setTimeout(function() {
