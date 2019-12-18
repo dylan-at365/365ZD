@@ -999,6 +999,7 @@ ul {
 .article-body img {
 	height: auto;
 	max-width: 100%;
+	padding: 16px 0px;
 }
 
 .article-body img.fancybox {
@@ -1021,6 +1022,10 @@ ul {
 
 .article-body ul>ul, .article-body ol>ol, .article-body ol>ul, .article-body ul>ol {
 	margin: 0;
+}
+
+.article-body li, .article-body p {
+	padding: 4px 0px;
 }
 
 .article-body ul {
