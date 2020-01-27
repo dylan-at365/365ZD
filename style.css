@@ -1,8 +1,12 @@
 @charset "UTF-8";
-/*Google Fonts------------ */
+
+/*
+Google Fonts
+================================================== */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-/***** Base *****/
+/* Base
+================================================== */
 * {
 	box-sizing: border-box;
 }
@@ -12,8 +16,8 @@
 }
 
 body {
-	background-color: $background_color;
 	color: #22212d;
+	background-color: $background_color;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 	font-weight: 400;
@@ -22,9 +26,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	margin-top: 0;
 }
 
 h1 {
@@ -64,10 +68,10 @@ input, textarea {
 }
 
 input {
-	font-weight: 300;
 	max-width: 100%;
 	box-sizing: border-box;
 	outline: none;
+	font-weight: 300;
 	transition: border .12s ease-in-out;
 }
 
@@ -80,16 +84,17 @@ input[disabled] {
 }
 
 select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+	width: 100%;
+	padding: 8px 30px 8px 10px;
+	color: #555;
 	background: url("http://theme.zdassets.com/theme_assets/2031453/27f536d448438fdd88b4004a3223bcc153fb621d.svg") no-repeat #fff;
 	background-position: right 10px center;
 	border: 1px solid #ddd;
 	border-radius: 4px;
-	padding: 8px 30px 8px 10px;
 	outline: none;
-	color: #555;
-	width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
 }
 
 select:focus {
@@ -1431,11 +1436,13 @@ ul {
 }
 
 .article-content table {
+	margin: 0px;
 	background-color: rgba(78, 81, 87, 0.03);
-	width:90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	border-radius: 2px 2px 2px 2px;
+	border-radius: 2px;
+}
+
+.article-body table {
+	width: auto !important;
 }
 
 .article-body table tbody {
@@ -1590,6 +1597,17 @@ ul {
 .article-hero-filter-canteen {
 	background-color: rgba(69, 85, 96, 0.95);
 	height: 100%;
+}
+
+@media screen and (max-width: 450px) {
+	.article-body {
+		padding: 0px;
+	}
+
+	.article-title, .article-timestamp-block, .breadcrumbs {
+		margin: 0px !important;
+		padding: 12px 0px;
+	}
 }
 
 .hero-text-inner-hero {
@@ -2849,6 +2867,26 @@ ul {
 	text-align: center;
 	display: block;
 	margin: auto;
+}
+
+/*
+Recent Activity ZD Helper Styles
+================================ */
+.recent-activity-item-comment, .recent-activity-item-parent {
+	display: none;
+}
+
+.recent-activity-item {
+	padding-bottom: 16px;
+}
+
+.recent-activity-item-link {
+	font-weight: bold;
+}
+
+.recent-activity-item-meta {
+	font-size: 10pt;
+	font-style: italic;
 }
 
 /***** Error Page *****/

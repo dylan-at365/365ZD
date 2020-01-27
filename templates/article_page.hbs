@@ -1,29 +1,27 @@
  <!-- 365 - All other articles!--------------->
  <section class="article-hero">
  	<div class="article-hero-filter">
- 		<div class="col-6 hero-text-inner-hero" style="display:none;">
- 			{{section.name}}
- 		</div>
+ 		<div class="col-6 hero-text-inner-hero" style="display:none;">{{section.name}}</div>
  	</div>
  </section>
+
  <div class="article-wrapper container-fluid">
  	<div class="row">
  		<article class="col-lg-8 col-md-9 col-xs-12 article">
+
  			<header class="article-header">
- 				{{breadcrumbs}}
+ 				{{breadcrumbs}} <!-- Becomes an ordered list element -->
  				<h1 class="article-title" title="{{article.title}}">
- 					{{article.title}} {{#if article.internal}}<i class="fas fa-unlock-alt"></i> {{/if}}
+ 					{{article.title}} {{#if article.internal}}<i class="fas fa-lock"></i> {{/if}}
  				</h1>
  				<div class="article-timestamp-block">
- 					{{subscribe}}
+ 					{{subscribe}} <!-- Becomes an anchor tag -->
  					<div class="article-author">
  						<div class="avatar article-avatar">
  							<img class="user-avatar" src="https://theme.zdassets.com/theme_assets/2031453/12b4be60e519a04eba4f0c9a25be87f430762f53.png" alt="Avatar" />
  						</div>
  						<div class="article-meta">
- 							<strong>
- 								365 Support
- 							</strong>
+ 							<strong>365 Support</strong>
  							<ul class="meta-group">
  								<li>{{#is article.created_at article.updated_at}} {{date article.created_at timeago=true}}</li>
  								{{else}}
@@ -36,6 +34,7 @@
  					</div>
  				</div>
  			</header>
+
  			<section class="article-info">
  				<div class="article-content">
  					<div class="article-body">
