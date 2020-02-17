@@ -27,8 +27,7 @@
 								</div>
 								<div class="category-header-block category-header-text">
 									<a href="{{url}}">{{name}}</a>
-									{{#if internal}}<i class="fas fa-unlock-alt"></i>
-									{{/if}}
+									{{#if internal}}<i class="fas fa-lock"></i>{{/if}}
 								</div>
 
 								{{#if articles}}
@@ -38,8 +37,7 @@
 												{{#if promoted}}
 													<span data-title="{{t 'promoted'}}" class="icon-star"></span>
 												{{/if}}
-												<a href="{{url}}" class="article-list-link">{{title}}</a>{{#if internal}}<i style="margin-left:5px;" class="fas fa-unlock-alt"></i>
-												{{/if}}
+												<a href="{{url}}" class="article-list-link">{{title}}</a>{{#if internal}}<i style="margin-left:5px;" class="fas fa-lock"></i>{{/if}}
 											</li>
 										{{/each}}
 									</ul>
@@ -48,25 +46,28 @@
 											{{t 'show_all_articles' count=article_count}}
 										</a>
 									{{/if}}
-								{{else}}
-									<i class="section-empty">
-										<center>Coming Soon!</center>
-									</i>
 								{{/if}}
-							</section>
-						{{else}}
-							<i class="category-empty">
-								<a href="{{category.url}}">{{t 'empty'}}</a>
-							</i>
-						{{/each}}
 
+								{{#each sections}}
+									<section class="section article-list">
+										<div class="article-list-item">
+											<a class="article-list-link" href="{{url}}">{{name}}</a>{{#if internal}}<i style="margin-left:5px;" class="fas fa-lock"></i>{{/if}}
+										</div>
+									</section>
+								{{/each}}
+
+							</section>
+							{{else}}
+								<i class="category-empty">
+									<a href="{{category.url}}">{{t 'empty'}}</a>
+								</i>
+						{{/each}}
 
 					</section>
 					<section class="gutter"></section>
 					<div class="section-category-search-again-message">
 						<div class="section-category-search-again-message-wrapper">
-							<h2>
-								How can we help?</h2>
+							<h2>How can we help?</h2>
 							<h4>Search the Help Center or <a href="https://365retailmarkets.zendesk.com/hc/en-us">browse</a> our resources. </h4>
 							<div class="section-category-search-bar-container">
 								<form class="search-results-search-bar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden"
