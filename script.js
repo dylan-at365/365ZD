@@ -105,13 +105,6 @@ $(document).ready(function() {
 		}
 	});
 
-$(document).ready(function() {
-	currentDate = new Date();
-	currentYear = currentDate.getFullYear();
-	timeLoc = document.getElementById('footer-copyright text');
-
-	timeLoc.innerHTML = `© ${currentYear} 365 Retail Markets | All Rights Reserved`;
-});
 	function search() {
 		window.location.search = $.param({
 			query: $("#quick-search").val(),
