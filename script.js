@@ -325,29 +325,7 @@ $(document).ready(function() {
 		}
 	})
 });
-
-/* $(document).ready(function() { //Gets the content of an article specifically set up to run banners across Zendesk.
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360002185914/articles.json',
-		dataType: 'json',
-		async: true,
-		success: function(requested) {
-
-			for (var i = 0; i < requested.articles.length; i++) {
-
-				if (requested.articles[i].id != '360037144093') {
-					requested.articles.splice(i, 1);
-					messageBody = requested.articles[0].title;
-
-					$(".hc-header > #alert_container").html(messageBody);
-
-				}
-			}
-		}
-	})
-}); */
-
+/*
 $(document).ready(function() { //Grab articles by creation date and throw them in an empty category to fake a "New Articles" page
 	$.ajax({
 		type: 'GET',
@@ -438,3 +416,4 @@ $(document).ready(function() { //Does like the "New Articles" page but is for up
 		}
 	})
 });
+*/
