@@ -2742,6 +2742,16 @@ ul {
 	font-family: Arial;
 }
 
+/*
+Subsection Adjustments
+====================== */
+.subsection-container {
+	padding-bottom: 24px;
+}
+
+
+/* ==== */
+
 /***** Category pages *****/
 .category-container {
 	display: flex;
@@ -5070,7 +5080,7 @@ Recent Activity ZD Helper Styles
 /*****New Header ****/
 .alert-banner {
   width: 100%;
-  
+
   color: #fff;
   background-color: #2555d9;
   font-family: "Roboto";
