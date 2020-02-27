@@ -129,6 +129,15 @@ $(document).ready(function() {
 		this.form.submit();
 	});
 
+	$("a").click(function (){
+		var placeToScroll = $(this).attr( 'href' );
+            $('html, body').animate({
+                scrollTop: $(placeToScroll).offset().top - 150
+            }, 1000).promise().done(function() {
+				console.log('animation done');
+			});
+    });
+
 });
 
 
