@@ -1008,7 +1008,7 @@ ul {
 }
 
 .article-body img.fancybox {
-	cursor: pointer;
+	cursor: zoom-in;
 }
 
 .article-body ul, .article-body ol {

@@ -19,10 +19,13 @@ $(document).ready(function() {
 		$.fancybox.open([
 			{
 				src : $(this).attr("src"),
-				opts : {},
+				opts : { smallBtn: true },
 			},
 		]);
 	});
+
+	$('.article-body img.fancybox').after('<p style="font-size: 10pt; font-weight: normal;"><em>(Click image to enlarge it)</em></p>');
+
 
 	// Adds fadeout to the notification window upon follow/unfollow of an article/section
 	$(".notification-dismiss")
