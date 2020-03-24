@@ -2672,6 +2672,7 @@ ul {
 }
 
 .section-article-list {
+	width: 100%;
 	padding-left: 40px;
 	padding-right: 40px;
 }
