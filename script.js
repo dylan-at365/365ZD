@@ -2,7 +2,6 @@
 var name;
 var userId;
 var userRole;
-var canteenRoleID = 370274627154;
 
 $(document).ready(function() {
 	$("form.search input[type=submit]").attr("value", "Search");
@@ -23,11 +22,11 @@ $(document).ready(function() {
 				{
 					groupID = me.user.organization_id;
 
-					if ( groupID == canteenRoleID ) {
+					if ( groupID == 370274627154 || groupID == 116453457553 ) {
 						document.getElementById("canteen-icon").style.display = "block";
 
 					} else {
-						console.log('Active user is not of the Organization.')
+						console.log('Active user is not Canteen or 365.')
 					}
 				}
 			}
