@@ -1,9 +1,8 @@
-/*
- * jQuery v1.9.1 included
- */
+/* jQuery v1.9.1 included */
 var name;
 var userId;
 var userRole;
+var canteenRoleID = 370274627154;
 
 $(document).ready(function() {
 	$("form.search input[type=submit]").attr("value", "Search");
@@ -13,6 +12,27 @@ $(document).ready(function() {
 		$('#subscription-list .subscriptions-unsubscribe a').text(''); //Change Unfollow link text on Saved Articles (Subscriptions) page
 		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
 	}
+
+	$(document).ready(function() {
+		$.ajax({
+			type: 'GET',
+			url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
+			dataType: 'json',
+			async: true,
+			success: function(me) {
+				{
+					groupID = me.user.organization_id;
+
+					if ( groupID == canteenRoleID ) {
+						document.getElementById("canteen-icon").style.display = "block";
+
+					} else {
+						console.log('Active user is not of the Organization.')
+					}
+				}
+			}
+		})
+	});
 
 	//FancyBox lightbox
 	$('.article-body img.fancybox').click(function() {
