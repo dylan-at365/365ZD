@@ -30,6 +30,14 @@
 									{{#if internal}}<i class="fas fa-lock"></i>{{/if}}
 								</div>
 
+								{{#each sections}}
+									<section class="section article-list">
+										<div class="article-list-item">
+											<a style="font-weight: bold;" class="article-list-link" href="{{url}}">{{name}}</a>{{#if internal}}<i style="margin-left:5px;" class="fas fa-lock"></i>{{/if}}
+										</div>
+									</section>
+								{{/each}}
+
 								{{#if articles}}
 									<ul class="article-list" id="ArticleList">
 										{{#each articles}}
@@ -47,14 +55,6 @@
 										</a>
 									{{/if}}
 								{{/if}}
-
-								{{#each sections}}
-									<section class="section article-list">
-										<div class="article-list-item">
-											<a class="article-list-link" href="{{url}}">{{name}}</a>{{#if internal}}<i style="margin-left:5px;" class="fas fa-lock"></i>{{/if}}
-										</div>
-									</section>
-								{{/each}}
 
 							</section>
 							{{else}}

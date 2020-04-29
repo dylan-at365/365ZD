@@ -2750,6 +2750,10 @@ Subsection Adjustments
 	padding-bottom: 24px;
 }
 
+.category-section-block > section:last-of-type {
+	border-bottom: 3px solid #c8cedf;
+}
+
 
 /* ==== */
 
