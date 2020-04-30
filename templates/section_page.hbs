@@ -14,12 +14,12 @@
 			{{#if section.sections}}
 				<div class="section-container subsection-container">
 					{{#each section.sections}}
-						<section class="section-article-list">
+						<section class="subsection-article-list">
 							<h3 class="section-tree-title">
 								<a href="{{url}}">{{name}}</a>
 							</h3>
 							{{#if articles}}
-								<ul class="section-article-list">
+								<ul class="subsection-article-list">
 									{{#each articles}}
 										<li class="section-article-list-item{{#if promoted}} article-promoted{{/if}}">
 											{{#if promoted}}
