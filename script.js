@@ -12,7 +12,7 @@ $(document).ready(function() {
 		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
 	}
 
-	$(document).ready(function() {
+	$(document).ready(function() { //is for the Canteen button
 		$.ajax({
 			type: 'GET',
 			url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
@@ -21,9 +21,8 @@ $(document).ready(function() {
 			success: function(me) {
 				{
 					groupID = me.user.organization_id;
-                    userRole = me.user.role;
 
-					if ( groupID == 370274627154 || userRole == 'admin' ) {
+					if ( groupID == 370274627154 || groupID == 116453457553 ) {
 						document.getElementById("canteen-icon").style.display = "block";
 
 					} else {
@@ -34,7 +33,7 @@ $(document).ready(function() {
 		})
 	});
 
-    $(document).ready(function() {
+    $(document).ready(function() { //is for the Sales Ops button
         $.ajax({
             type: 'GET',
             url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
@@ -43,8 +42,9 @@ $(document).ready(function() {
             success: function(me) {
                 {
                     groupID = me.user.organization_id;
+                    userRole = me.user.role;
 
-                    if ( groupID == 114094510753 || groupID == 116453457553 ) {
+                    if ( groupID == 114094510753 || userRole == 'admin' ) {
                         document.getElementById("salesops-icon").style.display = "block";
 
                     } else {
