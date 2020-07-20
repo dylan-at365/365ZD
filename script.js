@@ -21,8 +21,9 @@ $(document).ready(function() {
 			success: function(me) {
 				{
 					groupID = me.user.organization_id;
+                    userRole = me.user.role;
 
-					if ( groupID == 370274627154 || groupID == 116453457553 ) {
+					if ( groupID == 370274627154 || userRole == 'admin' ) {
 						document.getElementById("canteen-icon").style.display = "block";
 
 					} else {
