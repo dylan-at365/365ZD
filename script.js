@@ -33,6 +33,27 @@ $(document).ready(function() {
 		})
 	});
 
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
+            dataType: 'json',
+            async: true,
+            success: function(me) {
+                {
+                    groupID = me.user.organization_id;
+
+                    if ( groupID == 114094510753 || groupID == 116453457553 ) {
+                        document.getElementById("salesops-icon").style.display = "block";
+
+                    } else {
+                        console.log('Active user is not SalesOps or HelpCenter Admin.')
+                    }
+                }
+            }
+        })
+    });
+
 	//FancyBox lightbox
 	$('.article-body img.fancybox').click(function() {
 		$.fancybox.open([
