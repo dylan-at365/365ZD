@@ -33,7 +33,7 @@ $(document).ready(function() {
 		})
 	});
 
-    $(document).ready(function() { //is for the Sales Ops button
+    $(document).ready(function() { //is for the Sales Ops button - used to be 114094510753
         $.ajax({
             type: 'GET',
             url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
@@ -44,7 +44,7 @@ $(document).ready(function() {
                     groupID = me.user.organization_id;
                     userRole = me.user.role;
 
-                    if ( groupID == 114094510753 || userRole == 'admin' ) {
+                    if ( groupID == 114095664913 || userRole == 'admin' ) {
                         document.getElementById("salesops-icon").style.display = "block";
 
                     } else {
