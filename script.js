@@ -12,7 +12,7 @@ $(document).ready(function() {
 		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
 	}
 
-	async function setCanteenButton() { //is for the Canteen button
+	$(document).ready(function() { //is for the Canteen button
 		$.ajax({
 			type: 'GET',
 			url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
