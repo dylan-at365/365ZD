@@ -2213,10 +2213,9 @@ ul {
 
 .footer-logo {
 	display: block;
-	margin: auto;
 	min-height: 90px;
 	max-height: 100px;
-	margin-bottom: 10px;
+    margin: 24px auto;
 }
 
 .footer-icons {
@@ -2233,7 +2232,8 @@ ul {
 .footer-link-block {
 	padding-left: 30px;
 	margin-top: 3px;
-	margin-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /***** Search results *****/
