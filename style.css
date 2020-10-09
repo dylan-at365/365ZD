@@ -1014,7 +1014,7 @@ ul {
 .article-body ul, .article-body ol {
 	padding-left: 20px;
 	list-style-position: outside;
-	margin: 20px 0 20px 20px;
+	/* margin: 20px 0 20px 20px; */
 	overflow: hidden;
 }
 
