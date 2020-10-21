@@ -1,43 +1,21 @@
 <section class="article-hero">
-	<div class="article-hero-filter">
-		<div style="display:none;" class="col-6 hero-text-inner-hero">{{section.name}}</div>
-	</div>
+	<div class="article-hero-filter"></div>
 </section>
 <div class="section-page-background">
 	<section class="container">
-		<div class="col-md-12 section-category-box">
+		<div class="col-12 section-category-box">
 			<header class="section-page-header">
 				<ol class="breadcrumbs section-page-breadcrumbs">{{breadcrumbs}}</ol>
 				<div class="clear"></div>
 			</header>
 
 			{{#if section.sections}}
-				<div class="section-container subsection-container">
+				<div class="section-container subsection-container row">
 					{{#each section.sections}}
-						<section class="subsection-article-list">
+						<section class="subsection-article-list col">
 							<h3 class="section-tree-title">
-								<a href="{{url}}">{{name}}</a>
+								<a href="{{url}}">{{name}} <i class="fas fa-chevron-right"></i></a>
 							</h3>
-							{{#if articles}}
-								<ul class="subsection-article-list">
-									{{#each articles}}
-										<li class="section-article-list-item{{#if promoted}} article-promoted{{/if}}">
-											{{#if promoted}}
-												<span data-title="{{t 'promoted'}}" class="icon-star"></span>
-											{{/if}}
-											<a href="{{url}}" class="article-list-link">{{title}}</a>
-											{{#if internal}}
-												<span class="fas fa-lock" title="{{t 'internal'}}"></span>
-											{{/if}}
-										</li>
-									{{/each}}
-								</ul>
-								{{#if more_articles}}
-									<a href="{{url}}" class="see-all-articles">
-										{{t 'show_all_articles' count=article_count}}
-									</a>
-								{{/if}}
-							{{/if}}
 						</section>
 					{{/each}}
 				</div>

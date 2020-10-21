@@ -1586,7 +1586,7 @@ ul {
 .article-unsubscribe:hover {}
 
 .article-hero {
-	height: 150px;
+	height: 64px;
 	width: 100%;
 	color: #ffffff;
 	display: block;
@@ -2751,7 +2751,8 @@ ul {
 Subsection Adjustments
 ====================== */
 .subsection-container {
-	padding-bottom: 24px;
+    padding-bottom: 24px;
+    border: none;
 }
 
 .category-section-block > section:last-of-type {
@@ -2759,9 +2760,25 @@ Subsection Adjustments
 }
 
 .subsection-article-list {
-	width: 100%;
-	padding-left: 0px;
-	padding-right: 40px;
+    width: 100%;
+    margin: 8px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.subsection-article-list a:hover {
+    text-decoration: none;
+}
+
+.subsection-article-list i {
+    font-size: 16px;
+}
+
+.subsection-article-list h3 {
+    margin: 0;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .subsection-article-list-item {
@@ -5989,4 +6006,49 @@ Resources Dropdown Styles
 	#resources_dropdown ol {
 		width: 25%;
 	}
+}
+
+/*
+Wingcard Article Styles
+================================ */
+.wingcard_area {
+    max-width: 800px;
+}
+
+.wingcard-header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+
+    color: #fff;
+    background-color: #2555d9;
+}
+
+.wingcard-footer {
+    padding: 24px;
+    color: #fff;
+    background-color: #2555d9;
+    text-align: center;
+}
+
+/* Make list markers bold */
+.wingcard_area ol > li::marker {
+    font-weight: bold;
+}
+
+/* Highlight callout words */
+.wingcard_area span {
+    color: #2555d9;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Add space between list items */
+.wingcard_area ol > li {
+    padding: 8px 0;
+}
+
+.wingcard_area ol > ol {
+    margin-top: -12px;
+    padding-bottom: 8px;
 }
