@@ -1090,6 +1090,10 @@ ul {
 	padding-bottom: 20px;
 }
 
+.sidebar {
+    margin-top: 64px;
+}
+
 .related-articles {
 	background-color: #c8cedf;
 	border-radius: 2px 2px 2px 2px;
@@ -1097,8 +1101,8 @@ ul {
 	border-bottom: 1px solid #ddd;
 	border-top: 1px solid #ddd;
 	flex: 1 0 auto;
-	margin-top: 30px;
-	padding: 0;
+	
+	padding: 16px;
 	margin-bottom: 40px;
 	color: #22212d;
 	font-family: 'Roboto', sans-serif;

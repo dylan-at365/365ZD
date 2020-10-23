@@ -1,12 +1,10 @@
 <section class="article-hero">
- 	<div class="article-hero-filter">
- 		<div class="col-6 hero-text-inner-hero" style="display:none;">{{section.name}}</div>
- 	</div>
+ 	<div class="article-hero-filter"></div>
 </section>
 
-<div class="article-wrapper container-fluid">
+<div class="container">
  	<div class="row">
- 		<article class="col-lg-8 col-md-9 col-xs-12 article">
+ 		<article class="col-lg-8 col-md-9 col-xs-12">
 
  			<header class="article-header">
  				{{breadcrumbs}} <!-- Becomes an ordered list element -->
@@ -75,12 +73,48 @@
  						<small class="article-votes-count">
  							{{vote 'label' class='article-vote-label'}}
  						</small>
- 				{{/with}}
- 	</div>
- 	</section>
- 	<footer>
- 	</footer>
- 	</article>
+                    </div>
+ 			    {{/with}}    
+ 	        </section>
+ 	    </article>
 
- 	
- </div>
+        <div class="col-lg-4 col-md-3 sidebar">
+            <!-- - - - - - - - - - Related Articles - - - - - - - - - -->
+            <div class="related-articles">
+                <section class="related-article-container">
+                    <div class="sidebar-header-block">
+                        <h3>
+                            RELATED ARTICLES
+                        </h3>
+                    </div>
+                    <ul>
+                        {{#each section.articles}}
+                            <li>
+                                <a {{#is id ../article.id}}current-article{{/is}} href="{{url}}">
+                                    {{title}}
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </section>
+                {{#if section.more_articles}}
+                    <a class="related-articles-cta button" href="{{section.url}}">
+                        View More
+                    </a>
+                {{/if}}
+            </div>
+
+            <!-- - - - - - - - - - Featured Content - - - - - - - - - -->
+            <div class="article-featured-content">
+                <a href="https://www.365retailmarkets.com/products/#MicroMarkets">
+                    <img class="featured-content-image" src="{{asset 'nanomarket_tab.png'}}" />
+                </a>
+                <div>
+                    <a class="button featured-content-cta" href="https://www.365retailmarkets.com/products/">
+                        Learn More <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
