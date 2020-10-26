@@ -1,4 +1,3 @@
-/* jQuery v1.9.1 included */
 var name;
 var userId;
 var userRole;
@@ -175,11 +174,11 @@ $(document).ready(function() {
 
 	$("a").click(function (){
 		var placeToScroll = $(this).attr( 'href' );
-            $('html, body').animate({
-                scrollTop: $(placeToScroll).offset().top - 150
-            }, 1000).promise().done(function() {
-				console.log('animation done');
-			});
+        $('html, body').animate({
+            scrollTop: $(placeToScroll).offset().top - 150
+        }, 1000).promise().done(function() {
+            console.log('animation done');
+        });
     });
 
 });
@@ -378,95 +377,3 @@ $(document).ready(function() {
 		}
 	})
 });
-/*
-$(document).ready(function() { //Grab articles by creation date and throw them in an empty category to fake a "New Articles" page
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
-		dataType: 'json',
-		async: true,
-		success: function(newArticles) {
-
-			var headerText = document.querySelectorAll('.category-header-text > a');
-			var articleList = document.getElementsByClassName('article-list')[0];
-
-			if (headerText[0].innerHTML == 'New Articles This Month!') {
-
-				if ( (HelpCenter.user.role !== 'agent') && (HelpCenter.user.role !== 'manager') ) {
-
-					for (var y = 0; y < newArticles.articles.length; y++) {
-
-						if (newArticles.articles[y].user_segment_id == '321294') {
-
-							newArticles.articles.splice(y, 1);
-							console.log('Length is ' + newArticles.articles.length + ' and an article was removed!');
-						}
-					}
-				}
-
-				for (var i = 0; i < newArticles.articles.length; i++) {
-
-					var liNode = document.createElement('li');
-					articleList.appendChild(liNode);
-					liNode.setAttribute('class', 'article-list-item');
-
-					liNode.appendChild(document.createElement('a'));
-				}
-
-				var singleArticle = document.querySelectorAll('.article-list-item > a');
-
-				for (var x = 0; x < newArticles.articles.length; x++) {
-
-					singleArticle[x].setAttribute('href', newArticles.articles[x].html_url);
-					singleArticle[x].textContent = newArticles.articles[x].title;
-				}
-			}
-		}
-	})
-});
-
-$(document).ready(function() { //Does like the "New Articles" page but is for updated ones instead.
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=updated_at',
-		dataType: 'json',
-		async: true,
-		success: function(updatedArticles) {
-
-			var headerText = document.querySelectorAll('.category-header-text > a');
-			var articleList = document.getElementsByClassName('article-list')[1];
-
-			if (headerText[1].innerHTML == 'Updated Articles!') {
-
-				if ( (HelpCenter.user.role !== 'agent') && (HelpCenter.user.role !== 'manager') ) {
-
-					for (var y = 0; y < updatedArticles.articles.length; y++) {
-
-						if (updatedArticles.articles[y].user_segment_id == '321294') {
-
-							updatedArticles.articles.splice(y, 1);
-						}
-					}
-				}
-
-				for (var i = 0; i < updatedArticles.articles.length; i++) {
-
-					var liNode = document.createElement('li');
-					articleList.appendChild(liNode);
-					liNode.setAttribute('class', 'article-list-item');
-
-					liNode.appendChild(document.createElement('a'));
-				}
-
-				var singleArticle = document.querySelectorAll('.article-list-item > a');
-
-				for (var x = 0; x < updatedArticles.articles.length; x++) {
-
-					singleArticle[x].setAttribute('href', updatedArticles.articles[x].html_url);
-					singleArticle[x].textContent = updatedArticles.articles[x].title;
-				}
-			}
-		}
-	})
-});
-*/
