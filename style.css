@@ -1589,6 +1589,11 @@ ul {
 
 .article-unsubscribe:hover {}
 
+.article-print {
+    float: right;
+    margin-right: 8px;
+}
+
 .article-hero {
 	height: 64px;
 	width: 100%;
@@ -6055,4 +6060,16 @@ Wingcard Article Styles
 .wingcard_area ol > ol {
     margin-top: -12px;
     padding-bottom: 8px;
+}
+
+@media print {
+    .hc-header, .breadcrumbs, .article-timestamp-block, .sidebar, .article-attachments, .article-questions, .article-votes-container, .footer {
+        display: none;
+    }
+
+    .row > article {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
 }
