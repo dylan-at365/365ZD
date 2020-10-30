@@ -1545,18 +1545,18 @@ ul {
 }
 
 .article-vote-up::before {
-	font-family: "Glyphicons Halflings";
+	font-family: "Font Awesome 5 Free";
 	font-size: 35px;
-	content: "\e084";
+	content: "\f164";
 	font-weight: normal;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
 .article-vote-down::before {
-	font-family: "Glyphicons Halflings";
+	font-family: "Font Awesome 5 Free";
 	font-size: 35px;
-	content: "\e083";
+	content: "\f165";
 	font-weight: normal;
 	-webkit-box-shadow: none;
 	box-shadow: none !important;
