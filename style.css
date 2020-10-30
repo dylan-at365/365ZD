@@ -6062,6 +6062,9 @@ Wingcard Article Styles
     padding-bottom: 8px;
 }
 
+/*
+Make articles printable
+================================ */
 @media print {
     .hc-header, .breadcrumbs, .article-meta, .article-print, .article-subscribe, .sidebar, .article-attachments, .article-questions, .article-votes-container, .footer {
         display: none;
