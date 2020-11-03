@@ -5873,7 +5873,6 @@ New Header Menu Styles Here
 }
 
 .menu-item a {
-	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	display: block;
