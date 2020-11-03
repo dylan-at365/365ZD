@@ -1018,8 +1018,20 @@ ul {
 	overflow: hidden;
 }
 
+.article-body ul li {
+    list-style: disc;
+}
+
 .article-body ul ul li {
     list-style: circle;
+}
+
+.article-body ul ul ul li {
+    list-style: square;
+}
+
+.article-body ul ul ul ul li {
+    list-style: disc;
 }
 
 [dir="rtl"] .article-body ul, [dir="rtl"] .article-body ol {
