@@ -1107,6 +1107,7 @@ ul {
 }
 
 .related-articles {
+    width: 100%;
 	background-color: #c8cedf;
 	border-radius: 2px 2px 2px 2px;
 	box-shadow: 0 0 3px #c8cedf;
@@ -1142,7 +1143,8 @@ ul {
 @media (min-width: 1024px) {
 	.related-articles {
 		border: 0;
-		flex: 0 0 17%;
+        flex: 0 0 17%;
+        width: 100%;
 		height: auto;
 	}
 }
