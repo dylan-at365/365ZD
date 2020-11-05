@@ -4642,9 +4642,9 @@ Recent Activity ZD Helper Styles
 .subscriptions-unsubscribe>a::after {
 	box-shadow: none !important;
 	text-align: right;
-	font-family: "Glyphicons Halflings";
+	font-family: "Font Awesome 5 Free";
 	font-size: 14px;
-	content: "\e014";
+	content: "\f057";
 	color: #525f79;
 	font-weight: normal;
 	-webkit-box-shadow: none;
