@@ -3,6 +3,12 @@ var userId;
 var userRole;
 
 $(document).ready(function() {
+
+    //Show Quick Action button for Canteen Org members only
+    if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
+        $( 'div.canteen' ).show();
+    };
+
 	$("form.search input[type=submit]").attr("value", "Search");
 	if (HelpCenter.user.role != 'anonymous') {
 		$('#support-toolbox').text('' + HelpCenter.user.name.split(" ")[0] + ', did you know you can submit and track support tickets online?');
