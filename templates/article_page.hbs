@@ -1,129 +1,56 @@
-<section class="article-hero">
- 	<div class="article-hero-filter"></div>
-</section>
-
+<!-- Start Article Template -->
 <div class="container">
- 	<div class="row">
- 		<article class="col-lg-8 col-md-9 col-xs-12">
 
- 			<header class="article-header">
- 				{{breadcrumbs}} <!-- Becomes an ordered list element -->
- 				<h1 class="article-title" title="{{article.title}}">
- 					{{article.title}} {{#if article.internal}}<i class="fas fa-lock"></i> {{/if}}
- 				</h1>
- 				<div class="article-timestamp-block">
- 					{{subscribe}} <!-- Becomes an anchor tag -->
-
-                     <a id="printArticle" class="article-print" role="button" href="#">Print</a>
- 					<div class="article-author">
- 						<div class="avatar article-avatar">
- 							<img class="user-avatar" src="https://theme.zdassets.com/theme_assets/2031453/12b4be60e519a04eba4f0c9a25be87f430762f53.png" alt="Avatar" />
- 						</div>
- 						<div class="article-meta">
- 							<strong>365 Support</strong>
- 							<ul class="meta-group">
- 								<li>{{#is article.created_at article.updated_at}} {{date article.created_at timeago=true}}</li>
- 								{{else}}
- 									<li class="meta-data">
- 										{{t 'updated'}} {{date article.updated_at timeago=true}}
- 									</li>
- 									{{/is}}
- 							</ul>
- 						</div>
- 					</div>
- 				</div>
- 			</header>
-
- 			<section class="article-info">
- 				<div class="article-content">
- 					<div class="article-body">
- 						{{article.body}}
- 					</div>
- 					<div class="article-attachments">
- 						<ul class="attachments">
- 							{{#each attachments}}
- 								<a href="{{url}}" target="_blank" rel="noopener" name="{{name}}">
- 									<li class="attachment-item doc-library">
- 										<img id="preview-image" src="http://365retailmarkets.com/wp-content/uploads/kb_img/961557212485.png"/>
- 								</a>
- 								<a href="{{url}}" target="_blank" rel="noopener">{{name}}</a>
- 								<div class="attachment-meta meta-group">
- 									<a class="attachment-meta-item meta-data download-link" href="{{url}}" target="_blank" rel="noopener">Download</a>
- 									<span class="attachment-meta-item meta-data">{{size}}</span>
- 								</div>
- 								</li>
- 							{{/each}}
- 						</ul>
- 					</div>
- 				</div>
- 				{{#with article}}
- 					<div class="article-questions">
- 						<h3>
- 							Have a question?</h3>
- 						<h4>Our world-class technical support team is here to help 24 hours a day, 7 days a week.</h4>
- 						<a class="button article-questions-cta" href="#">
- 							Submit a Ticket
- 						</a>
- 					</div>
- 					<div class="article-votes-container">
- 						<span class="article-votes-question">
- 							{{t 'was_this_article_helpful'}}
- 						</span>
- 						<div class="article-votes-controls" role="radiogroup">
- 							{{vote 'up' role='radio' class='button article-vote article-vote-up'}} {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
- 						</div>
- 						<small class="article-votes-count">
- 							{{vote 'label' class='article-vote-label'}}
- 						</small>
-                    </div>
- 			    {{/with}}    
- 	        </section>
- 	    </article>
-
-        <div class="col-lg-4 col-md-3 sidebar">
-            <!-- - - - - - - - - - Related Articles - - - - - - - - - -->
-            <div class="related-articles">
-                <section class="related-article-container">
-                    <div class="sidebar-header-block">
-                        <h3>
-                            RELATED ARTICLES
-                        </h3>
-                    </div>
-                    <ul>
-                        {{#each section.articles}}
-                            <li>
-                                <a {{#is id ../article.id}}current-article{{/is}} href="{{url}}">
-                                    {{title}}
-                                </a>
-                            </li>
-                        {{/each}}
-                    </ul>
-                </section>
-                {{#if section.more_articles}}
-                    <a class="related-articles-cta button" href="{{section.url}}">
-                        View More
-                    </a>
-                {{/if}}
-            </div>
-
-            <!-- - - - - - - - - - Featured Content - - - - - - - - - -->
-            <div class="article-featured-content">
-                <a href="https://www.365retailmarkets.com/products/#MicroMarkets">
-                    <img class="featured-content-image" src="{{asset 'nanomarket_tab.png'}}" />
-                </a>
-                <div>
-                    <a class="button featured-content-cta" href="https://www.365retailmarkets.com/products/">
-                        Learn More <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+    <!-- Breadcrumbs -->
+    <div class="row breadcrumbs-container d-print-none">
+        <div class="col-12">
+            {{breadcrumbs}}
         </div>
     </div>
-</div>
 
-<script>
-    $('#printArticle').click(function() {
-        window.print();
-        return false;
-    });
-</script>
+    <div class="row article_header d-print-none">
+        <div class="col-12 article_header-title">
+            {{article.title}}
+            {{#if article.internal}}
+                <i class="ph-lock-key-fill"></i>
+            {{/if}}
+        </div>
+
+        <div class="col-12 article_header-updated">
+            {{#is article.created_at article.updated_at}}
+                {{date article.created_at timeago=true}}
+            {{else}}
+                {{t 'updated'}} {{date article.updated_at timeago=true}}
+            {{/is}}
+        </div>
+
+        <a href="#" class="col-3 col-md-2 col-lg-1 article_header-button print_article">Print</a>
+
+        <div class="col-3 col-md-2 col-lg-1 article-unsubscribe_container">
+            {{subscribe}}
+        </div>
+    </div>
+
+    <div class="row article_body">
+        <div class="col">
+            {{article.body}}
+        </div>
+    </div>
+
+    {{#if attachments}}
+        <div class="row article_attachments d-print-none">
+            <div class="col-12 article_attachments-title">
+                Attachments
+            </div>
+
+            {{#each attachments}}
+                <div class="col-12 article_attachments-link">
+                    <a href="{{url}}" target="_blank" rel="noopener">{{name}}</a>
+                    <div class="article_attachments-link-meta"> - {{size}}</div>
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+
+</div>
+<!-- End Article Template -->

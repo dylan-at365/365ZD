@@ -1,129 +1,124 @@
-<section class="container-fluid dashboard-hero">
-	<div class="row dashboard-hero-filter">
-		<div style="display:none;" class="col-6 hero-text-inner-hero">Ticket History<br>
-		</div>
-	</div>
-</section>
-<div class="search-results-background">
-	<div class="search-results-container container">
-		<div class="container col-lg-12">
-			<header class="my-activities-header">
-				<nav class="my-activities-sub-nav">
-					<ul class="requests-page-navigation-list">
-						<li><a href="/hc/en-us/requests/">My Tickets</a></li>
-						<li><a href="/hc/en-us/requests/ccd">CC'd Tickets</a></li>
-					</ul>
-				</nav>
-			</header>
+<!-- Start Request List Template -->
+<div class="container">
 
-			{{#form 'requests_filter' class='requests-table-toolbar'}}
-				<div class="search">
-					<input type="search" name="query" id="quick-search" value="" placeholder="Search Tickets" class="requests-search" aria-required="false">
-				</div>
-				{{#if help_center.multiple_organizations_enabled}}
-					<div class="request-table-filter">
-						{{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
-						{{select 'organization' id='request-organization-select' class='request-filter'}}
-					</div>
-				{{/if}}
+    <!-- Breadcrumbs -->
+    <div class="row breadcrumbs-container">
+        <div class="col-12">
+            {{breadcrumbs}}
+        </div>
+    </div>
 
-				<div style="display:none;" class="request-table-filter">
-					{{subscribe}}
+    <!-- Tickets/CC Link -->
+    <div class="row tickets_cc">
+        <div class="col-12">
+            <a class="tickets_cc-button" href="/hc/en-us/requests">My Tickets</a>
+            <a class="tickets_cc-button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
+        </div>
+    </div>
+
+    <!-- Ticket Search/Filter -->
+    <div class="row tickets_filter">
+        <div class="col-12">
+            {{#form 'requests_filter'}}
+                <div class="requests_filter-search">
+					<input type="search" name="query" id="quick-search" value="" placeholder="Search tickets" aria-required="false">
 				</div>
 
-				<div class="request-table-filter">
+				<div class="request_filter-status">
 					{{label 'status' for='request-status-select' class='request-filter request-filter-label'}}
 					{{select 'status' id='request-status-select' class='request-filter'}}
 				</div>
-			{{/form}}
+            {{/form}}
+        </div>
+    </div>
 
-			{{#if query}}
-				<div class="requests-search-info meta-data">
-					{{t 'requests_search_results_info' count=requests.length query=query}}
-				</div>
-			{{else}}
-				{{#unless requests}}
-					<p class="no-activities">{{t 'no_requests'}}</p>
-				{{/unless}}
-			{{/if}}
-			<div id="requests-table-iframe">
-				<div class="requests">
-					{{#if requests}}
-						<table class="table my-activities-table requests-table {{current_filter.identifier}}-requests">
-							<thead>
-								<tr>
-									<th>{{t 'subject'}}</th>
-									<th>{{t 'id'}}</th>
-									<th>
-										{{#is current_filter.identifier 'my'}}
-											{{#link 'requests' sort_by='created_at'}}{{t 'created'}}{{/link}}
-					{{else}}
-						{{t 'requester'}}
-										{{/is}}
-									</th>
-									<th>{{#link 'requests' sort_by='updated_at'}}{{t 'last_activity'}}{{/link}}</th>
-									<th>
-										{{t 'status'}}
-									</th>
-								</tr>
-							</thead>
+    <!-- Shows search results info/lack of tickets -->
+    <div class="row tickets_meta">
+        {{#if query}}
+            <div class="col-12 tickets_meta-results">
+                {{t 'requests_search_results_info' count=requests.length query=query}}
+            </div>
+        {{else}}
+            {{#unless requests}}
+                <div class="tickets_meta-none">
+                    {{t 'no_requests'}}
+                </div>
+            {{/unless}}
+        {{/if}}
+    </div>
 
-							<tbody>
-								{{#each requests}}
-									<tr {{#is status 'closed'}} class="request-closed" {{/is}}>
-										<td class="request-info requests-table-info">
-											<a href="{{url}}" class="striped-list-title" title="{{subject}}">
-												{{#if subject}}
-													{{subject}}
-												{{else}}
-													{{excerpt description characters=50}}
-												{{/if}}
-											</a>
+    {{#if requests}}
+        <div class="row tickets_headers">
 
-											<!-- Visible on mobile -->
-											<div class="requests-table-meta meta-group">
-												<span class="meta-data">#{{id}}</span>
-												<span class="meta-data">{{date created_at timeago=true}}</span>
-												<span class="status-label status-label-{{status}}" title="{{status_description}}">
-													{{status_name}}
-												</span>
-											</div>
-										</td>
-										<td>#{{id}}</td>
-										<td>
-											{{#is ../current_filter.identifier 'my'}}
-												{{date created_at timeago=true}}
-								{{else}}
-									{{requester.name}}
-											{{/is}}
-										</td>
-										<td>{{date updated_at timeago=true}}</td>
-										<td class="requests-table-status">
-											<span class="status-label status-label-{{status}}" title="{{status_description}}">
-												{{status_name}}
-											</span>
-										</td>
-									</tr>
-								{{/each}}
-							</tbody>
-						</table>
-					{{/if}}
-				</div>
+            <div class="col-6 col-sm-4 col-md-4 tickets_list-subject_header">
+                {{t 'subject'}}
+            </div>
 
-				{{pagination}}
-			</div>
-		</div>
-	</div>
-	<div class="search-again-message">
-		<div class="container search-again-message-wrapper">
-			<h2>
-				Still looking for answers?</h2>
-			<h4>Try searching again or <a href="https://365retailmarkets.zendesk.com/hc/en-us">browse</a> our available resources. </h4>
-			<div class="search-results-search-bar-container">
-				<form class="search-results-search-bar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search"
-					 name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="search-results-search-bar-small-button"><i
-						 class="glyphicon glyphicon-search form-group"></i></button></form>
-			</div>
-		</div>
-	</div>
+            <div class="col-3 col-sm-2 col-md-2 tickets_list-id_header">
+                {{t 'id'}}
+            </div>
+
+            <div class="col-sm-2 col-md-2 tickets_list-created_header">
+                {{#is current_filter.identifier 'my'}}
+                    {{#link 'requests' sort_by='created_at'}}
+                        {{t 'created'}}
+                    {{/link}}
+                {{else}}
+                    {{t 'requester'}}
+                {{/is}}
+            </div>
+
+            <div class="col-sm-2 col-md-2 tickets_list-activity_header">
+                {{#link 'requests' sort_by='updated_at'}}
+                    {{t 'last_activity'}}
+                {{/link}}
+            </div>
+
+            <div class="col-3 col-sm-2 col-md-2 tickets_list-status_header">
+                {{t 'status'}}
+            </div>
+
+        </div>
+
+        {{#each requests}}
+        <div class="row tickets_list">
+
+            <div class="col-6 col-sm-4 col-md-4 tickets_list-subject_content">
+                <a href="{{url}}">
+                    {{#if subject}}
+                        {{subject}}
+                    {{else}}
+                        {{excerpt description characters=50}}
+                    {{/if}}
+                </a>
+            </div>
+
+            <div class="col-3 col-sm-2 col-md-2 tickets_list-id_content">
+                #{{id}}
+            </div>
+
+            <div class="col-sm-2 col-md-2 tickets_list-created_content">
+                {{#is ../current_filter.identifier 'my'}}
+                    {{date created_at timeago=true}}
+                {{else}}
+                    {{requester.name}}
+                {{/is}}
+            </div>
+
+            <div class="col-sm-2 col-md-2 tickets_list-activity_content">
+                {{date updated_at timeago=true}}
+            </div>
+
+            <div class="col-3 col-sm-2 col-md-2 tickets_list-status_content">
+                {{status_name}}
+            </div>
+        </div>
+        {{/each}}
+    {{/if}}
+
+    <div class="row pagination_container">
+        <div class="col-12 col-sm-6">
+            {{pagination}}
+        </div>
+    </div>
 </div>

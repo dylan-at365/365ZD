@@ -1,147 +1,217 @@
-<section class="hc-header">
+<!-- Start Header Template -->
+<div class="container d-print-none">
+    <!-- Logo and Menu Button -->
+    <div class="row header">
+        <a href="{{page_path 'help_center'}}" class="col-9 logo">
+            <img src="{{asset '365logo_RGB_2018.svg'}}" alt="365 Retail Markets logo" width="80" height="80" title="365 Retail Markets"/>
+            <span class="logo-title">HelpCenter</span>
+        </a>
 
-	<div id="alert_container">
-		<a href="https://365retailmarkets.zendesk.com/hc/en-us/articles/360049314053-Back-to-Business-Guide">
-			<div class="alert-banner" style="background-color: #2555d9; color: #fff;">
-				Re-opening a market? Click here to download our Back to Business Guide!
-			</div>
-		</a>
-	</div>
+        <div class="col-3 menu-button">
+            <i class="ph-list"></i>
+        </div>
+    </div>
 
+    <!-- Menu Area -->
+    <ul class="row menu" style="display: none;">
+        {{#if signed_in}}
+        <li class="col-sm-12 col-md-3 menu-item">
+            <a id="dashboard_link" href="#">
+                <i class="ph-info"></i>
+                <div>Dashboard</div>
+            </a>
+        </li>
 
-	<nav class="menu">
-		<ol>
-			<li class="menu-item"><a href="{{page_path 'help_center'}}"><img src="{{asset 'Logo.png'}}" class="logo"><a/></li>
-			<li class="menu-item">
-				<a href="#0">
-					<form class="navbar-form search-small search-placement" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-						<input name="utf8" type="hidden" value="✓">
-						<input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="search-small-button">
-							<i class="fas fa-search"></i>
-						</button>
-					</form>
-				</a></li>
-			<li class="menu-item" id="resources_button">
-				<a href="#0">Resources</a>
-			</li>
+        <li class="col-sm-12 col-md-3 menu-item">
+            <a href="{{page_path 'requests'}}">
+                <i class="ph-article"></i>
+                <div>Ticket History</div>
+            </a>
+        </li>
 
-			<li class="menu-item"><a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002185954-Release-Notes">Release Notes</a></li>
-			<div class="release_notes_notify no_notes"></div>
+        <li class="col-sm-12 col-md-3 menu-item">
+            <a href="{{page_path 'subscriptions'}}">
+                <i class="ph-book-bookmark"></i>
+                <div>Saved Resources</div>
+            </a>
+        </li>
 
-			<li class="menu-item" id="my-support-logout">
-				<a href="#0">My Support</a>
-				<ol class="sub-menu">
-					<li class="menu-item"><a id="user-profile-link">View Dashboard</a></li>
-					<li class="menu-item">
-						<a href="{{page_path 'new_request'}}">Submit a Ticket</a>
-					</li>
-					<li class="menu-item"><a href="/hc/en-us/requests">Ticket History</a></li>
-					<li class="menu-item"><a href="https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=articles">Saved Resources</a></li>
-					<li class="menu-item"><a href="/access/logout?return_to=https%3A%2F%2F365retailmarkets.zendesk.com%2Fhc%2Fen-us">Sign Out</a></li>
-				</ol>
-			</li>
+        <li class="col-sm-12 col-md-3 menu-item">
+            <a href="{{page_path 'sign_out'}}">
+                <i class="ph-sign-out"></i>
+                <div>Log Out</div>
+            </a>
+        </li>
+        {{else}}
+        <li class="col-sm-12 col-md-3 offset-md-6 menu-item">
+            <a href="https://365retailmarkets.zendesk.com/auth/v2/login/registration?auth_origin=114094510753%2Cfalse%2Ctrue&brand_id=114094510753&return_to=https%3A%2F%2F365retailmarkets.zendesk.com&theme=hc">
+                <i class="ph-user-plus"></i>
+                <div>Sign Up</div>
+            </a>
+        </li>
 
-			<li class="menu-item" id="my-support-login"><a href="https://365retailmarkets.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2F365retailmarkets.zendesk.com">Sign In</a></li>
-		</ol>
-	</nav>
+        <li class="col-sm-12 col-md-3 menu-item">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2F365retailmarkets.zendesk.com">
+                <i class="ph-sign-in"></i>
+                <div>Log In</div>
+            </a>
+        </li>
+        {{/if}}
+    </ul>
+</div>
 
-	<div id="resources_dropdown">
-		<ol>
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004440794">365Dining</a>
-			</li>
+<!-- Begin Fixed Footer Navigation -->
+<div class="container d-print-none fixed-bottom">
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002716534-365-Retail-Markets-Things-to-Know-">365 Things to Know!</a>
-			</li>
+    <div class="row nav_categories" style="display: none;">
+        <div class="col-12 col-md-4 nav_category">
+            <div class="nav_category-header">
+                Hardware Categories
+                <i class="ph-plus-bold"></i>
+            </div>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947074">365Pay App</a>
-			</li>
+            <div class="nav_category-item_list">
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947034" class="nav_category-item">
+                    365Beacon
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001965073">Additional Docs</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964853" class="nav_category-item">
+                    AirVend
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964793">ADM</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004440794" class="nav_category-item">
+                    Dining
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964853">Airvend</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946554" class="nav_category-item">
+                    Legacy Kiosks
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947034">Beacon</a>
-			</li>
-		</ol>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964913" class="nav_category-item">
+                    Market Security
+                    <i class="ph-caret-right"></i>
+                </a>
 
-		<ol>
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964913">Camera Security Systems</a>
-			</li>			
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964433" class="nav_category-item">
+                    NanoMarket
+                    <i class="ph-caret-right"></i>
+                </a>
 
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964893">Equipment Maintenance</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947114" class="nav_category-item">
+                    PicoPlatform
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002064033">Integrations</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964373" class="nav_category-item">
+                    V5 Kiosks
+                    <i class="ph-caret-right"></i>
+                </a>
+            </div>
+        </div>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964973">International</a>
-			</li>
+        <div class="col-12 col-md-4 nav_category">
+            <div class="nav_category-header">
+                Software Categories
+                <i class="ph-plus-bold"></i>
+            </div>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946554">Legacy</a>
-			</li>
+            <div class="nav_category-item_list">
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964793" class="nav_category-item">
+                    ADM
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964433">NanoMarket</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947074" class="nav_category-item">
+                    Mobile
+                    <i class="ph-caret-right"></i>
+                </a>
 
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947114">PicoPlatform</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946914" class="nav_category-item">
+                    SmartHQ
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            
-		</ol>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964993" class="nav_category-item">
+                    Social Feedia
+                    <i class="ph-caret-right"></i>
+                </a>
 
-		<ol>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002185954" class="nav_category-item">
+                    Release Notes
+                    <i class="ph-caret-right"></i>
+                </a>
+            </div>
+        </div>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946914">SmartHQ</a>
-			</li>
-			
+        <div class="col-12 col-md-4 nav_category">
+            <div class="nav_category-header">
+                Other Categories
+                <i class="ph-plus-bold"></i>
+            </div>
 
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964993">Social Feedia</a>
-			</li>
+            <div class="nav_category-item_list">
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001965073" class="nav_category-item">
+                    Additional Docs
+                    <i class="ph-caret-right"></i>
+                </a>
 
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001965013">Support Procedures</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004802874" class="nav_category-item">
+                    CK Legacy
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964373">V5</a>
-			</li>			
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964893" class="nav_category-item">
+                    Equipment Maintenance
+                    <i class="ph-caret-right"></i>
+                </a>
 
-			<li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947554">Wing Cards</a>
-			</li>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004325294" class="nav_category-item">
+                    Grand Openings
+                    <i class="ph-caret-right"></i>
+                </a>
 
-            <li>
-				<a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964953">Zendesk</a>
-			</li>
-		</ol>
-	</div>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964973" class="nav_category-item">
+                    International
+                    <i class="ph-caret-right"></i>
+                </a>
 
-</section>
-<!-- /Nav -->
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002841913" class="nav_category-item">
+                    Sales Material
+                    <i class="ph-caret-right"></i>
+                </a>
 
-<script>
-	$('#resources_button').click(function() {
-		$('#resources_dropdown').toggle(500);
-	});
-</script>
+                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947554" class="nav_category-item">
+                    Wing Cards
+                    <i class="ph-caret-right"></i>
+                </a>                
+            </div>
+        </div>
+    </div>
+
+    <div class="row nav_footer">
+        <a href="{{page_path 'help_center'}}" class="col">
+            <i class="ph-house"></i>
+            <span class="nav_footer-text">Home</span>
+        </a>
+
+        <a href="{{page_path 'requests'}}" class="col">
+            <i class="ph-article"></i>
+            <span class="nav_footer-text">Tickets</span>
+        </a>
+
+        <a href="{{page_path 'new_request'}}" class="col">
+            <i class="ph-rocket-launch"></i>
+            <span class="nav_footer-text">New Ticket</span>
+        </a>
+
+        <a class="col nav_footer-categories_button">
+            <i class="ph-sort-descending"></i>
+            <span class="nav_footer-text">Categories</span>
+        </a>
+    </div>
+</div>
+<!-- End Header Template -->

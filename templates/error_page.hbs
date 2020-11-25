@@ -1,28 +1,31 @@
-<div class="error-page-wrapper">
-	<div class="error-page">
-		<center>
-			<br>
-			<h3>Sorry, Item Not Found</h3>
-			<h4>Please return the product to the shelf or cooler</h4><br>
-			<img class="error-page-frown" src='{{asset 'SadKiosk.png'}}'>
-		</center>
-		<div>
-			{{#is error 'unauthorized'}}
-				{{link 'sign_in'}}
-			{{/is}}
+<!-- Start Error Page Template -->
+<div class="container">
+    <div class="row error_page">
+        <div class="col-12 error_content">
+            <div class="error-title">
+                Sorry, item not found
+            </div>
+            <div class="error-desc">
+                Please return the product to the shelf or cooler
+            </div>
 
-			{{#is error 'forbidden'}}
-				{{t 'not_authorized'}}
-			{{/is}}
+            <img src="{{asset 'sad_kiosk.svg'}}" alt="" width="196" height="196" title="(｡•́︿•̀｡)"/>
 
-			{{#is error 'not_found'}}
-				{{t 'nonexistent_page'}}
-				<p>{{t 'mistyped_address_or_moved_page'}}</p>
-			{{/is}}
+            <div class="error-info">
+                The page you were looking for doesn't exist<br/>
+                You may have mistyped the address or the page may have moved
+            </div>
+        </div>
 
-			<br>
+        <div class="col-2"></div>
+        <div class="col-8 error_content">
+            <a href="{{page_path 'help_center'}}" class="error_button">
+                Return to the 365 HelpCenter
+                <i class="ph-arrow-u-up-left"></i>
+            </a>
+        </div>
+        <div class="col-2"></div>
 
-			<a class="button" href="https://365retailmarkets.zendesk.com/hc/en-us">Return to the 365 Help Center</a>
-		</div>
-	</div>
+    </div>
 </div>
+<!-- End Error Page Template -->

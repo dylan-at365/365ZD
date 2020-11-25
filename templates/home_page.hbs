@@ -1,311 +1,244 @@
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFVHVPS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- Start Home Page Template -->
+<div class="container"> 
 
-<section class="section hero">
-	<!-- Hero Image -->
-	<div class="container hero-filter">
-		<div class="row hero-inner">
-			<div class="hero-text col-12">Your business never closes, and neither do we.</div>
+    <!-- Hero and Search Bar -->
+    <div class="row hero"> 
+        <div class="col-sm-3"></div>
+        <div class="col">
+            <form accept-charset="UTF-8" action="/hc/en-us/search" method="get" role="search" >
+                <input class="search" id="query" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter">
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
 
-			<div class="col-12">
-				<form class="search" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-					<input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search the 365 Help Center" autocomplete="off" aria-label="Search the 365 Help Center">
-					<button type="submit" name="commit" class="search-button button">Search</button>
-				</form>
+    <!-- Quick Actions Area -->
+    <div class="row quick-actions">
 
-				<form class="search-small-hero" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-					<input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search">
-					<button type="submit" name="commit" class="search-small-button-hero button">
-						<i class="glyphicon glyphicon-search form-group"></i>
-					</button>
-				</form>
-			</div>
+        <div class="col-sm-12 col-md-4 action canteen">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002063553" class="action-content">
+                Canteen
+                <i class="ph-coffee"></i>
+            </a>
+        </div>
+        <div class="w-100"></div>
 
-		</div>
-	</div>
-</section> <!-- Hero Image End -->
-
-<!-- New Accordion-->
-<section class="homepage-segment-1-background">
-	<div class="homepage-segment-1 container">
-
-        <div class="row">
-            <div class="col-sm contact-accordion-container" id="canteen-icon" style="display: none;">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002063553"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Canteen.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947554"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-WingCards.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964893"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Maintenance.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004325294"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-GrandOpenings.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+        <div class="col-sm-12 col-md-3 action">
+            <a href="{{page_path 'new_request'}}" class="action-content">
+                Submit a Ticket
+                <i class="ph-rocket-launch"></i>
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946554"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Legacy.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964373"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-v5.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964433"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-NanoMarket.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947114"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-PicoMarket.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+        <div class="col-sm-12 col-md-3 action">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947554" class="action-content">
+                Wing Cards
+                <i class="ph-file-text"></i>
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004440794"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-ReadyTouch.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964853"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-AirVend.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947074"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Mobile.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947034"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Beacon.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+        <div class="col-sm-12 col-md-3 action">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964893" class="action-content">
+                Equipment Maint.
+                <i class="ph-shield-check"></i>
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964793"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-ADM.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+    </div>
 
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946914"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-SHQ.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+    <!-- Start Category Area -->
 
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964913"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-CameraSec.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+    <!-- Hardware Categories -->
+    <div class="row rollup-header hardware-header">
+        <div class="col-12 hardware-rollup category-rollup">
+            Hardware Categories
+            <i class="ph-plus-bold"></i>
+        </div>
+    </div>
 
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004802874"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-CK.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+    <!-- Hardware Content -->
+    <div class="row rollup-content hardware-content" style="display: none;">
+
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947034" class="rollup-button_content">
+                365Beacon
+                <i class="ph-caret-right"></i>
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964973"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Intl.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964993"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-SocialFeedia.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964853" class="rollup-button_content">
+                AirVend
+                <i class="ph-caret-right"></i>
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002185954"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-ReleaseNotes.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002841913-Sales-Marketing-Material"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Marketing.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
-
-            <div class="col-sm contact-accordion-container">
-                <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001965073"><button class="contact-accordion"
-                    style="background-image: url({{asset 'KB_Home-Additional.png'}}); background-position: center; background-size: contain; background-repeat: no-repeat;"></button>
-                </a>
-            </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004440794" class="rollup-button_content">
+                Dining
+                <i class="ph-caret-right"></i>
+            </a>
         </div>
-	</div>
 
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946554" class="rollup-button_content">
+                Legacy Kiosks
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-	<!-- Promotional -->
-	<div class="col-lg-12 col-xs-12 promoted_articles home-page-promo">
-		<div class="container home-page-promo-featured">
-            <div class="row">
-                <div class="col">
-                    <div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/G0DzPnjv1tQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                
-                    <h4 class="card-title first-card">How to Troubleshoot an Offline Kiosk</h4>
-                    <div class="announcements">Seeing connection status issues on SmartHQ or ADM? Not getting the latest sales data pushed to your reports? Your kiosk might be offline! We've put together a how-to video that walks
-                    you through the most common troubleshooting steps that almost always get a kiosk back online and communicating with the 365 Retail Markets servers.</div>
-                    <a class="button floatRight" href="https://365retailmarkets.zendesk.com/hc/en-us/articles/360041172734" target="_blank">Read More &nbsp;<i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-		</div>
-	</div>
-	
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964913" class="rollup-button_content">
+                Market Security
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-	<!-- Featured Articles -->
-	<section class="gutter">
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964433" class="rollup-button_content">
+                NanoMarket
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col">
-					<section class="featured-articles">
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947114" class="rollup-button_content">
+                PicoPlatform
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-                        <div class="col promoted_articles">
-                            <div class="featured-article-header-block">
-                                <h2 class="homepage-segment-title">NEW ARTICLES</h2>
-                            </div>
-                        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964373" class="rollup-button_content">
+                V5 Kiosks
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
+    </div>
 
-                        <ul class="new-articles">
-                            <li class="new-articles-item">
-                                <div class="newarticles_title"></div>
-                                <div class="newarticles_published"></div>
-                                <div class="newarticles_body"></div>
-                                <div class="newarticles_cta"><a href="#">Read It Here</a></div>
-                            </li>
+    <!-- Software Categories -->
+    <div class="row rollup-header software-header">
+        <div class="col-12 software-rollup category-rollup">
+            Software Categories
+            <i class="ph-plus-bold"></i>
+        </div>
+    </div>
 
-                            <li class="new-articles-item">
-                                <div class="newarticles_title"></div>
-                                <div class="newarticles_published"></div>
-                                <div class="newarticles_cta"><a href="#">Read It Here</a></div>
-                            </li>
+    <!-- Software Content -->
+    <div class="row rollup-content software-content" style="display: none;">
 
-                            <li class="new-articles-item">
-                                <div class="newarticles_title"></div>
-                                <div class="newarticles_published"></div>
-                                <div class="newarticles_cta"><a href="#">Read It Here</a></div>
-                            </li>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964793" class="rollup-button_content">
+                ADM
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-                            <li class="new-articles-item">
-                                <div class="newarticles_title"></div>
-                                <div class="newarticles_published"></div>
-                                <div class="newarticles_cta"><a href="#">Read It Here</a></div>
-                            </li>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001947074" class="rollup-button_content">
+                Mobile
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-                            <li class="new-articles-item">
-                                <div class="newarticles_title"></div>
-                                <div class="newarticles_published"></div>
-                                <div class="newarticles_cta"><a href="#">Read It Here</a></div>
-                            </li>
-                        </ul>
-					</section>
-				</div>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001946914" class="rollup-button_content">
+                SmartHQ
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964993" class="rollup-button_content">
+                Social Feedia
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002185954" class="rollup-button_content">
+                Release Notes
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
+    </div>
 
-				<!-- Twitter Feed -->
-				<div class="col promoted_articles kb-block-border">
-					<h2 class="homepage-segment-title">COMMUNITY</h2>
-					<div class="twitter-feed-desktop">
-						<a class="twitter-timeline twitter-feed" href="https://twitter.com/365retailmarket?ref_src=twsrc%5Etfw" data-tweet-limit="1" data-chrome="noscrollbar" data-width="60%" data-height="50%">Recent Tweets by 365retailmarket</a>
-						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					</div>
+    <!-- Other Categories -->
+    <div class="row rollup-header other-header">
+        <div class="col-12 other-rollup category-rollup">
+            Documents, Company Kitchen, and International
+            <i class="ph-plus-bold"></i>
+        </div>
+    </div>
 
-					<div class="twitter-feed-mobile"><a class="twitter-timeline" href="https://twitter.com/365retailmarket?ref_src=twsrc%5Etfw" data-tweet-limit="1" data-width="80%" data-height="60%">Recent Tweets from 365</a>
-						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					</div>
+    <!-- Other Content -->
+    <div class="row rollup-content other-content" style="display: none;">
 
-					<div class="twitter-feed">
-						<center>
-							<div>
-								<div>
-									<h4 class="card-title">Join the conversation!</h4>
-									<div class="card-text">
-										<div class="twitter-feed">
-                                            <a href="https://www.facebook.com/365RetailMarkets" target="_blank">
-                                                <img border="0" height="35" src="https://go2.365retailmarkets.com/rs/977-HXW-596/images/icon-facebook.png" width="35">
-                                            </a>&nbsp;
-                                            <a href="https://twitter.com/365retailmarket" target="_blank" class="twitter">
-                                                <img border="0" height="35" src="https://go2.365retailmarkets.com/rs/977-HXW-596/images/icon-twitter.png" width="35" class="twitter">
-                                            </a>
-                                            <a href="https://www.linkedin.com/company/365-retail-markets" target="_blank">
-                                                <img border="0" height="35" src="https://go2.365retailmarkets.com/rs/977-HXW-596/images/icon-linkedin.png" width="35">
-                                            </a>&nbsp;
-                                            <a href="https://www.instagram.com/365retailmarkets/" target="_blank">
-                                                <img border="0" height="35" src="https://go2.365retailmarkets.com/rs/977-HXW-596/images/icon-instagram.png" width="35">
-                                            </a>&nbsp;
-                                            <a href="https://www.youtube.com/365retailmarkets" target="_blank">
-                                                <img border="0" height="35" id="_x0000_i1033" src="https://go2.365retailmarkets.com/rs/977-HXW-596/images/icon-youtube.png" width="35">
-                                            </a><br>
-										</div>
-									</div>
-								</div> <!-- end CARD-BLOCK -->
-							</div> <!-- end CARD -->
-						</center>
-					</div>
-				</div>
-	</section>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001965073" class="rollup-button_content">
+                Additional Docs
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-	<section class="gutter">
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004802874" class="rollup-button_content">
+                CK Legacy
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-		<!-- Contact Us -->
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360004325294" class="rollup-button_content">
+                Grand Openings
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-		<div class="container-fluid support-toolbox-container" style="display:none;">
-			<div class="row support-toolbox-container-filter">
-				<div class="col-lg-8 support-toolbox-container-left">
-					<div class="col-lg-7 col-md-7 col-sm-12 support-toolbox-container-left">
-						<p class="hero-text-tagline midbanner">Live Support 24/7, 365.</p>
-					</div>
-					<div style="display:none;" class="triangle-right"></div>
-				</div>
-				<div class="col-lg-4 col-md-5 col-sm-12 support-toolbox-dark-banner">
-					<div class="col-md-10 dark-banner-inner-containter">
-						<h2>
-							<div id="support-toolbox">Submit and Track Support Tickets Online</div>
-						</h2>
-						<div class="row">
-							<center>
-								<div class="col-lg-12 col-sm-3"><a class="button" href="">View Your Dashboard</a></div>
-							</center>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360001964973" class="rollup-button_content">
+                International
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
 
-	</section>
+        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
+            <a href="https://365retailmarkets.zendesk.com/hc/en-us/categories/360002841913" class="rollup-button_content">
+                Sales Material
+                <i class="ph-caret-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- New Articles Feed -->
+    <div class="row new-articles-feed">
+        <div class="col-12 new_articles-header">New Articles</div>
+
+        <a href="#" class="col-12 new_articles-title">
+        </a>
+        <div class="col-12 new_articles-date">
+        </div>
+
+        <a href="#" class="col-12 new_articles-title">
+        </a>
+        <div class="col-12 new_articles-date">
+        </div>
+
+        <a href="#" class="col-12 new_articles-title">
+        </a>
+        <div class="col-12 new_articles-date">
+        </div>
+
+        <a href="#" class="col-12 new_articles-title">
+        </a>
+        <div class="col-12 new_articles-date">
+        </div>
+
+        <a href="#" class="col-12 new_articles-title">
+        </a>
+        <div class="col-12 new_articles-date">
+        </div>
+    </div>
+
+</div>
+<!-- End Home Page Template -->

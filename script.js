@@ -1,67 +1,160 @@
-var name;
-var userId;
-var userRole;
-
 $(document).ready(function() {
 
-    //Show Quick Action button for Canteen Org members only
+    // Toggle hamburger menu in Header
+    $( '.menu-button' ).click(function toggleMenu() {
+        $( '.menu' ).slideToggle(250);
+        $( '.menu-button i' ).toggleClass( 'ph-list ph-x' );
+    });
+
+    // Show Quick Action button for Canteen Org members only
     if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
         $( 'div.canteen' ).show();
     };
 
-	$("form.search input[type=submit]").attr("value", "Search");
-	if (HelpCenter.user.role != 'anonymous') {
-		$('#support-toolbox').text('' + HelpCenter.user.name.split(" ")[0] + ', did you know you can submit and track support tickets online?');
-		$('#ajax-content').load('https://365retailmarkets.zendesk.com/hc/en-us/requests/ #requests-table-iframe'); //Pulls My Activities table from Requests page to User Profile page
-		$('#subscription-list .subscriptions-unsubscribe a').text(''); //Change Unfollow link text on Saved Articles (Subscriptions) page
-		$('#ajax-subscriptions').load('https://365retailmarkets.zendesk.com/hc/en-us/subscriptions?filter_by=section #subscription-list'); //Pulls subscribed topics to Dashboard
-	}
+    // Show footer navigation when scrolled past the header
+    $(document).scroll(function toggleFooterNav() {
+        var y = $(this).scrollTop();
+        var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
 
-	$(document).ready(function() { //is for the Canteen button
-		$.ajax({
-			type: 'GET',
-			url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
-			dataType: 'json',
-			async: true,
-			success: function(me) {
-				{
-					groupID = me.user.organization_id;
-
-					if ( groupID == 370274627154 || groupID == 116453457553 ) {
-						document.getElementById("canteen-icon").style.display = "block";
-
-					} else {
-						console.log('Active user is not Canteen or 365.')
-					}
-				}
-			}
-		})
-	});
-
-    $(document).ready(function() { //is for the Sales Ops button - used to be 114094510753
-        $.ajax({
-            type: 'GET',
-            url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
-            dataType: 'json',
-            async: true,
-            success: function(me) {
-                {
-                    groupID = me.user.organization_id;
-                    userRole = me.user.role;
-
-                    if ( groupID == 360001778713 || userRole == 'admin' ) {
-                        document.getElementById("salesops-icon").style.display = "block";
-
-                    } else {
-                        console.log('Active user is not SalesOps or HelpCenter Admin.')
-                    }
-                }
-            }
-        })
+        if (y < 96 || scrollBottom < 96) {
+            $( '.nav_footer' ).removeClass( 'nav_display' );
+            $( '.nav_categories' ).addClass( 'd-none' );
+        } else {
+            $( '.nav_footer' ).addClass( 'nav_display' );
+            $( '.nav_categories' ).removeClass( 'd-none' );
+        }
     });
 
-	//FancyBox lightbox
-	$('.article-body img.fancybox').click(function() {
+    // Toggle footer navigation categories
+    $( '.nav_footer-categories_button' ).click(function toggleFootCat() {
+        $( '.nav_categories' ).slideToggle(250);
+        $(this).toggleClass( 'selected' );
+        $(this).find( 'i' ).toggleClass( 'ph-sort-descending ph-sort-ascending' );
+    });
+
+    // Toggle footer navigation content
+    $( '.nav_category-header' ).click(function toggleCatContent() {
+        $(this).next( '.nav_category-item_list' ).slideToggle(250);
+        $(this).find( 'i' ).toggleClass( 'ph-plus-bold ph-minus-bold' );
+    });
+
+    // Set {{my_profile}} URL into Dashboard href attribute
+    $.ajax({
+		type: 'GET',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
+		dataType: 'json',
+		async: true,
+		success: function insertProfileURL(user) {
+			{
+				let userId = user.user.id;
+				$( '#dashboard_link' ).attr('href', 'https://365retailmarkets.zendesk.com/hc/en-us/profiles/' + userId);
+			}
+		}
+	});
+
+    // Toggle Home Page Category content
+    $( '.rollup-header' ).click(function toggleHomeCat() {
+        $(this).next( '.rollup-content' ).slideToggle(250);
+        $(this).find( '.category-rollup i' ).toggleClass( 'ph-plus-bold ph-minus-bold' );
+    });
+
+    // Retrieve latest articles and insert title, date, and link content into feed
+    $.ajax({
+		type: 'GET',
+		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
+		dataType: 'json',
+		async: true,
+		success: function getLatestArticles(requested) {
+
+			for (var i = 0; i < requested.articles.length; i++) {
+
+				if (requested.articles[i].user_segment_id == '321294') {
+					requested.articles.splice(i, 1);
+				}
+            }
+
+            // The article feed titles & dates are siblings. The header counts as child 1.
+            // Article titles are then even children and article dates are odd children.
+            // Variable t starts at the first title and ends at highest date + 1.
+            // Variable n is used to keep in sync with the JSON index.
+
+            var n = 0;
+
+            for (var t = 2; t < 12; t++) {
+                n++;
+                $( `a.new_articles-title:nth-child(2n+${t})` ).text(requested.articles[n].title);
+                $( `a.new_articles-title:nth-child(2n+${t})` ).attr("href", requested.articles[n].html_url);
+                $( `div.new_articles-date:nth-child(3n+${t})` ).text(requested.articles[n].updated_at.substring(0, 10));
+            }
+		}
+    });
+
+    // Pulled two functions from Zendesk's Copenhagen theme to operate the Status filter
+    // (https://github.com/zendesk/copenhagen_theme/blob/master/script.js)
+
+    // Function 1 - closest()
+    function closest (element, selector) {
+        if (Element.prototype.closest) {
+          return element.closest(selector);
+        }
+        do {
+          if (Element.prototype.matches && element.matches(selector)
+            || Element.prototype.msMatchesSelector && element.msMatchesSelector(selector)
+            || Element.prototype.webkitMatchesSelector && element.webkitMatchesSelector(selector)) {
+            return element;
+          }
+          element = element.parentElement || element.parentNode;
+        } while (element !== null && element.nodeType === 1);
+        return null;
+    }
+
+    // Function 2 - saveFocus()
+    // In some cases we should preserve focus after page reload
+    function saveFocus() {
+        var activeElementId = document.activeElement.getAttribute("id");
+        sessionStorage.setItem('returnFocusTo', '#' + activeElementId);
+    }
+    var returnFocusTo = sessionStorage.getItem('returnFocusTo');
+    if (returnFocusTo) {
+        sessionStorage.removeItem('returnFocusTo');
+        var returnFocusToEl = document.querySelector(returnFocusTo);
+        returnFocusToEl && returnFocusToEl.focus && returnFocusToEl.focus();
+    }
+
+    // Submit requests filter form when the Status drop down menu is changed
+    Array.prototype.forEach.call(document.querySelectorAll('#request-status-select'), function(el) {
+        el.addEventListener('change', function(e) {
+        e.stopPropagation();
+        saveFocus();
+        closest(this, 'form').submit();
+        });
+    });
+
+    // Submit requests filter form on search in the request list page
+    var quickSearch = document.querySelector('#quick-search');
+    quickSearch && quickSearch.addEventListener('keyup', function(e) {
+        if (e.keyCode === ENTER) {
+        e.stopPropagation();
+        saveFocus();
+        closest(this, 'form').submit();
+        }
+    });
+
+    // End borrowed Zendesk scripts
+
+    // Hide the "Internal Support" links in the User Profile page if not Agent
+    if (HelpCenter.user.role == 'agent') {
+        $( 'div.internal' ).show();
+    };
+
+    // Print article button function
+    $( '.print_article' ).click(function printArticle() {
+        window.print();
+        return false;
+    });
+
+    // FancyBox lightbox
+	$( '.article_body img.fancybox' ).click(function toggleFancyBox() {
 		$.fancybox.open([
 			{
 				src : $(this).attr("src"),
@@ -70,316 +163,15 @@ $(document).ready(function() {
 		]);
 	});
 
-	$('.article-body img.fancybox').after('<p style="font-size: 10pt; font-weight: normal;"><em>(Click image to enlarge it)</em></p>');
-
-
-	// Adds fadeout to the notification window upon follow/unfollow of an article/section
-	$(".notification-dismiss")
-	setTimeout(function() {
-		$(".notification").fadeOut("slow");
-	}, 3000);
-
-	// social share popups
-	$(".share a").click(function(e) {
-		e.preventDefault();
-		window.open(this.href, "", "height = 500, width = 500");
-	});
-
-	//Change pdf file exentension to png for document library
-	$('#preview-image').text('.png'); //Change Unfollow link text on Saved Articles (Subscriptions) page
-
-	// show form controls when the textarea receives focus or backbutton is used and value exists
-	var $commentContainerTextarea = $(".comment-container textarea"),
-		$commentContainerFormControls = $(".comment-form-controls, .comment-ccs");
-
-	$commentContainerTextarea.one("focus", function() {
-		$commentContainerFormControls.show();
-	});
-
-	if ($commentContainerTextarea.val() !== "") {
-		$commentContainerFormControls.show();
-	}
-
-	// Expand Request comment form when Add to conversation is clicked
-	var $showRequestCommentContainerTrigger = $(".request-container .comment-container .comment-show-container"),
-		$requestCommentFields = $(".request-container .comment-container .comment-fields"),
-		$requestCommentSubmit = $(".request-container .comment-container .request-submit-comment");
-
-	$showRequestCommentContainerTrigger.on("click", function() {
-		$showRequestCommentContainerTrigger.hide();
-		$requestCommentFields.show();
-		$requestCommentSubmit.show();
-		$commentContainerTextarea.focus();
-	});
-
-	// Mark as solved button
-	var $requestMarkAsSolvedButton = $(".request-container .mark-as-solved:not([data-disabled])"),
-		$requestMarkAsSolvedCheckbox = $(".request-container .comment-container input[type=checkbox]"),
-		$requestCommentSubmitButton = $(".request-container .comment-container input[type=submit]");
-
-	$requestMarkAsSolvedButton.on("click", function() {
-		$requestMarkAsSolvedCheckbox.attr("checked", true);
-		$requestCommentSubmitButton.prop("disabled", true);
-		$(this).attr("data-disabled", true).closest("form").submit();
-	});
-
-	// Change Mark as solved text according to whether comment is filled
-	var $requestCommentTextarea = $(".request-container .comment-container textarea");
-
-	$requestCommentTextarea.on("keyup", function() {
-		if ($requestCommentTextarea.val() !== "") {
-			$requestMarkAsSolvedButton.text($requestMarkAsSolvedButton.data("solve-and-submit-translation"));
-			$requestCommentSubmitButton.prop("disabled", false);
-		} else {
-			$requestMarkAsSolvedButton.text($requestMarkAsSolvedButton.data("solve-translation"));
-			$requestCommentSubmitButton.prop("disabled", true);
-		}
-	});
-
-	// Disable submit button if textarea is empty
-	if ($requestCommentTextarea.val() === "") {
-		$requestCommentSubmitButton.prop("disabled", true);
-	}
-
-	// Submit requests filter form in the request list page
-	$("#request-status-select, #request-organization-select")
-		.on("change", function() {
-			search();
-		});
-
-	// Submit requests filter form in the request list page
-	$("#quick-search").on("keypress", function(e) {
-		if (e.which === 13) {
-			search();
-		}
-	});
-
-	function search() {
-		window.location.search = $.param({
-			query: $("#quick-search").val(),
-			status: $("#request-status-select").val(),
-			organization_id: $("#request-organization-select").val()
-		});
-	}
-
-	$(".header .icon-menu").on("click", function(e) {
-		e.stopPropagation();
-		var menu = document.getElementById("user-nav");
-		var isExpanded = menu.getAttribute("aria-expanded") === "true";
-		menu.setAttribute("aria-expanded", !isExpanded);
-	});
-
-	if ($("#user-nav").children().length === 0) {
-		$(".header .icon-menu").hide();
-	}
-
-	// Submit organization form in the request page
-	$("#request-organization select").on("change", function() {
-		this.form.submit();
-	});
-
-	$("a").click(function (){
-		var placeToScroll = $(this).attr( 'href' );
-        $('html, body').animate({
-            scrollTop: $(placeToScroll).offset().top - 150
-        }, 1000).promise().done(function() {
-            console.log('animation done');
-        });
+    // Add a little note telling users they can click on images to enable big mode
+    $( '.article_body img.fancybox' ).after( '<p class="fancy-p_img">(Click image to enlarge it)</p>' );
+    
+    // Add table and striping class to, and remove width from, all article tables
+    $( '.article_body table' ).each (function tableDeco() {
+        $(this).addClass( 'table table-striped' );
+        $(this).removeAttr( 'width' );
     });
 
-});
-
-
-
-$(document).ready(function() {
-	$('#user-menu .my-activities').html('View Tickets');
-	var w = window.innerWidth;
-	if (w <= 480) {
-		var sticky = $('.hc_header');
-		sticky.removeClass('sticky_header_hide');
-	}
-
-});
-
-
-//Accordion for Phone/Email on Contact Us Page
-/*
-$(document).ready(function() {
-	var acc = document.getElementsByClassName("contact-accordion");
-	var i;
-
-	for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var panel = this.nextElementSibling;
-			if (panel.style.maxHeight) {
-				panel.style.maxHeight = null;
-			} else {
-				panel.style.maxHeight = panel.scrollHeight + "px";
-			}
-		});
-	}
-});*/
-
-;
-(function($) {
-
-	// DOM ready
-	$(function() {
-
-		// Append the mobile icon nav
-		$('#hc-nav').append($('<div class="nav-mobile"></div>'));
-
-		// Add a <span> to every .nav-item that has a <ul> inside
-		$('.nav-item').has('ul').prepend('<span class="nav-click"><i class="nav-arrow"></i></span>');
-
-		// Click to reveal the nav
-		$('.nav-mobile').click(function() {
-			$('.nav-list').toggle();
-			$('#hc-nav').parent().find('.help-center-navigation').toggleClass('hc-nav-height');
-			$('#hc-nav').parent().find('#nav-search').addClass('nav-search-center');
-		});
-
-		// Dynamic binding to on 'click'
-		$('.nav-list').on('click', '.nav-click', function() {
-
-			// Toggle - click to display the nested nav (mobile only)
-			$(this).siblings('.nav-submenu').toggle();
-
-			// Toggle the arrow using CSS3 transforms
-			$(this).children('.nav-arrow').toggleClass('nav-rotate');
-
-		});
-
-	});
-
-})(jQuery);
-
-$(document).ready(function() {
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
-		dataType: 'json',
-		async: true,
-		success: function(user) {
-			{
-				name = user.user.name;
-				userId = user.user.id;
-				userRole = user.user.role;
-				$("#user-profile-link").attr("href", "https://365retailmarkets.zendesk.com/hc/en-us/profiles/" + userId);
-				$("#user-info-name").text(name);
-
-				if (userRole == 'admin' || userRole == 'agent') {
-					document.getElementById("internal-support-links").style.display = "block";
-
-				} else {
-					console.log('Active user is not an Agent/Admin.')
-				}
-			}
-		}
-	})
-});
-
-$(document).ready(function() {
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
-		dataType: 'json',
-		async: true,
-		success: function(requested) {
-
-			for (var i = 0; i < requested.articles.length; i++) {
-
-				if (requested.articles[i].user_segment_id == '321294') {
-					requested.articles.splice(i, 1);
-				}
-			}
-
-			{
-				articleTitle1 = requested.articles[0].title;
-				articleLink1 = requested.articles[0].html_url;
-				articleTime1 = requested.articles[0].updated_at.substring(0, 10);
-
-				articleTitle2 = requested.articles[1].title;
-				articleLink2 = requested.articles[1].html_url;
-				articleTime2 = requested.articles[1].updated_at.substring(0, 10);
-
-				articleTitle3 = requested.articles[2].title;
-				articleLink3 = requested.articles[2].html_url;
-				articleTime3 = requested.articles[2].updated_at.substring(0, 10);
-
-				articleTitle4 = requested.articles[3].title;
-				articleLink4 = requested.articles[3].html_url;
-				articleTime4 = requested.articles[3].updated_at.substring(0, 10);
-
-				articleTitle5 = requested.articles[4].title;
-				articleLink5 = requested.articles[4].html_url;
-				articleTime5 = requested.articles[4].updated_at.substring(0, 10);
-
-				$(".new-articles > li:first-child > .newarticles_title").text(articleTitle1);
-				$(".new-articles > li:first-child > .newarticles_published").text(articleTime1);
-				$(".new-articles > li:first-child > .newarticles_cta > a").attr("href", articleLink1);
-
-				$(".new-articles > li:nth-child(2) > .newarticles_title").text(articleTitle2);
-				$(".new-articles > li:nth-child(2) > .newarticles_published").text(articleTime2);
-				$(".new-articles > li:nth-child(2) > .newarticles_cta > a").attr("href", articleLink2);
-
-				$(".new-articles > li:nth-child(3) > .newarticles_title").text(articleTitle3);
-				$(".new-articles > li:nth-child(3) > .newarticles_published").text(articleTime3);
-				$(".new-articles > li:nth-child(3) > .newarticles_cta > a").attr("href", articleLink3);
-
-				$(".new-articles > li:nth-child(4) > .newarticles_title").text(articleTitle4);
-				$(".new-articles > li:nth-child(4) > .newarticles_published").text(articleTime4);
-				$(".new-articles > li:nth-child(4) > .newarticles_cta > a").attr("href", articleLink4);
-
-				$(".new-articles > li:nth-child(5) > .newarticles_title").text(articleTitle5);
-				$(".new-articles > li:nth-child(5) > .newarticles_published").text(articleTime5);
-				$(".new-articles > li:nth-child(5) > .newarticles_cta > a").attr("href", articleLink5);
-			}
-		}
-	})
-});
-
-$(document).ready(function() {
-	var navUserFunctions = document.getElementById('my-support-logout');
-	var navUserSignIn = document.getElementById('my-support-login');
-
-	if (HelpCenter.user.role === 'anonymous') {
-		navUserFunctions.style.cssText = "display: none;";
-		navUserSignIn.style.cssText = "display: inline-block;";
-	} else if (HelpCenter.user.role !== 'anonymous') {
-		navUserFunctions.style.cssText = "display: inline-block;";
-		navUserSignIn.style.cssText = "display: none;";
-	}
-});
-
-$(document).ready(function() {
-	$.ajax({
-		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/categories/360002185954/articles.json',
-		dataType: 'json',
-		async: true,
-		success: function(notes) {
-			{
-				const notifyBlock = document.getElementsByClassName('release_notes_notify')[0];
-
-				currentTime = new Date();
-				currentDay = currentTime.getDate();
-				currentMonth = currentTime.getMonth() + 1; //Add one to month because January starts at zero
-				currentYear = currentTime.getFullYear();
-
-				notesYear = parseInt(notes.articles[0].updated_at.substring(0, 4));
-				notesMonth = parseInt(notes.articles[0].updated_at.substring(5, 7));
-				notesDay = parseInt(notes.articles[0].updated_at.substring(8, 10));
-
-				if(currentYear === notesYear && currentMonth === notesMonth && currentDay - notesDay < 7) {
-					notifyBlock.classList.remove('no_notes');
-					notifyBlock.classList.add('new_notes');
-				} else {
-					notifyBlock.classList.add('no_notes');
-					notifyBlock.classList.remove('new_notes');
-				}
-			}
-		}
-	})
+    // Also wrap tables in a responsive div tag
+    $( '.article_body table' ).wrap( '<div class="table-responsive"></div>' );
 });

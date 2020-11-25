@@ -1,59 +1,40 @@
-<section class="article-hero">
-	<div class="article-hero-filter"></div>
-</section>
-<div class="section-page-background">
-	<section class="container">
-		<div class="col-12 section-category-box">
-			<header class="section-page-header">
-				<ol class="breadcrumbs section-page-breadcrumbs">{{breadcrumbs}}</ol>
-				<div class="clear"></div>
-			</header>
+<!-- Start Section Template -->
+<div class="container">
 
-			{{#if section.sections}}
-				<div class="section-container subsection-container row">
-					{{#each section.sections}}
-						<section class="subsection-article-list col">
-							<h3 class="section-tree-title">
-								<a href="{{url}}">{{name}} <i class="fas fa-chevron-right"></i></a>
-							</h3>
-						</section>
-					{{/each}}
-				</div>
-			{{/if}}
+    <!-- Breadcrumbs -->
+    <div class="row breadcrumbs-container">
+        <div class="col-12">
+            {{breadcrumbs}}
+        </div>
+    </div>
 
-			<div class="section-container">
-				{{#if section.articles}}
-					<ul class="section-article-list">
-						{{#each section.articles}}
-							<li class="section-article-list-item {{#if promoted}} article-promoted{{/if}}">
-								{{#if promoted}}
-									<span data-title="{{t 'promoted'}}" class="icon-star"></span>
-								{{/if}}
-								<div class="section-listheader"><a href="{{url}}" class="section-listheader">{{title}}</a> {{#if internal}}<i class="fas fa-lock"></i> {{/if}}</div>
-								<div class="clear"></div>
-								<div class="section-timestamp">Updated {{date updated_at timeago=true}}</div>
-								<div class="clear"></div>
-							</li>
-						{{/each}}
-					</ul>
-				{{/if}}
+    <div class="row section_header">
+        <div class="col-12 section_header-title">{{section.name}}</div>
+    </div>
 
-				<div class="pagination">{{pagination}}</div>
-			</div>
+    <div class="row section_list">
 
-			<div class="section-category-search-again-message">
-				<div class="section-category-search-again-message-wrapper">
-					<h2>How can we help?</h2>
-					<h4>Search the Help Center or <a href="https://365retailmarkets.zendesk.com/hc/en-us">browse</a> our resources.</h4>
-					<div class="section-category-search-bar-container">
-						<form class="search-results-search-bar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-							<input name="utf8" type="hidden" value="✓"><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center">
-							<button type="submit" name="commit" class="search-results-search-bar-small-button">
-								<i class="glyphicon glyphicon-search form-group"></i>
-							</button>
-						</form>
-					</div>
-				</div>
-			</div>
+        {{#if section.sections}}
+            {{#each section.sections}}
+                <div class="col-sm-12 col-md-6 col-lg-3 section_item">
+                    <a href="{{url}}" class="section_item-subsection">
+                        {{name}}
+                        <i class="ph-arrow-right"></i>
+                    </a>
+                </div>
+            {{/each}}
+        {{/if}}
 
-		</div>
+        {{#if section.articles}}
+            <div class="col-sm-12 col-md-6 col-lg-3 section_item">
+                {{#each section.articles}}
+                    <a href="{{url}}" class="section_item-article">
+                        <i class="ph-caret-right"></i>
+                        {{title}}
+                    </a>
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+</div>
+<!-- End Section Template -->

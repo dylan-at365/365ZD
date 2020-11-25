@@ -1,72 +1,48 @@
-<section class="container-fluid article-hero">
-	<div class="row article-hero-filter">
-		<div class="col-6 hero-text-inner-hero">Search the Help Center<br>
-			<header class="page-header-description"></header>
+<!-- Start Request List Template -->
+<div class="container">
+
+    <!-- Breadcrumbs -->
+    <div class="row breadcrumbs-container">
+        <div class="col-12">
+            {{breadcrumbs}}
+        </div>
+    </div>
+
+	<div class="row search_results-container">
+		<div class="col-12 search_results-header">
+			<div class="search_results-header_count">
+                {{t 'results' query=query count=results_count}}
+            </div>
+
+			<form class="search_results-header_searchbar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+                <input name="utf8" type="hidden" value="✓">
+                <input class="search" id="query" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter">
+            </form>
 		</div>
-	</div>
-</section>
-<div class="search-results-background">
+    </div>
 
-	<div class="search-results-container container">
-		<header class="search-page-header">
-			<h2>{{t 'results' query=query count=results_count}}</h2>
+    <div class="row search_results-results">
+        {{#if results}}
+            <ul class="col-12 search_results-results_list">
+                {{#each results}}
+                    <li class="search_results-result_item">
+                        <a href="{{url}}" class="search_results-result_item-title">{{title}}</a>
+                        <div class="search_results-result_item-desc">{{text}}</div>
 
-			<form class="search-results-search-bar floatRight" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input
-				 type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="search-results-search-bar-small-button"><i
-					 class="glyphicon glyphicon-search form-group"></i></button></form>
-		</header>
+                        <div class="search_results-result_item-time">Updated {{date edited_at timeago=true}}</div>
+                        {{#each path_steps}}
+                            <div class="search_results-result_item-path" title="{{name}}"><a href="{{url}}">{{name}}</a></div>
+                        {{/each}}
 
-		<div class="search-results">
-			<section class="search-results-column">
-				<h3 class="search-results-subheading">
-					{{t 'dc.help_center_name'}}
-				</h3>
-				{{#if article_results}}
-					<ul class="search-results-list">
-						{{#each article_results}}
-							<li class="search-result">
-								<a href="{{url}}" class="search-result-listheader">{{title}}</a>
-								{{#if vote_sum}}
-									<span class="search-result-votes meta-count">{{vote_sum}}</span>
-								{{/if}}
-								<ul class="meta-group">
-									<div class="search-result-description">{{text}}</div>
-									<ol class="breadcrumbs search-result-breadcrumbs">
-										<timestamp class="section-timestamp">Updated {{date edited_at timeago=true}}&nbsp;•&nbsp; </timestamp>
-										{{#each path_steps}}
-											<li title="{{name}}"><a href="{{url}}">{{name}}</a></li>
-										{{/each}}
-									</ol>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </div>
 
-									<li class="meta-data"></li>
-								</ul>
-							</li>
-						{{/each}}
-					</ul>
-				{{else}}
-					<p>
-						{{t 'no_results' query=query}}
-						{{#link 'help_center'}}
-						{{t 'browse_knowledge_base'}}
-						{{/link}}
-					</p>
-				{{/if}}
-			</section>
-
-
-		</div>
-
-		<div class="pagination"> {{pagination}}</div>
-	</div>
-	<div class="search-again-message">
-		<div class="container search-again-message-wrapper">
-			<h2 class="hero-text">
-				Still looking for answers?</h2>
-			<h4>Try searching again or <a href="https://365retailmarkets.zendesk.com/hc/en-us">browse</a> our available resources. </h4>
-			<div class="search-results-search-bar-container">
-				<form class="search-results-search-bar" role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓"><input type="search"
-					 name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search the 365 Help Center"><button type="submit" name="commit" class="search-results-search-bar-small-button"><i
-						 class="glyphicon glyphicon-search form-group"></i></button></form>
-			</div>
-		</div>
-	</div>
+    <div class="row pagination_container">
+        <div class="col-12">
+            {{pagination}}
+        </div>
+    </div>
+</div>
