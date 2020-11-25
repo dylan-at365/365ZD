@@ -6103,3 +6103,7 @@ Make articles printable
         margin: 0;
     }
 }
+
+.canteen {
+    display: none;
+}
