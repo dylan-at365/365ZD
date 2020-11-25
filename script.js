@@ -4,11 +4,6 @@ var userRole;
 
 $(document).ready(function() {
 
-    //Show Quick Action button for Canteen Org members only
-    if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
-        $( 'div.canteen' ).show();
-    };
-
 	$("form.search input[type=submit]").attr("value", "Search");
 	if (HelpCenter.user.role != 'anonymous') {
 		$('#support-toolbox').text('' + HelpCenter.user.name.split(" ")[0] + ', did you know you can submit and track support tickets online?');
@@ -28,7 +23,7 @@ $(document).ready(function() {
 					groupID = me.user.organization_id;
 
 					if ( groupID == 370274627154 || groupID == 116453457553 ) {
-						document.getElementById("canteen-icon").style.display = "block";
+						$( 'div.canteen' ).show();
 
 					} else {
 						console.log('Active user is not Canteen or 365.')
