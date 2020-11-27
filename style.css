@@ -240,6 +240,7 @@ Hero Area
     justify-content: center;
     height: 256px;
     background: url($assets-moroccan-flower-dark-png) repeat center center fixed;
+    /* Background pattern from Toptal Subtle Patterns */
 }
 
 .search {

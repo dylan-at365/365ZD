@@ -1,9 +1,10 @@
 ![ATLAS - A custom Zendesk theme](thumbnail.png)
 
+## About ATLAS:
 Version 3 saw a complete rewrite of the entire codebase for all available Zendesk templates.
 Design for the theme was done from a mobile-first perspective with an effort made to reduce file sizes and data consumption as much as possible, understanding that those who might need to access the information on the HelpCenter could be in locations with slow 3G connections.
 
-Some specific points in the new version include:
+## Some specific points in the new version include:
 - Greatly improved template code quality
     - Proper indentations, fewer unnecessary tags, and no unused classes.
 - Increased mobile device support.
@@ -17,7 +18,10 @@ Some specific points in the new version include:
     - Using Phosphor icons. Fun and small!
     - Articles now include useful utility elements for an enhanced reader experience
 
-Detailed changelog:
+## Notes:
+Heavily compressed header pattern from [Toptal Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/moroccan-flower-dark-pattern/)
+
+## Detailed changelog:
 - `manifest.json`
     - Named version 3 of the theme to "Atlas"
     - I am the author of the theme
