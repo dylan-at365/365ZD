@@ -17,12 +17,14 @@ $(document).ready(function() {
         $( 'div.canteen' ).remove();
     };
 
-    // Show footer navigation when scrolled past the header
+    // Show footer navigation by default
+    $( '.nav_footer' ).addClass( 'nav_display' );
+    $( '.nav_search' ).addClass( 'nav_display' );
+    $( '.nav_categories' ).removeClass( 'd-none' );
+    // Hide when at the bottom to not block the social icons
     $(document).scroll(function toggleFooterNav() {
-        var y = $(this).scrollTop();
         var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
-
-        if (y < 96 || scrollBottom < 96) {
+        if ( scrollBottom < 96 ) {
             $( '.nav_footer' ).removeClass( 'nav_display' );
             $( '.nav_search' ).removeClass( 'nav_display' );
             $( '.nav_categories' ).addClass( 'd-none' );
