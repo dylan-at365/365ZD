@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
         $( 'div.canteen' ).show();
-        
+
     } else {
         $( 'div.canteen' ).remove();
     };
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     // Retrieve latest articles and insert title, date, and link content into feed
     $.ajax({
-		type: 'GET',
+		method: 'GET',
 		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
 		dataType: 'json',
 		async: true,
@@ -84,13 +84,23 @@ $(document).ready(function() {
             // Variable t starts at the first title and ends at highest date + 1.
             // Variable n is used to keep in sync with the JSON index.
 
+            
             var n = 0;
 
             for (var t = 2; t < 12; t++) {
                 n++;
-                $( `a.new_articles-title:nth-child(2n+${t})` ).text(requested.articles[n].title);
-                $( `a.new_articles-title:nth-child(2n+${t})` ).attr("href", requested.articles[n].html_url);
-                $( `div.new_articles-date:nth-child(3n+${t})` ).text(requested.articles[n].updated_at.substring(0, 10));
+
+                if ( requested.articles[n] === undefined ) {
+                    $( `a.new_articles-title:nth-child(2n+${t})` ).text( 'Log in to view new articles.' );
+                    $( `a.new_articles-title:nth-child(2n+${t})` ).attr( 'href', '#');
+                    $( `div.new_articles-date:nth-child(3n+${t})` ).text('N/A');
+
+                } else {
+
+                    $( `a.new_articles-title:nth-child(2n+${t})` ).text(requested.articles[n].title);
+                    $( `a.new_articles-title:nth-child(2n+${t})` ).attr("href", requested.articles[n].html_url);
+                    $( `div.new_articles-date:nth-child(3n+${t})` ).text(requested.articles[n].updated_at.substring(0, 10));
+                }
             }
 		}
     });
