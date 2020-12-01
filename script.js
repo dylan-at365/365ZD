@@ -24,9 +24,11 @@ $(document).ready(function() {
 
         if (y < 96 || scrollBottom < 96) {
             $( '.nav_footer' ).removeClass( 'nav_display' );
+            $( '.nav_search' ).removeClass( 'nav_display' );
             $( '.nav_categories' ).addClass( 'd-none' );
         } else {
             $( '.nav_footer' ).addClass( 'nav_display' );
+            $( '.nav_search' ).addClass( 'nav_display' );
             $( '.nav_categories' ).removeClass( 'd-none' );
         }
     });
