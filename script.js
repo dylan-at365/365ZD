@@ -9,6 +9,10 @@ $(document).ready(function() {
     // Show Quick Action button for Canteen Org members only
     if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
         $( 'div.canteen' ).show();
+    } else if ( HelpCenter.user.organizations[0] === undefined ) {
+            $( 'div.canteen' ).remove();
+    } else {
+        $( 'div.canteen' ).remove();
     };
 
     // Show footer navigation when scrolled past the header
