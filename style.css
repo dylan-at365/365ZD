@@ -146,11 +146,17 @@ Header Template Styles
     display: none !important;
     height: 40px;
 
+    color: #fff;
+    background-color: #2555d9;
     font-size: 0.8rem;
 
     box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.1);
     line-height: 40px;
     text-align: center;
+}
+
+.nav_footer a {
+    color: #fff;
 }
 
 .nav_search > .col-12 {
@@ -168,14 +174,14 @@ Header Template Styles
 
     border: none;
     
-    border-bottom: 1px solid #a7a7a7;
+    border-top: 1px solid #2555d9;
     border-radius: 2px;
     box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.selected {
-    color: #fff;
-    background-color: #2555d9;
+a.selected {
+    color: #2555d9;
+    background-color: #fff;
 }
 
 .nav_footer-categories_button:hover {
