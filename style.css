@@ -736,7 +736,7 @@ Article Template Start
     font-size: 1.5rem;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\ec6d";
+    content: "\ec74";
 }
 
 .alert {
@@ -751,7 +751,7 @@ Article Template Start
     font-family: "phosphor" !important;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\ee3d";
+    content: "\ee44";
 }
 
 .warning {
@@ -766,7 +766,7 @@ Article Template Start
     font-family: "phosphor" !important;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\ede7";
+    content: "\edee";
 }
 
 /* Article Icon Utilities */

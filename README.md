@@ -55,8 +55,6 @@ Heavily compressed header pattern from [Toptal Subtle Patterns](https://www.topt
     - Removed all the now-useless home icons. They were not scalable and if, for any reason, your connection was slow enough, they would not load and rendered most of the home page useless.
     - The large banners were replaced with a very small, tile-able, pattern.
     - Replaced the PNG logos/images with SVG.
-    - During testing, the Phosphor icons hosted on UNPKG took an average of 10 seconds to load, causing the page load to hang until the resources were loaded in. Moved the files it requested (a JS file requesting a CSS file requesting three font files...) into the Zendesk asset folder.
-        - This `phosphor.css` file and related font files are pulled from [my fork](https://github.com/ohitsdylan/phosphor-icons)
 
 - `settings/`
     - Removed useless images.
