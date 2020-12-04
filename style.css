@@ -379,6 +379,10 @@ Home Page Rollup Sections
     padding-top: 1px;
 }
 
+.internal-header {
+    display: none;
+}
+
 /*
 New Articles
 ================================ */

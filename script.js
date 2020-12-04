@@ -8,13 +8,26 @@ $(document).ready(function() {
 
     // Show Quick Action button for Canteen Org members only
     if ( HelpCenter.user.organizations[0] === undefined ) {
-            $( 'div.canteen' ).remove();
+        $( 'div.canteen' ).remove();
 
     } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
         $( 'div.canteen' ).show();
 
     } else {
         $( 'div.canteen' ).remove();
+    };
+
+    // Show Internal Category if 365 user logged in
+    if ( HelpCenter.user.organizations[0] === undefined ) {
+        $( 'div.internal-header' ).remove();
+        $( 'div.internal-content' ).remove();
+
+    } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' ) {
+        $( 'div.internal-header' ).show();
+
+    } else {
+        $( 'div.internal-header' ).remove();
+        $( 'div.internal-content' ).remove();
     };
 
     // Show footer navigation by default
