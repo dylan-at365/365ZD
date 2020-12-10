@@ -13,9 +13,7 @@
         <div class="col-12">
             <a class="tickets_cc-button" href="/hc/en-us/requests">My Tickets</a>
             <a class="tickets_cc-button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
-
-            
-
+            <a class="tickets_cc-button" href="/hc/en-us/requests/organization">Organization Requests</a>
         </div>
     </div>
 
@@ -32,14 +30,16 @@
 					{{select 'status' id='request-status-select' class='request-filter'}}
 				</div>
 
-                <div class="request_filter-org">
-                    {{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
-                    {{select 'organization' id='request-organization-select' class='request-filter'}}
-                </div>
+                {{#if help_center.multiple_organizations_enabled}}
+                    <div class="request_filter-status">
+                        {{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
+                        {{select 'organization' id='request-organization-select' class='request-filter'}}
+                    </div>
 
-                <div class="request-table-filter organization-subscribe">
-                    {{subscribe}}
-                </div>
+                    <div class="request-table-filter organization-subscribe">
+                        {{subscribe}}
+                    </div>
+                {{/if}}
             {{/form}}
         </div>
     </div>
