@@ -1107,6 +1107,7 @@ Request View Page Template Styles
 
 #request_comment_body {
     width: 100%;
+    font-size: 0.8rem;
 }
 
 .ticket_reply-controls {
@@ -1140,6 +1141,16 @@ Request View Page Template Styles
     transition: color 0.1s;
 }
 
+.ticket_reply-controls_submit input:disabled {
+    color: #a7a7a7;
+    background-color: #fff;
+    border: 1px solid #a7a7a7;
+}
+
+.ticket_reply-controls_submit input:disabled:hover {
+    cursor: not-allowed;
+}
+
 /* Ticket Details */
 .ticket_details-title {
     font-size: 1.25rem;
@@ -1164,9 +1175,16 @@ New Request Page Template Styles
     font-size: 0.8rem;
 }
 
-/* Edit CC area within auto generator form */
-.request_body .request_cc_emails {
+/* Edit CC & Org labels within auto generator form */
+.request_body .request_cc_emails, .request_body .request_organization_id {
     font-size: 0.8rem;
+}
+
+.nesty-panel li {
+    font-family: "Roboto", "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+    font-size: 0.8rem !important;
+    font-weight: normal !important;
+    line-height: 0.8rem;
 }
 
 /* Edit subject field */
@@ -1228,6 +1246,10 @@ New Request Page Template Styles
     font-weight: bold;
 }
 
+.request_body footer {
+    margin-top: 24px;
+}
+
 .request_body footer input {
     width: 128px;
     padding: 8px;
@@ -1239,13 +1261,19 @@ New Request Page Template Styles
     transition: color 0.1s;
 }
 
-.request_body footer {
-    margin-top: 24px;
-}
-
 .request_body footer input:hover {
     color: #7492e6;
     transition: color 0.1s;
+}
+
+.request_body footer input:disabled {
+    color: #a7a7a7;
+    background-color: #fff;
+    border: 1px solid #a7a7a7;
+}
+
+.request_body footer input:disabled:hover {
+    cursor: not-allowed;
 }
 
 /*
