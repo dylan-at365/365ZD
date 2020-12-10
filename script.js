@@ -173,6 +173,26 @@ $(document).ready(function() {
         }
     });
 
+    // Submit requests filter form on status or organization change in the request list page
+  Array.prototype.forEach.call(document.querySelectorAll('#request-status-select, #request-organization-select'), function(el) {
+    el.addEventListener('change', function(e) {
+      e.stopPropagation();
+      saveFocus();
+      closest(this, 'form').submit();
+    });
+  });
+
+
+    // Submit organization form in the request page
+  var requestOrganisationSelect = document.querySelector('#request-organization select');
+
+  if (requestOrganisationSelect) {
+    requestOrganisationSelect.addEventListener('change', function() {
+      closest(this, 'form').submit();
+    });
+  }
+
+  
     // End borrowed Zendesk scripts
 
     // Hide the "Internal Support" links in the User Profile page if not Agent
