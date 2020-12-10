@@ -14,10 +14,7 @@
             <a class="tickets_cc-button" href="/hc/en-us/requests">My Tickets</a>
             <a class="tickets_cc-button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
 
-            <div class="request-table-filter">
-                {{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
-                {{select 'organization' id='request-organization-select' class='request-filter'}}
-            </div>
+            
 
         </div>
     </div>
@@ -34,6 +31,15 @@
 					{{label 'status' for='request-status-select' class='request-filter request-filter-label'}}
 					{{select 'status' id='request-status-select' class='request-filter'}}
 				</div>
+
+                <div class="request_filter-org">
+                    {{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
+                    {{select 'organization' id='request-organization-select' class='request-filter'}}
+                </div>
+
+                <div class="request-table-filter organization-subscribe">
+                    {{subscribe}}
+                </div>
             {{/form}}
         </div>
     </div>
