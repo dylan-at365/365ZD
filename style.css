@@ -683,11 +683,19 @@ Article Template Start
     color: #2555d9;
 }
 
-.article_body h1, .article_body h2 {
+.article_body h1 {
+    font-size: 2rem;
+}
+
+.article_body h2 {
+    font-size: 1.75rem;
+}
+
+.article_body h3 {
     font-size: 1.5rem;
 }
 
-.article_body h3, .article_body h4 {
+.article_body h4 {
     font-size: 1.25rem;
 }
 
