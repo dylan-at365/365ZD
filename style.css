@@ -117,6 +117,7 @@ Header Template Styles
 .menu-item i {
     padding-right: 4px;
     font-size: 1.5rem;
+    vertical-align: -0.2rem;
 }
 
 .menu-item div {
@@ -157,6 +158,10 @@ Header Template Styles
 
 .nav_footer a {
     color: #fff;
+}
+
+.nav_footer a i {
+    vertical-align: -0.1rem;
 }
 
 .nav_search > .col-12 {
@@ -215,7 +220,7 @@ a.selected {
 
 .nav_category-header i {
     float: right;
-    padding-top: 2px;
+    padding-top: 1px;
 }
 
 .nav_category-item_list {
@@ -232,6 +237,10 @@ a.selected {
 .nav_category-item:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
+}
+
+.nav_category-item i {
+    vertical-align: -0.16rem;
 }
 
 /* Hide the accompanying text on mobile, display on larger devices */
@@ -506,7 +515,7 @@ Category Template Start
 
 .category_item-subsection i {
     float: right;
-    padding-top: 2px;
+    padding-top: 1px;
 }
 
 .category_item-article {
@@ -517,6 +526,10 @@ Category Template Start
 
 .category_item > .category_item-article ~ .category_item-article {
     padding: 8px 0;
+}
+
+.category_item-article i {
+    vertical-align: -0.1rem;
 }
 
 .category_item-more {
@@ -530,7 +543,7 @@ Category Template Start
 
 .category_item-more i {
     float: right;
-    padding-top: 2px;
+    padding-top: 1px;
 }
 
 /* =============================
@@ -586,6 +599,10 @@ Section Template Start
     padding: 8px 0;
 }
 
+.section_item-article i {
+    vertical-align: -0.1rem;
+}
+
 .section_item-more {
     margin-top: 16px;
     padding: 8px;
@@ -618,7 +635,7 @@ Article Template Start
 }
 
 .article_header-title i {
-    vertical-align: baseline;
+    vertical-align: -0.2rem;
 }
 
 .article_header-updated {
@@ -1351,6 +1368,10 @@ User Profile Template Styles
 .profile_info-about_name-recent h3 {
     font-size: 1rem;
     font-weight: bold;
+}
+
+.profile_info-about_name i {
+    vertical-align: -0.2rem;
 }
 
 .profile_info-about_name-stats,
