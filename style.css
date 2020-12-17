@@ -688,15 +688,15 @@ Article Template Start
 }
 
 .article_body h2 {
-    font-size: 1.75rem;
-}
-
-.article_body h3 {
     font-size: 1.5rem;
 }
 
-.article_body h4 {
+.article_body h3 {
     font-size: 1.25rem;
+}
+
+.article_body h4 {
+    font-size: 1rem;
 }
 
 .article_body ul {
