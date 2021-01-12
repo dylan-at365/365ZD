@@ -838,19 +838,19 @@ Article Template Start
 }
 
 /* Change default colors to brand palette */
-.wysiwyg-color-blue, .wysiwyg-color-blue90, .wysiwyg-color-blue110  {
+.wysiwyg-color-blue, .wysiwyg-color-blue90, .wysiwyg-color-blue110, .wysiwyg-color-blue120  {
     color: #2555d9;
 }
 
-.wysiwyg-color-red, .wysiwyg-color-red90, .wysiwyg-color-red110 {
+.wysiwyg-color-red, .wysiwyg-color-red90, .wysiwyg-color-red110, .wysiwyg-color-red120 {
     color: #ff4c5b;
 }
 
-.wysiwyg-color-green, .wysiwyg-color-green90, .wysiwyg-color-green110 {
+.wysiwyg-color-green, .wysiwyg-color-green90, .wysiwyg-color-green110, .wysiwyg-color-green120 {
     color: #00bf6f;
 }
 
-.wysiwyg-color-yellow, .wysiwyg-color-yellow90, .wysiwyg-color-yellow110 {
+.wysiwyg-color-yellow, .wysiwyg-color-yellow90, .wysiwyg-color-yellow110, .wysiwyg-color-yellow120 {
     color: #ffcc1e;
 }
 
