@@ -1,5 +1,5 @@
 <!-- Start Header Template -->
-<div class="container d-print-none">
+<div class="container">
     <!-- Logo and Menu Button -->
     <div class="row header">
         <a href="{{page_path 'help_center'}}" class="col-9 logo">
@@ -7,13 +7,13 @@
             <span class="logo-title">HelpCenter</span>
         </a>
 
-        <div class="col-3 menu-button">
+        <div class="col-3 menu-button d-print-none">
             <i class="ph-list"></i>
         </div>
     </div>
 
     <!-- Menu Area -->
-    <ul class="row menu" style="display: none;">
+    <ul class="row menu d-print-none" style="display: none;">
         {{#if signed_in}}
         <li class="col-sm-12 col-md-3 menu-item">
             <a id="dashboard_link" href="#">

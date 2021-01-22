@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <div class="row article_header d-print-none">
+    <div class="row article_header">
         <div class="col-12 article_header-title">
             {{article.title}}
             {{#if article.internal}}
@@ -16,7 +16,7 @@
             {{/if}}
         </div>
 
-        <div class="col-12 article_header-updated">
+        <div class="col-12 article_header-updated d-print-none">
             {{#is article.created_at article.updated_at}}
                 {{date article.created_at timeago=true}}
             {{else}}
@@ -24,9 +24,9 @@
             {{/is}}
         </div>
 
-        <a href="#" class="col-3 col-md-2 col-lg-1 article_header-button print_article">Print</a>
+        <a href="#" class="col-3 col-md-2 col-lg-1 article_header-button print_article d-print-none">Print</a>
 
-        <div class="col-3 col-md-2 col-lg-1 article-unsubscribe_container">
+        <div class="col-3 col-md-2 col-lg-1 article-unsubscribe_container d-print-none">
             {{subscribe}}
         </div>
     </div>
