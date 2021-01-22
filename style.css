@@ -730,11 +730,14 @@ Article Template Start
 }
 
 .article_body ul ul ul ul {
-    list-style: "\2610";
+    list-style: none;
 }
 
-.article_body ul ul ul ul li:before {
+.article_body ul ul ul ul li::before {
     margin-right: 4px;
+    font-size: 0.55rem;
+    vertical-align: 0.1rem;
+    content: "\2610";
 }
 
 .article_body ol {
