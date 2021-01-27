@@ -1035,6 +1035,40 @@ Article Template Start
     color: #a7a7a7;
 }
 
+/* Voting Content */
+.article_vote {
+    padding: 16px 0;
+}
+
+.article_vote-header {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.article-vote_container button {
+    width: 100%;
+    margin: 16px 0;
+    padding: 8px;
+
+    color: #fff;
+    background-color: #2555d9;
+    font-size: 0.8rem;
+
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.article-vote_container button:hover {
+    color: #7492e6;
+}
+
+.article_vote-count {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 /* Fancybox Post-Image Insert */
 .fancy-p_img {
     color: #a7a7a7;

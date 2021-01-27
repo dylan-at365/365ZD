@@ -52,5 +52,27 @@
         </div>
     {{/if}}
 
+    {{#if article.internal}}
+        <div class="row article_vote">
+            <div class="col-12 article_vote-header">
+                Was this article helpful?
+            </div>
+
+            <div class="col-3"></div>
+            <div class="col-3 article-vote_container">
+                {{article.vote "up" role="radio" class="article-vote article-vote-up" selected_class="button-primary"}}
+            </div>
+
+            <div class="col-3 article-vote_container">
+                {{article.vote "down" role="radio" class="article-vote article-vote-down" selected_class="button-primary"}}
+            </div>
+            <div class="col-3"></div>
+
+            <div class="col-12 article_vote-count">
+                {{article.vote 'label' class='article_vote-count_label'}}
+            </div>
+        </div>
+    {{/if}}
+
 </div>
 <!-- End Article Template -->
