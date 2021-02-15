@@ -142,6 +142,41 @@ Header Template Styles
     }
 }
 
+/* Banner Area */
+.header_news {
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    transition: all 0.1s;
+}
+
+.header_news-content {
+    padding: 8px 0;
+    background-color: #00bf6f;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header_news a {
+    color: #fff;
+    transition: all 0.1s;
+}
+
+.header_news a:hover {
+    color: #00bf6f !important;
+    background-color: #fff;
+    transition: all 0.1s;
+}
+
+.header_news i {
+    padding-right: 4px;
+    font-size: 1.5rem;
+    vertical-align: -0.4rem;
+}
+
+.header_news div {
+    display: inline-block;
+}
+
 /* Sticky Footer Navigation */
 .nav_footer {
     display: none !important;
