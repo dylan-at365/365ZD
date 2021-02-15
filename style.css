@@ -1590,7 +1590,7 @@ User Profile Template Styles
 
 .profile_info-about_name,
 .profile-quick_links-title,
-.profile_info-about_name-recent h3 {
+.profile_info-about_name-recent h2 {
     font-size: 1rem;
     font-weight: bold;
 }
