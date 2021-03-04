@@ -64,13 +64,13 @@ $(document).ready(function() {
     // Set {{my_profile}} URL into Dashboard href attribute
     $.ajax({
 		type: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/users/me.json',
+		url: 'https://help.365retailmarkets.com/api/v2/users/me.json',
 		dataType: 'json',
 		async: true,
 		success: function insertProfileURL(user) {
 			{
 				let userId = user.user.id;
-				$( '#dashboard_link' ).attr('href', 'https://365retailmarkets.zendesk.com/hc/en-us/profiles/' + userId);
+				$( '#dashboard_link' ).attr('href', 'https://help.365retailmarkets.com/hc/en-us/profiles/' + userId);
 			}
 		}
 	});
@@ -84,7 +84,7 @@ $(document).ready(function() {
     // Retrieve latest articles and insert title, date, and link content into feed
     $.ajax({
 		method: 'GET',
-		url: 'https://365retailmarkets.zendesk.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
+		url: 'https://help.365retailmarkets.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
 		dataType: 'json',
 		async: true,
 		success: function getLatestArticles(requested) {
