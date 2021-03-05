@@ -112,12 +112,13 @@ Header Template Styles
 .menu-item {
     height: 56px;
     padding: 8px 0;
+    font-size: 0.8rem;
 }
 
 .menu-item i {
     padding-right: 4px;
-    font-size: 1.5rem;
-    vertical-align: -0.2rem;
+    font-size: 1.15rem;
+    vertical-align: -0.05rem;
 }
 
 .menu-item div {

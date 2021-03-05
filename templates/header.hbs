@@ -15,28 +15,35 @@
     <!-- Menu Area -->
     <ul class="row menu d-print-none" style="display: none;">
         {{#if signed_in}}
-        <li class="col-sm-12 col-md-3 menu-item">
+        <li class="col-sm-12 col-md-2 menu-item">
             <a id="dashboard_link" href="#">
                 <i class="ph-info"></i>
                 <div>Dashboard</div>
             </a>
         </li>
 
-        <li class="col-sm-12 col-md-3 menu-item">
+        <li class="col-sm-12 col-md-2 menu-item">
             <a href="{{page_path 'requests'}}">
                 <i class="ph-article"></i>
                 <div>Ticket History</div>
             </a>
         </li>
 
-        <li class="col-sm-12 col-md-3 menu-item">
+        <li class="col-sm-12 col-md-3 col-lg-2 menu-item">
             <a href="{{page_path 'subscriptions'}}">
                 <i class="ph-book-bookmark"></i>
                 <div>Saved Resources</div>
             </a>
         </li>
 
-        <li class="col-sm-12 col-md-3 menu-item">
+        <li class="col-sm-12 col-md-2 menu-item">
+            <a href="https://status.365retailmarkets.com">
+                <i class="ph-heartbeat"></i>
+                <div>System Status</div>
+            </a>
+        </li>
+
+        <li class="col-sm-12 col-md-2 menu-item">
             <a href="{{page_path 'sign_out'}}">
                 <i class="ph-sign-out"></i>
                 <div>Log Out</div>
