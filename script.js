@@ -7,14 +7,34 @@ $(document).ready(function() {
     });
 
     // Show Quick Action button for Canteen Org members only
-    if ( HelpCenter.user.organizations[0] === undefined ) {
-        $( 'div.canteen' ).remove();
 
-    } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' || HelpCenter.user.organizations[0].name == 'Canteen' ) {
+    // Get the total number of Orgs a user belongs to
+    let userOrgTotal = HelpCenter.user.organizations.length;
+
+    // Loop through all of a user's Orgs to see if they're a Canteen/CFG member
+    /*
+        Use the 'orgCheck' variable to prevent the removal of the element with the
+        'canteen' class and thereby removing the function's chance to re-add the 
+        class when the check passes.
+
+        Seems a little convoluted...
+        Check to see if this can be improved with a little extra brain power.
+    */
+    for ( var i = 0; i < userOrgTotal; i++ ) {
+        var orgCheck = false;
+
+        if ( HelpCenter.user.organizations[i].name == '365 Retail Markets' || HelpCenter.user.organizations[i].name.includes('Canteen') ) {
+            orgCheck = true;
+        } else {
+            orgCheck = false;
+        };
+    }
+
+    // Add or remove our element based on the result above
+    if ( orgCheck == false ) {
+        $( 'div.canteen' ).remove();
+    } else if ( orgCheck == true ) {
         $( 'div.canteen' ).show();
-
-    } else {
-        $( 'div.canteen' ).remove();
     };
 
     // Show Internal Category if 365 user logged in
