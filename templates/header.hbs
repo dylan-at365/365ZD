@@ -66,12 +66,51 @@
         {{/if}}
     </ul>
 
-    <div class="row header_news d-print-none">
-        <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="col-12 header_news-content">
-            <i class="ph-hand-waving"></i>
-            <div>How to Check if Your Kiosk is Online</div>
-        </a>
-    </div>
+    {{#if signed_in}}
+        <div class="row header_news d-print-none">
+            <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="col-12 header_news-content">
+                <i class="ph-hand-waving"></i>
+                <div>How to Check if Your Kiosk is Online</div>
+            </a>
+        </div>
+    {{else}}
+        <div class="row header_news d-print-none" id="howToBanner">
+            <a href="" data-toggle="modal" data-target="#videoHowTo" class="col-12 header_news-content">
+                <i class="ph-hand-waving"></i>
+                <div>How to Use the 365 HelpCenter</div>
+            </a>
+        </div>
+
+        <div class="modal fade" id="videoHowTo" tabindex="-1" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="video-container">
+                            <iframe id="youtubeHowToEmbed" width="560" height="315" src="https://www.youtube-nocookie.com/embed/RkILQJpJZS4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $( '#howToBanner' ).click(function () {
+                var src = 'https://www.youtube-nocookie.com/embed/RkILQJpJZS4';
+                $( '#videoHowTo' ).modal('show');
+                $( '#videoHowTo iframe' ).attr('src', src);
+            });
+
+            $( '#videoHowTo button' ).click(function () {
+                $( '#videoHowTo iframe' ).removeAttr('src');
+            });
+        </script>
+
+    {{/if}}
 
 </div>
 
