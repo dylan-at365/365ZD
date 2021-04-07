@@ -803,6 +803,10 @@ Article Template Start
     border: none;
 }
 
+.article_body table td {
+    border-right: 1px solid #dee2e6;
+}
+
 .article_body img {
     max-width: 100%;
     height: auto;
@@ -1044,7 +1048,7 @@ Article Template Start
 }
 
 /* Change default colors to brand palette */
-.wysiwyg-color-blue, .wysiwyg-color-blue90, .wysiwyg-color-blue110, .wysiwyg-color-blue120  {
+.wysiwyg-color-blue, .wysiwyg-color-blue90, .wysiwyg-color-blue110, .wysiwyg-color-blue120, .wysiwyg-color-cyan  {
     color: #2555d9;
 }
 
