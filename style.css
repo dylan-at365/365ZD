@@ -1383,7 +1383,6 @@ Request View Page Template Styles
     margin-top: 16px;
 }
 
-/* Not sure this ever appears, but in case it does, make it look nice */
 .ticket_reply-controls_mas {
     display: inline-block;
     padding: 8px;
