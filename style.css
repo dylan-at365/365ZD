@@ -1468,6 +1468,19 @@ New Request Page Template Styles
     font-weight: normal;
 }
 
+.request_anonymous_requester_email label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#request_anonymous_requester_email_error,
+#request_subject_error,
+#request_description_error {
+    color: #ff4c5b;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
 /* Appears when typing a subject; suggests articles */
 .suggestion-list {
     background-color: #fafafa;
