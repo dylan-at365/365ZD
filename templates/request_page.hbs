@@ -98,11 +98,11 @@
     </div>
 
     <div class="row ticket_reply-controls">
-        <div class="col-3">
+        <div class="col-3 col-sm-12">
             {{checkbox 'mark_as_solved'}}
 
             {{#if request.can_be_marked_as_solved}}
-                <a role="button" class="ticket_reply-controls_mas mark-as-solved" data-solve-translation="{{t 'mark_as_solved'}}" data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}">
+                <a class="ticket_reply-controls_mas mark-as-solved" data-solve-translation="{{t 'mark_as_solved'}}" data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}">
                     {{t 'mark_as_solved'}}
                 </a>
             {{/if}}
