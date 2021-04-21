@@ -1135,6 +1135,10 @@ img.fancybox:hover {
     cursor: pointer;
 }
 
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
 /* =============================
 Article Template End
 ================================ */
