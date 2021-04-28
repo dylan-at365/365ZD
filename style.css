@@ -931,7 +931,7 @@ Article Template Start
     font-size: 1.5rem;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\ec74";
+    content: "\ecdd";
 }
 
 .alert {
@@ -946,7 +946,7 @@ Article Template Start
     font-family: "phosphor" !important;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\ee44";
+    content: "\eef0";
 }
 
 .warning {
@@ -961,7 +961,7 @@ Article Template Start
     font-family: "phosphor" !important;
     font-weight: normal !important;
     vertical-align: middle;
-    content: "\edee";
+    content: "\ee8a";
 }
 
 /* Simple Inline Callouts */
@@ -1215,8 +1215,32 @@ img.fancybox:hover {
     cursor: pointer;
 }
 
-[data-toggle="collapse"] {
+.article_body [data-toggle="collapse"] {
     cursor: pointer;
+}
+
+.article_body [data-toggle="collapse"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbe";
+}
+
+.article_body [aria-expanded="false"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbe";
+}
+
+.article_body [aria-expanded="true"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbc";
 }
 
 /* =============================
