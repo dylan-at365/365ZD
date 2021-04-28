@@ -101,6 +101,18 @@ $(document).ready(function() {
         $(this).find( '.category-rollup i' ).toggleClass( 'ph-plus-bold ph-minus-bold' );
     });
 
+    // Switch over Common Questions categories
+    $( '.questions_category-button' ).click(function switchCommonQuestions() {
+        // Store the clicked button text to use as a reference for the data-attribute of the related questions
+        var questionType = $(this).text();
+        // Remove the previous button's "active" state and add it to the clicked button
+        $( '.qc_active' ).removeClass( 'qc_active' );
+        $(this).addClass( 'qc_active' );
+        // Remove active state from the current block and add it to the one referenced by the data-attribute
+        $( '.qc_blocks-active' ).removeClass( 'qc_blocks-active' );
+        $( `.qc_blocks[data-question-type='${questionType}'` ).addClass( 'qc_blocks-active' );
+    });
+
     // Retrieve latest articles and insert title, date, and link content into feed
     $.ajax({
 		method: 'GET',
