@@ -1135,20 +1135,32 @@ img.fancybox:hover {
     cursor: pointer;
 }
 
-[data-toggle="collapse"] {
+.article_body [data-toggle="collapse"] {
     cursor: pointer;
 }
 
-[data-toggle="collapse"]::after {
-    content: "\efbc";
+.article_body [data-toggle="collapse"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbe";
 }
 
-[aria-expanded="false"]::after {
-    content: "\efbc";
+.article_body [aria-expanded="false"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbe";
 }
 
-[aria-expanded="true"]::after {
-    content: "\efbf";
+.article_body [aria-expanded="true"]::after {
+    padding-left: 8px;
+    font-family: "phosphor" !important;
+    font-weight: normal !important;
+    vertical-align: -0.25rem;
+    content: "\efbc";
 }
 
 /* =============================
