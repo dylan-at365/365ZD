@@ -219,6 +219,11 @@ $(document).ready(function() {
   
     // End borrowed Zendesk scripts
 
+    // Remove Organizations button if user does not belong to more than one
+    if ( userOrgTotal <= 1 ) {
+        $( '.org_requests-button' ).remove();
+    }
+
     // Disable Submit button if text area is empty
     $( '.request_body footer input' ).prop( 'disabled', true );
 
