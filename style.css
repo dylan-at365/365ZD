@@ -391,7 +391,7 @@ Home Page Rollup Sections
 ================================ */
 .rollup-header {
     margin-top: 24px;
-    padding: 24px 8px;
+    padding: 24px 0;
     background-color: #fff;
     font-size: 1.25rem;
     font-weight: bold;
