@@ -1139,10 +1139,7 @@ img.fancybox:hover {
 .collapse-header {
     margin-bottom: 8px;
     padding: 12px;
-    color: #fff;
-    background-color: #7492e6;
-    font-size: 1rem;
-    font-weight: bold;
+    color: #22212d;
     border-radius: 2px 2px 0 0;
 }
 
@@ -1159,29 +1156,29 @@ img.fancybox:hover {
 
 .article_body [data-toggle="collapse"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.16rem;
-    content: "\ee44";
-    float: right;
+    font-size: 1rem;
+    content: "[\ee44  ]";
 }
 
 .article_body [aria-expanded="false"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.16rem;
-    content: "\ee44";
-    float: right;
+    font-size: 1rem;
+    content: "[\ee44  ]";
 }
 
 .article_body [aria-expanded="true"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.16rem;
-    content: "\edea";
-    float: right;
+    font-size: 1rem;
+    content: "[\edea  ]";
 }
 
 .article_body [aria-expanded="false"] {
