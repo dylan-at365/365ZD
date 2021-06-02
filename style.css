@@ -391,7 +391,7 @@ Home Page Rollup Sections
 ================================ */
 .rollup-header {
     margin-top: 24px;
-    padding: 24px 8px;
+    padding: 24px 0;
     background-color: #fff;
     font-size: 1.25rem;
     font-weight: bold;
@@ -1215,32 +1215,58 @@ img.fancybox:hover {
     cursor: pointer;
 }
 
+/* Collapsible Headings */
+.collapse-header {
+    margin-bottom: 8px;
+    padding: 12px;
+    color: #22212d;
+    border-radius: 2px 2px 0 0;
+}
+
+.collapse, .collapsing {
+    padding: 12px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-top: none;
+}
+
 .article_body [data-toggle="collapse"] {
     cursor: pointer;
 }
 
 .article_body [data-toggle="collapse"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.25rem;
-    content: "\efbe";
+    font-size: 1rem;
+    content: "[\ee44  ]";
 }
 
 .article_body [aria-expanded="false"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.25rem;
-    content: "\efbe";
+    font-size: 1rem;
+    content: "[\ee44  ]";
 }
 
 .article_body [aria-expanded="true"]::after {
     padding-left: 8px;
+    color: #22212d;
     font-family: "phosphor" !important;
     font-weight: normal !important;
-    vertical-align: -0.25rem;
-    content: "\efbc";
+    font-size: 1rem;
+    content: "[\edea  ]";
+}
+
+.article_body [aria-expanded="false"] {
+    border-radius: 2px;
+}
+
+.article_body [aria-expanded="true"] {
+    margin-bottom: 0;
 }
 
 /* =============================
@@ -1687,6 +1713,47 @@ Search Results Template Styles
     border-radius: 2px;
 }
 
+/* Search Results Filters */
+.type_filter_option {
+    padding-right: 8px;
+    font-size: 0.8rem;
+}
+
+.type_filter_selected {
+    color: #a7a7a7;
+    text-decoration: underline;
+}
+
+.search_filters-subfilters {
+    max-height: 56px;
+    margin-bottom: 12px;
+
+    line-height: 52px;
+
+    background-color: #fafafa;
+    font-size: 0.8rem;
+    box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.1) inset;
+    border-bottom: 1px solid #dae0f2;
+
+    overflow: auto hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.search_filters-subfilters ul {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.search_filters-types li,
+.search_filters-subfilters li {
+    display: inline-block;
+}
+
+.search_filters-subfilters li {
+    white-space: nowrap;
+}
+
+/* Search Results */
 .search_results-results_list {
     font-size: 0.8rem;
 }
