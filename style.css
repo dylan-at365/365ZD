@@ -443,6 +443,113 @@ Home Page Rollup Sections
 }
 
 /*
+Common Questions
+================================ */
+.common_questions {
+    background-color: #fafafa;
+}
+
+.qc_top {
+    margin-top: 24px;
+    padding-top: 24px;
+}
+
+.qc_blocks {
+    margin-bottom: -24px;
+    padding: 16px;
+    display: none !important;
+}
+
+.qc_blocks-active {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.common_questions-header {
+    padding: 0 24px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.questions_category-button {
+    height: 48px;
+    margin: 12px 8px;
+    line-height: 44px;
+    color: #2555d9;
+    background-color: #ebeff8;
+    
+    border-radius: 2px;
+    text-align: center;
+    transition: color 0.1s;
+}
+
+.qc_active {
+    color: #fff;
+    background-color: #2555d9;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.questions_category-button:hover {
+    color: #7492e6;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.qc_block {
+    min-width: 144px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    scroll-margin: -1rem;
+}
+
+.qc_block-title {
+    padding: 8px 0;
+    border-bottom: 1px solid #dae0f2;
+}
+
+.qc_block-questions {
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.qc_block-questions li {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
+
+.qc_block-questions li ~ li {
+    padding: 8px 0;
+}
+
+.qc_block-questions li i {
+    vertical-align: -0.1rem;
+}
+
+.qc_block-more {
+    margin-top: 16px;
+    padding: 8px;
+    color: #fff;
+    background-color: #2555d9;
+    font-size: 0.8rem;
+    border-radius: 2px;
+}
+
+.qc_block-more a {
+    padding: 8px;
+    color: #fff;
+}
+
+.qc_block-more i {
+    padding-right: 8px;
+    float: right;
+}
+
+/*
 New Articles
 ================================ */
 .new-articles-feed {
