@@ -1,0 +1,90 @@
+body {
+    background-color: #4a4953;
+}
+
+a {
+    color: #2555d9;
+}
+
+a:hover {
+    color: #7492e6;
+}
+
+/*
+Header Template Styles
+================================ */
+/* Logo Area */
+.header {
+    color: #fff;
+    background-color: #22212d;
+}
+
+.header__title {
+    color: #fff;
+}
+
+.banner__content {
+    background-color: #1f46b2;
+}
+
+.banner a {
+    color: #fff;
+}
+
+.banner a:hover {
+    color: #fff;
+    background-color: #22212d;
+}
+
+/* =============================
+Home Page Template Start
+================================ */
+/*
+Hero Area
+================================ */
+.search {
+    color: #eaeaeb;
+    background-color: #4a4953;
+}
+
+/*
+Quick Actions
+================================ */
+.quick_actions {
+    background-color: #727179;
+}
+
+a.card--action {
+    color: #fff;
+    background-color: #1F46B2;
+}
+
+a.card--action:hover {
+    color: #7492e6;
+}
+
+a.canteen {
+    color: #fff;
+    background-color: #409f68;
+}
+
+a.canteen:hover {
+    color: #a5cf4f;
+}
+
+/*
+Home Page Rollup Sections
+================================ */
+.category_drawer {
+    color: #fff;
+    background-color: #22212d;
+}
+
+.category_drawer__content {
+    background-color: #727179;
+}
+
+.button {
+    color: #fff;
+    background-color: #2555d9;
+}

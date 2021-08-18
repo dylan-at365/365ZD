@@ -1,0 +1,89 @@
+body {
+    background-color: #c2c2c5;
+}
+
+a {
+    color: #2555d9;
+}
+
+a:hover {
+    color: #7492e6;
+}
+
+/*
+Header Template Styles
+================================ */
+/* Logo Area */
+.header {
+    background-color: #fff;
+}
+
+.header__title {
+    color: #22212d;
+}
+
+.banner__content {
+    background-color: #00bf6f;
+}
+
+.banner a {
+    color: #fff;
+}
+
+.banner a:hover {
+    color: #00bf6f;
+    background-color: #fff;
+}
+
+/* =============================
+Home Page Template Start
+================================ */
+
+/*
+Quick Actions
+================================ */
+.quick_actions {
+    background-color: #eaeaeb;
+}
+
+a.card--action {
+    background-color: #fff;
+}
+
+a.canteen {
+    color: #fff;
+    background-color: #a9d2d8;
+}
+
+a.canteen:hover {
+    color: #003349;
+}
+
+/*
+Home Page Rollup Sections
+================================ */
+.category_drawer {
+    color: #22212d;
+    background-color: #fff;
+}
+
+.category_drawer__content {
+    background-color: #eaeaeb;
+}
+
+.button {
+    color: #fff;
+    background-color: #2555d9;
+}
+
+
+
+.pagination li {
+    color: #fff;
+    background-color: #2555d9;
+    border: 1px solid #2555d9;
+}
+
+.pagination li a {
+    color: #fff;
+}
