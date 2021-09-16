@@ -1,0 +1,83 @@
+.article-inner {
+    max-width: 800px;
+    padding: 0 40px;
+}
+
+.article-inner img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+/*
+    * These styles override the default Zendesk TinyMCE article builder styles.
+    * Colors are replaced with brand colors and font sizes are adjusted to fit the rest of the site.
+*/
+
+.wysiwyg-color-black,
+.wysiwyg-color-black70,
+.wysiwyg-color-black60,
+.wysiwyg-color-black50,
+.wysiwyg-color-black40,
+.wysiwyg-color-black30,
+.wysiwyg-color-black20,
+.wysiwyg-color-black10 {
+    color: var(--gray-100);
+}
+
+.wysiwyg-color-blue,
+.wysiwyg-color-blue70,
+.wysiwyg-color-blue80,
+.wysiwyg-color-blue90,
+.wysiwyg-color-blue110,
+.wysiwyg-color-blue120,
+.wysiwyg-color-blue130 {
+    color: var(--blue-200);
+}
+
+.wysiwyg-color-red,
+.wysiwyg-color-red70,
+.wysiwyg-color-red80,
+.wysiwyg-color-red90,
+.wysiwyg-color-red110,
+.wysiwyg-color-red120,
+.wysiwyg-color-red130 {
+    color: var(--red-200);
+}
+
+.wysiwyg-color-yellow,
+.wysiwyg-color-yellow70,
+.wysiwyg-color-yellow80,
+.wysiwyg-color-yellow90,
+.wysiwyg-color-yellow110,
+.wysiwyg-color-yellow120,
+.wysiwyg-color-yellow130 {
+    color: var(--yellow-200);
+}
+
+.wysiwyg-color-green,
+.wysiwyg-color-green70,
+.wysiwyg-color-green80,
+.wysiwyg-color-green90,
+.wysiwyg-color-green110,
+.wysiwyg-color-green120,
+.wysiwyg-color-green130 {
+    color: var(--green-200);
+}
+
+.wysiwyg-font-size-x-large {
+    font: var(--font-heading);
+}
+
+.wysiwyg-font-size-large {
+    font: var(--font-subheading);
+}
+
+.wysiwyg-font-size-medium,
+.wysiwyg-font-size-small {
+    font: var(--font-body);
+}

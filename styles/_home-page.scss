@@ -1,0 +1,82 @@
+/* ================================
+    #Hero-Area
+================================ */
+.hero {
+    align-items: center;
+    justify-content: center;
+    height: 256px;
+    background: radial-gradient(rgba(34, 33, 45, 0.2), rgba(34, 33, 45, 0.2)), url($assets-hero_pattern-png) repeat center center fixed;
+}
+
+
+
+
+
+/* ================================
+    #Quick-Actions
+================================ */
+.quick-actions {
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+
+
+
+/* ================================
+    #Category-Drawers
+================================ */
+.category-heading {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.category-heading__content {
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow-inset);
+}
+
+
+
+
+
+/* ================================
+    #Common-Questions
+================================ */
+.question-block {
+    display: none;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    -webkit-overflow-scrolling: touch;
+}
+
+.question-block--active {
+    display: flex;
+}
+
+
+
+
+
+/* ================================
+    #New-Articles-Feed
+================================ */
+.new-articles-feed {
+    padding: 1rem;
+}
+
+.new-articles-feed__article-title {
+    padding: 0 12px;
+}
+
+.new-articles-feed__article-date {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    font-size: 0.8rem;
+    font-style: italic;
+    border-bottom: 1px solid var(--gray-400);
+}

@@ -1,0 +1,34 @@
+/*
+    * Use of !important to override inline styles set by the Reel JS library.
+*/
+.reel-preloader {
+    height: 2rem !important;
+    background: repeating-linear-gradient(
+        45deg,
+        #2555d9,
+        #2555d9 1rem,
+        #7492e6 1rem,
+        #7492e6 2rem
+    );
+}
+
+.reel-preloader::after {
+    content: "Loading...";
+    padding: 1rem;
+    color: #fff;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.reel-indicator {
+    width: 2rem !important;
+    height: 0.5rem !important;
+    background-color: #2555d9 !important;
+}
+
+.reel-panning,
+.reel-panning * {
+    cursor: grabbing;
+}
