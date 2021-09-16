@@ -51,7 +51,7 @@ To avoid having to enter your Zendesk credentials every time you start your deve
 ```json
 {
   "subdomain": "erm",
-  "username": "john.doe@evoko.se/token",
+  "username": "jh@365.rm/token",
   "password": "YOUR_API_TOKEN"
 }
 ```
@@ -84,4 +84,4 @@ For deploying changes to production we use the [Zendesk GitHub integration](http
 ## Acknowledgments
 - [@vinorodrigues for the dark mode script](https://github.com/vinorodrigues/bootstrap-dark-5/blob/main/docs/bootstrap-night.md)
 - [Harry Roberts for excellent guidelines on writing CSS](https://cssguidelin.es)
-- [Evoko for their well-written theme README that I ~blatantly copied~ borrowed from](https://github.com/evoko/zendesk-theme)
+- [Evoko for their well-written theme README and development process that I ~blatantly copied~ borrowed from](https://github.com/evoko/zendesk-theme)
