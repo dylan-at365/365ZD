@@ -1,89 +1,224 @@
+/* ================================
+    #Default-Styles
+================================ */
 body {
-    background-color: #c2c2c5;
+    background-color: var(--gray-500);
 }
 
+
+
+
+
 a {
-    color: #2555d9;
+    color: var(--blue-200);
 }
 
 a:hover {
-    color: #7492e6;
+    color: var(--blue-400);
+}
+
+
+
+
+
+.row-light {
+    color: var(--gray-100);
+    background-color: var(--gray-700);
+}
+
+.row-dark {
+    background-color: var(--gray-600);
+}
+
+.row-warning {
+    color: var(--gray-100);
+    background-color: var(--yellow-300);
+    border-left: 4px solid var(--yellow-200);
+}
+
+
+
+/*
+    * These rules extend .button {} in _globals.scss
+*/
+.button {
+    color: var(--gray-700);
+    background-color: var(--blue-200);
+}
+
+.button--hollow {
+    color: var(--blue-200);
+    background-color: transparent;
+    border: 2px solid var(--blue-200);
+}
+
+.button--inactive {
+    color: var(--blue-200);
+    background-color: var(--blue-700);
+}
+
+.button--active {
+    color: var(--gray-700);
+    background-color: var(--blue-200);
+}
+
+
+
+
+
+
+.table {
+    color: var(--gray-100);
+    border-color: var(--blue-600);
+  }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    color: var(--gray-100);
+    background-color: var(--gray-600);
+}
+
+
+
+
+
+/* ================================
+    #Header-Template-Styles
+================================ */
+
+/* #Logo-Area */
+.title {
+    color: var(--gray-100);
+}
+
+
+
+
+
+.search {
+    color: var(--gray-200);
+    background-color: var(--gray-700);
+    border: 1px solid var(--gray-500);
 }
 
 /*
-Header Template Styles
-================================ */
-/* Logo Area */
-.header {
-    background-color: #fff;
+    * These rules extend .search {} in _globals.scss
+*/
+
+.search--small {
+    border: 1px solid var(--gray-500);
 }
 
-.header__title {
-    color: #22212d;
+textarea, input {
+    border: 1px solid var(--gray-500);
 }
 
+
+
+
+/* #Banner-Area */
 .banner__content {
-    background-color: #00bf6f;
+    background-color: var(--green-200);
 }
 
-.banner a {
-    color: #fff;
+.banner > a {
+    color: var(--gray-700);
 }
 
-.banner a:hover {
-    color: #00bf6f;
-    background-color: #fff;
+.banner > a:hover {
+    color: var(--green-200);
+    background-color: var(--gray-700);
 }
+
+
+
+
 
 /* =============================
-Home Page Template Start
+    #Home-Page-Template-Start
 ================================ */
-
-/*
-Quick Actions
-================================ */
-.quick_actions {
-    background-color: #eaeaeb;
-}
-
-a.card--action {
-    background-color: #fff;
-}
-
-a.canteen {
-    color: #fff;
-    background-color: #a9d2d8;
-}
-
-a.canteen:hover {
-    color: #003349;
+.card {
+    background-color: var(--gray-700);
 }
 
 /*
-Home Page Rollup Sections
+    * These rules extend .card {} in _globals.scss
+*/
+
+.card--quick-action {
+    border-top: 24px solid var(--blue-200);
+}
+
+
+
+
+
+
+/* =============================
+    #Common-Questions
 ================================ */
-.category_drawer {
-    color: #22212d;
-    background-color: #fff;
-}
-
-.category_drawer__content {
-    background-color: #eaeaeb;
-}
-
-.button {
-    color: #fff;
-    background-color: #2555d9;
+.question-block {
+    background-color: var(--gray-600);
 }
 
 
 
-.pagination li {
-    color: #fff;
-    background-color: #2555d9;
-    border: 1px solid #2555d9;
+
+
+/* =============================
+    #Request-Page
+================================ */
+ul[data-hc-pills-container] {
+    background-color: var(--gray-700);
 }
 
-.pagination li a {
-    color: #fff;
+
+
+
+
+.pagination > ul > li {
+    
+    background-color: var(--blue-200);
+}
+
+.pagination > ul > li > a {
+    color: var(--gray-700);
+}
+
+.pagination > ul > li > a:hover {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    #Footer
+================================ */
+.footer {
+    background-color: var(--blue-700);
+}
+
+.social {
+    color: var(--gray-100);
+    background-color: var(--gray-700);
+}
+
+
+
+
+
+/* =============================
+    #Canteen-Overrides
+================================ */
+.canteen-branded {
+    border-color: #a5cf4f;
+}
+
+.canteen-branded > a {
+    color: #a5cf4f;
+}
+
+.canteen-branded > a:hover {
+    color: #409f68;
 }
