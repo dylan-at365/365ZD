@@ -1,0 +1,18 @@
+/*
+    * Extend .button {} in styles-light.css & styles-dark.css
+*/
+.button {
+    display: inline-block;
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-outset);
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-time);
+}
+
+.button:hover {
+    color: var(--blue-400);
+    transition: var(--transition-time);
+}

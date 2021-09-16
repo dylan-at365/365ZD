@@ -1,0 +1,23 @@
+.heading {
+    font: var(--font-heading);
+}
+
+.heading i {
+    position: relative;
+    top: 3px;
+}
+
+.subheading {
+    font: var(--font-subheading);
+}
+
+.subheading--underline {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gray-400);
+}
+
+.subheading--small-italic {
+    padding-bottom: 16px;
+    font-size: 0.8rem;
+    font-style: italic;
+}

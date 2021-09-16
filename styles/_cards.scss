@@ -1,0 +1,23 @@
+/*
+    * Extend .card {} in styles-light.css, & styles-dark.css
+*/
+.card {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-outset);
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    scroll-margin: -1rem;
+}
+
+.card__title {
+    font: var(--font-heading);
+}
+
+.card i {
+    position: relative;
+    top: 3px;
+    padding-left: 4px;
+    font-size: 1.25rem;
+}

@@ -1,0 +1,23 @@
+.breadcrumbs-container ol {
+    list-style: none;
+}
+
+.breadcrumbs-container li {
+    display: inline-block;
+}
+
+.breadcrumbs-container li:not(li:last-of-type)::after {
+    content: "/";
+    margin: 0 4px;
+}
+
+.breadcrumbs {
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.breadcrumbs--search-results {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,32 @@
+/*
+    * When a customer submits a ticket via their email client, remove the inline styles.
+    * TODO: These are the only one's I've seen so far. Check to see what other clients do.
+*/
+.zd-comment-pre-styled * {
+    margin: inherit !important;
+    color: inherit !important;
+    background-color: inherit !important;
+    font-size: inherit !important;
+
+}
+
+/*
+    * These styles change the "CC" input field for new and existing requests
+*/
+#request_comment_body, #request_description {
+    width: 100%;
+}
+
+ul[data-hc-pills-container] li:last-child input {
+    height: 1.75rem;
+}
+
+ul[data-hc-pills-container] li[data-hc-pill="true"][aria-invalid="true"] {
+    padding: initial;
+    border: 1px solid var(--red-200);
+}
+
+.request-page__add-cc li,
+.request_cc_emails li {
+    padding: initial;
+}

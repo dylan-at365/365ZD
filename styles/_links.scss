@@ -1,0 +1,26 @@
+.link {
+    padding: 8px 0;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+.link i {
+    padding-right: 4px;
+    font-size: 1.15rem;
+}
+
+.link div {
+    display: inline-block;
+    position: relative;
+    top: -4px;
+}
+
+@media (min-width: 768px) {
+
+    .link {
+        padding: 12px 0 8px 0;
+    }
+
+}

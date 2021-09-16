@@ -1,0 +1,15 @@
+/*
+    * Extend .search {} in _header.scss
+*/
+.search {
+    width: calc(100% - 8px);
+    height: 48px;
+    padding: 0;
+    padding-left: 8px;
+
+    color: #727179;
+
+    border: 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-outset);
+}

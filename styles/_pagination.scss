@@ -1,0 +1,9 @@
+.pagination > ul > li {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-outset);
+    border-radius: var(--border-radius);    
+    text-align: center;
+    cursor: pointer;
+}

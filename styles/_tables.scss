@@ -1,0 +1,23 @@
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+  }
+
+.table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    border-bottom-width: 1px;
+}
+
+.table > tbody {
+    vertical-align: inherit;
+}
+
+.table > thead {
+    vertical-align: bottom;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
