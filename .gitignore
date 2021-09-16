@@ -1,2 +1,5 @@
-
 .zat
+.sass-cache/
+node_modules/
+package-lock.json
+style.css.map
