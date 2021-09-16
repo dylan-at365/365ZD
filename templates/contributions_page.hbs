@@ -1,30 +1,28 @@
 <!-- Serve Error Template as ZD Community is disabled -->
 <div class="container">
     <div class="row error_page">
-        <div class="col-12 error_content">
-            <div class="error-title">
+        <div class="col-12 padded-content centered-content row-dark">
+            <div class="heading">
                 Sorry, item not found
             </div>
-            <div class="error-desc">
+            <div class="subheading">
                 Please return the product to the shelf or cooler
             </div>
 
             <img src="{{asset 'sad_kiosk.svg'}}" alt="" width="196" height="196" title="(｡•́︿•̀｡)"/>
 
-            <div class="error-info">
+            <div>
                 The page you were looking for doesn't exist<br/>
                 You may have mistyped the address or the page may have moved
             </div>
         </div>
 
-        <div class="col-2"></div>
-        <div class="col-8 error_content">
-            <a href="{{page_path 'help_center'}}" class="error_button">
+        <div class="col-12 padded-content centered-content row-light">
+            <a href="{{page_path 'help_center'}}" class="button">
                 Return to the 365 HelpCenter
                 <i class="ph-arrow-u-up-left"></i>
             </a>
         </div>
-        <div class="col-2"></div>
 
     </div>
 </div>

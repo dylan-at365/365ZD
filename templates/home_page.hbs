@@ -1,406 +1,385 @@
 <!-- Start Home Page Template -->
 <div class="container"> 
 
-    <!-- Hero and Search Bar -->
-    <div class="row hero"> 
+    <!-- ================================
+        #Hero-and-Search-Bar 
+    ================================ -->
+    <section class="row hero"> 
         <div class="col-sm-3"></div>
-        <div class="col">
-            <form accept-charset="UTF-8" action="/hc/en-us/search" method="get" role="search" >
-                <input class="search" id="query" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter">
-            </form>
-        </div>
+        <form accept-charset="UTF-8" action="/hc/en-us/search" method="get" role="search" class="col">
+            <label class="label--hidden" for="search--hero">Search the Three Six Five Help Center:</label>
+            <input id="search--hero" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search">
+        </form>
         <div class="col-sm-3"></div>
-    </div>
+    </section>
 
-    <!-- Quick Actions Area -->
-    <div class="row quick-actions">
 
-        <div class="col-sm-12 col-md-4 action canteen">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002063553" class="action-content">
-                Canteen
-                <i class="ph-coffee"></i>
-            </a>
-        </div>
-        <div class="w-100"></div>
 
-        <div class="col-sm-12 col-md-2 action">
-            <a href="{{page_path 'new_request'}}" class="action-content">
-                Submit a Ticket
-                <i class="ph-rocket-launch"></i>
-            </a>
-        </div>
 
-        <div class="col-sm-12 col-md-2 action">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554" class="action-content">
-                Wing Cards
-                <i class="ph-file-text"></i>
+
+    <!-- ================================
+        #Quick-Actions
+    ================================ -->
+    <section class="row quick-actions padded-content row-dark">
+
+        <div class="col card card--quick-action canteen-branded restricted-canteen-content">
+            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002063553">
+                <div class="card__title">
+                    Canteen
+                </div>
+                <p class="card_body">
+                    Access all of the Canteen-specific content here.
+                </p>
+                
             </a>
         </div>
 
-        <div class="col-sm-12 col-md-2 action">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004439774" class="action-content">
-                Article Index
-                <i class="ph-text-align-left"></i>
+        <div class="col card card--quick-action">
+            <a href="{{page_path 'new_request'}}">
+                <div class="card__title">
+                    Submit a Ticket
+                </div>
+                <p class="card__body">
+                    Open a new ticket with our world-class Support team.
+                </p>
             </a>
         </div>
 
-        <div class="col-sm-12 col-md-2 action internal-header">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002064053" class="action-content">
-                Training Corner
-                <i class="ph-medal"></i>
+        <div class="col card card--quick-action">
+            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554">
+                <div class="card__title">
+                    Wing Cards
+                </div>
+                <p class="card__body">
+                    Browse our collection of short, instructional, how-to cards you can post in your market.
+                </p>
             </a>
         </div>
 
-    </div>
+        <div class="col card card--quick-action">
+            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004439774">
+                <div class="card__title">
+                    Article Index
+                </div>
+                <p class="card__body">
+                    Find all the information you'll need about any of our products in its master article here.
+                </p>
+            </a>
+        </div>
 
-    <!-- Start Category Area -->
+        <div class="col card card--quick-action restricted-internal-content">
+            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002064053">
+                <div class="card__title">
+                    Training Corner
+                </div>
+                <p class="card__body">
+                    Take all the past and current Training Certification Courses right here. Your journey to higher knowledge begins!
+                </p>
+            </a>
+       </div>
+    </section>
 
-    <!-- Internal Categories -->
-    <div class="row rollup-header internal-header">
-        <div class="col-12 internal-rollup category-rollup">
-            365 Internal Department Categories
+
+
+
+
+    <!-- ================================
+        #Category-Drawers
+    ================================ -->
+
+    <!-- ================================
+        #Internal-Categories
+    ================================ -->
+    <div class="row category-heading row-light restricted-internal-content js-expand-category">
+        <div class="col-12 heading">
             <i class="ph-plus-bold"></i>
+            Internal Categories
         </div>
     </div>
 
-    <!-- Internal Content -->
-    <div class="row rollup-content internal-content" style="display: none;">
+    <div class="row category-heading__content row-dark restricted-internal-content" style="display: none;">
+        <a href="#" class="col-sm-12 col-md-3 col-lg-2 button">
+            Implementation
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="#" class="rollup-button_content">
-                Implementation
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="#" class="col-sm-12 col-md-3 col-lg-2 button">
+            IT
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="#" class="rollup-button_content">
-                IT
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/4403373458327" class="col-sm-12 col-md-3 col-lg-2 button">
+            Marketing
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/4403373458327" class="rollup-button_content">
-                Marketing
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360003728294" class="col-sm-12 col-md-3 col-lg-2 button">
+            SalesOps
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360003728294" class="rollup-button_content">
-                SalesOps
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="#" class="col-sm-12 col-md-3 col-lg-2 button">
+            Security
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="#" class="rollup-button_content">
-                Security
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001965013" class="rollup-button_content">
-                Support
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001965013" class="col-sm-12 col-md-3 col-lg-2 button">
+            Support
+        </a>
     </div>
 
 
-    <!-- Hardware Categories -->
-    <div class="row rollup-header hardware-header">
-        <div class="col-12 hardware-rollup category-rollup">
+
+
+
+    <!-- ================================
+        #Hardware-Categories
+    ================================ -->
+    <div class="row category-heading row-light js-expand-category">
+        <div class="col-12 heading">
+            <i class="ph-plus-bold"></i>
             Hardware Categories
-            <i class="ph-plus-bold"></i>
         </div>
     </div>
 
     <!-- Hardware Content -->
-    <div class="row rollup-content hardware-content" style="display: none;">
+    <div class="row category-heading__content row-dark" style="display: none;">
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947034" class="col-sm-12 col-md-3 col-lg-2 button">
+            365Beacon
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947034" class="rollup-button_content">
-                365Beacon
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964853" class="col-sm-12 col-md-3 col-lg-2 button">
+            AirVend
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964853" class="rollup-button_content">
-                AirVend
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004440794" class="col-sm-12 col-md-3 col-lg-2 button">
+            Dining
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004440794" class="rollup-button_content">
-                Dining
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946554" class="col-sm-12 col-md-3 col-lg-2 button">
+            Legacy Kiosks
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946554" class="rollup-button_content">
-                Legacy Kiosks
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964913" class="col-sm-12 col-md-3 col-lg-2 button">
+            Market Security
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964913" class="rollup-button_content">
-                Market Security
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964433" class="col-sm-12 col-md-3 col-lg-2 button">
+            NanoMarket
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964433" class="rollup-button_content">
-                NanoMarket
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947114" class="col-sm-12 col-md-3 col-lg-2 button">
+            PicoPlatform
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947114" class="rollup-button_content">
-                PicoPlatform
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964373" class="col-sm-12 col-md-3 col-lg-2 button">
+            V5 Kiosks
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964373" class="rollup-button_content">
-                V5 Kiosks
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004802874" class="col-sm-12 col-md-3 col-lg-2 button">
+            CK Legacy
+        </a>
     </div>
 
-    <!-- Software Categories -->
-    <div class="row rollup-header software-header">
-        <div class="col-12 software-rollup category-rollup">
-            Software Categories
+
+
+
+
+    <!-- ================================
+        #Software-Categories
+    ================================ -->
+    <div class="row category-heading row-light js-expand-category">
+        <div class="col-12 heading">
             <i class="ph-plus-bold"></i>
+            Software Categories
         </div>
     </div>
 
     <!-- Software Content -->
-    <div class="row rollup-content software-content" style="display: none;">
+    <div class="row category-heading__content row-dark" style="display: none;">
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964793" class="col-sm-12 col-md-3 col-lg-2 button">
+            ADM
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964793" class="rollup-button_content">
-                ADM
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947074" class="col-sm-12 col-md-3 col-lg-2 button">
+            Mobile
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947074" class="rollup-button_content">
-                Mobile
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946914" class="col-sm-12 col-md-3 col-lg-2 button">
+            SmartHQ
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946914" class="rollup-button_content">
-                SmartHQ
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964993" class="col-sm-12 col-md-3 col-lg-2 button">
+            Social Feedia
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964993" class="rollup-button_content">
-                Social Feedia
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002185954" class="rollup-button_content">
-                Release Notes
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002185954" class="col-sm-12 col-md-3 col-lg-2 button">
+            Release Notes
+        </a>
     </div>
 
-    <!-- Other Categories -->
-    <div class="row rollup-header other-header">
-        <div class="col-12 other-rollup category-rollup">
-            Sales Materials, CK, and International
+
+
+
+
+    <!-- ================================
+        #Other-Categories
+    ================================ -->
+    <div class="row category-heading row-light js-expand-category">
+        <div class="col-12 heading">
             <i class="ph-plus-bold"></i>
+            Sales Materials and International
         </div>
     </div>
 
     <!-- Other Content -->
-    <div class="row rollup-content other-content" style="display: none;">
+    <div class="row category-heading__content row-dark" style="display: none;">
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001965073" class="col-sm-12 col-md-3 col-lg-2 button">
+            Additional Docs
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001965073" class="rollup-button_content">
-                Additional Docs
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004325294" class="col-sm-12 col-md-3 col-lg-2 button">
+            Grand Openings
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004802874" class="rollup-button_content">
-                CK Legacy
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964973" class="col-sm-12 col-md-3 col-lg-2 button">
+            International
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004325294" class="rollup-button_content">
-                Grand Openings
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002841913" class="col-sm-12 col-md-3 col-lg-2 button">
+            Sales Material
+        </a>
 
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964973" class="rollup-button_content">
-                International
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004439774" class="rollup-button_content">
-                Master Articles
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002841913" class="rollup-button_content">
-                Sales Material
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
-
-        <div class="col-sm-12 col-md-3 col-lg-2 rollup-button">
-            <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002716534" class="rollup-button_content">
-                Things to Know!
-                <i class="ph-caret-right"></i>
-            </a>
-        </div>
+        <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002716534" class="col-sm-12 col-md-3 col-lg-2 button">
+            Things to Know!
+        </a>
     </div>
 
 
-    <!-- Common Questions -->
-    <div class="row common_questions qc_top">
-        <div class="col-12 common_questions-header">Browse common questions</div>
 
-        <div class="col-sm col-md-3 col-lg-2 questions_category-button qc_active">Finance</div>
-        <div class="col-sm col-md-3 col-lg-2 questions_category-button">Products</div>
-        <div class="col-sm col-md-3 col-lg-2 questions_category-button">General Questions</div>
+
+
+    <!-- ================================
+        #Common-Questions
+    ================================ -->
+    <div class="row padded-content row-light">
+        <div class="col-12 heading">Browse common questions</div>
+
+        <a href="#Finance" class="col-sm col-md-3 col-lg-2 button button--active js-switch-question">
+            Finance
+        </a>
+
+        <a href="#Products" class="col-sm col-md-3 col-lg-2 button button--inactive js-switch-question">
+            Products
+        </a>
+
+        <a href="#General" class="col-sm col-md-3 col-lg-2 button button--inactive js-switch-question">
+            General Questions
+        </a>
     </div>
 
-    <!-- Question Block -->
-    <div class="row common_questions qc_blocks qc_blocks-active" data-question-type="Finance">
-        <div class="col-sm col-md-3 qc_block">
-            <div class="qc_block-title">Disbursements</div>
-            <ul class="qc_block-questions">
+
+
+
+
+    <!-- ================================
+        #Finance-Questions
+    ================================ -->
+    <div id="Finance" class="row question-block question-block--active padded-content">
+
+        <div class="col-sm col-md-3 card">
+            <div class="subheading subheading--underline">Disbursements</div>
+
+            <ul>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9K4FA0RVV2CS64SCSFC3T">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9K4FA0RVV2CS64SCSFC3T" class="link">
                         Can I access my disbursement report online?
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KD0M0D087KWA6SWTAYJM">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KD0M0D087KWA6SWTAYJM" class="link">
                         Why are cash fundings deducted from my GMA disbursement?
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KPZDYEHJ929D7144JY79">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KPZDYEHJ929D7144JY79" class="link">
                         Why are past due invoices being deducted from my disbursement?
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KXJ61B0KVX51682S25JT">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9KXJ61B0KVX51682S25JT" class="link">
                         If my kiosk is offline, why can a sale still go through and not appear on my disbursement?
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9M57S514M9TVRA8K3YB11">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9M57S514M9TVRA8K3YB11" class="link">
                         Is the column labeled "Taxes" on my GMA disbursement included in my disbursement total?
                     </a>
                 </li>
-                <li class="qc_block-more">
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007">
+
+                <li>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007" class="button button--dark">
                         See more
-                        <i class="ph-dots-three-bold"></i>
                     </a>
                 </li>
             </ul>
+
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">Invoices &amp; Payments</div>
-            <ul class="qc_block-questions">
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">Invoices &amp; Payments</div>
+
+            <ul>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9A23BMFYSHXRJNNMM0HH3">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9A23BMFYSHXRJNNMM0HH3" class="link">
                         How can I pay my bill?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9ESA6C8Q2QZMFV16PN3WB">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9ESA6C8Q2QZMFV16PN3WB" class="link">
                         Why am I getting a list of charges due with no details?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9F53GK3KBC1G88CF8F4CT">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9F53GK3KBC1G88CF8F4CT" class="link">
                         Can I get an invoice now for an order I just placed or will place soon?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9H2VXV3RSCXD5NX6M1BDX">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9H2VXV3RSCXD5NX6M1BDX" class="link">
                         I paid my transfer fee, what are the next steps?
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">Customer Accounts/Charges</div>
-            <ul class="qc_block-questions">
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">Customer Accounts/Charges</div>
+
+            <ul>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9JX3ZP2RJWXWJY2PX1KMR">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9JX3ZP2RJWXWJY2PX1KMR" class="link">
                         What does GMA stand for?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MBJABR0VN58KBQE9TA6F">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MBJABR0VN58KBQE9TA6F" class="link">
                         Does 365 pay the sales tax for my company or are we responsible for paying the sales tax?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MNSR20MWQCP63TE75QZM">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MNSR20MWQCP63TE75QZM" class="link">
                         What are the charges on my credit card for?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MH2K3KZGM1SX88WP46KK">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9MH2K3KZGM1SX88WP46KK" class="link">
                         If I fund a customer’s account, why does it show as a deduction in the adjustment column?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9JPGP4CQHHVQFSENNBJNR">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404430474007-Finance-FAQ-s#h_01FAR9JPGP4CQHHVQFSENNBJNR" class="link">
                         Can you tell me what the adjustment on my GMA report is for?
                     </a>
                 </li>
@@ -408,164 +387,155 @@
         </div>
     </div>
 
-    <!-- Question Block -->
-    <div class="row common_questions qc_blocks" data-question-type="Products">
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">ADM</div>
-            <ul class="qc_block-questions">
+
+
+
+
+    <!-- ================================
+        #Products-Questions
+    ================================ -->
+    <div id="Products" class="row question-block padded-content">
+
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">ADM</div>
+
+            <ul>
                 <li>
-                    <a href="https://365servicedesk.atlassian.net/servicedesk/customer/portal/15">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://365servicedesk.atlassian.net/servicedesk/customer/portal/15" class="link">
                         Do you offer any training on ADM? Where can I sign up?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360034907654">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360034907654" class="link">
                         How do Pick Lists work?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360017588213">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360017588213" class="link">
                         How can I complete a bulk price change?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360055590994">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360055590994" class="link">
                         What are some of the most common reports for sales and reconciliation in ADM?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360026457834">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360026457834" class="link">
                         How do I create a promotion?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404730014999">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/4404730014999" class="link">
                         What web browser is ADM best viewed in?
                     </a>
                 </li>
-                <li class="qc_block-more">
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360051886154">
+                <li>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360051886154" class="button button--dark">
                         See more
-                        <i class="ph-dots-three-bold"></i>
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">PicoCooler</div>
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">PicoCooler</div>
+
             <ul class="qc_block-questions">
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGR7Y41527DCQMWM94KEKYG">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGR7Y41527DCQMWM94KEKYG" class="link">
                         How do I enter service mode on my cooler and Pico?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZ6FG6NG8VW1J32J96AZ9">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZ6FG6NG8VW1J32J96AZ9" class="link">
                         Does PicoCooler have ethernet?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGR7C2Y0Y7HJFNVFJTVF6AR">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGR7C2Y0Y7HJFNVFJTVF6AR" class="link">
                         My PicoCooler says Health Safety Checks are engaged, how do I clear these?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZ6FG6NG8VW1J32J96AZ9">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZ6FG6NG8VW1J32J96AZ9" class="link">
                         What type of connectivity does the PicoCooler offer?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZM3A71HWKVWQ3H53P6WS">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642-PicoCooler-FAQs-External#h_01FAGQZM3A71HWKVWQ3H53P6WS" class="link">
                         Does Pico offer Verizon network capabilities?
                     </a>
                 </li>
-                <li class="qc_block-more">
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642">
+                <li>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500001335642" class="button button--dark">
                         See more
-                        <i class="ph-dots-three-bold"></i>
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">365Beacon</div>
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">365Beacon</div>
+
             <ul class="qc_block-questions">
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFT0H3HW8JSZFPDPJME0TC">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFT0H3HW8JSZFPDPJME0TC" class="link">
                         What is the 365Beacon?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFT6G7NN5B5F1WBFR2PP9P">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFT6G7NN5B5F1WBFR2PP9P" class="link">
                         How do you install the Beacon?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFTH4B376T4BDEG99NSWGV">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFTH4B376T4BDEG99NSWGV" class="link">
                         Where should I put the Beacon?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFV37C4QSE1M1PYSVTTHVM">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFV37C4QSE1M1PYSVTTHVM" class="link">
                         What are the pros and cons of having multiple Beacons?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFVY3H81NXT0XBG6RTGMH4">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154-365Beacon-FAQ#h_01FAGFVY3H81NXT0XBG6RTGMH4" class="link">
                         Can a Beacon be placed in a marketplace with an existing kiosk or tablet?
                     </a>
                 </li>
-                <li class="qc_block-more">
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154">
+                <li>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360045117154" class="button button--dark">
                         See more
-                        <i class="ph-dots-three-bold"></i>
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">Network &amp; Connectivity</div>
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">Network &amp; Connectivity</div>
+
             <ul class="qc_block-questions">
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="link">
                         Where is the network documentation for my product?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500009385262-365-FAQ-s#h_01FAGDJWR2FJJWW4ARD11TCXVN">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500009385262-365-FAQ-s#h_01FAGDJWR2FJJWW4ARD11TCXVN" class="link">
                         What do I do if my kiosk goes offline?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360038455853-ADM-Dashboards-and-Notifications-Guide">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360038455853-ADM-Dashboards-and-Notifications-Guide" class="link">
                         Can I get offline alerts for my devices?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500009385262-365-FAQ-s#h_01FAGDK650HY4WCC4BZ4Y83PTX">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/1500009385262-365-FAQ-s#h_01FAGDK650HY4WCC4BZ4Y83PTX" class="link">
                         Do the Gen3 and NanoMarket kiosks have NFC capability?
                     </a>
                 </li>
@@ -573,51 +543,53 @@
         </div>
     </div>
 
-    <!-- Question Block -->
-    <!-- Hardware Block -->
-    <div class="row common_questions qc_blocks" data-question-type="General Questions">
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">Market Management</div>
+
+
+
+
+    <!-- ================================
+        #General-Questions
+    ================================ -->
+    <div id="General" class="row question-block padded-content">
+        <div class="col-sm-12 col-md-3 card">
+
+            <div class="subheading subheading--underline">Market Management</div>
             <ul class="qc_block-questions">
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360036077174">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360036077174" class="link">
                         Can we use key fobs (market cards) in the market? How does it work?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554" class="link">
                         Do you have signage we can display in the market?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554" class="link">
                         Where can I find flyers to post around my market that will show customers how to use a kiosk?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002841913">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002841913" class="link">
                         Do you have any sales information about your products?
                     </a>
                 </li>
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360052872353">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360052872353" class="link">
                         Are there any recommended best practices?
                     </a>
                 </li>
             </ul>
         </div>
 
-        <div class="col-sm-12 col-md-3 qc_block">
-            <div class="qc_block-title">Misc</div>
+        <!-- Question Block -->
+        <div class="col-sm-12 col-md-3 card">
+            <div class="subheading subheading--underline">Misc</div>
+
             <ul class="qc_block-questions">
                 <li>
-                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360039553133">
-                        <i class="ph-caret-right"></i>
+                    <a href="https://help.365retailmarkets.com/hc/en-us/articles/360039553133" class="link">
                         Where can I find details about the Loyalty Program?
                     </a>
                 </li>
@@ -626,35 +598,42 @@
     </div>
 
 
-    <!-- New Articles Feed -->
-    <div class="row new-articles-feed">
-        <div class="col-12 new_articles-header">New Articles</div>
 
-        <a href="#" class="col-12 new_articles-title">
+
+
+    <!-- ================================
+        #New-Articles-Feed
+    ================================ -->
+    <section class="row new-articles-feed row-light">
+        <div class="col-12 heading">New Articles</div>
+
+        <a href="#" class="col-12 new-articles-feed__article-title link">
         </a>
-        <div class="col-12 new_articles-date">
+        <div class="col-12 subheading--small-italic js-article-date">
         </div>
 
-        <a href="#" class="col-12 new_articles-title">
+        <a href="#" class="col-12 new-articles-feed__article-title link">
         </a>
-        <div class="col-12 new_articles-date">
+        <div class="col-12 subheading--small-italic js-article-date">
         </div>
 
-        <a href="#" class="col-12 new_articles-title">
+        <a href="#" class="col-12 new-articles-feed__article-title link">
         </a>
-        <div class="col-12 new_articles-date">
+        <div class="col-12 subheading--small-italic js-article-date">
         </div>
 
-        <a href="#" class="col-12 new_articles-title">
+        <a href="#" class="col-12 new-articles-feed__article-title link">
         </a>
-        <div class="col-12 new_articles-date">
+        <div class="col-12 subheading--small-italic js-article-date">
         </div>
 
-        <a href="#" class="col-12 new_articles-title">
+        <a href="#" class="col-12 new-articles-feed__article-title link">
         </a>
-        <div class="col-12 new_articles-date">
+        <div class="col-12 subheading--small-italic js-article-date">
         </div>
-    </div>
+    </section>
 
 </div>
+
+<script src="{{asset 'home-page-scripts.js'}}"></script>
 <!-- End Home Page Template -->

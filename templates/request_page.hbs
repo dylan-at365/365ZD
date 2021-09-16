@@ -2,24 +2,23 @@
 <div class="container">
 
     <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container">
+    <div class="row breadcrumbs-container row-dark">
         <div class="col-12">
             {{breadcrumbs}}
         </div>
     </div>
 
     <!-- Ticket Header/Subject and Closed Notification -->
-    <div class="row">
-        {{#if comment_callout}}
-            <div class="col-12 request_followup">
-                <i class="ph-warning"></i>
-                <div>{{comment_callout}}</div>
+    {{#if comment_callout}}
+        <div class="row padded-content row-warning">
+            <div class="col-12">
+                <div><i class="ph-warning"></i> {{comment_callout}}</div>
             </div>
-		{{/if}}
-    </div>
+        </div>
+    {{/if}}
 
-    <div class="row request_subject">
-        <div class="col-12">
+    <div class="row padded-content--no-gap row-light">
+        <div class="col-12 heading">
             {{request.subject}}
         </div>
         <div class="col-12">
@@ -29,124 +28,129 @@
 
     <!-- Commenter Info -->
     {{#each comments}}
-        <div class="row request_header">
+        <div class="row padded-content row-dark">
         
-            <div class="col-3 col-sm-2 col-md-2 request_header-author_image">
+            <div class="col-3 col-sm-2 col-md-2">
                 <img src="{{author.avatar_url}}" alt="User avatar"/>
             </div>
 
-            <div class="col-9 col-sm-10 col-md-10 request_header-author_info">
-                <a href="{{link 'user_profile'}}">{{author.name}}</a>
+            <div class="col-9 col-sm-10 col-md-10">
+                <a href="{{link 'user_profile'}}" class="subheading">{{author.name}}</a>
                 {{#if author.agent}}
-                    <div class="request_header-author_title">365 Support</div>
+                    <div class="">365 Support</div>
                 {{/if}}
-                <div class="request_header-author_date">{{date created_at timeago=true}}</div>
+                <div class="subheading--small-italic">{{date created_at timeago=true}}</div>
             </div>
         </div>
 
         <!-- Ticket Content -->
-        <div class="row request_body">
-            <div class="col-12 request_body-content">
+        <div class="row padded-content row-light">
+            <div class="col-12">
                 {{body}}
             </div>
 
             {{#if attachments}}
-            <div class="col-12 request_body-attachments_title">Attachments:</div>
+            <div class="col-12 subheading--underline">Attachments:</div>
                 {{#each attachments}}
-                    <div class="col-3 request_body-attachments">
-                        <div class="request_body-attachment_item">
-                            <a class="request_body-attachment_item-name" href="{{url}}" target="_blank">{{name}}</a>
-                            <div class="request_body-attachment_item-size">{{size}}</div>
-                        </div>
+                    <div class="col-12">
+                        <a class="link" href="{{url}}" target="_blank">{{name}}</a>
+                        <div class="subheading--small-italic">{{size}}</div>
                     </div>
                 {{/each}}
             {{/if}}
         </div>
     {{/each}}
 
-
 </div>
 
 <!-- In-ticket reply area -->
-{{#form 'comment' class='container ticket_reply'}}
-    <div class="row">
-        <div class="col-12 ticket_reply-title">
+{{#form 'comment' class='container request-container'}}
+
+    <div class="row padded-content--no-gap row-light">
+        <div class="col-12 heading">
             {{t 'add_to_conversation'}}
         </div>
     </div>
 
-    <div class="row">
+    <div class="row padded-content row-dark">
         {{#if help_center.request_ccs_enabled}}
-            <div class="col-12 ticket_reply-emailcc">
-                {{token_field 'ccs' class='ticket_reply-emailcc_input'}}
+            <div class="col-12 request-page__add-cc">
+                {{token_field 'ccs'}}
             </div>
         {{/if}}
     </div>
 
-    <div class="row">
-        <div class="col-12 ticket_reply-text_input">
+    <div class="row padded-content row-light comment-container">
+        <div class="col-12">
             {{textarea 'body' rows='7'}}
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12 ticket_reply-attachments">
+    <div class="row padded-content row-light">
+        <div class="col-12">
             {{#if upload}}
                 {{upload}}
             {{/if}}
         </div>
     </div>
 
-    <div class="row ticket_reply-controls">
+    <div class="row padded-content row-light">
 
         <div class="col-3 col-sm-12">
             {{#if request.can_be_marked_as_solved}}
+
                 {{checkbox 'mark_as_solved'}}
-                <div class="ticket_reply-controls_mas mark-as-solved" data-solve-translation="{{t 'mark_as_solved'}}" data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}">
+
+                <div 
+                    class="mark-as-solved" 
+                    data-solve-translation="{{t 'mark_as_solved'}}" 
+                    data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}"
+                >
                     {{t 'mark_as_solved'}}
                 </div>
+
             {{/if}}
         </div>
         
         <div class="col-3 col-sm-12">
-            <div class="ticket_reply-controls_submit {{#validate 'body'}}hide{{/validate}}">
-                {{input type='submit'}}
+            <div>
+                {{input type='submit' class="button {{#validate 'body'}}button--inactive{{/validate}}"}}
             </div>
         </div>
     </div>
 {{/form}}
 
 <!-- Ticket details -->
-<div class="container ticket_details">
-    <div class="row">
-        <div class="col-12 ticket_details-title">
+<div class="container">
+    <div class="row padded-content row-dark">
+        <div class="col-12 heading">
             {{t 'ticket_details'}}
         </div>
     </div>
 
     {{#if request.followup_source_id}}
-        <div class="row">
-            <dl class="col-12 ticket_details-content">
+        <div class="row padded-content row-dark">
+            <dl class="col-12">
                 <dt>{{t 'followup'}}</dt>
                 <dd>{{link 'request' id=request.followup_source_id}}</dd>
             </dl>
         </div>
     {{/if}}
 
-    <div class="row">
-        <dl class="col-12 ticket_details-content">
-            <dt>{{t 'requester'}}</dt>
+    <div class="row padded-content row-dark">
+        <dl class="col-12">
+            <dt class="subheading">{{t 'requester'}}</dt>
             <dd>{{request.requester.name}}</dd>
 
-            <dt>{{t 'created'}}</dt>
+            <dt class="subheading">{{t 'created'}}</dt>
             <dd>{{date request.created_at}}</dd>
 
-            <dt>{{t 'last_activity'}}</dt>
+            <dt class="subheading">{{t 'last_activity'}}</dt>
             <dd>{{date request.updated_at}}</dd>
 
             <!-- A "collaborator" is someone who is CC'd on the ticket -->
             {{#if collaborators}}
-                <dt>{{t 'ccs'}}</dt>
+                <dt class="subheading">{{t 'ccs'}}</dt>
                 <dd>
                     <ul class="request-collaborators">
                         {{#each collaborators}}
@@ -156,40 +160,37 @@
                 </dd>
             {{/if}}
         </dl>
-    </div>
 
-    <!-- Maybe this part is for agents? -->
-    <div class="row">
-        <dl class="col-12 ticket_details-content">
+        <dl class="col-12">
             {{#if assignee}}
-                <dt>{{t 'assignee'}}</dt>
+                <dt class="subheading">{{t 'assignee'}}</dt>
                 <dd>
                     {{assignee.name}}
                 </dd>
             {{/if}}
 
-            <dt>{{t 'id'}}</dt>
+            <dt class="subheading">{{t 'id'}}</dt>
             <dd>#{{request.id}}</dd>
 
             {{#form 'organization' id='request-organization'}}
-                <dt>{{t 'organization'}}</dt>
+                <dt class="subheading">{{t 'organization'}}</dt>
                 <dd>{{select 'organization'}}</dd>
             {{/form}}
 
             {{#if group}}
-                <dt>{{t 'group'}}</dt>
+                <dt class="subheading">{{t 'group'}}</dt>
                 <dd>
                     {{group.name}}
                 </dd>
             {{/if}}
 
-            <dt>{{t 'status'}}</dt>
+            <dt class="subheading">{{t 'status'}}</dt>
             <dd>
                 {{request.status_name}}
             </dd>
 
             {{#if request.type}}
-                <dt>{{t 'type'}}</dt>
+                <dt class="subheading">{{t 'type'}}</dt>
                 <dd>
                     {{request.type_name}}
                     {{#is request.type 'task'}}
@@ -199,14 +200,14 @@
             {{/if}}
 
             {{#if request.priority}}
-                <dt>{{t 'priority'}}</dt>
+                <dt class="subheading">{{t 'priority'}}</dt>
                 <dd>
                     {{request.priority_name}}
                 </dd>
             {{/if}}
 
             {{#each custom_fields}}
-                <dt>{{title}}</dt>
+                <dt class="subheading">{{title}}</dt>
                 <dd>
                     {{value}}
                 </dd>

@@ -2,41 +2,43 @@
 <div class="container">
 
     <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container">
+    <div class="row breadcrumbs-container row-dark">
         <div class="col-12">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row subscriptions-header">
-        <div class="col-12 subscriptions-info">A list of articles you've saved for future reference</div>
+    <div class="row padded-content row-light">
+        <div class="col-12 heading">A list of articles you've saved for future reference</div>
     </div>
 
 
     {{#if subscriptions}}
-        <div class="row">
-            <ul class="col-12 subscriptions-list">
+        <div class="row table-responsive">
+            <table class="col-12 row-light table table-striped">
 
                 {{#each subscriptions}}
-                    <li>
-                        <a href="{{url}}">
+                    <tr>
+                        <td>
+                        <a href="{{url}}" class="link">
                             {{title}}
                         </a>
-                    </li>
+                        </td>
+                    </tr>
                 {{/each}}
-            </ul>
+            </table>
         </div>
 
     {{else}}
         <div class="row">
-            <div class="col-12 subscriptions-info">
+            <div class="col-12">
                 You haven't saved anything!<br/>
 				Did you know you can save your favorite resources? Select the "Follow" button in any article or category and we'll keep it right here for you.
             </div>
         </div>
     {{/if}}
 
-    <div class="row pagination_container">
+    <div class="row padded-content centered-content row-light">
         <div class="col-12 col-sm-6">
             {{pagination}}
         </div>
