@@ -105,39 +105,4 @@ $(document).ready(function() {
   
     // End borrowed Zendesk scripts
 
-
-
-
-
-    // Disable Submit button if text area is empty
-    if ( $( '.request-container .comment-container' ) && $( '.request-container .comment-container' ).val() === '') {
-        $( '.request-container input.button' ).disabled = true;
-    }
-
-    $( '#request_description' ).change( function() {
-        if ( !$.trim( $( '#request_description' ).val()) ) {
-            $( '.request_body footer input' ).prop( 'disabled', true );
-            $( '#request_description_hint' ).css( 'color', '#ff4c5b');
-        } else {
-            $( '.request_body footer input' ).prop( 'disabled', false );
-            $( '#request_description_hint' ).css( 'color', '#a7a7a7');
-        }
-    });
-
-    // Also do the same for the in-ticket reply
-    $( '.button--inactive input' ).prop( 'disabled', true );
-
-    $( '#request_comment_body' ).change( function() {
-        if ( !$.trim( $( '#request_comment_body' ).val()) ) {
-            $( '.ticket_reply-controls_submit input' ).prop( 'disabled', true );
-        } else {
-            $( '.ticket_reply-controls_submit input' ).prop( 'disabled', false );
-        }
-    });
-
-    // Hide the "Internal Support" links in the User Profile page if not Agent
-    if (HelpCenter.user.role == 'agent') {
-        $( 'div.internal' ).show();
-    };
-
 });
