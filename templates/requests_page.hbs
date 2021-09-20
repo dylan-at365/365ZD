@@ -16,18 +16,18 @@
     </div>
 
     <!-- Ticket Search/Filter -->
-    {{#form 'requests_filter' class="row padded-content row-dark"}}
+    {{#form 'requests_filter' class="row padded-content row-dark requests-filter"}}
 
         <label class="col-12 label--hidden" for="ticket-search">Search through your support tickets:</label>
         <input type="search" name="query" id="ticket-search" value="" placeholder="&#8981; Search tickets" aria-required="false" class="col-12 search search--small">
 
-        {{label 'status' for='request-status-select' class='col-1'}}
-        {{select 'status' id='request-status-select' class='col-3'}}
+        {{label 'status' for='request-status-select' class='col-sm-12 col-md-1'}}
+        {{select 'status' id='request-status-select' class='col-sm-12 col-md-3'}}
 
         {{#if help_center.multiple_organizations_enabled}}
 
-            {{label 'organization' for='request-organization-select' class='col-1'}}
-            {{select 'organization' id='request-organization-select' class='col-3'}}
+            {{label 'organization' for='request-organization-select' class='col-sm-12 col-md-1'}}
+            {{select 'organization' id='request-organization-select' class='col-sm-12 col-md-3'}}
 
             {{subscribe class="col-3 button"}}
 
