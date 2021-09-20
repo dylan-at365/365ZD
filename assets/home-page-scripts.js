@@ -32,9 +32,9 @@ $(document).ready(function() {
 
     // Add or remove our element based on the result above
     if ( orgCheck == false ) {
-        $( 'div.restricted-canteen-content' ).remove();
+        $( 'div.js-restricted-canteen-content' ).remove();
     } else if ( orgCheck == true ) {
-        $( 'div.restricted-canteen-content' ).show();
+        $( 'div.js-restricted-canteen-content' ).show();
     };
 
 
@@ -42,18 +42,18 @@ $(document).ready(function() {
 
 
 
-/* 
-    Show Internal Category if 365 user logged in
-*/
+    /* 
+        Show Internal Category if 365 user logged in
+    */
     if ( HelpCenter.user.organizations[0] === undefined ) {
-        $( '.restricted-internal-content' ).remove();
+        $( '.js-restricted-internal-content' ).remove();
 
     } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' ) {
         console.log('365RM User');
-        //$( '.restricted-internal-content' ).show();
+        //$( '.js-restricted-internal-content' ).show();
 
     } else {
-        $( '.restricted-internal-content' ).remove();
+        $( '.js-restricted-internal-content' ).remove();
     };
 
 
