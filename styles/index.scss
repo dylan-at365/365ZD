@@ -1,8 +1,11 @@
+// Structure & Layout
 @import "grid";
 @import "variables";
 @import "overrides";
 @import "zendesk-overrides";
 @import "layout";
+
+// Components & Elements
 @import "breadcrumbs";
 @import "buttons";
 @import "cards";
@@ -12,9 +15,17 @@
 @import "search";
 @import "tables";
 @import "typography";
+
+// Guide Template Specific
 @import "header";
 @import "home-page";
 @import "articles";
-@import "request-page";
+@import "requests";
+@import "search-results";
 @import "footer";
+
+// Article Utilities
+@import "callouts";
+
+// Third-Party Libraries
 @import "reel";
