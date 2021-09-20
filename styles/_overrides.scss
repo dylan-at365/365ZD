@@ -1,7 +1,6 @@
 /* ================================
     #Override-Styles
 ================================ */
-
 * {
     box-sizing: border-box;
 }
@@ -73,6 +72,15 @@ button:hover {
 
 
 
+label {
+    line-height: inherit;
+}
+
+select {
+    min-height: 37px;
+    border: 2px solid var(--gray-500);
+    border-radius: var(--border-radius);
+}
 
 textarea:focus, input:focus, select:focus {
     outline: 1px solid #22212d;
