@@ -10,9 +10,9 @@
 
     <!-- Ticket Header/Subject and Closed Notification -->
     {{#if comment_callout}}
-        <div class="row padded-content row-warning">
-            <div class="col-12">
-                <div><i class="ph-warning"></i> {{comment_callout}}</div>
+        <div class="row">
+            <div class="col-12 banner-callout banner-callout__warning">
+                <div>{{comment_callout}}</div>
             </div>
         </div>
     {{/if}}
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <div class="row padded-content row-dark">
+    <div class="row padded-content row-light">
         {{#if help_center.request_ccs_enabled}}
             <div class="col-12 request-page__add-cc">
                 {{token_field 'ccs'}}
@@ -215,3 +215,5 @@
         </dl>
     </div>
 </div>
+
+<script src="{{asset 'request-scripts.js'}}"></script>
