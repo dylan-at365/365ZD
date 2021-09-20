@@ -1,0 +1,11 @@
+.search-filters {
+    display: flex;
+    column-gap: 1rem;
+    overflow: auto hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.search-filters > li {
+    display: inline-block;
+    white-space: nowrap;
+}
