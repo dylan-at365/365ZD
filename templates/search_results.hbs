@@ -47,13 +47,13 @@
         <div class="col-12">
             {{#if type_filters}}
                 <div>Filter results:</div>
-                <ul>
+                <ul class="search-filters">
                     {{#each type_filters}}
-                        <li style="display: inline-block;">
+                        <li>
                             {{#if selected}}
-                                <a href="{{url}}" class="button">
+                                <a href="{{url}}" class="button button--active">
                             {{else}}
-                                <a href="{{url}}" class="button">
+                                <a href="{{url}}" class="button button--inactive">
                             {{/if}}
 
                             <span>{{name}}</span>
@@ -66,13 +66,13 @@
 
         <div class="col-12">
             {{#if subfilters}}
-                <ul>
+                <ul class="search-filters">
                     {{#each subfilters}}
                         <li>
                             {{#if selected}}
-                                <a href="{{url}}" aria-current="page" class="button">
+                                <a href="{{url}}" aria-current="page" class="button button--active">
                             {{else}}
-                                <a href="{{url}}" class="button">
+                                <a href="{{url}}" class="button button--inactive">
                             {{/if}}
                                 <span>{{name}}</span>
                                 <span>({{count}})</span>
@@ -90,7 +90,7 @@
             <ul class="col-12">
                 {{#each results}}
                     <li>
-                        <a href="{{url}}" class="subheading">{{title}}</a>
+                        <a href="{{url}}" class="subheading link">{{title}}</a>
                         <div>{{text}}</div>
 
                         <div class="subheading--small-italic">Updated {{date edited_at timeago=true}}</div>
