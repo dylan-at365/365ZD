@@ -192,6 +192,25 @@ ul[data-hc-pills-container] {
 
 
 
+
+/* ================================
+    #Articles
+================================ */
+.article-inner pre {
+    color: var(--gray-100);
+    background-color: var(--gray-600);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-600);
+    border: 1px solid var(--gray-500);
+}
+
+
+
+
+
 /* ================================
     #Footer
 ================================ */

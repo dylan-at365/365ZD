@@ -196,11 +196,23 @@ textarea, input {
 
 
 
+
 /* =============================
     #Common-Questions
 ================================ */
 .question-block {
     background-color: var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    #New-Articles-Feed
+================================ */
+.new-articles-feed__article-title {
+    color: var(--blue-400);
 }
 
 
@@ -254,11 +266,19 @@ select {
 
 
 
+
+
 /* ================================
-    #New-Articles-Feed
+    #Articles
 ================================ */
-.new-articles-feed__article-title {
-    color: var(--blue-400);
+.article-inner pre {
+    color: var(--gray-700);
+    background-color: var(--gray-200);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-200);
 }
 
 
