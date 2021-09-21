@@ -28,19 +28,20 @@
 
     <!-- Commenter Info -->
     {{#each comments}}
-        <div class="row padded-content row-dark">
+        <div class="row padded-content--no-gap row-dark">
         
-            <div class="col-3 col-sm-2 col-md-2">
+            <div class="col-1">
                 <img src="{{author.avatar_url}}" alt="User avatar"/>
             </div>
 
-            <div class="col-9 col-sm-10 col-md-10">
+            <div class="col-11">
                 <a href="{{link 'user_profile'}}" class="subheading">{{author.name}}</a>
                 {{#if author.agent}}
                     <div class="">365 Support</div>
                 {{/if}}
                 <div class="subheading--small-italic">{{date created_at timeago=true}}</div>
             </div>
+
         </div>
 
         <!-- Ticket Content -->
@@ -50,7 +51,7 @@
             </div>
 
             {{#if attachments}}
-            <div class="col-12 subheading--underline">Attachments:</div>
+                <div class="col-12 subheading--underline">Attachments:</div>
                 {{#each attachments}}
                     <div class="col-12">
                         <a class="link" href="{{url}}" target="_blank">{{name}}</a>
@@ -97,18 +98,17 @@
     <div class="row padded-content row-light">
 
         <div class="col-3 col-sm-12">
+            {{checkbox 'mark_as_solved'}}
+
             {{#if request.can_be_marked_as_solved}}
-
-                {{checkbox 'mark_as_solved'}}
-
-                <div 
-                    class="mark-as-solved" 
+                <button
+                    type="button"
+                    class="mark-as-solved button" 
                     data-solve-translation="{{t 'mark_as_solved'}}" 
                     data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}"
                 >
                     {{t 'mark_as_solved'}}
-                </div>
-
+                </button>
             {{/if}}
         </div>
         
@@ -137,82 +137,81 @@
         </div>
     {{/if}}
 
-    <div class="row padded-content row-dark">
-        <dl class="col-12">
-            <dt class="subheading">{{t 'requester'}}</dt>
-            <dd>{{request.requester.name}}</dd>
+    <div class="row padded-content row-light table-responsive">
+        <table class="col-12 table table-striped">
+            <tr>
+                <td>{{t 'requester'}}: {{request.requester.name}}</td>
+            </tr>
 
-            <dt class="subheading">{{t 'created'}}</dt>
-            <dd>{{date request.created_at}}</dd>
+            <tr>
+                <td>{{t 'created'}}: {{date request.created_at}}</td>
+            </tr>
 
-            <dt class="subheading">{{t 'last_activity'}}</dt>
-            <dd>{{date request.updated_at}}</dd>
-
+            <tr>
+                <td>{{t 'last_activity'}}: {{date request.updated_at}}</td>
+            </tr>
             <!-- A "collaborator" is someone who is CC'd on the ticket -->
             {{#if collaborators}}
-                <dt class="subheading">{{t 'ccs'}}</dt>
-                <dd>
-                    <ul class="request-collaborators">
+                <tr>
+                    <td>
+                        {{t 'ccs'}}:
                         {{#each collaborators}}
-                            <li title={{name}}>{{name}}</li>
+                            {{name}}
                         {{/each}}
-                    </ul>
-                </dd>
+                    </td>
+                </tr>
             {{/if}}
-        </dl>
 
-        <dl class="col-12">
             {{#if assignee}}
-                <dt class="subheading">{{t 'assignee'}}</dt>
-                <dd>
-                    {{assignee.name}}
-                </dd>
+                <tr>
+                    <td>{{t 'assignee'}}: {{assignee.name}}</td>
+                </tr>    
             {{/if}}
 
-            <dt class="subheading">{{t 'id'}}</dt>
-            <dd>#{{request.id}}</dd>
+            <tr>
+                <td>{{t 'id'}}: #{{request.id}}</td>
+            </tr>
 
             {{#form 'organization' id='request-organization'}}
-                <dt class="subheading">{{t 'organization'}}</dt>
-                <dd>{{select 'organization'}}</dd>
+                <tr>
+                    <td>{{t 'organization'}}: {{select 'organization'}}</td>
+                </tr>
             {{/form}}
 
             {{#if group}}
-                <dt class="subheading">{{t 'group'}}</dt>
-                <dd>
-                    {{group.name}}
-                </dd>
+                <tr>
+                    <td>{{t 'group'}}: {{group.name}}</td>
+                </tr>
             {{/if}}
 
-            <dt class="subheading">{{t 'status'}}</dt>
-            <dd>
-                {{request.status_name}}
-            </dd>
+            <tr>
+                <td>{{t 'status'}}: {{request.status_name}}</td>
+            </tr>
 
             {{#if request.type}}
-                <dt class="subheading">{{t 'type'}}</dt>
-                <dd>
-                    {{request.type_name}}
-                    {{#is request.type 'task'}}
-                        {{t 'task_due_date' due_date=request.due_date}}
-                    {{/is}}
-                </dd>
+                <tr>
+                    <td>
+                        {{t 'type'}}: {{request.type_name}}
+
+                        {{#is request.type 'task'}}
+                            {{t 'task_due_date' due_date=request.due_date}}
+                        {{/is}}
+                    </td>
+                </tr>
             {{/if}}
 
             {{#if request.priority}}
-                <dt class="subheading">{{t 'priority'}}</dt>
-                <dd>
-                    {{request.priority_name}}
-                </dd>
+                <tr>
+                    <td>{{t 'priority'}}: {{request.priority_name}}</td>
+                </tr>
             {{/if}}
 
             {{#each custom_fields}}
-                <dt class="subheading">{{title}}</dt>
-                <dd>
-                    {{value}}
-                </dd>
+                <tr>
+                    <td>{{title}}: {{value}}</td>
+                </tr>
             {{/each}}
-        </dl>
+        </table>
     </div>
 </div>
 
