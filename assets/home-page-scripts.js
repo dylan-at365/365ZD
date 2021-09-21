@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' ) {
         console.log('365RM User');
-        //$( '.js-restricted-internal-content' ).show();
+        $( '.js-restricted-internal-content' ).show();
 
     } else {
         $( '.js-restricted-internal-content' ).remove();
