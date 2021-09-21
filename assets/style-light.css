@@ -21,6 +21,20 @@ a:hover {
 
 
 
+details[open] {
+    background-color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+details[open] > summary {
+    background-color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+
+
+
+
 .row-light {
     color: var(--gray-100);
     background-color: var(--gray-700);

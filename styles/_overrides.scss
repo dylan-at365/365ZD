@@ -90,6 +90,25 @@ textarea:focus, input:focus, select:focus {
 
 
 
+details {
+    margin-bottom: 1rem;
+}
+
+summary {
+    padding: 1rem 0;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+details[open] {
+    padding-bottom: 1rem;
+}
+
+
+
+
 
 @media (min-width: 768px) {
     .col-md-6 {
