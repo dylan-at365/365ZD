@@ -56,7 +56,7 @@ dd {
     padding-bottom: 1rem;
 }
 
-.request_subject input {
+.request_subject > input {
     width: 100%;
     min-height: 37px;
 }
@@ -91,13 +91,9 @@ dd {
     font-style: italic;
 }
 
-#request_subject {
-    color: var(--gray-700);
-}
-
-#request_description {
+#request_description,
+#request_comment_body {
     height: 8rem;
-    color: var(--gray-700);
     font-family: 'Roboto', Arial, sans-serif;
 }
 
@@ -124,4 +120,8 @@ input[name="commit"] {
 input[name="commit"]:hover {
     color: var(--blue-400);
     transition: var(--transition-time);
+}
+
+input[name="commit"]:disabled:hover {
+    cursor: not-allowed;
 }

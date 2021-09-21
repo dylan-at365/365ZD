@@ -48,7 +48,11 @@ a:hover {
     border: 2px solid var(--blue-200);
 }
 
-.button--inactive {
+/*
+    * Add this input element here to override CSS specificity in _resquests.scss:113
+*/
+.button--inactive,
+input[name="commit"]:disabled {
     color: var(--blue-200);
     background-color: var(--blue-700);
 }
@@ -177,6 +181,13 @@ ul[data-hc-pills-container] {
     background-color: var(--blue-200);
 }
 
+#request_subject {
+    color: var(--gray-100);
+}
+
+#request_description {
+    color: var(--gray-100);
+}
 
 
 

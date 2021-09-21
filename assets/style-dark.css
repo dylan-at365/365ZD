@@ -244,6 +244,13 @@ select {
     background-color: var(--gray-300);
 }
 
+#request_subject {
+    color: var(--gray-700);
+}
+
+#request_description {
+    color: var(--gray-700);
+}
 
 
 
