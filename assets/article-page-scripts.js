@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
     // Print article button function
-    $( '.print_article' ).click(function printArticle() {
+    $( '.js-print-article' ).click(function printArticle() {
         window.print();
         return false;
     });

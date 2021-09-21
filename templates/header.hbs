@@ -16,7 +16,7 @@
             <h2 class="title">HelpCenter</h2>
         </a>
 
-        <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col search-form">
+        <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col search-form d-print-none">
             <label class="label--hidden" for="search--header">Search the Three Six Five Help Center:</label>
             <input id="search--header" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
         </form>
@@ -24,14 +24,14 @@
         
 
 
-        <button type="button" aria-controls="header-menu" class="col button--menu">
+        <button type="button" aria-controls="header-menu" class="col button--menu d-print-none">
             <i class="ph-list"></i>
         </button>
 
     </div>
 
     <!-- Menu Area -->
-    <nav aria-label="Main Navigation" class="row header-menu row-dark" style="display: none;">
+    <nav aria-label="Main Navigation" class="row header-menu row-dark d-print-none" style="display: none;">
         {{#if signed_in}}
 
             <a href="#" id="dashboard_link" class="col-sm-12 col-md link">
@@ -74,14 +74,14 @@
 
     <!-- Banner Content -->
     {{#if signed_in}}
-        <div class="row banner">
+        <div class="row banner d-print-none">
             <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="col-12 banner__content">
                 <i class="ph-hand-waving"></i>
                 <div>How to Check if Your Kiosk is Online</div>
             </a>
         </div>
     {{else}}
-        <div class="row banner">
+        <div class="row banner d-print-none">
             <a href="https://www.youtube-nocookie.com/embed/RkILQJpJZS4" class="col-12 banner__content">
                 <i class="ph-hand-waving"></i>
                 <div>How to Use the 365 HelpCenter</div>
