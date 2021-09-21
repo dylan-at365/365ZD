@@ -109,6 +109,7 @@
 input[name="commit"] {
     display: inline-block;
     padding: 0.5rem;
+    font: var(--font-body);
     border: none;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-outset);
