@@ -30,11 +30,11 @@
     {{#each comments}}
         <div class="row padded-content--no-gap row-dark">
         
-            <div class="col-1">
+            <div class="col col-md-1">
                 <img src="{{author.avatar_url}}" alt="User avatar"/>
             </div>
 
-            <div class="col-11">
+            <div class="col col-md-11">
                 <a href="{{link 'user_profile'}}" class="subheading">{{author.name}}</a>
                 {{#if author.agent}}
                     <div class="">365 Support</div>
@@ -97,25 +97,31 @@
 
     <div class="row padded-content row-light">
 
-        <div class="col-3 col-sm-12">
-            {{checkbox 'mark_as_solved'}}
-
-            {{#if request.can_be_marked_as_solved}}
-                <button
-                    type="button"
-                    class="mark-as-solved button" 
-                    data-solve-translation="{{t 'mark_as_solved'}}" 
-                    data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}"
-                >
-                    {{t 'mark_as_solved'}}
-                </button>
-            {{/if}}
-        </div>
+        
         
         <div class="col-3 col-sm-12">
-            <div>
+
+                <!--
+                    NOTE: When attempting to test the "Mark as Solved" functionality, the "Requester" and the assigned Agent cannot be the same user, otherwise the "Mark as Solved" button will always submit the ticket in an "Open" status.
+
+                    Addtionally, I don't believe that the "Requester" can be anyone but an "end-user", lest they be subject to the same fate.
+                -->
+
                 {{input type='submit' class="button {{#validate 'body'}}button--inactive{{/validate}}"}}
-            </div>
+
+                {{checkbox 'mark_as_solved'}}
+
+                {{#if request.can_be_marked_as_solved}}
+                    <button
+                        type="button"
+                        class="mark-as-solved button" 
+                        data-solve-translation="{{t 'mark_as_solved'}}" 
+                        data-solve-and-submit-translation="{{t 'mark_as_solved_and_submit'}}"
+                    >
+                        {{t 'mark_as_solved'}}
+                    </button>
+                {{/if}}
+
         </div>
     </div>
 {{/form}}
