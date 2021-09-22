@@ -52,6 +52,10 @@ $(document).ready(function() {
         console.log('365RM User');
         $( '.js-restricted-internal-content' ).show();
 
+        // The .show() method expands the internal category drawer when this script is run
+        // Run this .slideToggle() to hide the drawer after it is expanded with a duration of "instant"
+        $( '#internal-drawer-content' ).slideToggle(0);
+
     } else {
         $( '.js-restricted-internal-content' ).remove();
     };
