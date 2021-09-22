@@ -37,8 +37,15 @@
     cursor: not-allowed;
 }
 
+/* This is the checkbox for the "Mark As Solved" button */
+#mark_as_solved {
+    visibility: hidden;
+}
+
+/* This is the "Mark As Solved" button */
 .mark-as-solved {
     display: inline-block;
+    min-height: 40px;
 }
 
 #request_organization_id {
@@ -109,7 +116,7 @@
 input[name="commit"] {
     display: inline-block;
     padding: 0.5rem;
-    font: var(--font-body);
+    font: var(--font-body) !important;
     border: none;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-outset);
