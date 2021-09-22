@@ -34,6 +34,11 @@
     <nav aria-label="Main Navigation" class="row header-menu row-dark d-print-none" style="display: none;">
         {{#if signed_in}}
 
+            <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col padded-content--no-gap d-print-none d-md-none">
+                <label class="label--hidden" for="search--mobile-menu">Search the Three Six Five Help Center:</label>
+                <input id="search--mobile-menu" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
+            </form>
+
             <a href="#" id="dashboard_link" class="col-sm-12 col-md link">
                 <i class="ph-info"></i>
                 <div>Dashboard</div>
