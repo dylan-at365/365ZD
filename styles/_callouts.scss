@@ -6,7 +6,7 @@
 }
 
 .banner-callout:before {
-    padding-right: 8px;
+    padding-right: 0.5rem;
     font-family: "phosphor" !important;
     font-size: 1.5rem;
     font-weight: normal !important;
@@ -68,7 +68,7 @@
 
 .inline-callout__info {
     padding: 1rem;
-    background-color: #c3d0f4;
+    background-color: var(--blue-600);
     border-left: 4px solid var(--blue-200);
 }
 
@@ -76,33 +76,30 @@
 
 
 
-/* Inline Success Shaded */
 .inline-callout__success {
-    padding: 8px;
-    color: #fff;
-    background-color: #68d9a9;
-    border-left: 4px solid #00bf6f;
+    padding: 1rem;
+    color: var(--gray-700);
+    background-color: var(--green-300);
+    border-left: 4px solid var(--green-200);
 }
 
 
 
 
 
-/* Inline Warning Shaded */
 .inline-callout__warning {
     padding: 8px;
-    color: #fff;
-    background-color: #ff949d;
-    border-left: 4px solid #ff4c5b;
+    color: var(--gray-700);
+    background-color: var(--yellow-300);
+    border-left: 4px solid var(--yellow-200);
 }
 
 
 
 
 
-/* Inline Alert Shaded */
 .inline-callout__alert {
     padding: 8px;
-    background-color: #ffe179;
-    border-left: 4px solid #ffcc1e;
+    background-color: var(--red-300);
+    border-left: 4px solid var(--red-200);
 }
