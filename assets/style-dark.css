@@ -179,6 +179,12 @@ details[open] > summary {
 ================================ */
 
 /* #Hero-Area */
+.hero {
+    background-position: bottom center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 .search {
     color: var(--gray-600);
     background-color: var(--gray-200);
