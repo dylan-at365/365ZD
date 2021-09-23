@@ -152,8 +152,6 @@ textarea, input {
 ================================ */
 .hero {
     background-position: top center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
 }
 
 .card {
