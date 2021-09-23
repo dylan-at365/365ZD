@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
     // FancyBox lightbox
-	$( '.article_body img.fancybox' ).click(function toggleFancyBox() {
+	$( '.article-inner img.fancybox' ).click(function toggleFancyBox() {
 		$.fancybox.open([
 			{
 				src : $(this).attr("src"),
@@ -25,20 +25,20 @@ $(document).ready(function() {
 	});
 
     // Add a little note telling users they can click on images to enable big mode
-    $( '.article_body img.fancybox' ).after( '<p class="fancy-p_img">(Click image to enlarge it)</p>' );
+    $( '.article-inner img.fancybox' ).after( '<p class="subheading--small-italic">(Click image to enlarge it)</p>' );
 
 
 
 
 
     // Add table and striping class to, and remove width from, all article tables
-    $( '.article_body table' ).each (function tableDeco() {
+    $( '.article-inner table' ).each (function tableDeco() {
         $(this).addClass( 'table table-striped' );
         $(this).removeAttr( 'width' );
     });
 
     // Also wrap tables in a responsive div tag
-    $( '.article_body table' ).wrap( '<div class="table-responsive"></div>' );
+    $( '.article-inner table' ).wrap( '<div class="table-responsive"></div>' );
 
 
 
