@@ -1,13 +1,9 @@
 /* ================================
-    #Default-Styles
+    _overrides.scss
 ================================ */
 body {
     background-color: var(--gray-500);
 }
-
-
-
-
 
 a {
     color: var(--blue-200);
@@ -17,9 +13,9 @@ a:hover {
     color: var(--blue-400);
 }
 
-
-
-
+textarea, input {
+    border: 1px solid var(--gray-500);
+}
 
 details[open] {
     background-color: var(--gray-700);
@@ -35,6 +31,9 @@ details[open] > summary {
 
 
 
+/* ================================
+    _layout.scss
+================================ */
 .row-light {
     color: var(--gray-100);
     background-color: var(--gray-700);
@@ -48,9 +47,9 @@ details[open] > summary {
 
 
 
-/*
-    * These rules extend .button {} in _globals.scss
-*/
+/* ================================
+    _buttons.scss
+================================ */
 .button {
     color: var(--gray-700);
     background-color: var(--blue-200);
@@ -80,7 +79,61 @@ input[name="commit"]:disabled {
 
 
 
+/* ================================
+    _cards.scss
+================================ */
+.card {
+    background-color: var(--gray-700);
+}
 
+.card--quick-action {
+    border-top: 24px solid var(--blue-200);
+}
+
+
+
+
+
+/* ================================
+    _pagination.scss
+================================ */
+.pagination > ul > li {
+    
+    background-color: var(--blue-200);
+}
+
+.pagination > ul > li > a {
+    color: var(--gray-700);
+}
+
+.pagination > ul > li > a:hover {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _search.scss
+================================ */
+.search {
+    color: var(--gray-200);
+    background-color: var(--gray-700);
+    border: 1px solid var(--gray-500);
+}
+
+.search--small {
+    border: 1px solid var(--gray-500);
+}
+
+
+
+
+
+/* ================================
+    _tables.scss
+================================ */
 .table {
     color: var(--gray-100);
     border-color: var(--blue-600);
@@ -96,40 +149,12 @@ input[name="commit"]:disabled {
 
 
 /* ================================
-    #Header-Template-Styles
+    _header.scss
 ================================ */
-
-/* #Logo-Area */
 .title {
     color: var(--gray-100);
 }
 
-
-
-
-
-.search {
-    color: var(--gray-200);
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
-}
-
-/*
-    * These rules extend .search {} in _globals.scss
-*/
-.search--small {
-    border: 1px solid var(--gray-500);
-}
-
-textarea, input {
-    border: 1px solid var(--gray-500);
-}
-
-
-
-
-
-/* #Banner-Area */
 .banner__content {
     background-color: var(--green-200);
 }
@@ -148,31 +173,12 @@ textarea, input {
 
 
 /* =============================
-    #Home-Page-Template-Start
+    _home-page.scss
 ================================ */
 .hero {
     background-position: top center;
 }
 
-.card {
-    background-color: var(--gray-700);
-}
-
-/*
-    * These rules extend .card {} in _cards.scss
-*/
-.card--quick-action {
-    border-top: 24px solid var(--blue-200);
-}
-
-
-
-
-
-
-/* =============================
-    #Common-Questions
-================================ */
 .question-block {
     background-color: var(--gray-600);
 }
@@ -181,8 +187,26 @@ textarea, input {
 
 
 
+/* ================================
+    _articles_scss
+================================ */
+.article-inner pre {
+    color: var(--gray-100);
+    background-color: var(--gray-600);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-600);
+    border: 1px solid var(--gray-500);
+}
+
+
+
+
+
 /* =============================
-    #Request-Page
+    _requests.scss
 ================================ */
 ul[data-hc-pills-container] {
     background-color: var(--gray-700);
@@ -212,25 +236,7 @@ ul[data-hc-pills-container] {
 
 
 /* ================================
-    #Articles
-================================ */
-.article-inner pre {
-    color: var(--gray-100);
-    background-color: var(--gray-600);
-}
-
-.article-inner code {
-    color: var(--red-200);
-    background-color: var(--gray-600);
-    border: 1px solid var(--gray-500);
-}
-
-
-
-
-
-/* ================================
-    #Footer
+    _footer.scss
 ================================ */
 .footer {
     background-color: var(--blue-700);
@@ -239,26 +245,6 @@ ul[data-hc-pills-container] {
 .social {
     color: var(--gray-100);
     background-color: var(--gray-700);
-}
-
-
-
-
-
-/* =============================
-    #Pagination
-============================= */
-.pagination > ul > li {
-    
-    background-color: var(--blue-200);
-}
-
-.pagination > ul > li > a {
-    color: var(--gray-700);
-}
-
-.pagination > ul > li > a:hover {
-    color: var(--blue-400);
 }
 
 

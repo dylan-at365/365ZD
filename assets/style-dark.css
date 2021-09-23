@@ -1,13 +1,9 @@
 /* ================================
-    #Default-Styles
+    _overrides.scss
 ================================ */
 body {
     background-color: var(--gray-200);
 }
-
-
-
-
 
 a {
     color: var(--blue-600);
@@ -17,9 +13,10 @@ a:hover {
     color: var(--blue-100);
 }
 
-
-
-
+textarea, input {
+    background-color: var(--gray-300);
+    border: 1px solid var(--gray-300);
+}
 
 details[open] {
     background-color: var(--gray-100);
@@ -35,6 +32,9 @@ details[open] > summary {
 
 
 
+/* ================================
+    _layout.scss
+================================ */
 .row-light {
     color: var(--gray-700);
     background-color: var(--gray-100);
@@ -49,20 +49,20 @@ details[open] > summary {
 
 
 
-.card {
-    background-color: var(--gray-100);
-}
-
-.card a {
-    color: var(--blue-400);
-}
-
-.card a:hover {
-    color: var(--blue-200);
+/* ================================
+    _breadcrumbs.scss
+================================ */
+.breadcrumbs-container li {
+    color: var(--gray-700);
 }
 
 
 
+
+
+/* ================================
+    _buttons.scss
+================================ */
 .button {
     color: var(--gray-700);
     background-color: var(--blue-100);
@@ -97,6 +97,71 @@ details[open] > summary {
 
 
 
+/* ================================
+    _cards.scss
+================================ */
+.card {
+    background-color: var(--gray-100);
+}
+
+.card a {
+    color: var(--blue-400);
+}
+
+.card a:hover {
+    color: var(--blue-200);
+}
+
+/*
+    * These rules extend .card {} in _globals.scss
+*/
+.card--quick-action {
+    border-top: 24px solid var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _pagination.scss
+================================ */
+.pagination > ul > li {
+
+    background-color: var(--blue-100);
+}
+
+.pagination > ul > li > a {
+    color: var(--gray-700);
+}
+
+.pagination > ul > li > a:hover {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _search.scss
+================================ */
+.search {
+    color: var(--gray-600);
+    background-color: var(--gray-200);
+}
+
+.search--small {
+    border: 1px solid var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    _tables.scss
+================================ */
 .table {
     color: var(--gray-700);
     border-color: var(--blue-600);
@@ -111,6 +176,9 @@ details[open] > summary {
 
 
 
+/* ================================
+    _typography.scss
+================================ */
 .heading {
     color: var(--gray-700);
 }
@@ -123,40 +191,21 @@ details[open] > summary {
 
 
 
-.breadcrumbs-container li {
-    color: var(--gray-700);
-}
-
-
-
-
-
 /* ================================
-    #Header-Template-Styles
+    _header.scss
 ================================ */
-
-/* #Logo-Area */
 .title {
     color: var(--gray-700);
 }
-
-
-
-
 
 .navigation-link {
     color: var(--blue-700);
 }
 
-
-
-
-
 .button--menu {
     color: var(--gray-700);
 }
 
-/* #Banner-Area */
 .banner__content {
     background-color: var(--blue-100);
 }
@@ -174,61 +223,17 @@ details[open] > summary {
 
 
 
-/* ================================
-    #Home-Page-Template-Styles
+/* =============================
+    _home-page.scss
 ================================ */
-
-/* #Hero-Area */
 .hero {
     background-position: bottom center;
 }
 
-.search {
-    color: var(--gray-600);
-    background-color: var(--gray-200);
-}
-
-/*
-    * These rules extend .search {} in _globals.scss
-*/
-
-.search--small {
-    border: 1px solid var(--gray-300);
-}
-
-textarea, input {
-    background-color: var(--gray-300);
-    border: 1px solid var(--gray-300);
-}
-
-
-
-/*
-    * These rules extend .card {} in _globals.scss
-*/
-.card--quick-action {
-    border-top: 24px solid var(--blue-400);
-}
-
-
-
-
-
-
-/* =============================
-    #Common-Questions
-================================ */
 .question-block {
     background-color: var(--gray-300);
 }
 
-
-
-
-
-/* ================================
-    #New-Articles-Feed
-================================ */
 .new-articles-feed__article-title {
     color: var(--blue-400);
 }
@@ -237,8 +242,25 @@ textarea, input {
 
 
 
+/* ================================
+    _articles_scss
+================================ */
+.article-inner pre {
+    color: var(--gray-700);
+    background-color: var(--gray-200);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-200);
+}
+
+
+
+
+
 /* =============================
-    #Request-Page
+    _requests.scss
 ================================ */
 ul[data-hc-pills-container] {
     background-color: var(--gray-300);
@@ -287,24 +309,7 @@ select {
 
 
 /* ================================
-    #Articles
-================================ */
-.article-inner pre {
-    color: var(--gray-700);
-    background-color: var(--gray-200);
-}
-
-.article-inner code {
-    color: var(--red-200);
-    background-color: var(--gray-200);
-}
-
-
-
-
-
-/* ================================
-    #Footer
+    _footer.scss
 ================================ */
 .footer {
     background-color: var(--gray-100);
@@ -312,26 +317,6 @@ select {
 
 .social {
     color: var(--gray-700);
-}
-
-
-
-
-
-/* =============================
-    #Pagination
-============================= */
-.pagination > ul > li {
-
-    background-color: var(--blue-100);
-}
-
-.pagination > ul > li > a {
-    color: var(--gray-700);
-}
-
-.pagination > ul > li > a:hover {
-    color: var(--blue-400);
 }
 
 
