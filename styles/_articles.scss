@@ -33,3 +33,10 @@
 .article-inner p {
     line-height: 1.5rem;
 }
+
+.check {
+    display: inline-block;
+    color: var(--green-200);
+    font-size: 1.25rem;
+    vertical-align: middle;
+}
