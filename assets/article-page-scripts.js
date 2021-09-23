@@ -25,7 +25,7 @@ $(document).ready(function() {
 	});
 
     // Add a little note telling users they can click on images to enable big mode
-    $( '.article-inner img.fancybox' ).after( '<p class="subheading--small-italic">(Click image to enlarge it)</p>' );
+    $( '.article-inner img.fancybox' ).after( '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' );
 
 
 
