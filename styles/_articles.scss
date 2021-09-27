@@ -33,6 +33,26 @@
     line-height: 1.5rem;
 }
 
+
+
+
+
+.article-inner ul details {
+    margin-bottom: 0;
+}
+
+.article-inner ul summary {
+    padding: 0;
+}
+
+.article-inner ul details[open] > summary {
+    padding-bottom: 0.5rem;
+}
+
+
+
+
+
 .check {
     display: inline-block;
     color: var(--green-200);
