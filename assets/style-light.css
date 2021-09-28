@@ -1,0 +1,267 @@
+/* ================================
+    _overrides.scss
+================================ */
+body {
+    background-color: var(--gray-500);
+}
+
+a {
+    color: var(--blue-200);
+}
+
+a:hover {
+    color: var(--blue-400);
+}
+
+textarea, input {
+    border: 1px solid var(--gray-500);
+}
+
+details[open] {
+    background-color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+details[open] > summary {
+    background-color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    _layout.scss
+================================ */
+.row-light {
+    color: var(--gray-100);
+    background-color: var(--gray-700);
+}
+
+.row-dark {
+    background-color: var(--gray-600);
+}
+
+
+
+
+
+/* ================================
+    _buttons.scss
+================================ */
+.button {
+    color: var(--gray-700);
+    background-color: var(--blue-200);
+}
+
+.button--hollow {
+    color: var(--blue-200);
+    background-color: transparent;
+    border: 2px solid var(--blue-200);
+}
+
+/*
+    * Add this input element here to override CSS specificity in _resquests.scss:113
+*/
+.button--inactive,
+input[name="commit"]:disabled {
+    color: var(--blue-200);
+    background-color: var(--blue-700);
+}
+
+.button--active {
+    color: var(--gray-700);
+    background-color: var(--blue-200);
+}
+
+
+
+
+
+/* ================================
+    _cards.scss
+================================ */
+.card {
+    background-color: var(--gray-700);
+}
+
+.card--quick-action {
+    border-top: 24px solid var(--blue-200);
+}
+
+
+
+
+
+/* ================================
+    _pagination.scss
+================================ */
+.pagination > ul > li {
+    
+    background-color: var(--blue-200);
+}
+
+.pagination > ul > li > a {
+    color: var(--gray-700);
+}
+
+.pagination > ul > li > a:hover {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _search.scss
+================================ */
+.search {
+    color: var(--gray-200);
+    background-color: var(--gray-700);
+    border: 1px solid var(--gray-500);
+}
+
+.search--small {
+    border: 1px solid var(--gray-500);
+}
+
+
+
+
+
+/* ================================
+    _tables.scss
+================================ */
+.table {
+    color: var(--gray-100);
+    border-color: var(--blue-600);
+  }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    color: var(--gray-100);
+    background-color: var(--gray-600);
+}
+
+
+
+
+
+/* ================================
+    _header.scss
+================================ */
+.title {
+    color: var(--gray-100);
+}
+
+.banner__content {
+    background-color: var(--green-200);
+}
+
+.banner > a {
+    color: var(--gray-700);
+}
+
+.banner > a:hover {
+    color: var(--green-200);
+    background-color: var(--gray-700);
+}
+
+
+
+
+
+/* =============================
+    _home-page.scss
+================================ */
+.hero {
+    background-position: top center;
+}
+
+.question-block {
+    background-color: var(--gray-600);
+}
+
+
+
+
+
+/* ================================
+    _articles_scss
+================================ */
+.article-inner pre {
+    color: var(--gray-100);
+    background-color: var(--gray-600);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-600);
+    border: 1px solid var(--gray-500);
+}
+
+
+
+
+
+/* =============================
+    _requests.scss
+================================ */
+ul[data-hc-pills-container] {
+    background-color: var(--gray-700);
+}
+
+#request_organization_id_hint,
+#request_description_hint {
+    color: var(--gray-300) !important;
+}
+
+.request-form > footer > input,
+.requests-filter div > button {
+    color: var(--gray-700);
+    background-color: var(--blue-200);
+}
+
+#request_subject {
+    color: var(--gray-100);
+}
+
+#request_description {
+    color: var(--gray-100);
+}
+
+
+
+
+
+/* ================================
+    _footer.scss
+================================ */
+.footer {
+    background-color: var(--blue-700);
+}
+
+.social {
+    color: var(--gray-100);
+    background-color: var(--gray-700);
+}
+
+
+
+
+
+/* =============================
+    #Canteen-Overrides
+================================ */
+.canteen-branded {
+    border-color: #a5cf4f;
+}
+
+.canteen-branded > a {
+    color: #a5cf4f;
+}
+
+.canteen-branded > a:hover {
+    color: #409f68;
+}

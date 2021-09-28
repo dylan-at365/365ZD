@@ -1,0 +1,12 @@
+.article-inner pre {
+    display: block;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow: auto;
+}
+
+.article-inner code {
+    margin: 0 2px;
+    padding: 0 4px;
+    word-wrap: break-word;
+}

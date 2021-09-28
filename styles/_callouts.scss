@@ -1,0 +1,105 @@
+/* Banner Callouts/Warnings */
+.banner-callout {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.banner-callout:before {
+    display: block;
+    padding-right: 0.5rem;
+    font-family: "phosphor" !important;
+    font-size: 2rem;
+    font-weight: normal !important;
+}
+
+.banner-callout a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.banner-callout a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+.banner-callout__info {
+    color: var(--gray-700);
+    background-color: var(--blue-400);
+}
+
+.banner-callout__info:before {
+    content: "\ecdd";
+}
+
+
+
+
+
+.banner-callout__warning {
+    color: var(--gray-100);
+    background-color: var(--yellow-300);
+}
+
+.banner-callout__warning:before {
+    content: "\eef0";
+}
+
+
+
+
+
+.banner-callout__alert {
+    color: var(--gray-700);
+    background-color: var(--red-200);
+}
+
+.banner-callout__alert:before {
+    content: "\ee8a";
+}
+
+
+
+
+
+.inline-callout__info {
+    padding: 1rem;
+    background-color: var(--blue-600);
+    border-left: 4px solid var(--blue-200);
+}
+
+
+
+
+
+.inline-callout__success {
+    padding: 1rem;
+    color: var(--gray-700);
+    background-color: var(--green-300);
+    border-left: 4px solid var(--green-200);
+}
+
+
+
+
+
+.inline-callout__warning {
+    padding: 8px;
+    color: var(--gray-700);
+    background-color: var(--yellow-300);
+    border-left: 4px solid var(--yellow-200);
+}
+
+
+
+
+
+.inline-callout__alert {
+    padding: 8px;
+    background-color: var(--red-300);
+    border-left: 4px solid var(--red-200);
+}

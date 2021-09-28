@@ -2,42 +2,41 @@
 <div class="container">
 
     <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container">
+    <div class="row breadcrumbs-container row-dark">
         <div class="col-12">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row search_results-container">
-        <div class="col-12 search_results-header">
-            <div class="search_results-header_count">
+    <div class="row padded-content row-light">
+        <div class="col-12 heading">
+            <div>
                 {{t 'results' query=query count=results_count}}
             </div>
 
-            <form class="search_results-header_searchbar" role="search" data-search="" data-instant="true"
-                autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-                <input name="utf8" type="hidden" value="✓">
-                <input class="search" id="query" name="query" type="search"
+            <form role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+                <label class="label--hidden" for="article-search">Search the Three Six Five Help Center:</label>
+                <input id="article-search" class="search" id="query" name="query" type="search"
                     placeholder="&#8981; Search the 365 HelpCenter">
             </form>
         </div>
     </div>
 
-    <div class="row search_filters-container">
+    <div class="row padded-content row-dark">
 
         <!-- I don't think this block will show up -->
-        <div class="col-12 search_filters-sources">
+        <div class="col-12">
             {{#if source_filters}}
                 <ul>
                     {{#each source_filters}}
-                        <li>
+                        <li class="button">
                             {{#if selected}}
                                 <a href="{{url}}">
                             {{else}}
                                 <a href="{{url}}">
                             {{/if}}
-                            <span class="search_filter-name">{{name}}</span>
-                            <span class="search_filter-count">({{count}})</span>
+                            <span>{{name}}</span>
+                            <span>({{count}})</span>
                             </a>
                         </li>
                     {{/each}}
@@ -45,19 +44,19 @@
             {{/if}}
         </div>
 
-        <div class="col-12 search_filters-types">
+        <div class="col-12">
             {{#if type_filters}}
-                <div class="search_filters-label">Filter results:</div>
-                <ul>
+                <div>Filter results:</div>
+                <ul class="search-filters">
                     {{#each type_filters}}
                         <li>
                             {{#if selected}}
-                                <a class="type_filter_option type_filter_selected" href="{{url}}">
+                                <a href="{{url}}" class="button button--active">
                             {{else}}
-                                <a class="type_filter_option" href="{{url}}">
+                                <a href="{{url}}" class="button button--inactive">
                             {{/if}}
 
-                            <span class="search_filter-name">{{name}}</span>
+                            <span>{{name}}</span>
                             </a>
                         </li>
                     {{/each}}
@@ -65,18 +64,18 @@
             {{/if}}
         </div>
 
-        <div class="col-12 search_filters-subfilters">
+        <div class="col-12">
             {{#if subfilters}}
-                <ul>
+                <ul class="search-filters">
                     {{#each subfilters}}
                         <li>
                             {{#if selected}}
-                                <a href="{{url}}" class="type_filter_option type_filter_selected" aria-current="page">
+                                <a href="{{url}}" aria-current="page" class="button button--active">
                             {{else}}
-                                <a href="{{url}}" class="type_filter_option">
+                                <a href="{{url}}" class="button button--inactive">
                             {{/if}}
-                            <span class="sidenav-subitem filter-name">{{name}}</span>
-                            <span class="sidenav-subitem doc-count">({{count}})</span>
+                                <span>{{name}}</span>
+                                <span>({{count}})</span>
                             </a>
                         </li>
                     {{/each}}
@@ -86,19 +85,25 @@
 
     </div>
 
-    <div class="row search_results-results">
+    <div class="row padded-content row-light">
         {{#if results}}
-            <ul class="col-12 search_results-results_list">
+            <ul class="col-12 search-results-container">
                 {{#each results}}
-                    <li class="search_results-result_item">
-                        <a href="{{url}}" class="search_results-result_item-title">{{title}}</a>
-                        <div class="search_results-result_item-desc">{{text}}</div>
+                    <li class="search-result">
+                        <a href="{{url}}" class="subheading link">{{title}}</a>
+                        <div>{{text}}</div>
 
-                        <div class="search_results-result_item-time">Updated {{date edited_at timeago=true}}</div>
-                        {{#each path_steps}}
-                            <div class="search_results-result_item-path" title="{{name}}"><a href="{{url}}">{{name}}</a>
-                            </div>
-                        {{/each}}
+                        <div class="subheading--small-italic">Updated {{date edited_at timeago=true}}</div>
+
+                        <div class="breadcrumbs-container">
+                            <ol class="breadcrumbs breadcrumbs--search-results">
+                                {{#each path_steps}}
+                                    <li title="{{name}}">
+                                        <a href="{{url}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                            </ol>
+                        </div>
 
                     </li>
                 {{/each}}
@@ -106,8 +111,8 @@
         {{/if}}
     </div>
 
-    <div class="row pagination_container">
-        <div class="col-12">
+    <div class="row padded-content centered-content row-light">
+        <div class="col-12 col-sm-6">
             {{pagination}}
         </div>
     </div>

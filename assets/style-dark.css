@@ -1,0 +1,339 @@
+/* ================================
+    _overrides.scss
+================================ */
+body {
+    background-color: var(--gray-200);
+}
+
+a {
+    color: var(--blue-600);
+}
+
+a:hover {
+    color: var(--blue-100);
+}
+
+textarea, input {
+    background-color: var(--gray-300);
+    border: 1px solid var(--gray-300);
+}
+
+details[open] {
+    background-color: var(--gray-100);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+details[open] > summary {
+    background-color: var(--gray-100);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    _layout.scss
+================================ */
+.row-light {
+    color: var(--gray-700);
+    background-color: var(--gray-100);
+}
+
+.row-dark {
+    color: var(--gray-700);
+    background-color: var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    _breadcrumbs.scss
+================================ */
+.breadcrumbs-container li {
+    color: var(--gray-700);
+}
+
+
+
+
+
+/* ================================
+    _buttons.scss
+================================ */
+.button {
+    color: var(--gray-700);
+    background-color: var(--blue-100);
+}
+
+.button--hollow {
+    color: var(--blue-600);
+    background-color: transparent;
+    border: 2px solid var(--blue-600);
+}
+
+.button--inactive {
+    color: var(--blue-100);
+    background-color: var(--blue-700);
+}
+
+.button--active {
+    color: var(--gray-700);
+    background-color: var(--blue-300);
+    border-color: var(--blue-300);
+}
+
+.button--dark {
+    color: var(--gray-700) !important;
+}
+
+.button--dark:hover {
+    color: var(--blue-400) !important;
+}
+
+
+
+
+
+/* ================================
+    _cards.scss
+================================ */
+.card {
+    background-color: var(--gray-100);
+}
+
+.card a {
+    color: var(--blue-400);
+}
+
+.card a:hover {
+    color: var(--blue-200);
+}
+
+/*
+    * These rules extend .card {} in _globals.scss
+*/
+.card--quick-action {
+    border-top: 24px solid var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _pagination.scss
+================================ */
+.pagination > ul > li {
+
+    background-color: var(--blue-100);
+}
+
+.pagination > ul > li > a {
+    color: var(--gray-700);
+}
+
+.pagination > ul > li > a:hover {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _search.scss
+================================ */
+.search {
+    color: var(--gray-600);
+    background-color: var(--gray-200);
+}
+
+.search--small {
+    border: 1px solid var(--gray-300);
+}
+
+
+
+
+
+/* ================================
+    _tables.scss
+================================ */
+.table {
+    color: var(--gray-700);
+    border-color: var(--blue-600);
+  }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    color: var(--gray-700);
+    background-color: var(--gray-200);
+}
+
+
+
+
+
+/* ================================
+    _typography.scss
+================================ */
+.heading {
+    color: var(--gray-700);
+}
+
+.subheading {
+    color: var(--gray-700);
+}
+
+
+
+
+
+/* ================================
+    _header.scss
+================================ */
+.title {
+    color: var(--gray-700);
+}
+
+.navigation-link {
+    color: var(--blue-700);
+}
+
+.button--menu {
+    color: var(--gray-700);
+}
+
+.banner__content {
+    background-color: var(--blue-100);
+}
+
+.banner > a {
+    color: var(--gray-700);
+}
+
+.banner > a:hover {
+    color: var(--gray-700);
+    background-color: var(--gray-100);
+}
+
+
+
+
+
+/* =============================
+    _home-page.scss
+================================ */
+.hero {
+    background-position: bottom center;
+}
+
+.question-block {
+    background-color: var(--gray-300);
+}
+
+.new-articles-feed__article-title {
+    color: var(--blue-400);
+}
+
+
+
+
+
+/* ================================
+    _articles_scss
+================================ */
+.article-inner pre {
+    color: var(--gray-700);
+    background-color: var(--gray-200);
+}
+
+.article-inner code {
+    color: var(--red-200);
+    background-color: var(--gray-200);
+}
+
+
+
+
+
+/* =============================
+    _requests.scss
+================================ */
+ul[data-hc-pills-container] {
+    background-color: var(--gray-300);
+}
+
+ul[data-hc-pills-container] li[data-hc-pill="true"] {
+    background-color: var(--gray-200);
+}
+
+ul[data-hc-pills-container] li:last-child input {
+    color: var(--gray-700);
+    background-color: transparent;
+}
+
+#request_organization_id_hint,
+#request_description_hint {
+    color: var(--gray-500) !important;
+}
+
+.upload-dropzone {
+    background-color: var(--gray-300);
+}
+
+.request-form > footer > input,
+.requests-filter div > button {
+    color: var(--gray-700);
+    background-color: var(--blue-100);
+}
+
+.nesty-input,
+select {
+    color: var(--gray-700);
+    background-color: var(--gray-300);
+}
+
+#request_subject {
+    color: var(--gray-700);
+}
+
+#request_description {
+    color: var(--gray-700);
+}
+
+
+
+
+
+/* ================================
+    _footer.scss
+================================ */
+.footer {
+    background-color: var(--gray-100);
+}
+
+.social {
+    color: var(--gray-700);
+}
+
+
+
+
+
+/* =============================
+    #Canteen-Overrides
+================================ */
+.canteen-branded {
+    border-color: #a5cf4f;
+}
+
+.canteen-branded > a {
+    color: #a5cf4f;
+}
+
+.canteen-branded > a:hover {
+    color: #409f68;
+}

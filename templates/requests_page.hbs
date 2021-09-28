@@ -2,57 +2,48 @@
 <div class="container">
 
     <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container">
+    <div class="row breadcrumbs-container row-dark">
         <div class="col-12">
             {{breadcrumbs}}
         </div>
     </div>
 
     <!-- Tickets/CC Link -->
-    <div class="row tickets_cc">
-        <div class="col-12">
-            <a class="tickets_cc-button" href="/hc/en-us/requests">My Tickets</a>
-            <a class="tickets_cc-button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
-            <a class="tickets_cc-button" href="/hc/en-us/requests/organization">Organization Requests</a>
-        </div>
+    <div class="row padded-content row-light">
+        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests">My Tickets</a>
+        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
+        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests/organization">Organization Requests</a>
     </div>
 
     <!-- Ticket Search/Filter -->
-    <div class="row tickets_filter">
-        <div class="col-12">
-            {{#form 'requests_filter'}}
-                <div class="requests_filter-search">
-					<input type="search" name="query" id="quick-search" value="" placeholder="Search tickets" aria-required="false">
-				</div>
+    {{#form 'requests_filter' class="row padded-content row-dark requests-filter"}}
 
-				<div class="request_filter-status">
-					{{label 'status' for='request-status-select' class='request-filter request-filter-label'}}
-					{{select 'status' id='request-status-select' class='request-filter'}}
-				</div>
+        <label class="col-12 label--hidden" for="ticket-search">Search through your support tickets:</label>
+        <input type="search" name="query" id="ticket-search" value="" placeholder="&#8981; Search tickets" aria-required="false" class="col-12 search search--small">
 
-                {{#if help_center.multiple_organizations_enabled}}
-                    <div class="request_filter-status">
-                        {{label 'organization' for='request-organization-select' class='request-filter request-filter-label'}}
-                        {{select 'organization' id='request-organization-select' class='request-filter'}}
-                    </div>
+        {{label 'status' for='request-status-select' class='col-sm-12 col-md-1'}}
+        {{select 'status' id='request-status-select' class='col-sm-12 col-md-3'}}
 
-                    <div class="request-table-filter organization-subscribe">
-                        {{subscribe}}
-                    </div>
-                {{/if}}
-            {{/form}}
-        </div>
-    </div>
+        {{#if help_center.multiple_organizations_enabled}}
+
+            {{label 'organization' for='request-organization-select' class='col-sm-12 col-md-1'}}
+            {{select 'organization' id='request-organization-select' class='col-sm-12 col-md-3'}}
+
+            {{subscribe class="col-3 button"}}
+
+        {{/if}}
+
+    {{/form}}
 
     <!-- Shows search results info/lack of tickets -->
-    <div class="row tickets_meta">
+    <div class="row padded-content--no-gap row-light">
         {{#if query}}
-            <div class="col-12 tickets_meta-results">
+            <div class="col-12 subheading--underline">
                 {{t 'requests_search_results_info' count=requests.length query=query}}
             </div>
         {{else}}
             {{#unless requests}}
-                <div class="tickets_meta-none">
+                <div class="col-12 subheading--underline">
                     {{t 'no_requests'}}
                 </div>
             {{/unless}}
@@ -60,77 +51,86 @@
     </div>
 
     {{#if requests}}
-        <div class="row tickets_headers">
 
-            <div class="col-6 col-sm-4 col-md-4 tickets_list-subject_header">
-                {{t 'subject'}}
-            </div>
+        <div class="row table-responsive row-light">
+            <table class="col-12 row-light table table-striped">
 
-            <div class="col-3 col-sm-2 col-md-2 tickets_list-id_header">
-                {{t 'id'}}
-            </div>
+                <thead>
+                    <tr>
+                        <th>
+                            {{t 'subject'}}
+                        </th>
 
-            <div class="col-sm-2 col-md-2 tickets_list-created_header">
-                {{#is current_filter.identifier 'my'}}
-                    {{#link 'requests' sort_by='created_at'}}
-                        {{t 'created'}}
-                    {{/link}}
-                {{else}}
-                    {{t 'requester'}}
-                {{/is}}
-            </div>
+                        <th>
+                            {{t 'id'}}
+                        </th>
 
-            <div class="col-sm-2 col-md-2 tickets_list-activity_header">
-                {{#link 'requests' sort_by='updated_at'}}
-                    {{t 'last_activity'}}
-                {{/link}}
-            </div>
+                        <th>
+                            {{#is current_filter.identifier 'my'}}
+                                {{#link 'requests' sort_by='created_at'}}
+                                    {{t 'created'}}
+                                {{/link}}
+                            {{else}}
+                                {{t 'requester'}}
+                            {{/is}}
+                        </th>
 
-            <div class="col-3 col-sm-2 col-md-2 tickets_list-status_header">
-                {{t 'status'}}
-            </div>
+                        <th>
+                            {{#link 'requests' sort_by='updated_at'}}
+                                {{t 'last_activity'}}
+                            {{/link}}
+                        </th>
 
+                        <th>
+                            {{t 'status'}}
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each requests}}
+                        <tr>
+                            <td>
+                                <a href="{{url}}">
+                                    {{#if subject}}
+                                        {{subject}}
+                                    {{else}}
+                                        {{excerpt description characters=50}}
+                                    {{/if}}
+                                </a>
+                            </td>
+
+                            <td>
+                                #{{id}}
+                            </td>
+
+                            <td>
+                                {{#is ../current_filter.identifier 'my'}}
+                                    {{date created_at timeago=true}}
+                                {{else}}
+                                    {{requester.name}}
+                                {{/is}}
+                            </td>
+    
+                            <td>
+                                {{date updated_at timeago=true}}
+                            </td>
+
+                            <td>
+                                {{status_name}}
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
         </div>
-
-        {{#each requests}}
-        <div class="row tickets_list">
-
-            <div class="col-6 col-sm-4 col-md-4 tickets_list-subject_content">
-                <a href="{{url}}">
-                    {{#if subject}}
-                        {{subject}}
-                    {{else}}
-                        {{excerpt description characters=50}}
-                    {{/if}}
-                </a>
-            </div>
-
-            <div class="col-3 col-sm-2 col-md-2 tickets_list-id_content">
-                #{{id}}
-            </div>
-
-            <div class="col-sm-2 col-md-2 tickets_list-created_content">
-                {{#is ../current_filter.identifier 'my'}}
-                    {{date created_at timeago=true}}
-                {{else}}
-                    {{requester.name}}
-                {{/is}}
-            </div>
-
-            <div class="col-sm-2 col-md-2 tickets_list-activity_content">
-                {{date updated_at timeago=true}}
-            </div>
-
-            <div class="col-3 col-sm-2 col-md-2 tickets_list-status_content">
-                {{status_name}}
-            </div>
-        </div>
-        {{/each}}
     {{/if}}
 
-    <div class="row pagination_container">
+    <div class="row padded-content centered-content row-light">
         <div class="col-12 col-sm-6">
             {{pagination}}
         </div>
     </div>
+    
 </div>

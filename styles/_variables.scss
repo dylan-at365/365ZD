@@ -1,0 +1,61 @@
+:root {
+    /* ================================
+        #BRAND-COLORS
+    ================================ */
+
+    --blue-100: #1f46b2;
+    --blue-200: #2555d9;
+    --blue-300: #4c73df;
+    --blue-400: #7492e6;
+    --blue-500: #9bb1ed;
+    --blue-600: #c3d0f4;
+    --blue-700: #ebeff8;
+
+    --gray-100: #22212d;
+    --gray-200: #4a4953;
+    --gray-300: #727179;
+    --gray-400: #9a9a9f;
+    --gray-500: #c2c2c5;
+    --gray-600: #eaeaeb;
+    --gray-700: #ffffff;
+
+    --green-100: #009d5b;
+    --green-200: #00bf6f;
+    --green-300: #68d9a9;
+
+    --red-100: #d13f4b;
+    --red-200: #ff4c5b;
+    --red-300: #ff949d;
+
+    --yellow-100: #d1a719;
+    --yellow-200: #ffcc1e;
+    --yellow-300: #ffe179;
+
+
+
+
+
+    /* ================================
+        #TYPOGRAPHY
+    ================================ */
+
+    --font-heading: normal normal 700 1.563rem/1.5 'Roboto', Arial, sans-serif;
+    --font-subheading: normal normal 400 1.25rem/1.5 'Roboto', Arial, sans-serif;
+    --font-body: normal normal 400 1rem/1.5 'Roboto', Arial, sans-serif;
+
+
+
+
+
+    /* ================================
+        #OTHER-VARIABLES
+    ================================ */
+
+    --border-radius: 2px;
+    --shadow-outset: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-inset: 0px 4px 12px -4px rgba(0, 0, 0, 0.1) inset;
+    --transition-time: 0.2s;
+}
+
+/* Set hero banner variable here so SCSS plays nicely with the Zendesk asset reference */
+$assets-hero_banner-png: '$assets-hero_banner-png';

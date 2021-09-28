@@ -2,77 +2,91 @@
 <div class="container">
 
     <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container d-print-none">
+    <div class="row breadcrumbs-container row-dark d-print-none">
         <div class="col-12">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row article_header">
-        <div class="col-12 article_header-title">
+    <div class="row padded-content--no-gap row-light">
+        <div class="col-12 heading">
             {{article.title}}
             {{#if article.internal}}
                 <i class="ph-lock-key-fill"></i>
             {{/if}}
         </div>
 
-        <div class="col-12 article_header-updated d-print-none">
+        <div class="col-12 subheading--small-italic d-print-none">
             {{#is article.created_at article.updated_at}}
                 {{date article.created_at timeago=true}}
             {{else}}
                 {{t 'updated'}} {{date article.updated_at timeago=true}}
             {{/is}}
         </div>
+    </div>
 
-        <a href="#" class="col-3 col-md-2 col-lg-1 article_header-button print_article d-print-none">Print</a>
+    <div class="row padded-content row-light d-print-none">
+        <a href="#" class="col-3 col-md-2 col-lg-1 button js-print-article">Print</a>
 
-        <div class="col-3 col-md-2 col-lg-1 article-unsubscribe_container d-print-none">
+        <div class="col-3 col-md-2 col-lg-1 button">
             {{subscribe}}
         </div>
     </div>
 
-    <div class="row article_body">
-        <div class="col">
+    <div class="row article-body row-light">
+        <div class="col article-inner">
             {{article.body}}
         </div>
     </div>
 
     {{#if attachments}}
-        <div class="row article_attachments d-print-none">
-            <div class="col-12 article_attachments-title">
+        <div class="row padded-content--no-gap row-light d-print-none">
+            <div class="col-12 heading">
                 Attachments
             </div>
 
             {{#each attachments}}
-                <div class="col-12 article_attachments-link">
-                    <a href="{{url}}" target="_blank" rel="noopener">{{name}}</a>
-                    <div class="article_attachments-link-meta"> - {{size}}</div>
+                <div class="col-12">
+                    <a href="{{url}}" target="_blank" rel="noopener" class="link">{{name}}</a>
+                     - {{size}}
                 </div>
             {{/each}}
         </div>
     {{/if}}
 
     {{#if article.internal}}
-        <div class="row article_vote d-print-none">
-            <div class="col-12 article_vote-header">
+        <div class="row padded-content centered-content row-dark d-print-none">
+            <div class="col-12 heading">
                 Was this article helpful?
             </div>
 
-            <div class="col-3"></div>
-            <div class="col-3 article-vote_container">
-                {{article.vote "up" role="radio" class="article-vote article-vote-up" selected_class="button-primary"}}
-            </div>
+            {{article.vote "up" role="radio" class="col-3 button button--hollow" selected_class="button--active"}}
+            {{article.vote "down" role="radio" class="col-3 button button--hollow" selected_class="button--active"}}
 
-            <div class="col-3 article-vote_container">
-                {{article.vote "down" role="radio" class="article-vote article-vote-down" selected_class="button-primary"}}
-            </div>
-            <div class="col-3"></div>
-
-            <div class="col-12 article_vote-count">
-                {{article.vote 'label' class='article_vote-count_label'}}
+            <div class="col-12">
+                {{article.vote 'label' class="subheading"}}
             </div>
         </div>
     {{/if}}
 
 </div>
+<script src="{{asset 'article-page-scripts.js'}}"></script>
+
+<!-- FancyBox Script/Stylesheet -->
+<link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA="
+    crossorigin="anonymous"
+>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
+    integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8="
+    crossorigin="anonymous">
+</script>
+
+<!-- Reel Spinner Script -->
+<script src="{{asset 'jquery.reel-min.js'}}"></script>
+
 <!-- End Article Template -->

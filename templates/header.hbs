@@ -1,289 +1,98 @@
 <!-- Start Header Template -->
-<div class="container">
-    <!-- Logo and Menu Button -->
-    <div class="row header">
-        <a href="{{page_path 'help_center'}}" class="col-9 logo">
-            <img src="{{asset '365logo_RGB_2018.svg'}}" alt="365 Retail Markets logo" width="80" height="80" title="365 Retail Markets"/>
-            <span class="logo-title">HelpCenter</span>
+<header class="container">
+    
+    <div class="row header row-light">
+
+        <!-- Logo and Menu Button -->
+        <a href="{{page_path 'help_center'}}" class="col brand">
+            
+            <picture class="logo">
+                <source
+                    srcset="{{asset 'logo-white.svg'}}"
+                    media="(prefers-color-scheme: dark)">
+                <img src="{{asset 'logo-color.svg'}}" alt="Three Six Five Retail Markets logo" width="80" height="80">
+            </picture>
+
+            <h2 class="title">HelpCenter</h2>
         </a>
 
-        <div class="col-3 menu-button d-print-none">
+        <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col search-form d-print-none">
+            <label class="label--hidden" for="search--header">Search the Three Six Five Help Center:</label>
+            <input id="search--header" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
+        </form>
+
+        
+
+
+        <button type="button" aria-controls="header-menu" class="col button--menu d-print-none">
             <i class="ph-list"></i>
-        </div>
+        </button>
+
     </div>
 
     <!-- Menu Area -->
-    <ul class="row menu justify-content-center d-print-none" style="display: none;">
+    <nav aria-label="Main Navigation" class="row header-menu row-dark d-print-none" style="display: none;">
         {{#if signed_in}}
-        <li class="col-sm-12 col-md-2 menu-item">
-            <a id="dashboard_link" href="#">
+
+            <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col padded-content--no-gap d-print-none d-md-none">
+                <label class="label--hidden" for="search--mobile-menu">Search the Three Six Five Help Center:</label>
+                <input id="search--mobile-menu" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
+            </form>
+
+            <a href="#" id="dashboard_link" class="col-sm-12 col-md link">
                 <i class="ph-info"></i>
                 <div>Dashboard</div>
             </a>
-        </li>
 
-        <li class="col-sm-12 col-md-2 menu-item">
-            <a href="{{page_path 'requests'}}">
+            <a href="{{page_path 'requests'}}" class="col-sm-12 col-md link">
                 <i class="ph-article"></i>
                 <div>Ticket History</div>
             </a>
-        </li>
 
-        <li class="col-sm-12 col-md-3 col-lg-2 menu-item">
-            <a href="{{page_path 'subscriptions'}}">
+            <a href="{{page_path 'subscriptions'}}" class="col-sm-12 col-md link">
                 <i class="ph-book-bookmark"></i>
                 <div>Saved Resources</div>
             </a>
-        </li>
 
-        <li class="col-sm-12 col-md-2 menu-item">
-            <a href="https://status.365retailmarkets.com">
+            <a href="https://status.365retailmarkets.com" class="col-sm-12 col-md link">
                 <i class="ph-heartbeat"></i>
                 <div>System Status</div>
             </a>
-        </li>
 
-        <li class="col-sm-12 col-md-2 menu-item">
-            <a href="{{page_path 'sign_out'}}">
+            <a href="{{page_path 'sign_out'}}" class="col-sm-12 col-md link">
                 <i class="ph-sign-out"></i>
                 <div>Log Out</div>
             </a>
-        </li>
+        
         {{else}}
-        <li class="col-sm-12 col-md-3 offset-md-6 menu-item">
-            <a href="https://365retailmarkets.zendesk.com/auth/v2/login/registration?auth_origin=114094510753%2Ctrue%2Ctrue&brand_id=114094510753&return_to=https%3A%2F%2Fhelp.365retailmarkets.com&theme=hc">
+            <a href="https://365retailmarkets.zendesk.com/auth/v2/login/registration?auth_origin=114094510753%2Ctrue%2Ctrue&brand_id=114094510753&return_to=https%3A%2F%2Fhelp.365retailmarkets.com&theme=hc" class="col-sm-12 col-md-3 offset-md-6 link">
                 <i class="ph-user-plus"></i>
                 <div>Sign Up</div>
             </a>
-        </li>
 
-        <li class="col-sm-12 col-md-3 menu-item">
-            <a href="https://help.365retailmarkets.com/hc/en-us/signin?return_to=https%3A%2F%2Fhelp.365retailmarkets.com">
+            <a href="https://help.365retailmarkets.com/hc/en-us/signin?return_to=https%3A%2F%2Fhelp.365retailmarkets.com" class="col-sm-12 col-md-3 link">
                 <i class="ph-sign-in"></i>
                 <div>Log In</div>
             </a>
-        </li>
         {{/if}}
-    </ul>
+    </nav>
 
+    <!-- Banner Content -->
     {{#if signed_in}}
-        <div class="row header_news d-print-none">
-            <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="col-12 header_news-content">
+        <div class="row banner d-print-none">
+            <a href="https://help.365retailmarkets.com/hc/en-us/articles/360062940373" class="col-12 banner__content">
                 <i class="ph-hand-waving"></i>
                 <div>How to Check if Your Kiosk is Online</div>
             </a>
         </div>
     {{else}}
-        <div class="row header_news d-print-none" id="howToBanner">
-            <a href="" data-toggle="modal" data-target="#videoHowTo" class="col-12 header_news-content">
+        <div class="row banner d-print-none">
+            <a href="https://www.youtube-nocookie.com/embed/RkILQJpJZS4" class="col-12 banner__content">
                 <i class="ph-hand-waving"></i>
                 <div>How to Use the 365 HelpCenter</div>
             </a>
         </div>
-
-        <div class="modal fade" id="videoHowTo" tabindex="-1" aria-hidden="true" data-backdrop="static">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="video-container">
-                            <iframe id="youtubeHowToEmbed" width="560" height="315" src="https://www.youtube-nocookie.com/embed/RkILQJpJZS4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            $( '#howToBanner' ).click(function () {
-                var src = 'https://www.youtube-nocookie.com/embed/RkILQJpJZS4';
-                $( '#videoHowTo' ).modal('show');
-                $( '#videoHowTo iframe' ).attr('src', src);
-            });
-
-            $( '#videoHowTo button' ).click(function () {
-                $( '#videoHowTo iframe' ).removeAttr('src');
-            });
-        </script>
-
     {{/if}}
 
-</div>
-
-<!-- Begin Fixed Footer Navigation -->
-<div class="container d-print-none fixed-bottom">
-
-    <div class="row nav_search" style="display: none;">
-        <div class="col-12">
-            <form accept-charset="UTF-8" action="/hc/en-us/search" method="get" role="search" >
-                <input class="nav_search-input" id="query" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter">
-            </form>
-        </div>
-    </div>
-
-    <div class="row nav_categories" style="display: none;">
-        <div class="col-12 col-md-4 nav_category">
-            <div class="nav_category-header">
-                Hardware Categories
-                <i class="ph-plus-bold"></i>
-            </div>
-
-            <div class="nav_category-item_list">
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947034" class="nav_category-item">
-                    365Beacon
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964853" class="nav_category-item">
-                    AirVend
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004440794" class="nav_category-item">
-                    Dining
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946554" class="nav_category-item">
-                    Legacy Kiosks
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964913" class="nav_category-item">
-                    Market Security
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964433" class="nav_category-item">
-                    NanoMarket
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947114" class="nav_category-item">
-                    PicoPlatform
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964373" class="nav_category-item">
-                    V5 Kiosks
-                    <i class="ph-caret-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4 nav_category">
-            <div class="nav_category-header">
-                Software Categories
-                <i class="ph-plus-bold"></i>
-            </div>
-
-            <div class="nav_category-item_list">
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964793" class="nav_category-item">
-                    ADM
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947074" class="nav_category-item">
-                    Mobile
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001946914" class="nav_category-item">
-                    SmartHQ
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964993" class="nav_category-item">
-                    Social Feedia
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002185954" class="nav_category-item">
-                    Release Notes
-                    <i class="ph-caret-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4 nav_category">
-            <div class="nav_category-header">
-                Other Categories
-                <i class="ph-plus-bold"></i>
-            </div>
-
-            <div class="nav_category-item_list">
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001965073" class="nav_category-item">
-                    Additional Docs
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004802874" class="nav_category-item">
-                    CK Legacy
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964893" class="nav_category-item">
-                    Equipment Maintenance
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004325294" class="nav_category-item">
-                    Grand Openings
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001964973" class="nav_category-item">
-                    International
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360004439774" class="nav_category-item">
-                    Master Articles
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360002841913" class="nav_category-item">
-                    Sales Material
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/sections/360009732253" class="nav_category-item">
-                    Things to Know!
-                    <i class="ph-caret-right"></i>
-                </a>
-
-                <a href="https://help.365retailmarkets.com/hc/en-us/categories/360001947554" class="nav_category-item">
-                    Wing Cards
-                    <i class="ph-caret-right"></i>
-                </a>                
-            </div>
-        </div>
-    </div>
-
-    <div class="row nav_footer">
-        <a href="{{page_path 'help_center'}}" class="col">
-            <i class="ph-house"></i>
-            <span class="nav_footer-text">Home</span>
-        </a>
-
-        <a href="{{page_path 'requests'}}" class="col">
-            <i class="ph-article"></i>
-            <span class="nav_footer-text">Tickets</span>
-        </a>
-
-        <a href="{{page_path 'new_request'}}" class="col">
-            <i class="ph-rocket-launch"></i>
-            <span class="nav_footer-text">New Ticket</span>
-        </a>
-
-        <a class="col nav_footer-categories_button">
-            <i class="ph-sort-descending"></i>
-            <span class="nav_footer-text">Categories</span>
-        </a>
-    </div>
-</div>
+</header>
 <!-- End Header Template -->
