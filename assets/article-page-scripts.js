@@ -4,6 +4,22 @@ $(document).ready(function() {
 
 
 
+    /*
+        * As Zendesk does not allow for the same article to exist in multiple places,
+        * a workaround has been created where an article exists with a link to another article.
+        * We're assigning that link a specific ID and then reference it here to send the user
+        * along to the linked article.
+    */
+    let redirectCheck = document.getElementById( 'js-forward-redirect' );
+    if( redirectCheck )  {
+        let redirectURL = $( '#js-forward-redirect' ).attr( 'href' );
+        window.location.href = redirectURL;
+    };
+
+
+
+
+
     // Print article button function
     $( '.js-print-article' ).click(function printArticle() {
         window.print();
