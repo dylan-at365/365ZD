@@ -1,6 +1,14 @@
 /* ================================
     #Footer
 ================================ */
+/*
+    * Extends summary in _overrides.scss
+*/
+summary.padding-bottom-only {
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+
 .footer {
     padding: 1rem;
 }
