@@ -43,6 +43,11 @@ ul[data-hc-pills-container] li[data-hc-pill="true"][aria-invalid="true"] {
     * These styles override the default Zendesk TinyMCE article builder styles.
     * Colors are replaced with brand colors and font sizes are adjusted to fit the rest of the site.
 */
+
+/*
+    * 4.0.1
+    * Fix authors setting the black color to override link styles and text disappearing in dark mode
+*/
 .wysiwyg-color-black,
 .wysiwyg-color-black70,
 .wysiwyg-color-black60,
@@ -51,7 +56,7 @@ ul[data-hc-pills-container] li[data-hc-pill="true"][aria-invalid="true"] {
 .wysiwyg-color-black30,
 .wysiwyg-color-black20,
 .wysiwyg-color-black10 {
-    color: var(--gray-100);
+    color: inherit;
 }
 
 .wysiwyg-color-blue,
