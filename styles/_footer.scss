@@ -1,6 +1,10 @@
 /* ================================
     #Footer
 ================================ */
+footer details[open], footer details[open] > summary.padding-bottom-only {
+    background-color: transparent;
+}
+
 /*
     * Extends summary in _overrides.scss
 */
