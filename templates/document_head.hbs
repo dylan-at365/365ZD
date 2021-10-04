@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="color-scheme" content="light dark">
 
+<!-- jQuery -->
+<script	src="{{asset 'jquery-3.6.0.min.js'}}"></script>
+
 <!-- Load light mode if "prefers-color-scheme" is not supported -->
 <script>
     if ( window.matchMedia( "(prefers-color-scheme: dark)" ).media === "not all" ) {
@@ -15,10 +18,7 @@
 
 <!-- Dark/Light CSS Files -->
 <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{asset 'style-dark.css'}}"/>
-<link rel="stylesheet" media="(prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
-
-<!-- jQuery -->
-<script	src="{{asset 'jquery-3.6.0.min.js'}}"></script>
+<link rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
 
 <!-- Phosphor Icons (https://phosphoricons.com/) -->
 <link rel="stylesheet" type="text/css" href="{{asset 'phosphor.css'}}"/>
