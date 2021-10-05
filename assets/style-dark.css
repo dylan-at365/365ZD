@@ -33,6 +33,19 @@ details[open] > summary {
 
 
 /* ================================
+    _zendesk-overrides.scss
+================================ */
+#preview-bar-container > div {
+    color: var(--gray-700) !important;
+    background: var(--gray-100) !important;
+    border-bottom: 1px solid var(--gray-200) !important;
+}
+
+
+
+
+
+/* ================================
     _layout.scss
 ================================ */
 .row-light {
