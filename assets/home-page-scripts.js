@@ -49,7 +49,6 @@ $(document).ready(function() {
         $( '.js-restricted-internal-content' ).remove();
 
     } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' ) {
-        console.log('365RM User');
         $( '.js-restricted-internal-content' ).show();
 
         // The .show() method expands the internal category drawer when this script is run
