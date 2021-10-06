@@ -151,6 +151,10 @@ input[name="commit"]:disabled {
 /* ================================
     _header.scss
 ================================ */
+.logo {
+    background-position: top center;
+}
+
 .title {
     color: var(--gray-100);
 }

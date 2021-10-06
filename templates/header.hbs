@@ -6,13 +6,7 @@
         <!-- Logo and Menu Button -->
         <a href="{{page_path 'help_center'}}" class="col brand">
             
-            <picture class="logo">
-                <source
-                    srcset="{{asset 'logo-white.svg'}}"
-                    media="(prefers-color-scheme: dark)">
-                <img src="{{asset 'logo-color.svg'}}" alt="Three Six Five Retail Markets logo" width="80" height="80">
-            </picture>
-
+            <div class="logo"></div>
             <h2 class="title">HelpCenter</h2>
         </a>
 
@@ -21,7 +15,22 @@
             <input id="search--header" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
         </form>
 
-        
+
+
+        <div class="mode-toggle d-print-none">
+            <input id="js-mode-toggle-switch" class="mode-toggle__switch" type="checkbox">
+            <label class="mode-toggle__label" for="js-mode-toggle-switch"></label>
+        </div>
+
+        <button type="button" id="js-clear-mode-storage" class="button button--inactive clear-mode-toggle d-print-none">
+            <i class="ph-x"></i>
+        </button>
+
+        <div class="toast">
+            <div class="toast__title"></div>
+            <div class="toast__description"></div>
+        </div>
+
 
 
         <button type="button" aria-controls="header-menu" class="col button--menu d-print-none">
@@ -94,5 +103,6 @@
         </div>
     {{/if}}
 
+<script src="{{asset 'toggle-color-mode.js'}}"></script>
 </header>
 <!-- End Header Template -->

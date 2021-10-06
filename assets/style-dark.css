@@ -207,6 +207,10 @@ details[open] > summary {
 /* ================================
     _header.scss
 ================================ */
+.logo {
+    background-position: bottom center;
+}
+
 .title {
     color: var(--gray-700);
 }

@@ -16,3 +16,8 @@
     color: var(--blue-400);
     transition: var(--transition-time);
 }
+
+.button > i {
+    position: relative;
+    top: -4px;
+}
