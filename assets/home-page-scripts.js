@@ -32,9 +32,9 @@ $(document).ready(function() {
 
     // Add or remove our element based on the result above
     if ( orgCheck == false ) {
-        $( 'div.js-restricted-canteen-content' ).remove();
+        $( '.js-restricted-canteen-content' ).remove();
     } else if ( orgCheck == true ) {
-        $( 'div.js-restricted-canteen-content' ).show();
+        $( '.js-restricted-canteen-content' ).show();
     };
 
 
