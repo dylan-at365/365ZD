@@ -57,6 +57,13 @@
   .ph-lock-key-fill:before {
     content: "\eacc";
   }
+  .ph-sun-fill:before {
+    content: "\eba4";
+  }
+  .ph-moon-fill:before {
+    content: "\eae9";
+  }
+
   .ph-airplay-bold:before {
     content: "\ec04";
   }
@@ -2373,6 +2380,7 @@
   .ph-airplane-tilt-bold:before {
     content: "\ef07";
   }
+  
   .ph-align-center-vertical:before {
     content: "\ef08";
   }

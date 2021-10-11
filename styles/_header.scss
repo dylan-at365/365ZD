@@ -127,10 +127,29 @@
     cursor: pointer;
 }
 
+.mode-toggle__label::after {
+    display: inline-block;
+    position: absolute;
+
+    top: -2px;
+    left: 2px;
+
+    color: var(--gray-700);
+
+    font-family: 'Phosphor';
+    font-size: 0.8rem;
+    
+    content: "\eae9";
+}
+
 .mode-toggle__switch:checked + .mode-toggle__label {
     left: 20px;
     background-color: var(--blue-200);
     transition: var(--transition-time);
+}
+
+.mode-toggle__switch:checked + .mode-toggle__label::after {
+    content: "\eba4";
 }
 
 .clear-mode-toggle {
