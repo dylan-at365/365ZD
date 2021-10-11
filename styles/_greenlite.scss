@@ -1,0 +1,26 @@
+/*
+    * Add a class to change heading colors to that of Greenlite's branding for specific articles
+*/
+.greenlite-branded .wysiwyg-color-blue,
+.greenlite-branded .wysiwyg-color-blue70,
+.greenlite-branded .wysiwyg-color-blue80,
+.greenlite-branded .wysiwyg-color-blue90,
+.greenlite-branded .wysiwyg-color-blue110,
+.greenlite-branded .wysiwyg-color-blue120,
+.greenlite-branded .wysiwyg-color-blue130 {
+    color: #80bd01;
+}
+
+.greenlite-branded .wysiwyg-color-green,
+.greenlite-branded .wysiwyg-color-green70,
+.greenlite-branded .wysiwyg-color-green80,
+.greenlite-branded .wysiwyg-color-green90,
+.greenlite-branded .wysiwyg-color-green110,
+.greenlite-branded .wysiwyg-color-green120,
+.greenlite-branded .wysiwyg-color-green130 {
+    color: #80bd01;
+}
+
+.greenlite-branded::before {
+    content: url(https://img.365retailmarkets.com/training/helpcenter/img/GreenLitelogo.png);
+}
