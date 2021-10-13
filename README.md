@@ -50,7 +50,7 @@ To avoid having to enter your Zendesk credentials every time you start your deve
 
 ```json
 {
-  "subdomain": "erm",
+  "subdomain": "365retailmarkets",
   "username": "jh@365.rm/token",
   "password": "YOUR_API_TOKEN"
 }
@@ -78,7 +78,7 @@ For deploying changes to production we use the [Zendesk GitHub integration](http
 
 1. Increment the `version` in [`manifest.json`](manifest.json) (without this Zendesk won't recognize an update).
 2. Commit your changes and merge your branch to the master branch.
-3. In the [Zendesk Guide theming center](https://support.evoko.se/theming) press **Update from GitHub**.
+3. In the [Zendesk Guide theming center](https://help.365retailmarkets.com/theming) press **Update from GitHub**.
 4. Changes should now be live!
 
 ## Acknowledgments
