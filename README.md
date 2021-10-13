@@ -5,6 +5,8 @@ This repository contains the [365 Retail Markets HelpCenter](https://help.365ret
 
 Version 4 focuses on clean code, BEM-like CSS principles, accessibility, and a dark mode addition.
 
+NOTE: This repository contains a lot of brand-specific links and styling. It is not intended to be used as a theme on another Zendesk Guide instance. Even so, I hope that it can act as a reference or starting point for creating your own Guide theme. Questions about the strange actions that Zendesk sometimes takes with its products are certainly welcome!
+
 ## Some specific points in the new version include:
 - Even more improved template code quality
 - BEM-like naming, reusable & component-ish classes
