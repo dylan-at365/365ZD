@@ -53,9 +53,11 @@ $(document).ready(function() {
         $(this).removeAttr( 'width' );
     });
 
-    // Also wrap tables in a responsive div tag
-    $( '.article-inner table' ).wrap( '<div class="table-responsive"></div>' );
-
+    // Wrap tables in a responsive div tag if sticky headers are not set
+    if ( $( 'table thead' ).hasClass( 'table__sticky-header') == false ) {
+        $( '.article-inner table' ).wrap( '<div class="table-responsive"></div>' );
+    }
+    
 
 
 
