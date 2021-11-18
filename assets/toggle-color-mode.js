@@ -138,6 +138,7 @@ $(document).ready(function() {
             $( '.toast__title' ).text( 'Error' );
             $( '.toast__description' ).text( 'Theme mode toggle not set!');
 
+            $( '.toast' ).removeClass( 'd-none' );
             $( '.toast' ).animate( { opacity: 1 }, 200 );
 
             // Is a timeout inside a timeout a bad idea? The styles get removed from the fading element too early otherwise...
@@ -146,6 +147,7 @@ $(document).ready(function() {
 
                 setTimeout(() => {
                     $( '.toast' ).removeClass( 'toast--alert' );
+                    $( '.toast' ).addClass( 'd-none' );
                 }, 200 );
             }, 3000 );
 
@@ -161,6 +163,7 @@ $(document).ready(function() {
             $( '.toast__title' ).text( 'Theme mode cleared' );
             $( '.toast__description' ).text( 'Please refresh the page to view changes.');
 
+            $( '.toast' ).removeClass( 'd-none' );
             $( '.toast' ).animate( { opacity: 1 }, 200 );
 
             setTimeout(() => {
@@ -168,6 +171,7 @@ $(document).ready(function() {
                 
                 setTimeout(() => {
                     $( '.toast' ).removeClass( 'toast--success' );
+                    $( '.toast' ).addClass( 'd-none' );
                 }, 200 );
 
             }, 3000 );

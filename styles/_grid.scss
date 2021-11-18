@@ -38,12 +38,6 @@
   }
 }
 
-/*@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}*/
-
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -130,6 +124,10 @@
 .col-12 {
   flex: 0 0 auto;
   width: 100%;
+}
+
+.d-none {
+    display: none !important;
 }
 
 @media (min-width: 576px) {
