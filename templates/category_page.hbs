@@ -10,9 +10,12 @@
 
     <div class="row padded-content row-light">
         <div class="col-12 heading">{{category.name}}</div>
-        <div class="col-12 subheading">
-            {{category.description}}
-        </div>
+
+        {{#if category.description}}
+            <div class="col-12 subheading">
+                {{category.description}}
+            </div>
+        {{/if}}
     </div>
 
     <div class="row padded-content row-dark">
