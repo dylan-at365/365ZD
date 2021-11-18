@@ -49,6 +49,8 @@ JavaScript that you do not think belong in the document `<head>` can be added in
 ## Developing
 To start contributing, clone the repository (`git clone https://github.com/ohitsdylan/365ZD.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
 
+When creating pull requests, please format your request according to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/#summary).
+
 ### Local previewing
 You can use your favorite IDE to develop and preview your changes locally in a web browser using the Zendesk Apps Tools (ZAT) which is installed as a Ruby gem. For more details, see [Previewing theme changes locally](https://support.zendesk.com/hc/en-us/articles/115012793547).
 
