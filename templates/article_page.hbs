@@ -1,4 +1,28 @@
 <!-- Start Article Template -->
+
+    <style>
+        .article-sidebar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            color: var(--gray-100);
+            background-color: var(--gray-600);
+        }
+    </style>
+
+    
+
+    <div class="article-sidebar">
+
+        <div class="heading">
+            Table of Contents
+        </div>
+
+        <ul>
+        </ul>
+    
+    </div>
+
 <div class="container">
 
     <!-- Breadcrumbs -->
@@ -90,3 +114,18 @@
 <script src="{{asset 'jquery.reel-min.js'}}"></script>
 
 <!-- End Article Template -->
+
+<script>
+        var headingElements = $( 'h1, h2' );
+
+        // Start at index 1 to skip over the HelpCenter title
+        for ( var i = 1; i < headingElements.length; i++ ) {
+            
+            $( '.article-sidebar ul' ).append( 
+                '<li>' + 
+                '<a href="#' + headingElements[i].id + '">' + 
+                headingElements[i].innerText + 
+                '</li>'
+            );
+        };
+    </script>
