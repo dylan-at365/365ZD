@@ -1,28 +1,4 @@
 <!-- Start Article Template -->
-
-    <style>
-        .article-sidebar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            color: var(--gray-100);
-            background-color: var(--gray-600);
-        }
-    </style>
-
-    
-
-    <div class="article-sidebar">
-
-        <div class="heading">
-            Table of Contents
-        </div>
-
-        <ul>
-        </ul>
-    
-    </div>
-
 <div class="container">
 
     <!-- Breadcrumbs -->
@@ -49,18 +25,39 @@
         </div>
     </div>
 
-    <div class="row padded-content row-light d-print-none">
-        <a href="#" class="col-3 col-md-2 col-lg-1 button js-print-article">Print</a>
-
-        <div class="col-3 col-md-2 col-lg-1 button">
-            {{subscribe}}
-        </div>
-    </div>
-
     <div class="row article-body row-light">
+
+        <div class="col-sm-12 col-md-3 article-sidebar sidebar-hidden d-print-none">
+            <div class="subheading subheading--underline">
+                Table of Contents
+            </div>
+
+            <ul>
+            </ul>
+        </div>
+
+        <div class="col-05 article-sidebar__tab-container d-print-none">
+            <div class="article-sidebar__tab js-toggle-sidebar">
+                Table of Contents
+            </div>
+
+            <div class="article-sidebar__tab js-print-article">
+                Print
+            </div>
+
+            <div class="article-sidebar__tab">
+                {{subscribe}}
+            </div>
+
+            <div class="article-sidebar__tab js-scroll-top">
+                <i class="ph-caret-up"></i>
+            </div>
+        </div>
+
         <div class="col article-inner">
             {{article.body}}
         </div>
+
     </div>
 
     {{#if attachments}}
@@ -114,18 +111,3 @@
 <script src="{{asset 'jquery.reel-min.js'}}"></script>
 
 <!-- End Article Template -->
-
-<script>
-        var headingElements = $( 'h1, h2' );
-
-        // Start at index 1 to skip over the HelpCenter title
-        for ( var i = 1; i < headingElements.length; i++ ) {
-            
-            $( '.article-sidebar ul' ).append( 
-                '<li>' + 
-                '<a href="#' + headingElements[i].id + '">' + 
-                headingElements[i].innerText + 
-                '</li>'
-            );
-        };
-    </script>
