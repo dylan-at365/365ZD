@@ -35,6 +35,8 @@ $(document).ready(function() {
     // Start at index 1 to skip over the HelpCenter title
     for ( var i = 1; i < headingElements.length; i++ ) {
 
+        headingElements[i].id = headingElements[i].innerText.replace(/\s+/g, '');
+
         // Check the heading level and indent the smaller ones to replicate a nested list
         if ( headingElements[i].tagName == "H1" ) {
             $( '.article-sidebar ul' ).append(
