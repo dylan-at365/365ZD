@@ -49,8 +49,43 @@
     color: var(--gray-700);
     background-color: var(--blue-200);
     border-radius: 0 2px 2px 0;
+    text-align: center;
     cursor: pointer;
     writing-mode: vertical-lr;
+}
+
+@media (max-width: 768px) {
+    .article-sidebar {
+        position: static;
+        max-height: auto;
+        padding: 1rem;
+        border: none;
+        overflow-y: visible;
+    }
+
+    .sidebar-hidden {
+        display: block;
+        width: 100%;
+        overflow: visible;
+    }
+
+    .article-sidebar__tab-container {
+        order: -1;
+        position: static;
+        margin: 1rem;
+        max-height: auto;
+    }
+
+    .article-sidebar__tab {
+        display: inline-block;
+        border-radius: var(--border-radius);
+        writing-mode: horizontal-tb;
+    }
+
+    .js-toggle-sidebar,
+    .js-scroll-top {
+        display: none;
+    }
 }
 
 
