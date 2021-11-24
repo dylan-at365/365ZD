@@ -29,6 +29,74 @@ $(document).ready(function() {
 
 
 
+    // Auto-generate a "Table of Contents" based on the heading elements in the article.
+    var headingElements = $( 'h1, h2, h3' );
+
+    // Start at index 1 to skip over the HelpCenter title
+    for ( var i = 1; i < headingElements.length; i++ ) {
+
+        // Check the heading level and indent the smaller ones to replicate a nested list
+        if ( headingElements[i].tagName == "H1" ) {
+            $( '.article-sidebar ul' ).append(
+
+                '<li>' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].innerText + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+        else if ( headingElements[i].tagName == "H2" ) {
+            $( '.article-sidebar ul' ).append( 
+
+                '<li class="article-sidebar__sublevel-one">' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].innerText + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+        else if ( headingElements[i].tagName == "H3" ) {
+            $( '.article-sidebar ul' ).append( 
+
+                '<li class="article-sidebar__sublevel-two">' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].innerText + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+        else {
+            $( '.article-sidebar ul' ).append(
+
+                '<li>' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].innerText + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+    };
+
+    $( '.js-toggle-sidebar' ).click( function toggleSidebar() {
+        $( '.article-sidebar' ).toggleClass('sidebar-hidden');
+    });
+
+    $( '.js-scroll-top' ).click( function scrollTop() {
+        $( 'html, body' ).scrollTop(0);
+    });
+
+
+
+
 
     // FancyBox lightbox
 	$( '.article-inner img.fancybox' ).click(function toggleFancyBox() {
