@@ -35,51 +35,39 @@ $(document).ready(function() {
     // Start at index 1 to skip over the HelpCenter title
     for ( var i = 1; i < headingElements.length; i++ ) {
 
-        headingElements[i].id = headingElements[i].innerText.replace(/\s+/g, '');
+        headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '');
 
         // Check the heading level and indent the smaller ones to replicate a nested list
-        if ( headingElements[i].tagName == "H1" ) {
+        if ( headingElements[i].tagName == 'H1' && headingElements[i].innerHTML !== '&nbsp;' ) {
             $( '.article-sidebar ul' ).append(
 
                 '<li>' + 
                     '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].innerText + 
+                        headingElements[i].textContent + 
                     '</a>' + 
                 '</li>'
 
             );
         }
 
-        else if ( headingElements[i].tagName == "H2" ) {
+        else if ( headingElements[i].tagName == 'H2' && headingElements[i].innerHTML !== '&nbsp;' ) {
             $( '.article-sidebar ul' ).append( 
 
                 '<li class="article-sidebar__sublevel-one">' + 
                     '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].innerText + 
+                        headingElements[i].textContent + 
                     '</a>' + 
                 '</li>'
 
             );
         }
 
-        else if ( headingElements[i].tagName == "H3" ) {
+        else if ( headingElements[i].tagName == 'H3' && headingElements[i].innerHTML !== '&nbsp;' ) {
             $( '.article-sidebar ul' ).append( 
 
                 '<li class="article-sidebar__sublevel-two">' + 
                     '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].innerText + 
-                    '</a>' + 
-                '</li>'
-
-            );
-        }
-
-        else {
-            $( '.article-sidebar ul' ).append(
-
-                '<li>' + 
-                    '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].innerText + 
+                        headingElements[i].textContent + 
                     '</a>' + 
                 '</li>'
 
