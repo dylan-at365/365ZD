@@ -35,6 +35,7 @@ $(document).ready(function() {
     // Start at index 1 to skip over the HelpCenter title
     for ( var i = 1; i < headingElements.length; i++ ) {
 
+        // Assign heading elements an ID based on their text content, minus the whitespace
         headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '');
 
         // Check the heading level and indent the smaller ones to replicate a nested list
@@ -81,7 +82,7 @@ $(document).ready(function() {
     });
 
     $( '.js-scroll-top' ).click( function scrollTop() {
-        $( 'html, body' ).scrollTop(0);
+        $( 'html, body' ).animate( { scrollTop: 0 }, '1000' );
     });
 
 
