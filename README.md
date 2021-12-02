@@ -79,47 +79,6 @@ npm run styles:watch
 npm run styles:build
 ```
 
-## Committing Changes
-When creating pull requests, please format your request according to the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/#summary).
-
-### Format
-Commit messages should contain a header. The scope of the header is optional. The body and footer are optional. If the message's type is `fix`, the footer should be included and contain a [closing reference to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
-```
-<type>(<scope>): <subject>
-<line break>
-<body>
-<line break>
-<footer>
-```
-
-**Short Example:**
-`fix(css): adjust warning callout text color to black`
-
-**Long Example:**
-```
-fix: toast element blocking header search bar (#6)
-
-Added a "d-none" class that is added/removed from/to the toast element after the opacity is set to zero/one.
-
-Closes #6
-```
-
-### Types
-Must be one of:
-- **fix**: A bug fix
-- **feat**: A new feature
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **docs**: Changes to the README or any other documentation
-
-### Scopes
-If included, should be one of:
-- **html**: Changes to the templating files
-- **css**: Changes to files in the `styles` folder, or the `style-light.css` or `style-dark.css` files
-- **js**: Changes to any JavaScript file
-
-If you feel a new type or scope should be implemented, please open a new issue and we can discuss it.
-
 ## Deploying
 For deploying changes to production we use the [Zendesk GitHub integration](https://support.zendesk.com/hc/en-us/community/posts/360004400007), the workflow can be summarized to:
 

@@ -80,6 +80,52 @@ input[name="commit"]:disabled {
 
 
 /* ================================
+    _callouts.scss
+================================ */
+.banner-callout__info {
+    color: var(--gray-700);
+    background-color: var(--blue-400);
+}
+
+.banner-callout__warning {
+    color: var(--gray-100);
+    background-color: var(--yellow-200);
+}
+
+.banner-callout__alert {
+    color: var(--gray-700);
+    background-color: var(--red-200);
+}
+
+
+
+
+
+.inline-callout__info {
+    background-color: var(--blue-600);
+    border-left: 12px solid var(--blue-200);
+}
+
+.inline-callout__success {
+    background-color: var(--green-300);
+    border-left: 12px solid var(--green-200);
+}
+
+.inline-callout__warning {
+    background-color: var(--yellow-300);
+    border-left: 12px solid var(--yellow-200);
+}
+
+.inline-callout__alert {
+    background-color: var(--red-300);
+    border-left: 12px solid var(--red-200);
+}
+
+
+
+
+
+/* ================================
     _cards.scss
 ================================ */
 .card {
@@ -142,6 +188,11 @@ input[name="commit"]:disabled {
 .table-striped > tbody > tr:nth-of-type(odd) {
     color: var(--gray-100);
     background-color: var(--gray-600);
+}
+
+.table__sticky-header {
+    color: var(--gray-700);
+    background-color: var(--blue-400);
 }
 
 
