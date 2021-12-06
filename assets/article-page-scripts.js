@@ -31,6 +31,7 @@ $(document).ready(function() {
 
     // Auto-generate a "Table of Contents" based on the heading elements in the article.
     var headingElements = $( 'h1, h2, h3' );
+    var regExMatch = /(\&nbsp\;)+/g;
 
     // Start at index 1 to skip over the HelpCenter title
     for ( var i = 1; i < headingElements.length; i++ ) {
@@ -39,7 +40,7 @@ $(document).ready(function() {
         headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '');
 
         // Check the heading level and indent the smaller ones to replicate a nested list
-        if ( headingElements[i].tagName == 'H1' && headingElements[i].innerHTML !== '&nbsp;' ) {
+        if ( headingElements[i].tagName == 'H1' && !headingElements[i].innerHTML.match(regExMatch) ) {
             $( '.article-sidebar ul' ).append(
 
                 '<li>' + 
@@ -51,7 +52,7 @@ $(document).ready(function() {
             );
         }
 
-        else if ( headingElements[i].tagName == 'H2' && headingElements[i].innerHTML !== '&nbsp;' ) {
+        else if ( headingElements[i].tagName == 'H2' && !headingElements[i].innerHTML.match(regExMatch) ) {
             $( '.article-sidebar ul' ).append( 
 
                 '<li class="article-sidebar__sublevel-one">' + 
@@ -63,7 +64,7 @@ $(document).ready(function() {
             );
         }
 
-        else if ( headingElements[i].tagName == 'H3' && headingElements[i].innerHTML !== '&nbsp;' ) {
+        else if ( headingElements[i].tagName == 'H3' && !headingElements[i].innerHTML.match(regExMatch) ) {
             $( '.article-sidebar ul' ).append( 
 
                 '<li class="article-sidebar__sublevel-two">' + 
