@@ -29,6 +29,66 @@ $(document).ready(function() {
 
 
 
+    // Auto-generate a "Table of Contents" based on the heading elements in the article.
+    var headingElements = $( 'h1, h2, h3' );
+    var regExMatch = /(\&nbsp\;)+/g;
+
+    // Start at index 1 to skip over the HelpCenter title
+    for ( var i = 1; i < headingElements.length; i++ ) {
+
+        // Assign heading elements an ID based on their text content, minus the whitespace
+        headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '');
+
+        // Check the heading level and indent the smaller ones to replicate a nested list
+        if ( headingElements[i].tagName == 'H1' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            $( '.article-sidebar ul' ).append(
+
+                '<li>' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].textContent + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+        else if ( headingElements[i].tagName == 'H2' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            $( '.article-sidebar ul' ).append( 
+
+                '<li class="article-sidebar__sublevel-one">' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].textContent + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+        else if ( headingElements[i].tagName == 'H3' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            $( '.article-sidebar ul' ).append( 
+
+                '<li class="article-sidebar__sublevel-two">' + 
+                    '<a href="#' + headingElements[i].id + '">' + 
+                        headingElements[i].textContent + 
+                    '</a>' + 
+                '</li>'
+
+            );
+        }
+
+    };
+
+    $( '.js-toggle-sidebar' ).click( function toggleSidebar() {
+        $( '.article-sidebar' ).toggleClass('sidebar-hidden');
+    });
+
+    $( '.js-scroll-top' ).click( function scrollTop() {
+        $( 'html, body' ).animate( { scrollTop: 0 }, '1000' );
+    });
+
+
+
+
 
     // FancyBox lightbox
 	$( '.article-inner img.fancybox' ).click(function toggleFancyBox() {
