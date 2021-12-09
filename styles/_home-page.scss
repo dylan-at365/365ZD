@@ -5,9 +5,10 @@
     align-items: center;
     justify-content: center;
     height: 256px;
-    background-image: url($assets-hero_banner-png);
+    background-image: url($assets-hero_banner-svg);
     background-attachment: scroll;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
