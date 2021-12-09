@@ -33,52 +33,55 @@ $(document).ready(function() {
     var headingElements = $( 'h1, h2, h3' );
     var regExMatch = /(\&nbsp\;)+/g;
 
-    // Start at index 1 to skip over the HelpCenter title
-    for ( var i = 1; i < headingElements.length; i++ ) {
+    // Some articles might not want the ToC. Skip the modification if this class exists
+    if( !$( '.js-deny-toc' ) ) {
 
-        // Assign heading elements an ID based on their text content, minus the whitespace & limited
-        // to 24 characters
-        headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '').substring(0, 24);
+        // Start at index 1 to skip over the HelpCenter title
+        for ( var i = 1; i < headingElements.length; i++ ) {
 
-        // Check the heading level and indent the smaller ones to replicate a nested list
-        if ( headingElements[i].tagName == 'H1' && !headingElements[i].innerHTML.match(regExMatch) ) {
-            $( '.article-sidebar .js-append-toc' ).append(
+            // Assign heading elements an ID based on their text content, minus the whitespace & limited
+            // to 24 characters
+            headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '').substring(0, 24);
 
-                '<li>' + 
-                    '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].textContent + 
-                    '</a>' + 
-                '</li>'
+            // Check the heading level and indent the smaller ones to replicate a nested list
+            if ( headingElements[i].tagName == 'H1' && !headingElements[i].innerHTML.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append(
 
-            );
-        }
+                    '<li>' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
 
-        else if ( headingElements[i].tagName == 'H2' && !headingElements[i].innerHTML.match(regExMatch) ) {
-            $( '.article-sidebar ul' ).append( 
+                );
+            }
 
-                '<li class="article-sidebar__sublevel-one">' + 
-                    '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].textContent + 
-                    '</a>' + 
-                '</li>'
+            else if ( headingElements[i].tagName == 'H2' && !headingElements[i].innerHTML.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append( 
 
-            );
-        }
+                    '<li class="article-sidebar__sublevel-one">' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
 
-        else if ( headingElements[i].tagName == 'H3' && !headingElements[i].innerHTML.match(regExMatch) ) {
-            $( '.article-sidebar ul' ).append( 
+                );
+            }
 
-                '<li class="article-sidebar__sublevel-two">' + 
-                    '<a href="#' + headingElements[i].id + '">' + 
-                        headingElements[i].textContent + 
-                    '</a>' + 
-                '</li>'
+            else if ( headingElements[i].tagName == 'H3' && !headingElements[i].innerHTML.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append( 
 
-            );
-        }
+                    '<li class="article-sidebar__sublevel-two">' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
 
+                );
+            }
+
+        };
     };
-
 
 
 
