@@ -1,36 +1,28 @@
 .article-sidebar {
     position: sticky;
-    top: 0;
+    top: 1rem;
     max-height: 480px;
 
+    margin-left: 1rem;
     padding: 1rem;
     padding-left: 1.5rem;
 
-    color: var(--gray-100);
-    background-color: var(--gray-700);
-
-    border: 1px solid var(--gray-500);
-    border-left: none;
-
+    border-radius: var(--border-radius);
     overflow-y: scroll;
     transition: width var(--transition-time);
 }
 
-.sidebar-hidden {
-    width: 0;
-    margin: -1px;
-    padding: 0;
-    visibility: hidden;
-    overflow: hidden;
-    transition: width var(--transition-time);
-}
-
-.article-sidebar ul {
+.article-sidebar .table-of-contents {
     list-style: initial;
 }
 
-.article-sidebar li {
+.article-sidebar .table-of-contents > li {
     border-bottom: 1px solid var(--gray-500);
+}
+
+.article-sidebar .table-of-contents > li:last-child {
+    margin-bottom: 2rem;
+    border-bottom: none;
 }
 
 .article-sidebar__sublevel-one {
@@ -43,54 +35,17 @@
     list-style-type: square;
 }
 
-.article-sidebar__tab-container {
-    position: sticky;
-    top: 0;
-    max-height: 480px;
-    padding-left: 0;
-}
-
-.article-sidebar__tab {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    color: var(--gray-700);
-    background-color: var(--blue-200);
-    border-radius: 0 2px 2px 0;
-    text-align: center;
-    cursor: pointer;
-    writing-mode: vertical-lr;
-}
-
 @media (max-width: 768px) {
     .article-sidebar {
         position: static;
+        width: 100%;
         max-height: auto;
         padding: 2rem;
+        margin-left: inherit;
         border: none;
         overflow-y: visible;
     }
 
-    .sidebar-hidden {
-        display: block;
-        width: 100%;
-        overflow: visible;
-        visibility: visible;
-    }
-
-    .article-sidebar__tab-container {
-        order: -1;
-        position: static;
-        padding: 1rem;
-        max-height: auto;
-    }
-
-    .article-sidebar__tab {
-        display: inline-block;
-        border-radius: var(--border-radius);
-        writing-mode: horizontal-tb;
-    }
-
-    .js-toggle-sidebar,
     .js-scroll-top {
         display: none;
     }

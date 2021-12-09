@@ -311,8 +311,14 @@ details[open] > summary {
 
 
 /* ================================
-    _articles_scss
+    _articles.scss
 ================================ */
+.article-sidebar {
+    color: var(--gray-700);
+    background-color: var(--gray-200);
+    border: 1px solid var(--gray-500);
+}
+
 .article-inner pre {
     color: var(--gray-700);
     background-color: var(--gray-200);
