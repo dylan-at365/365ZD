@@ -51,6 +51,7 @@ $(document).ready(function() {
     $( '.article-inner table' ).each (function tableDeco() {
         $(this).addClass( 'table table-striped' );
         $(this).removeAttr( 'width' );
+        $(this).removeAttr( 'style' );
     });
 
     // Wrap tables in a responsive div tag if sticky headers are not set
@@ -64,13 +65,13 @@ $(document).ready(function() {
 
     // Scroll article anchor tags into view
     // from: https://css-tricks.com/snippets/jquery/smooth-scrolling/
-    $('a[href*="#"]')
+    $( 'a[href*="#"]' )
 
     // Remove links that don't actually link to anything
-    .not('[href="#"]')
-    .not('[href="#0"]')
+    .not( '[href="#"]' )
+    .not( '[href="#0"]' )
 
-    .click(function(event) {
+    .click (function(event) {
         // On-page links
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
@@ -79,13 +80,13 @@ $(document).ready(function() {
         ) {
             // Figure out element to scroll to
             var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            target = target.length ? target : $( '[name=' + this.hash.slice(1) + ']' );
 
             // Does a scroll target exist?
             if (target.length) {
                 // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
-                    $('html, body').animate({
+                    $( 'html, body' ).animate({
                         // EDIT: offset scroll by 50 pixels to account for Zendesk's admin bar
                         scrollTop: target.offset().top - 50
                 }, 1000, function() {
@@ -93,10 +94,10 @@ $(document).ready(function() {
                     // Must change focus!
                     var $target = $(target);
                     $target.focus();
-                    if ($target.is(":focus")) { // Checking if the target was focused
+                    if ($target.is( ':focus' )) { // Checking if the target was focused
                         return false;
                     } else {
-                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                        $target.attr( 'tabindex','-1' ); // Adding tabindex for elements not focusable
                         $target.focus(); // Set focus again
                     };
                 });
