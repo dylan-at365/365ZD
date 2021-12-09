@@ -55,7 +55,7 @@ details[open] > summary {
 
 .row-dark {
     color: var(--gray-700);
-    background-color: var(--gray-300);
+    background-color: var(--gray-200);
 }
 
 
@@ -380,11 +380,12 @@ select {
     _footer.scss
 ================================ */
 .footer {
-    background-color: var(--gray-100);
+    background-color: var(--gray-200);
 }
 
 .social {
     color: var(--gray-700);
+    background-color: var(--gray-100);
 }
 
 
