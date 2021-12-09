@@ -25,33 +25,40 @@
         </div>
     </div>
 
+    <div class="row padded-content row-light d-print-none">
+        <a href="#" class="col-3 col-md-2 col-lg-1 button js-print-article">Print</a>
+
+        <div class="col-3 col-md-2 col-lg-1 button">
+            {{subscribe}}
+        </div>
+    </div>
+
     <div class="row article-body row-light">
 
-        <div class="col-sm-12 col-md-3 article-sidebar sidebar-hidden d-print-none">
+        <div class="col-sm-12 col-md-3 article-sidebar d-print-none">
             <div class="subheading subheading--underline">
                 Table of Contents
             </div>
 
-            <ul>
+            <ul class="table-of-contents js-append-toc">
             </ul>
-        </div>
 
-        <div class="col-sm-12 col-md-05 article-sidebar__tab-container d-print-none">
-            <div class="article-sidebar__tab js-toggle-sidebar">
-                Table of Contents
-            </div>
+            {{#if attachments}}
+                <div class="subheading subheading--underline">
+                    Attachments
+                </div>
 
-            <div class="article-sidebar__tab js-print-article">
-                Print
-            </div>
+                <ul>
+                {{#each attachments}}
+                    <li>
+                        <a href="{{url}}" target="_blank" rel="noopener" class="link">
+                            {{name}}
+                        </a>
+                    </li>
+                {{/each}}
+                </ul>
+            {{/if}}
 
-            <div class="article-sidebar__tab">
-                {{subscribe}}
-            </div>
-
-            <div class="article-sidebar__tab js-scroll-top">
-                <i class="ph-caret-up"></i>
-            </div>
         </div>
 
         <div class="col article-inner">
@@ -59,21 +66,6 @@
         </div>
 
     </div>
-
-    {{#if attachments}}
-        <div class="row padded-content--no-gap row-light d-print-none">
-            <div class="col-12 heading">
-                Attachments
-            </div>
-
-            {{#each attachments}}
-                <div class="col-12">
-                    <a href="{{url}}" target="_blank" rel="noopener" class="link">{{name}}</a>
-                     - {{size}}
-                </div>
-            {{/each}}
-        </div>
-    {{/if}}
 
     {{#if article.internal}}
         <div class="row padded-content centered-content row-dark d-print-none">
