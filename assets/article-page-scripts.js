@@ -47,12 +47,11 @@ $(document).ready(function() {
 
             // Assign heading elements an ID based on their text content, minus the whitespace & limited
             // to 24 characters
-            headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '').substring(0, 24);
+            headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24);
 
             // Check the heading level and indent the smaller ones to replicate a nested list
             if ( headingElements[i].tagName == 'H1' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append(
-
                     '<li>' + 
                         '<a href="#' + headingElements[i].id + '">' + 
                             headingElements[i].textContent + 
@@ -63,7 +62,6 @@ $(document).ready(function() {
 
             else if ( headingElements[i].tagName == 'H2' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append( 
-
                     '<li class="article-sidebar__sublevel-one">' + 
                         '<a href="#' + headingElements[i].id + '">' + 
                             headingElements[i].textContent + 
@@ -74,7 +72,6 @@ $(document).ready(function() {
 
             else if ( headingElements[i].tagName == 'H3' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append( 
-
                     '<li class="article-sidebar__sublevel-two">' + 
                         '<a href="#' + headingElements[i].id + '">' + 
                             headingElements[i].textContent + 
@@ -100,7 +97,7 @@ $(document).ready(function() {
     // If the only element is the "to top" button, make the column smaller
     if ( $( '.article-sidebar' ).children().length == 1 ) {
         $( '.article-sidebar' ).removeClass( 'col-md-3' );
-        $( '.article-sidebar' ).addClass( 'col-md-05' );
+        $( '.article-sidebar' ).addClass( 'col-md-1' );
     };
 
     // Scroll to top button
