@@ -29,12 +29,18 @@ $(document).ready(function() {
 
 
 
+
     // Auto-generate a "Table of Contents" based on the heading elements in the article.
     var headingElements = $( 'h1, h2, h3' );
-    var regExMatch = /(\&nbsp\;)+/g;
+    var regExMatch = /[\w\d]/g;
+
+    if ( $( '.js-deny-toc' ).length ) {
+        $( '.table-of-contents' ).remove();
+    };
 
     // Some articles might not want the ToC. Skip the modification if this class exists
-    if( !$( '.js-deny-toc' ) ) {
+    // If the sidebar is empty, also don't do anything
+    if ( !$( '.js-deny-toc' ).length ) {
 
         // Start at index 1 to skip over the HelpCenter title
         for ( var i = 1; i < headingElements.length; i++ ) {
@@ -44,7 +50,7 @@ $(document).ready(function() {
             headingElements[i].id = headingElements[i].textContent.replace(/\s+/g, '').substring(0, 24);
 
             // Check the heading level and indent the smaller ones to replicate a nested list
-            if ( headingElements[i].tagName == 'H1' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            if ( headingElements[i].tagName == 'H1' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append(
 
                     '<li>' + 
@@ -52,11 +58,10 @@ $(document).ready(function() {
                             headingElements[i].textContent + 
                         '</a>' + 
                     '</li>'
-
                 );
             }
 
-            else if ( headingElements[i].tagName == 'H2' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            else if ( headingElements[i].tagName == 'H2' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append( 
 
                     '<li class="article-sidebar__sublevel-one">' + 
@@ -64,11 +69,10 @@ $(document).ready(function() {
                             headingElements[i].textContent + 
                         '</a>' + 
                     '</li>'
-
                 );
             }
 
-            else if ( headingElements[i].tagName == 'H3' && !headingElements[i].innerHTML.match(regExMatch) ) {
+            else if ( headingElements[i].tagName == 'H3' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append( 
 
                     '<li class="article-sidebar__sublevel-two">' + 
@@ -76,12 +80,34 @@ $(document).ready(function() {
                             headingElements[i].textContent + 
                         '</a>' + 
                     '</li>'
-
                 );
             }
 
         };
     };
+
+    // If a link to an auto-generated ID is supplied, navigate to that ID after it has been generated
+    var currentHash = window.location.hash;
+    if ( currentHash != "" ) {
+        $(`${currentHash}`)[0].scrollIntoView();
+    };
+
+    // If the ToC is empty, get rid of it
+    if ( $( '.js-append-toc').children().length == 0 ) {
+        $( '.table-of-contents' ).remove();
+    };
+
+    // If the only element is the "to top" button, make the column smaller
+    if ( $( '.article-sidebar' ).children().length == 1 ) {
+        $( '.article-sidebar' ).removeClass( 'col-md-3' );
+        $( '.article-sidebar' ).addClass( 'col-md-05' );
+    };
+
+    // Scroll to top button
+    $( '.js-scroll-top' ).click (function() {
+        $( 'html, body' ).animate( { scrollTop: 0 }, '1000' );
+    });
+
 
 
 
@@ -97,7 +123,9 @@ $(document).ready(function() {
 	});
 
     // Add a little note telling users they can click on images to enable big mode
-    $( '.article-inner img.fancybox' ).after( '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' );
+    $( '.article-inner img.fancybox' ).after( 
+        '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
+    );
 
 
 
@@ -114,7 +142,7 @@ $(document).ready(function() {
     if ( $( 'table thead' ).hasClass( 'table__sticky-header') == false ) {
         $( '.article-inner table' ).wrap( '<div class="table-responsive"></div>' );
     }
-    
+
 
 
 

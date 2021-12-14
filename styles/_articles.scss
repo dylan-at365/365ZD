@@ -13,6 +13,7 @@
 }
 
 .article-sidebar .table-of-contents {
+    padding-bottom: 1rem;
     list-style: initial;
 }
 
@@ -43,7 +44,7 @@
         padding: 2rem;
         margin-left: inherit;
         border: none;
-        overflow-y: visible;
+        overflow-y: scroll;
     }
 
     .js-scroll-top {
