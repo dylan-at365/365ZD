@@ -27,19 +27,28 @@
     border-bottom: none;
 }
 
+.article-sidebar__toplevel {
+    list-style-type: disc;
+}
+
 .article-sidebar__sublevel-one {
     margin-left: 24px;
-    list-style-type: disc;
+    list-style-type: circle;
 }
 
 .article-sidebar__sublevel-two {
     margin-left: 48px;
-    list-style-type: circle;
+    list-style-type: square;
 }
 
 .article-sidebar__sublevel-three {
     margin-left: 72px;
-    list-style-type: square;
+}
+
+.article-sidebar__sublevel-three:before {
+    font-family: 'Phosphor';
+    font-size: 0.55rem;
+    content: "\f19c";
 }
 
 .js-scroll-top {
