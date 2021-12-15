@@ -45,51 +45,45 @@ $(document).ready(function() {
         // Start at index 1 to skip over the HelpCenter title
         for ( var i = 1; i < headingElements.length; i++ ) {
 
-            // Assign heading elements an ID based on their text content, minus the whitespace & limited
-            // to 24 characters
+            // Assign heading elements an ID based on their text content,
+            // minus the whitespace & limited to 24 characters
             headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24) + i;
 
-            // Check the heading level and indent the smaller ones to replicate a nested list
-            if ( headingElements[i].tagName == 'H1' && headingElements[i].textContent.match(regExMatch) ) {
+            /*
+                * Indent the headings in the auto-generated Table of Contents not by the
+                * heading element they're assigned in the article editor, but rather
+                * by their relation to the previous heading element.
+                * This way, if an author places an h4 element right after an h1 element,
+                * the h4 element is not overly indented.
+            */
+            var indentLevel = 'toplevel';
+
+            // If there is no other previous element, we assume that this is the first heading
+            if ( headingElements[i].previousElementSibling == null ) {
+                indentLevel = 'toplevel';
+            }
+
+            else if ( headingElements[i].previousElementSibling.tagName == 'H1' ) {
+                indentLevel = 'sublevel-one';
+            }
+
+            else if ( headingElements[i].previousElementSibling.tagName == 'H2' ) {
+                indentLevel = 'sublevel-two';
+            }
+
+            else if ( headingElements[i].previousElementSibling.tagName == 'H3' ) {
+                indentLevel = 'sublevel-three';
+            }
+
+            if ( headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append(
-                    '<li>' + 
-                        '<a href="#' + headingElements[i].id + '">' + 
-                            headingElements[i].textContent + 
-                        '</a>' + 
-                    '</li>'
+                    `<li class="article-sidebar__${indentLevel}">
+                        <a href="#${headingElements[i].id}">
+                            ${headingElements[i].textContent}
+                        </a>
+                    </li>`
                 );
-            }
-
-            else if ( headingElements[i].tagName == 'H2' && headingElements[i].textContent.match(regExMatch) ) {
-                $( '.article-sidebar .js-append-toc' ).append( 
-                    '<li class="article-sidebar__sublevel-one">' + 
-                        '<a href="#' + headingElements[i].id + '">' + 
-                            headingElements[i].textContent + 
-                        '</a>' + 
-                    '</li>'
-                );
-            }
-
-            else if ( headingElements[i].tagName == 'H3' && headingElements[i].textContent.match(regExMatch) ) {
-                $( '.article-sidebar .js-append-toc' ).append( 
-                    '<li class="article-sidebar__sublevel-two">' + 
-                        '<a href="#' + headingElements[i].id + '">' + 
-                            headingElements[i].textContent + 
-                        '</a>' + 
-                    '</li>'
-                );
-            }
-
-            else if ( headingElements[i].tagName == 'H4' && headingElements[i].textContent.match(regExMatch) ) {
-                $( '.article-sidebar .js-append-toc' ).append( 
-                    '<li class="article-sidebar__sublevel-three">' + 
-                        '<a href="#' + headingElements[i].id + '">' + 
-                            headingElements[i].textContent + 
-                        '</a>' + 
-                    '</li>'
-                );
-            }
-
+            };
         };
     };
 
