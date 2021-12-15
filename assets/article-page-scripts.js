@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 
     // Auto-generate a "Table of Contents" based on the heading elements in the article.
-    var headingElements = $( 'h1, h2, h3' );
+    var headingElements = $( 'h1, h2, h3, h4' );
     var regExMatch = /[\w\d]/g;
 
     if ( $( '.js-deny-toc' ).length ) {
@@ -47,7 +47,7 @@ $(document).ready(function() {
 
             // Assign heading elements an ID based on their text content, minus the whitespace & limited
             // to 24 characters
-            headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24);
+            headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24) + i;
 
             // Check the heading level and indent the smaller ones to replicate a nested list
             if ( headingElements[i].tagName == 'H1' && headingElements[i].textContent.match(regExMatch) ) {
@@ -73,6 +73,16 @@ $(document).ready(function() {
             else if ( headingElements[i].tagName == 'H3' && headingElements[i].textContent.match(regExMatch) ) {
                 $( '.article-sidebar .js-append-toc' ).append( 
                     '<li class="article-sidebar__sublevel-two">' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
+                );
+            }
+
+            else if ( headingElements[i].tagName == 'H4' && headingElements[i].textContent.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append( 
+                    '<li class="article-sidebar__sublevel-three">' + 
                         '<a href="#' + headingElements[i].id + '">' + 
                             headingElements[i].textContent + 
                         '</a>' + 

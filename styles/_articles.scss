@@ -29,11 +29,16 @@
 
 .article-sidebar__sublevel-one {
     margin-left: 24px;
-    list-style-type: circle;
+    list-style-type: disc;
 }
 
 .article-sidebar__sublevel-two {
     margin-left: 48px;
+    list-style-type: circle;
+}
+
+.article-sidebar__sublevel-three {
+    margin-left: 72px;
     list-style-type: square;
 }
 
