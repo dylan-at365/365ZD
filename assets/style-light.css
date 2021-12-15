@@ -243,8 +243,14 @@ input[name="commit"]:disabled {
 
 
 /* ================================
-    _articles_scss
+    _articles.scss
 ================================ */
+.article-sidebar {
+    color: var(--gray-100);
+    background-color: var(--gray-700);
+    border: 1px solid var(--gray-500);
+}
+
 .article-inner pre {
     color: var(--gray-100);
     background-color: var(--gray-600);

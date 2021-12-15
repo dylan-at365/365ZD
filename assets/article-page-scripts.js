@@ -30,6 +30,85 @@ $(document).ready(function() {
 
 
 
+    // Auto-generate a "Table of Contents" based on the heading elements in the article.
+    var headingElements = $( 'h1, h2, h3' );
+    var regExMatch = /[\w\d]/g;
+
+    if ( $( '.js-deny-toc' ).length ) {
+        $( '.table-of-contents' ).remove();
+    };
+
+    // Some articles might not want the ToC. Skip the modification if this class exists
+    // If the sidebar is empty, also don't do anything
+    if ( !$( '.js-deny-toc' ).length ) {
+
+        // Start at index 1 to skip over the HelpCenter title
+        for ( var i = 1; i < headingElements.length; i++ ) {
+
+            // Assign heading elements an ID based on their text content, minus the whitespace & limited
+            // to 24 characters
+            headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24);
+
+            // Check the heading level and indent the smaller ones to replicate a nested list
+            if ( headingElements[i].tagName == 'H1' && headingElements[i].textContent.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append(
+                    '<li>' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
+                );
+            }
+
+            else if ( headingElements[i].tagName == 'H2' && headingElements[i].textContent.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append( 
+                    '<li class="article-sidebar__sublevel-one">' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
+                );
+            }
+
+            else if ( headingElements[i].tagName == 'H3' && headingElements[i].textContent.match(regExMatch) ) {
+                $( '.article-sidebar .js-append-toc' ).append( 
+                    '<li class="article-sidebar__sublevel-two">' + 
+                        '<a href="#' + headingElements[i].id + '">' + 
+                            headingElements[i].textContent + 
+                        '</a>' + 
+                    '</li>'
+                );
+            }
+
+        };
+    };
+
+    // If a link to an auto-generated ID is supplied, navigate to that ID after it has been generated
+    var currentHash = window.location.hash;
+    if ( currentHash != "" ) {
+        $(`${currentHash}`)[0].scrollIntoView();
+    };
+
+    // If the ToC is empty, get rid of it
+    if ( $( '.js-append-toc').children().length == 0 ) {
+        $( '.table-of-contents' ).remove();
+    };
+
+    // If the only element is the "to top" button, make the column smaller
+    if ( $( '.article-sidebar' ).children().length == 1 ) {
+        $( '.article-sidebar' ).removeClass( 'col-md-3' );
+        $( '.article-sidebar' ).addClass( 'col-md-1' );
+    };
+
+    // Scroll to top button
+    $( '.js-scroll-top' ).click (function() {
+        $( 'html, body' ).animate( { scrollTop: 0 }, '1000' );
+    });
+
+
+
+
+
     // FancyBox lightbox
 	$( '.article-inner img.fancybox' ).click(function toggleFancyBox() {
 		$.fancybox.open([
@@ -41,7 +120,9 @@ $(document).ready(function() {
 	});
 
     // Add a little note telling users they can click on images to enable big mode
-    $( '.article-inner img.fancybox' ).after( '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' );
+    $( '.article-inner img.fancybox' ).after( 
+        '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
+    );
 
 
 
@@ -58,7 +139,7 @@ $(document).ready(function() {
     if ( $( 'table thead' ).hasClass( 'table__sticky-header') == false ) {
         $( '.article-inner table' ).wrap( '<div class="table-responsive"></div>' );
     }
-    
+
 
 
 

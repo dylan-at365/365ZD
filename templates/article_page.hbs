@@ -34,25 +34,47 @@
     </div>
 
     <div class="row article-body row-light">
+
+        <div class="col-sm-12 col-md-3 article-sidebar d-print-none">
+
+            <div class="js-scroll-top button">
+                Scroll to Top
+            </div>
+
+            <div class="table-of-contents">
+                <div class="subheading subheading--underline">
+                    Table of Contents
+                </div>
+
+                <ul class="js-append-toc">
+                </ul>
+            </div>
+
+            {{#if attachments}}
+                <div class="article-attachments">
+                    <div class="subheading subheading--underline">
+                        Attachments
+                    </div>
+
+                    <ul>
+                    {{#each attachments}}
+                        <li>
+                            <a href="{{url}}" target="_blank" rel="noopener" class="link">
+                                {{name}}
+                            </a>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </div>
+            {{/if}}
+
+        </div>
+
         <div class="col article-inner">
             {{article.body}}
         </div>
+
     </div>
-
-    {{#if attachments}}
-        <div class="row padded-content--no-gap row-light d-print-none">
-            <div class="col-12 heading">
-                Attachments
-            </div>
-
-            {{#each attachments}}
-                <div class="col-12">
-                    <a href="{{url}}" target="_blank" rel="noopener" class="link">{{name}}</a>
-                     - {{size}}
-                </div>
-            {{/each}}
-        </div>
-    {{/if}}
 
     {{#if article.internal}}
         <div class="row padded-content centered-content row-dark d-print-none">
