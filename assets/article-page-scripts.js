@@ -47,7 +47,15 @@ $(document).ready(function() {
 
             // Assign heading elements an ID based on their text content,
             // minus the whitespace & limited to 24 characters
-            headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24) + i;
+            headingElementID = headingElements[i].id;
+
+            if ( headingElementID.startsWith('#h_') ) {
+                headingElements[i].id = headingElementID;
+            }
+
+            else if ( headingElements[i].id == "" ) {
+                headingElements[i].id = headingElements[i].textContent.replace(/[\s\W]/g, '').substring(0, 24) + i;
+            }
 
             /*
                 * Indent the headings in the auto-generated Table of Contents not by the
