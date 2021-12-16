@@ -57,21 +57,43 @@ $(document).ready(function() {
                 * the h4 element is not overly indented.
             */
             var indentLevel = 'toplevel';
+            var prevSiblings = headingElements[i].previousElementSibling;
 
-            // If there is no other previous element, we assume that this is the first heading
-            if ( headingElements[i].previousElementSibling == null ) {
+            if ( prevSiblings == null) {
+                prevSiblings = headingElements[i].nextElementSibling;
+            }
+
+            while ( !['H1', 'H2', 'H3', 'H4'].includes(prevSiblings.tagName) ) {
+                if ( prevSiblings.previousElementSibling == null ) {
+                    break;
+                }
+
+                else {
+                    prevSiblings = prevSiblings.previousElementSibling;
+                }
+            }
+
+            if ( headingElements[i].tagName == 'H1' && prevSiblings.tagName == 'H1' ) {
                 indentLevel = 'toplevel';
             }
 
-            else if ( headingElements[i].previousElementSibling.tagName == 'H1' ) {
+            else if ( prevSiblings.tagName == 'H1' ) {
                 indentLevel = 'sublevel-one';
             }
 
-            else if ( headingElements[i].previousElementSibling.tagName == 'H2' ) {
+            else if ( headingElements[i].tagName == 'H2' && prevSiblings.tagName == 'H2' ) {
+                indentLevel = 'sublevel-one';
+            }
+
+            else if ( prevSiblings.tagName == 'H2' ) {
                 indentLevel = 'sublevel-two';
             }
 
-            else if ( headingElements[i].previousElementSibling.tagName == 'H3' ) {
+            else if ( headingElements[i].tagName == 'H3' && prevSiblings.tagName == 'H3' ) {
+                indentLevel = 'sublevel-two';
+            }
+
+            else if ( prevSiblings.tagName == 'H3' ) {
                 indentLevel = 'sublevel-three';
             }
 
