@@ -81,28 +81,73 @@ $(document).ready(function() {
                 }
             }
 
-            if ( headingElements[i].tagName == 'H1' && prevSiblings.tagName == 'H1' ) {
+            if ( headingElements[i].tagName == 'H1' ) {
                 indentLevel = 'toplevel';
             }
 
             else if ( prevSiblings.tagName == 'H1' ) {
-                indentLevel = 'sublevel-one';
-            }
 
-            else if ( headingElements[i].tagName == 'H2' && prevSiblings.tagName == 'H2' ) {
-                indentLevel = 'sublevel-one';
+                if ( headingElements[i].tagName == 'H1' ) {
+                    indentLevel = 'toplevel';
+                }
+
+                else if ( headingElements[i].tagName != 'H1' ) {
+                    indentLevel = 'sublevel-one';
+                }
             }
 
             else if ( prevSiblings.tagName == 'H2' ) {
-                indentLevel = 'sublevel-two';
-            }
 
-            else if ( headingElements[i].tagName == 'H3' && prevSiblings.tagName == 'H3' ) {
-                indentLevel = 'sublevel-two';
+                if ( headingElements[i].tagName == 'H1' ) {
+                    indentLevel = 'toplevel';
+                }
+
+                else if ( headingElements[i].tagName == 'H2' ) {
+                    indentLevel = 'sublevel-one';
+                }
+
+                else if ( headingElements[i].tagName == 'H3' || headingElements[i].tagName == 'H4' ) {
+                    indentLevel = 'sublevel-two';
+                }
             }
 
             else if ( prevSiblings.tagName == 'H3' ) {
-                indentLevel = 'sublevel-three';
+
+                if ( headingElements[i].tagName == 'H1' ) {
+                    indentLevel = 'toplevel';
+                }
+
+                else if ( headingElements[i].tagName == 'H2' ) {
+                    indentLevel = 'sublevel-one';
+                }
+
+                else if ( headingElements[i].tagName == 'H3' ) {
+                    indentLevel = 'sublevel-two';
+                }
+
+                else if ( headingElements[i].tagName == 'H4' ) {
+                    indentLevel = 'sublevel-three';
+                }
+            }
+
+            else if ( prevSiblings.tagName == 'H4' ) {
+
+                if ( headingElements[i].tagName == 'H1' ) {
+                    indentLevel = 'toplevel';
+                }
+
+                else if ( headingElements[i].tagName == 'H2' ) {
+                    indentLevel = 'sublevel-one';
+                }
+
+                else if ( headingElements[i].tagName == 'H3' ) {
+                    indentLevel = 'sublevel-two';
+                }
+
+                else if ( headingElements[i].tagName == 'H4' ) {
+                    indentLevel = 'sublevel-three';
+                }
+
             }
 
             if ( headingElements[i].textContent.match(regExMatch) ) {
