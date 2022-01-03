@@ -45,8 +45,13 @@ $(document).ready(function() {
         // Start at index 1 to skip over the HelpCenter title
         for ( var i = 1; i < headingElements.length; i++ ) {
 
-            // Assign heading elements an ID based on their text content,
-            // minus the whitespace & limited to 24 characters
+            /*
+                * Assign heading elements an ID based on their text content,
+                * minus the whitespace & limited to 24 characters.
+
+                * Additionally, if the ID has been created from the WYSIWYG
+                * editor, do not replace this with a generated ID.
+            */
             headingElementID = headingElements[i].id;
 
             if ( headingElementID.startsWith('#h_') ) {
