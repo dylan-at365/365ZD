@@ -30,16 +30,6 @@ $(document).ready(function() {
 
 
 
-    // FancyBox lightbox
-	$( '.article-inner img.fancybox' ).click(function toggleFancyBox() {
-		$.fancybox.open([
-			{
-				src : $(this).attr("src"),
-				opts : { smallBtn: true },
-			},
-		]);
-	});
-
     // Add a little note telling users they can click on images to enable big mode
     $( '.article-inner img.fancybox' ).after( 
         '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
