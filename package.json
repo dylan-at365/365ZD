@@ -8,15 +8,9 @@
   "scripts": {
     "preview": "../zendesk_apps_tools/bin/zat theme preview --no-livereload",
     "styles:watch": "sass styles/index.scss:style.css --watch",
-    "styles:build": "sass styles/index.scss:style.css --style compressed && postcss style.css --use autoprefixer --replace --no-map"
+    "styles:build": "sass --no-source-map --style=compressed styles/index.scss:style.css"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "browserslist": "^4.6.3",
-    "postcss-cli": "^7.1.0",
     "sass": "^1.22.2"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
