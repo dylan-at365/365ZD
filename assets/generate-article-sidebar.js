@@ -1,5 +1,5 @@
 // Auto-generate a "Table of Contents" based on the heading elements in the article.
-var headingElements = $( 'h1, h2, h3, h4' );
+var headingElements = $( 'h1, h2, h3, h4, summary' );
 var regExMatch = /[\w\d]/g;
 
 if ( $( '.js-deny-toc' ).length ) {
@@ -121,6 +121,17 @@ if ( !$( '.js-deny-toc' ).length ) {
                 indentLevel = 'sublevel-three';
             }
 
+        }
+
+        if ( headingElements[i].tagName == 'SUMMARY' ) {
+
+            if ( headingElements[i].innerText.includes('Change Log') ) {
+                indentLevel = 'toplevel';
+            }
+
+            else {
+                continue;
+            }
         }
 
         if ( headingElements[i].textContent.match(regExMatch) ) {
