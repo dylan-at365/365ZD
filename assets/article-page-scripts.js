@@ -35,6 +35,9 @@ $(document).ready(function() {
         '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
     );
 
+    $( '.article-inner img.fancybox-gallery:last-of-type' ).after( 
+        '<p class="subheading subheading--annotation">(Click image to open in gallery)</p>' 
+    );
 
 
 
