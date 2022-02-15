@@ -30,13 +30,36 @@ $(document).ready(function() {
 
 
 
+    // Add unique class names to div elements used for the Fancybox Gallery feature
+    var galleryItems = $('.fancybox-gallery');
+
+    for ( var i = 0; i < galleryItems.length; i++ ) {
+
+        galleryItems[i].classList.add(`fancybox-gallery-${i}`);
+
+        Fancybox.bind(`.fancybox-gallery-${i} img`, {
+            groupAll: true,
+        });
+
+        // Add little note telling users they can click on images to enable the gallery mode
+        $( `.article-inner div.fancybox-gallery-${i}` ).after( 
+            '<p class="subheading subheading--annotation">(Click image to open in gallery)</p>' 
+        );
+
+    };
+
+    // Enable Fancybox Lightbox on elements with this class and do not group them
+    Fancybox.bind('.fancybox', {
+        groupAll: false,
+    });
+
+
+
+
+
     // Add a little note telling users they can click on images to enable big mode
     $( '.article-inner img.fancybox' ).after( 
         '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
-    );
-
-    $( '.article-inner img.fancybox-gallery:last-of-type' ).after( 
-        '<p class="subheading subheading--annotation">(Click image to open in gallery)</p>' 
     );
 
 
