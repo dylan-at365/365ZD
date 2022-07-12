@@ -6,7 +6,7 @@
   "repository": "github:ohitsdylan/365ZD",
   "license": "GPL-3.0",
   "scripts": {
-    "preview": "../zendesk_apps_tools/bin/zat theme preview --no-livereload",
+    "preview": "zat theme preview --no-livereload",
     "styles:watch": "sass styles/index.scss:style.css --watch",
     "styles:build": "sass --no-source-map --style=compressed styles/index.scss:style.css"
   },
