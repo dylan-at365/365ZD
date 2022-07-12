@@ -4,13 +4,15 @@
     <div class="row header row-light">
 
         <!-- Logo and Menu Button -->
-        <a href="{{page_path 'help_center'}}" class="col brand">
+        <a href="{{page_path 'help_center'}}" class="col-auto brand">
             
             <div class="logo"></div>
             <h2 class="title">HelpCenter</h2>
         </a>
 
-        <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col search-form d-print-none">
+        <div class="col"></div>
+
+        <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="col-3 search-form d-print-none">
             <label class="label--hidden" for="search--header">Search the Three Six Five Help Center:</label>
             <input id="search--header" name="query" type="search" placeholder="&#8981; Search the 365 HelpCenter" class="search search--small">
         </form>
