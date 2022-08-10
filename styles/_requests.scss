@@ -133,3 +133,22 @@ input[name="commit"]:hover {
 input[name="commit"]:disabled:hover {
     cursor: not-allowed;
 }
+
+/* Custom Zendesk Form Fields */
+.request-form p {
+    margin: 0;
+    color: var(--gray-300);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  
+  .form-field {
+    margin: 1rem 0;
+  }
+  
+  input[id^="request_custom_fields_"],
+  textarea[id^="request_custom_fields_"],
+  .datepicker {
+    width: 100%;
+    min-height: 37px;
+  }
