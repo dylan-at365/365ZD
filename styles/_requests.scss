@@ -152,3 +152,8 @@ input[name="commit"]:disabled:hover {
     width: 100%;
     min-height: 37px;
   }
+
+  input[type="checkbox"] {
+    width: inherit;
+    min-height: inherit;
+  }
