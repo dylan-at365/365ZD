@@ -10,6 +10,35 @@
 
     <div class="row padded-content--no-gap row-light">
         <div class="col-12 heading">
+
+            {{#each article.labels}}
+
+                {{#is identifier 'zdfilter365'}}
+                    <img class="brand-article-marker--large" src="{{asset '365-article-marker.svg'}}">
+                {{/is}}
+
+                {{#is identifier 'zdfilteravanti'}}
+                    <img class="brand-article-marker--large" src="{{asset 'avanti-article-marker.svg'}}">
+                {{/is}}
+
+                {{#is identifier 'zdfilterlightspeed'}}
+                    <img class="brand-article-marker--large" src="{{asset 'lightspeed-article-marker.svg'}}">
+                {{/is}}
+
+                {{#is identifier 'zdfilterstockwell'}}
+                    <img class="brand-article-marker--large" src="{{asset 'stockwell-article-marker.svg'}}">
+                {{/is}}
+
+                {{#is identifier 'zdfilterairvend'}}
+                    <img class="brand-article-marker--large" src="{{asset 'airvend-article-marker.svg'}}">
+                {{/is}}
+
+                {{#is identifier 'zdfilterck'}}
+                    <img class="brand-article-marker--large" src="{{asset 'ck-article-marker.svg'}}">
+                {{/is}}
+
+            {{/each}}
+
             {{article.title}}
             {{#if article.internal}}
                 <i class="ph-lock-key-fill"></i>
