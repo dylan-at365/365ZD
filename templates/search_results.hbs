@@ -45,23 +45,34 @@
         </div>
 
         <div class="col-12">
+
             {{#if type_filters}}
                 <div>Filter results:</div>
-                <ul class="search-filters">
-                    {{#each type_filters}}
-                        <li>
-                            {{#if selected}}
-                                <a href="{{url}}" class="button button--active">
-                            {{else}}
-                                <a href="{{url}}" class="button button--inactive">
-                            {{/if}}
 
-                            <span>{{name}}</span>
+                <ul class="search-filters">
+
+                    {{#each type_filters}}
+
+                        <li>
+                        {{#if selected}}
+                            <a href="{{url}}" class="button button--active">
+                        {{else}}
+                            <a href="{{url}}" class="button button--inactive">
+                        {{/if}}
+
+                                {{#is name "Articles"}}
+                                    <span class="js-article-filter">{{name}}</span>
+                                {{else}}
+                                    <span>{{name}}</span>
+                                {{/is}}
                             </a>
                         </li>
+
                     {{/each}}
+
                 </ul>
             {{/if}}
+
         </div>
 
         <div class="col-12">
@@ -117,3 +128,8 @@
         </div>
     </div>
 </div>
+
+<!-- Change "Articles" filter button text to "By Category" to make the action clearer -->
+<script>
+    document.querySelector( '.js-article-filter' ).innerHTML = 'By Category';
+</script>
