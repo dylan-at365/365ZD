@@ -234,6 +234,16 @@ input[name="commit"]:disabled {
     background-color: var(--platinum-500);
 }
 
+.banner a {
+    color: var(--platinum-800);
+    background-color: var(--jungle-400);
+}
+
+.banner a:hover {
+    color: var(--platinum-800);
+    background-color: var(--jungle-500);
+}
+
 
 
 
