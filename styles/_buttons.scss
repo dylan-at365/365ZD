@@ -3,21 +3,26 @@
 */
 .button {
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
     border: none;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-outset);
+    border-radius: var(--border-radius--md);
     cursor: pointer;
     text-align: center;
     transition: var(--transition-time);
 }
 
 .button:hover {
-    color: var(--blue-400);
     transition: var(--transition-time);
 }
 
 .button > i {
     position: relative;
-    top: -4px;
+    top: 3px;
+    font-size: 1rem;
+}
+
+.button--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
 }

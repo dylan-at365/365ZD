@@ -2,20 +2,15 @@
     _overrides.scss
 ================================ */
 body {
-    background-color: var(--gray-200);
+    background-color: var(--raisin-400);
 }
 
 a {
-    color: var(--blue-600);
+    color: var(--platinum-800);
 }
 
 a:hover {
-    color: var(--blue-200);
-}
-
-textarea, input {
-    background-color: var(--gray-300);
-    border: 1px solid var(--gray-300);
+    color: var(--yale-500);
 }
 
 details[open] {
@@ -33,12 +28,16 @@ details[open] > summary {
 
 
 /* ================================
-    _zendesk-overrides.scss
+    _layout.scss
 ================================ */
-#preview-bar-container > div {
-    color: var(--gray-700) !important;
-    background: var(--gray-100) !important;
-    border-bottom: 1px solid var(--gray-200) !important;
+.row-light {
+    color: var(--platinum-800);
+    background-color: var(--raisin-400);
+}
+
+.row-dark {
+    color: var(--platinum-800);
+    background-color: var(--raisin-500);
 }
 
 
@@ -46,16 +45,14 @@ details[open] > summary {
 
 
 /* ================================
-    _layout.scss
+    _animations.scss
 ================================ */
-.row-light {
-    color: var(--gray-700);
-    background-color: var(--gray-100);
+.loading-container {
+    border-bottom: 2px solid var(--yale-400);
 }
 
-.row-dark {
-    color: var(--gray-700);
-    background-color: var(--gray-200);
+.loading-container::before {
+    border-bottom: 2px solid var(--raisin-400);
 }
 
 
@@ -77,33 +74,12 @@ details[open] > summary {
     _buttons.scss
 ================================ */
 .button {
-    color: var(--gray-700);
-    background-color: var(--blue-100);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
-.button--hollow {
-    color: var(--blue-600);
-    background-color: transparent;
-    border: 2px solid var(--blue-600);
-}
-
-.button--inactive {
-    color: var(--blue-100);
-    background-color: var(--blue-700);
-}
-
-.button--active {
-    color: var(--gray-700);
-    background-color: var(--blue-300);
-    border-color: var(--blue-300);
-}
-
-.button--dark {
-    color: var(--gray-700) !important;
-}
-
-.button--dark:hover {
-    color: var(--blue-400) !important;
+.button:hover {
+    background-color: var(--yale-500);
 }
 
 
@@ -206,12 +182,9 @@ details[open] > summary {
     _search.scss
 ================================ */
 .search {
-    color: var(--gray-600);
-    background-color: var(--gray-200);
-}
-
-.search--small {
-    border: 1px solid var(--gray-300);
+    color: var(--platinum-200);
+    background-color: var(--raisin-400);
+    border: 1px solid var(--platinum-200);
 }
 
 
@@ -258,33 +231,24 @@ details[open] > summary {
 /* ================================
     _header.scss
 ================================ */
-.logo {
-    background-position: bottom center;
+.logo path.logo__outer {
+    fill: var(--platinum-800);
 }
 
-.title {
-    color: var(--gray-700);
+.logo path.logo__inner {
+    fill: var(--platinum-800);
 }
 
-.navigation-link {
-    color: var(--blue-700);
+.logo path.logo__type {
+    fill: var(--platinum-800);
 }
 
-.button--menu {
-    color: var(--gray-700);
+.site-title {
+    color: var(--platinum-800);
 }
 
-.banner__content {
-    background-color: var(--blue-100);
-}
-
-.banner > a {
-    color: var(--gray-700);
-}
-
-.banner > a:hover {
-    color: var(--gray-700);
-    background-color: var(--gray-100);
+.subheader {
+    background-color: var(--raisin-500);
 }
 
 

@@ -125,6 +125,12 @@ $(document).ready(function() {
         toggleColorSchemeCSS('css', $mode);
 
         $( '.clear-mode-toggle' ).removeClass( 'button--inactive' );
+        
+        $( '.mode-toggle-switch i' ).addClass( 'js-rotate-button' )
+        .on( 'animationend', function() {
+            $( this ).removeClass( 'js-rotate-button' );
+        });
+        
 
     });
 
@@ -136,7 +142,7 @@ $(document).ready(function() {
 
             $( '.toast' ).addClass( 'toast--alert' );
             $( '.toast__title' ).text( 'Error' );
-            $( '.toast__description' ).text( 'Theme mode toggle not set!');
+            $( '.toast__description' ).text( 'Theme mode toggle not set!' );
 
             $( '.toast' ).removeClass( 'd-none' );
             $( '.toast' ).animate( { opacity: 1 }, 200 );

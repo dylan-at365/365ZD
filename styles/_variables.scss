@@ -3,33 +3,55 @@
         #BRAND-COLORS
     ================================ */
 
-    --blue-100: #1f46b2;
-    --blue-200: #2555d9;
-    --blue-300: #4c73df;
-    --blue-400: #7492e6;
-    --blue-500: #9bb1ed;
-    --blue-600: #c3d0f4;
-    --blue-700: #ebeff8;
+    /* Raisin Black */
+    --raisin-100: #0c0c11;
+    --raisin-200: #111319;
+    --raisin-300: #171922;
+    --raisin-400: #1d1f2a;
+    --raisin-500: #4a4c55;
+    --raisin-600: #77797f;
+    --raisin-700: #a5a5aa;
+    --raisin-800: #d2d2d4;
 
-    --gray-100: #22212d;
-    --gray-200: #4a4953;
-    --gray-300: #727179;
-    --gray-400: #9a9a9f;
-    --gray-500: #c2c2c5;
-    --gray-600: #eaeaeb;
-    --gray-700: #ffffff;
+    /* Platinum */
+    --platinum-100: #5e5e5e;
+    --platinum-200: #8d8d8c;
+    --platinum-300: #bcbcbb;
+    --platinum-400: #ebebea;
+    --platinum-500: #efefee;
+    --platinum-600: #f3f3f2;
+    --platinum-700: #f7f7f7;
+    --platinum-800: #fbfbfb;
 
-    --green-100: #009d5b;
-    --green-200: #00bf6f;
-    --green-300: #68d9a9;
+    /* Space Cadet */
+    --space-cadet-300: #0d1d35;
+    --space-cadet-400: #13294b;
+    --space-cadet-500: #5a6981;
 
-    --red-100: #d13f4b;
-    --red-200: #ff4c5b;
-    --red-300: #ff949d;
+    /* Yale Blue */
+    --yale-300: #143766;
+    --yale-400: #1d4f91;
+    --yale-500: #6184b2;
 
-    --yellow-100: #d1a719;
-    --yellow-200: #ffcc1e;
-    --yellow-300: #ffe179;
+    /* Saffron */
+    --saffron-300: ##a66d24;
+    --saffron-400: #ed9b33;
+    --saffron-500: #f2b970;
+
+    /* Jungle */
+    --jungle-300: #35745e;
+    --jungle-400: #4ca686;
+    --jungle-500: #82c1aa;
+
+    /* Very Peri */;
+    --peri-300: #474878;
+    --peri-400: #6667ab;
+    --peri-500: #9495c4;
+
+    /* Crimson */
+    --crimson-300: #951b2b;
+    --crimson-400: #d5263d;
+    --crimson-500: #e26777;
 
 
 
@@ -39,9 +61,11 @@
         #TYPOGRAPHY
     ================================ */
 
-    --font-heading: normal normal 700 1.563rem/1.5 'Roboto', Arial, sans-serif;
-    --font-subheading: normal normal 400 1.25rem/1.5 'Roboto', Arial, sans-serif;
-    --font-body: normal normal 400 1rem/1.5 'Roboto', Arial, sans-serif;
+    --font-heading: normal normal 300 1.75rem 'Roboto', Arial, sans-serif;
+    --font-subheading: normal normal 700 1rem 'Roboto', Arial, sans-serif;
+    --font-body--large: normal normal 400 1rem 'Roboto', Arial, sans-serif;
+    --font-body: normal normal 400 0.75rem/1.5 'Roboto', Arial, sans-serif;
+    --font-body--emphasis: italic normal 400 0.75rem/1.5 'Roboto', Arial, sans-serif;
 
 
 
@@ -51,12 +75,16 @@
         #OTHER-VARIABLES
     ================================ */
 
-    --border-radius: 2px;
+    --border-radius--sm: 2px;
+    --border-radius--md: 4px;
+    --border-radius--lg: 8px;
+    --border-radius--xl: 24px;
+
     --shadow-outset: 0px 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-inset: 0px 4px 12px -4px rgba(0, 0, 0, 0.1) inset;
     --transition-time: 0.2s;
 }
 
 /* Set hero banner variable here so SCSS plays nicely with the Zendesk asset reference */
-$assets-hero_banner-svg: '$assets-hero_banner-svg';
+$assets-hero_banner-jpg: '$assets-hero_banner-jpg';
 $assets-logo_stacked-png: '$assets-logo_stacked-png';

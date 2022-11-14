@@ -1,15 +1,19 @@
 .padded-content {
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem 2.5rem;
 }
 
 .padded-content--no-gap {
-    padding: 1rem;
+    padding: 1.5rem 2.5rem;
 }
 
-.centered-content {
+.center-align {
     text-align: center;
     justify-content: center;
+}
+
+.right-align {
+    justify-content: end;
 }
 
 .no-padding--bottom {

@@ -2,19 +2,15 @@
     _overrides.scss
 ================================ */
 body {
-    background-color: var(--gray-500);
+    background-color: var(--platinum-800);
 }
 
 a {
-    color: var(--blue-200);
+    color: var(--space-cadet-400);
 }
 
 a:hover {
-    color: var(--blue-400);
-}
-
-textarea, input {
-    border: 1px solid var(--gray-500);
+    color: var(--yale-400);
 }
 
 details[open] {
@@ -35,12 +31,28 @@ details[open] > summary {
     _layout.scss
 ================================ */
 .row-light {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
 }
 
 .row-dark {
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-400);
+}
+
+
+
+
+
+/* ================================
+    _animations.scss
+================================ */
+.loading-container {
+    border-bottom: 2px solid var(--yale-400);
+}
+
+.loading-container::before {
+    border-bottom: 2px solid var(--raisin-400);
 }
 
 
@@ -51,8 +63,12 @@ details[open] > summary {
     _buttons.scss
 ================================ */
 .button {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
+}
+
+.button:hover {
+    background-color: var(--yale-400);
 }
 
 .button--hollow {
@@ -164,13 +180,9 @@ input[name="commit"]:disabled {
     _search.scss
 ================================ */
 .search {
-    color: var(--gray-200);
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
-}
-
-.search--small {
-    border: 1px solid var(--gray-500);
+    color: var(--platinum-200);
+    background-color: var(--platinum-800);
+    border: 1px solid var(--platinum-200);
 }
 
 
@@ -202,25 +214,24 @@ input[name="commit"]:disabled {
 /* ================================
     _header.scss
 ================================ */
-.logo {
-    background-position: top center;
+.logo path.logo__outer {
+    fill: var(--raisin-400);
 }
 
-.title {
-    color: var(--gray-100);
+.logo path.logo__inner {
+    fill: var(--yale-400);
 }
 
-.banner__content {
-    background-color: var(--green-200);
+.logo path.logo__type {
+    fill: var(--raisin-400);
 }
 
-.banner > a {
-    color: var(--gray-700);
+.site-title {
+    color: var(--raisin-400);
 }
 
-.banner > a:hover {
-    color: var(--green-200);
-    background-color: var(--gray-700);
+.subheader {
+    background-color: var(--platinum-500);
 }
 
 
