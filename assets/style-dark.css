@@ -136,22 +136,13 @@ details[open] > summary {
     _cards.scss
 ================================ */
 .card {
-    background-color: var(--gray-100);
+    color: var(--platinum-800);
+    background-color: var(--raisin-400);
 }
 
-.card a {
-    color: var(--blue-400);
-}
-
-.card a:hover {
-    color: var(--blue-200);
-}
-
-/*
-    * These rules extend .card {} in _globals.scss
-*/
-.card--quick-action {
-    border-top: 24px solid var(--blue-400);
+.card__cap {
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 
@@ -268,10 +259,6 @@ details[open] > summary {
 /* =============================
     _home-page.scss
 ================================ */
-.hero {
-    background-position: bottom center;
-}
-
 .question-block {
     background-color: var(--gray-300);
 }

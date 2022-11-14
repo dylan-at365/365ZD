@@ -145,11 +145,13 @@ input[name="commit"]:disabled {
     _cards.scss
 ================================ */
 .card {
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
 }
 
-.card--quick-action {
-    border-top: 24px solid var(--blue-200);
+.card__cap {
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
 
@@ -251,10 +253,6 @@ input[name="commit"]:disabled {
 /* =============================
     _home-page.scss
 ================================ */
-.hero {
-    background-position: top center;
-}
-
 .question-block {
     background-color: var(--gray-600);
 }
