@@ -4,11 +4,8 @@
 .hero {
     align-items: center;
     justify-content: center;
-    height: 256px;
-    background-image: url($assets-hero_banner-svg);
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: calc(100vh - 168px);
+    background: linear-gradient( rgba(29, 31, 42, 0.75), rgba(29, 31, 42, 0.75) ) center center fixed, url($assets-hero_banner-jpg) center center fixed;
 }
 
 
