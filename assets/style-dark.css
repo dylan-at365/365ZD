@@ -79,7 +79,18 @@ details[open] > summary {
 }
 
 .button:hover {
+    color: var(--platinum-800);
     background-color: var(--yale-500);
+}
+
+.button--active {
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
+}
+
+.button--active:hover {
+    color: var(--platinum-800);
+    background-color: var(--saffron-300);
 }
 
 
@@ -259,14 +270,6 @@ details[open] > summary {
 /* =============================
     _home-page.scss
 ================================ */
-.question-block {
-    background-color: var(--gray-300);
-}
-
-.new-articles-feed__article-title {
-    color: var(--blue-400);
-}
-
 
 
 

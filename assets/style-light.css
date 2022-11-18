@@ -68,27 +68,18 @@ details[open] > summary {
 }
 
 .button:hover {
+    color: var(--platinum-800);
     background-color: var(--yale-400);
 }
 
-.button--hollow {
-    color: var(--blue-200);
-    background-color: transparent;
-    border: 2px solid var(--blue-200);
-}
-
-/*
-    * Add this input element here to override CSS specificity in _resquests.scss:113
-*/
-.button--inactive,
-input[name="commit"]:disabled {
-    color: var(--blue-200);
-    background-color: var(--blue-700);
-}
-
 .button--active {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
+}
+
+.button--active:hover {
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
 }
 
 
@@ -253,9 +244,6 @@ input[name="commit"]:disabled {
 /* =============================
     _home-page.scss
 ================================ */
-.question-block {
-    background-color: var(--gray-600);
-}
 
 
 
