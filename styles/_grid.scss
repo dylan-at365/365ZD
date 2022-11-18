@@ -357,28 +357,6 @@
 
 }
 
-.px-sm {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.px-md {
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-.px-md:last-of-type {
-    padding-right: 0;
-}
-
-.ps-sm {
-    padding-left: 1rem;
-}
-
-.ps-md {
-    padding-left: 1.5rem;
-}
-
 @media print {
     .d-print-none {
         display: none !important;
