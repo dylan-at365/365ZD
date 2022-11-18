@@ -306,13 +306,8 @@ ul[data-hc-pills-container] {
 /* ================================
     _footer.scss
 ================================ */
-.footer {
-    background-color: var(--blue-700);
-}
-
 .social {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
 }
 
 
