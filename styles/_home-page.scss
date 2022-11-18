@@ -6,8 +6,18 @@
     justify-content: center;
     height: calc(100vh - 136px);
     background: 
-        linear-gradient( rgba(29, 31, 42, 0.75), rgba(29, 31, 42, 0.75) ),
+        linear-gradient( rgba(19, 41, 75, 0.75), rgba(19, 41, 75, 0.75) ),
         url($assets-hero_banner-jpg) center center / cover no-repeat fixed;
+}
+
+.indicator-arrow {
+    position: absolute;
+    align-self: flex-end;
+    padding-bottom: 3rem;
+
+    font-size: 4rem;
+
+    text-align: center;
 }
 
 
@@ -17,30 +27,17 @@
 /* ================================
     #Quick-Actions
 ================================ */
-.quick-actions {
+.scrolling-content {
     align-items: stretch;
     justify-content: center;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    -webkit-overflow-scrolling: touch;
 }
 
 .canteen-branded {
     display: none;
-}
-
-
-
-/* ================================
-    #Category-Drawers
-================================ */
-.category-heading {
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.category-heading__content {
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    box-shadow: var(--shadow-inset);
 }
 
 
@@ -69,18 +66,12 @@
 /* ================================
     #New-Articles-Feed
 ================================ */
-.new-articles-feed {
-    padding: 1rem;
+.new-article-item {
+    
+    padding-bottom: 1rem;
 }
 
-.new-articles-feed__article-title {
-    padding: 0 12px;
-}
-
-.new-articles-feed__article-date {
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    font-size: 0.8rem;
-    font-style: italic;
-    border-bottom: 1px solid var(--gray-400);
+.new-article-item div {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--platinum-400);
 }
