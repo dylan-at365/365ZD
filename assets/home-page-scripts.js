@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-
-
-
-
     /*
         Show Quick Action button for Canteen and CFG members only
     */
@@ -104,44 +100,58 @@ $(document).ready(function() {
     /* 
         Retrieve latest articles and insert title, date, and link content into feed
     */
-    $.ajax({
-		method: 'GET',
-		url: 'https://help.365retailmarkets.com/api/v2/help_center/en-us/articles.json?sort_by=created_at',
-		dataType: 'json',
-		async: true,
-		success: function getLatestArticles(requested) {
+    async function getNewArticles( url ) {
 
-			for (var i = 0; i < requested.articles.length; i++) {
+        let articleFramework = document.createDocumentFragment();
 
-				if (requested.articles[i].user_segment_id == '321294') {
-					requested.articles.splice(i, 1);
-				}
-            }
+        try {
 
-            // The article feed titles & dates are siblings. The header counts as child 1.
-            // Article titles are then even children and article dates are odd children.
-            // Variable t starts at the first title and ends at highest date + 1.
-            // Variable n is used to keep in sync with the JSON index.
-            
-            var n = 0;
+            let response = await fetch ( url )
 
-            for (var t = 2; t < 12; t++) {
-                n++;
+            .then( ( response ) => {
+                return response.json();
+            })
 
-                if ( requested.articles[n] === undefined ) {
-                    $( `a.new-articles-feed__article-title:nth-child(2n+${t})` ).text( 'Log in to view new articles.' );
-                    $( `a.new-articles-feed__article-title:nth-child(2n+${t})` ).attr( 'href', '#');
-                    $( `div.js-article-date:nth-child(3n+${t})` ).text('N/A');
+            .then(( data ) => {
 
-                } else {
+                let newArticles = data.articles.filter( function( item, index ) {
 
-                    $( `a.new-articles-feed__article-title:nth-child(2n+${t})` ).text(requested.articles[n].title);
-                    $( `a.new-articles-feed__article-title:nth-child(2n+${t})` ).attr("href", requested.articles[n].html_url);
-                    $( `div.js-article-date:nth-child(3n+${t})` ).text(requested.articles[n].updated_at.substring(0, 10));
-                }
-            }
-		}
-    });
+                    item.position = index;
+                    return item.user_segment_id !== '321294' && index < 10;
+
+                });
+
+                newArticles.map( function( article ) {
+
+                    let itemWrapper = document.createElement( 'div' );
+                    let itemLink = document.createElement( 'a' );
+                    let itemDate = document.createElement( 'div' );
+
+                    itemWrapper.className = 'col-sm-12 col-md-6 new-article-item';
+                    itemLink.className = 'font-body--large';
+                    itemDate.className = 'font-body--emphasis';
+
+                    itemLink.href = article.html_url;
+                    itemLink.innerHTML = article.title;
+                    itemDate.innerHTML = article.updated_at.substring( 0, 10 );
+
+                    itemWrapper.appendChild( itemLink );
+                    itemWrapper.appendChild( itemDate );
+                    articleFramework.appendChild( itemWrapper );
+
+                });
+
+            });
+        }
+
+        catch( error ) {
+            console.error( error );
+        }
+
+        document.querySelector( '.js-new-articles-feed' ).appendChild( articleFramework );
+    }
+
+    getNewArticles('https://help.365retailmarkets.com/api/v2/help_center/en-us/articles.json?page=1&per_page=30&sort_by=created_at');
 
 
 
