@@ -6,6 +6,13 @@ $(document).ready(function() {
         $( '.button--menu i' ).toggleClass( 'ph-list ph-x' );
     });
 
+    /*
+        TODO:
+        Menu Notes:
+            Create a JSON document with the layout of the menu
+	        - to add new items, just edit the JSON file
+	        - use the Fetch API to programatically grab and create menu items
+    */
 
 
 
