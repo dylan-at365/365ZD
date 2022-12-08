@@ -97,6 +97,28 @@
                 </div>
             {{/if}}
 
+            {{#if (compare article.content_tags.length ">" 0)}}
+
+                <section class="content-tags">
+
+                    <div>Related to:</div>
+
+                    <ul class="content-tag-list">
+
+                        {{#each article.content_tags}}
+                            <li class="content-tag-item" data-content-tag-id="{{id}}">
+                                {{#link "search_result" content_tag_id=id target="_blank"}}
+                                    {{name}}
+                                {{/link}}
+                            </li>
+                        {{/each}}
+                        
+                    </ul>
+
+                </section>
+
+            {{/if}}
+
         </div>
 
         <div class="col-sm col-md-8 article-inner">

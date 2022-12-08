@@ -9,9 +9,32 @@
     </div>
 
     <div class="row padded-content row-light">
+
         <div class="col-12 heading">
             <div>
-                {{t 'results' query=query count=results_count}}
+                {{#if results}}
+                    {{#is current_filter.identifier 'unified'}}
+                        {{#if content_tag_filters }}
+                        {{#each (filter content_tag_filters on="selected" equals=true)}}
+                            {{t 'results_content_tag' content_tag=name count=../results_count}}
+                        {{/each}}
+                        {{else}}
+                        {{t 'results' query=query count=results_count}}
+                        {{/if}}
+                    {{else}}
+                        {{#if content_tag_filters }}
+                        {{#each (filter content_tag_filters on="selected" equals=true)}}
+                            {{t 'results_content_tag' content_tag=name count=../results_count}}
+                        {{/each}}
+                        {{else}}
+                        {{#unless current_subfilter.identifier}}
+                            {{t 'results' query=query count=results_count}}
+                        {{else}}
+                            {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
+                        {{/unless}}
+                        {{/if}}
+                    {{/is}}
+                {{/if}}
             </div>
 
             <form role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
@@ -20,6 +43,7 @@
                     placeholder="&#8981; Search the 365 HelpCenter">
             </form>
         </div>
+
     </div>
 
     <div class="row padded-content row-dark">
@@ -47,30 +71,55 @@
         <div class="col-12">
 
             {{#if type_filters}}
-                <div>Filter results:</div>
+                <div>
+                    <div>Filter results:</div>
 
-                <ul class="search-filters">
+                    <ul class="search-filters">
 
-                    {{#each type_filters}}
+                        {{#each type_filters}}
 
-                        <li>
-                        {{#if selected}}
-                            <a href="{{url}}" class="button button--active">
-                        {{else}}
-                            <a href="{{url}}" class="button button--inactive">
-                        {{/if}}
+                            <li>
+                            {{#if selected}}
+                                <a href="{{url}}" class="button button--active">
+                            {{else}}
+                                <a href="{{url}}" class="button button--inactive">
+                            {{/if}}
 
-                                {{#is name "Articles"}}
-                                    <span class="js-article-filter">{{name}}</span>
-                                {{else}}
-                                    <span>{{name}}</span>
-                                {{/is}}
-                            </a>
-                        </li>
+                                    {{#is name "Articles"}}
+                                        <span class="js-article-filter">{{name}}</span>
+                                    {{else}}
+                                        <span>{{name}}</span>
+                                    {{/is}}
+                                </a>
+                            </li>
 
-                    {{/each}}
+                        {{/each}}
 
-                </ul>
+                    </ul>
+                </div>
+            {{/if}}
+
+            {{#if content_tag_filters}}
+                <div style="padding-top: 1.5rem;">
+                    <div>Related to:</div>
+
+                    <ul class="search-filters">
+
+                        {{#each content_tag_filters}}
+
+                            {{#if selected}}
+                                <li>
+                                    <a href="{{url}}" class="button">
+                                        <i class="ph-x"></i>
+                                        <span>{{name}}</span>
+                                    </a>
+                                </li>
+                            {{/if}}
+
+                        {{/each}}
+
+                    </ul>
+                </div>
             {{/if}}
 
         </div>
