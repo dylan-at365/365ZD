@@ -49,8 +49,8 @@
     <div class="row padded-content row-dark">
 
         <!-- I don't think this block will show up -->
-        <div class="col-12">
-            {{#if source_filters}}
+        {{#if source_filters}}
+            <div class="col-12">
                 <ul>
                     {{#each source_filters}}
                         <li class="button">
@@ -65,41 +65,63 @@
                         </li>
                     {{/each}}
                 </ul>
-            {{/if}}
-        </div>
+            </div>
+        {{/if}}
+        
+        {{#if type_filters}}
+            <div class="col-12">
+                <div>Filter results:</div>
 
-        <div class="col-12">
+                <ul class="search-filters">
+                    {{#each type_filters}}
 
-            {{#if type_filters}}
-                <div>
-                    <div>Filter results:</div>
-
-                    <ul class="search-filters">
-
-                        {{#each type_filters}}
-
-                            <li>
+                        <li>
                             {{#if selected}}
                                 <a href="{{url}}" class="button button--active">
                             {{else}}
                                 <a href="{{url}}" class="button button--inactive">
                             {{/if}}
 
-                                    {{#is name "Articles"}}
-                                        <span class="js-article-filter">{{name}}</span>
-                                    {{else}}
-                                        <span>{{name}}</span>
-                                    {{/is}}
-                                </a>
-                            </li>
+                                {{#is name "Articles"}}
+                                    <span class="js-article-filter">{{name}}</span>
+                                {{else}}
+                                    <span>{{name}}</span>
+                                {{/is}}
+                            </a>
+                        </li>
 
-                        {{/each}}
+                    {{/each}}
+                </ul>
 
-                    </ul>
-                </div>
-            {{/if}}
+            </div>
+        {{/if}}
 
-            {{#if content_tag_filters}}
+
+        {{#if subfilters}}
+            <div class="col-12">
+
+                <ul class="search-filters">
+                    {{#each subfilters}}
+
+                        <li>
+                            {{#if selected}}
+                                <a href="{{url}}" aria-current="page" class="button button--active">
+                            {{else}}
+                                <a href="{{url}}" class="button button--inactive">
+                            {{/if}}
+                                <span>{{name}}</span>
+                                <span>({{count}})</span>
+                            </a>
+                        </li>
+                        
+                    {{/each}}
+                </ul>
+
+            </div>
+        {{/if}}
+
+        {{#if content_tag_filters}}
+            <div class="col-12">
                 <div style="padding-top: 1.5rem;">
                     <div>Related to:</div>
 
@@ -120,29 +142,9 @@
 
                     </ul>
                 </div>
-            {{/if}}
-
-        </div>
-
-        <div class="col-12">
-            {{#if subfilters}}
-                <ul class="search-filters">
-                    {{#each subfilters}}
-                        <li>
-                            {{#if selected}}
-                                <a href="{{url}}" aria-current="page" class="button button--active">
-                            {{else}}
-                                <a href="{{url}}" class="button button--inactive">
-                            {{/if}}
-                                <span>{{name}}</span>
-                                <span>({{count}})</span>
-                            </a>
-                        </li>
-                    {{/each}}
-                </ul>
-            {{/if}}
-        </div>
-
+            </div>
+        {{/if}}
+        
     </div>
 
     <div class="row padded-content row-light">
