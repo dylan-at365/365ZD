@@ -358,6 +358,7 @@
   ================================ */
   --font-heading: normal normal 300 1.75rem "Roboto", Arial, sans-serif;
   --font-subheading: normal normal 700 1rem "Roboto", Arial, sans-serif;
+  --font-subheading--large: normal normal 700 1.75rem "Roboto", Arial, sans-serif;
   --font-body--large: normal normal 400 1rem "Roboto", Arial, sans-serif;
   --font-body: normal normal 400 0.75rem/1.5 "Roboto", Arial, sans-serif;
   --font-body--emphasis: italic normal 400 0.75rem/1.5 "Roboto", Arial, sans-serif;
@@ -747,6 +748,31 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
     transform: rotate(180deg);
   }
 }
+/*
+    #Hand-Waving-Animation
+*/
+.animate-wave-hand {
+  rotate: 0deg;
+  animation: 5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite normal waveHand;
+}
+
+@keyframes waveHand {
+  0% {
+    rotate: 0deg;
+  }
+  10% {
+    rotate: 12deg;
+  }
+  20% {
+    rotate: -12deg;
+  }
+  30% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
 .breadcrumbs-container ol {
   list-style: none;
 }
@@ -757,16 +783,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 
 .breadcrumbs-container li:not(li:last-of-type)::after {
   content: "/";
-  margin: 0 4px;
+  margin: 0 8px;
 }
 
 .breadcrumbs {
-  margin: 0;
-  padding: 1rem;
-  font-size: 0.8rem;
-}
-
-.breadcrumbs--search-results {
   margin: 0;
   padding: 0;
 }
@@ -1003,6 +1023,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   font: var(--font-subheading);
 }
 
+.subheading--large {
+  font: var(--font-subheading--large);
+}
+
 .font-body {
   font: var(--font-body);
 }
@@ -1071,6 +1095,11 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   transition: var(--transition-time);
 }
 
+.banner--hidden {
+  left: 73%;
+  transition: var(--transition-time);
+}
+
 .banner__content {
   display: flex;
   justify-content: center;
@@ -1097,6 +1126,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   vertical-align: -0.4rem;
 }
 
+.banner--hidden .banner__content {
+  justify-content: start;
+}
+
 /* ================================
     #Hero-Area
 ================================ */
@@ -1111,6 +1144,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   position: absolute;
   align-self: flex-end;
   padding-bottom: 3rem;
+  color: var(--platinum-800);
   font-size: 4rem;
   text-align: center;
 }
