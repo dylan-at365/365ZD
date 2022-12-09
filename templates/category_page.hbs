@@ -1,21 +1,12 @@
 <!-- Start Category Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 subheading--large">{{category.name}}</div>
+
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
-    </div>
-
-    <div class="row padded-content row-light">
-        <div class="col-12 heading">{{category.name}}</div>
-
-        {{#if category.description}}
-            <div class="col-12 subheading">
-                {{category.description}}
-            </div>
-        {{/if}}
     </div>
 
     <div class="row padded-content row-dark">
