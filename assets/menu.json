@@ -1,0 +1,59 @@
+{
+  "brands": [
+    
+    {
+      "name": "AirVend / 365Vending",
+      "shortname": "airvend",
+      "type": "category",
+      "id": "360001964853",
+      "href": "https://help.365retailmarkets.com/hc/en-us/categories/360001964853",
+      
+      "content": [
+        
+        {
+          "name": "AirVend Network Requirements",
+          "type": "article",
+          "id": "360018903893",
+          "href": "https://help.365retailmarkets.com/hc/en-us/articles/360018903893",
+          "content": []
+        },
+
+        {
+          "name": "AV Live",
+          "type": "section",
+          "id": "360018903893",
+          "href": "https://help.365retailmarkets.com/hc/en-us/articles/360018903893",
+          "content": [
+
+            {
+              "name": "Release Notes",
+              "type": "section",
+              "id": "360017449313",
+              "href": "https://help.365retailmarkets.com/hc/en-us/articles/360017449313",
+              "content": []
+            }
+            
+          ]
+        },
+
+        {
+          "name": "365Inside",
+          "type": "section",
+          "id": "360008388333",
+          "href": "https://help.365retailmarkets.com/hc/en-us/sections/360008388333",
+          "content": []
+        },
+
+        {
+          "name": "AirVend",
+          "type": "section",
+          "id": "360008611653",
+          "href": "https://help.365retailmarkets.com/hc/en-us/sections/360008611653",
+          "content": []
+        }
+        
+      ]
+    }
+    
+  ]
+}
