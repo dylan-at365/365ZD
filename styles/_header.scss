@@ -61,6 +61,11 @@
     transition: var(--transition-time);
 }
 
+.banner--hidden {
+    left: 73%;
+    transition: var(--transition-time);
+}
+
 .banner__content {
     display: flex;
     justify-content: center;
@@ -87,4 +92,9 @@
     padding-right: 8px;
     font-size: 1.5rem;
     vertical-align: -0.4rem;
+}
+
+
+.banner--hidden .banner__content {
+    justify-content: start;
 }

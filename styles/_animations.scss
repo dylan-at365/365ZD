@@ -63,3 +63,39 @@
         transform: rotate(180deg);
     }
 }
+
+
+
+
+
+/*
+    #Hand-Waving-Animation
+*/
+.animate-wave-hand {
+    rotate: 0deg;
+    animation: 5s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite normal waveHand;
+}
+
+@keyframes waveHand {
+
+    0% {
+        rotate: 0deg;
+    }
+
+    10% {
+        rotate: 12deg;
+    }
+
+    20% {
+        rotate: -12deg;
+    }
+
+    30% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+
+}
