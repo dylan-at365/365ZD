@@ -8,16 +8,10 @@
 
 .breadcrumbs-container li:not(li:last-of-type)::after {
     content: "/";
-    margin: 0 4px;
+    margin: 0 8px;
 }
 
 .breadcrumbs {
-    margin: 0;
-    padding: 1rem;
-    font-size: 0.8rem;
-}
-
-.breadcrumbs--search-results {
     margin: 0;
     padding: 0;
 }
