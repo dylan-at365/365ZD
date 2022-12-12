@@ -133,13 +133,13 @@ details[open] {
 @media (min-width: 768px) {
     .col-md-6 {
       flex: 0 0 auto;
-      width: calc(50% - 0.5rem);
+      width: calc(50% - 0.75rem);
     }
 }
 
 @media (min-width: 992px) {
     .col-lg-3 {
         flex: 0 0 auto;
-        width: calc(25% - 0.75rem);
+        width: calc(25% - 1.125rem);
     }
 }

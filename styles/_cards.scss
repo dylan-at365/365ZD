@@ -19,8 +19,17 @@
     border-radius: var(--border-radius--lg) var(--border-radius--lg) 0 0;
 }
 
+.card__cap--rounded {
+    border-radius: var(--border-radius--lg);
+}
+
 .card__title {
+    display: flex;
     font: var(--font-subheading);
+}
+
+.card__title > div {
+    margin-right: auto;
 }
 
 .card__body {
@@ -28,7 +37,31 @@
     padding: 1.5rem;
 }
 
+.card__body--columns {
+    column-count: auto;
+    column-width: clamp(10rem, 30rem, 40rem);
+}
+
 .card__action {
     padding: 1.5rem;
     padding-top: 0;
+}
+
+.sub-navigation {
+    margin-bottom: 16px;
+    padding: 4px 8px 4px 24px;
+    border-radius: var(--border-radius--sm);
+    transition: background-color var(--transition-time);
+}
+
+.sub-navigation:hover {
+    transition: background-color var(--transition-time);
+}
+
+.sub-navigation a {
+    display: flex;
+}
+
+.sub-navigation a > div {
+    margin-right: auto;
 }

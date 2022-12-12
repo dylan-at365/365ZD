@@ -1,15 +1,12 @@
 <!-- Start Section Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 subheading--large">{{section.name}}</div>
+
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
-    </div>
-
-    <div class="row padded-content row-light">
-        <div class="col-12 heading">{{section.name}}</div>
     </div>
 
     <div class="row padded-content row-dark">
@@ -17,10 +14,12 @@
         {{#if section.sections}}
             {{#each section.sections}}
                 <div class="col-sm-12 col-md-6 col-lg-3 card">
-                    <a href="{{url}}" class="section_item-subsection">
-                        {{name}}
-                        <i class="ph-arrow-right"></i>
-                    </a>
+                    <div class="card__cap card__cap--rounded">
+                        <a href="{{url}}" class="card__title">
+                            <div>{{name}}</div>
+                            <i class="ph-caret-right-bold"></i>
+                        </a>
+                    </div>
                 </div>
             {{/each}}
         {{/if}}
@@ -31,53 +30,56 @@
     <div class="row padded-content row-dark">
 
         {{#if section.articles}}
-            <ul class="col-12 card">
-                {{#each section.articles}}
-                    <li>
-                        <a href="{{url}}" class="link">
 
-                            {{#each labels}}
+            <div class="card">
+                <ul class="col-12 card__body card__body--columns">
+                    {{#each section.articles}}
+                        <li>
+                            <a href="{{url}}">
 
-                                {{#is identifier 'zdfilter365'}}
-                                    <img class="brand-article-marker" src="{{asset '365-article-marker.svg'}}">
-                                {{/is}}
+                                {{#each labels}}
 
-                                {{#is identifier 'zdfilteravanti'}}
-                                    <img class="brand-article-marker" src="{{asset 'avanti-article-marker.svg'}}">
-                                {{/is}}
+                                    {{#is identifier 'zdfilter365'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-365.svg'}}">
+                                    {{/is}}
 
-                                {{#is identifier 'zdfilterlightspeed'}}
-                                    <img class="brand-article-marker" src="{{asset 'lightspeed-article-marker.svg'}}">
-                                {{/is}}
+                                    {{#is identifier 'zdfilteravanti'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-avanti.svg'}}">
+                                    {{/is}}
 
-                                {{#is identifier 'zdfilterstockwell'}}
-                                    <img class="brand-article-marker" src="{{asset 'stockwell-article-marker.svg'}}">
-                                {{/is}}
+                                    {{#is identifier 'zdfilterlightspeed'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-lightspeed.svg'}}">
+                                    {{/is}}
 
-                                {{#is identifier 'zdfilterairvend'}}
-                                    <img class="brand-article-marker" src="{{asset 'airvend-article-marker.svg'}}">
-                                {{/is}}
+                                    {{#is identifier 'zdfilterstockwell'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-stockwell.svg'}}">
+                                    {{/is}}
 
-                                {{#is identifier 'zdfilterck'}}
-                                    <img class="brand-article-marker" src="{{asset 'ck-article-marker.svg'}}">
-                                {{/is}}
+                                    {{#is identifier 'zdfilterairvend'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-airvend.svg'}}">
+                                    {{/is}}
 
-                            {{/each}}
+                                    {{#is identifier 'zdfilterck'}}
+                                        <img class="brand-article-marker" src="{{asset 'article_marker-ck.svg'}}">
+                                    {{/is}}
 
-                            {{title}}
+                                {{/each}}
 
-                            {{#if internal}}
-                                <i class="ph-lock-key-fill"></i>
-                            {{/if}}
-                        </a>
-                    </li>
-                {{/each}}
-                {{pagination "section.articles"}}
-            </ul>
+                                {{title}}
+
+                                {{#if internal}}
+                                    <i class="ph-lock-key-fill"></i>
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/each}}
+                    {{pagination "section.articles"}}
+                </ul>
+            </div>
 
         {{else}}
             <div class="col-12 card padded-content row-light">
-                <div class="error-info">
+                <div class="center-align-self subheading padded-content--no-gap">
                     This section does not contain any articles. It may contain other sections above.
                 </div>
             </div>

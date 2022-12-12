@@ -156,6 +156,22 @@ details[open] > summary {
     background-color: var(--yale-400);
 }
 
+a.card__title {
+    color: var(--platinum-800);
+}
+
+a.card__title:hover {
+    color: var(--yale-500);
+}
+
+.sub-navigation {
+    background-color: var(--raisin-500);
+}
+
+.sub-navigation:hover {
+    background-color: var(--raisin-300);
+}
+
 
 
 

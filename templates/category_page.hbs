@@ -13,74 +13,80 @@
 
         <!-- Creates top-level section template -->
         {{#each sections}} 
-            <ul class="col-sm-12 col-md-6 col-lg-3 card">
-                <li>
-                    <a href="{{url}}" class="heading">
-                        {{name}}
+            <div class="col-sm-12 col-md-6 col-lg-3 card">
+                <div class="card__cap">
+                    <a href="{{url}}" class="card__title">
+                        <div>{{name}}</div>
+                        <i class="ph-caret-right-bold"></i>
                     </a>
-                </li>
+                </div>
 
-                <!-- Creates subsection templates -->
-                {{#each sections}}
-                    <li>
-                        <a href="{{url}}" class="subheading">
-                            {{name}}
-                            <i class="ph-arrow-right"></i>
-                        </a>
-                    </li>
-                {{/each}}
+                <ul class="card__body">
 
-                <!-- Creates article lists -->
-                {{#if articles}}
-                    {{#each articles}}
-                        <li>
-                            <a href="{{url}}" class="link">
-
-                                {{#each labels}}
-
-                                    {{#is identifier 'zdfilter365'}}
-                                        <img class="brand-article-marker" src="{{asset '365-article-marker.svg'}}">
-                                    {{/is}}
-
-                                    {{#is identifier 'zdfilteravanti'}}
-                                        <img class="brand-article-marker" src="{{asset 'avanti-article-marker.svg'}}">
-                                    {{/is}}
-
-                                    {{#is identifier 'zdfilterlightspeed'}}
-                                        <img class="brand-article-marker" src="{{asset 'lightspeed-article-marker.svg'}}">
-                                    {{/is}}
-
-                                    {{#is identifier 'zdfilterstockwell'}}
-                                        <img class="brand-article-marker" src="{{asset 'stockwell-article-marker.svg'}}">
-                                    {{/is}}
-
-                                    {{#is identifier 'zdfilterairvend'}}
-                                        <img class="brand-article-marker" src="{{asset 'airvend-article-marker.svg'}}">
-                                    {{/is}}
-
-                                    {{#is identifier 'zdfilterck'}}
-                                        <img class="brand-article-marker" src="{{asset 'ck-article-marker.svg'}}">
-                                    {{/is}}
-                                    
-                                {{/each}}
-
-                                {{title}}
-                                {{#if internal}}
-                                    <i class="ph-lock-key-fill"></i>
-                                {{/if}}
+                    <!-- Creates subsection templates -->
+                    {{#each sections}}
+                        <li class="sub-navigation">
+                            <a href="{{url}}">
+                                <div>{{name}}</div>
+                                <i class="ph-caret-right"></i>
                             </a>
                         </li>
                     {{/each}}
 
-                    {{#if more_articles}}
-                        <li>
-                            <a href="{{url}}" class="button">
-                                {{t 'show_all_articles' count=article_count}}
-                            </a>
-                        </li>
+                    <!-- Creates article lists -->
+                    {{#if articles}}
+                        {{#each articles}}
+                            <li>
+                                <a href="{{url}}">
+
+                                    {{#each labels}}
+
+                                        {{#is identifier 'zdfilter365'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-365.svg'}}">
+                                        {{/is}}
+
+                                        {{#is identifier 'zdfilteravanti'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-avanti.svg'}}">
+                                        {{/is}}
+
+                                        {{#is identifier 'zdfilterlightspeed'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-lightspeed.svg'}}">
+                                        {{/is}}
+
+                                        {{#is identifier 'zdfilterstockwell'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-stockwell.svg'}}">
+                                        {{/is}}
+
+                                        {{#is identifier 'zdfilterairvend'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-airvend.svg'}}">
+                                        {{/is}}
+
+                                        {{#is identifier 'zdfilterck'}}
+                                            <img class="brand-article-marker" src="{{asset 'article_marker-ck.svg'}}">
+                                        {{/is}}
+                                        
+                                    {{/each}}
+
+                                    {{title}}
+                                    {{#if internal}}
+                                        <i class="ph-lock-key-fill"></i>
+                                    {{/if}}
+                                </a>
+                            </li>
+                        {{/each}}
                     {{/if}}
+
+                </ul>
+
+                {{#if more_articles}}
+                    <div class="card__action">
+                        <a href="{{url}}" class="button button--small">
+                            {{t 'show_all_articles' count=article_count}}
+                        </a>
+                    </div>
                 {{/if}}
-            </ul>
+
+            </div>
         {{/each}}
     </div>
 </div>

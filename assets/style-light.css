@@ -145,6 +145,22 @@ details[open] > summary {
     background-color: var(--space-cadet-400);
 }
 
+a.card__title {
+    color: var(--platinum-800);
+}
+
+a.card__title:hover {
+    color: var(--yale-500);
+}
+
+.sub-navigation {
+    background-color: var(--platinum-400);
+}
+
+.sub-navigation:hover {
+    background-color: var(--platinum-500);
+}
+
 
 
 
