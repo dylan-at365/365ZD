@@ -82,6 +82,18 @@ details[open] > summary {
     background-color: var(--saffron-500);
 }
 
+.button--subscribe button[data-selected="true"] {
+    width: 100%;
+    height: 100%;
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
+}
+
+.button--subscribe button[data-selected="true"]:hover {
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
+}
+
 
 
 
@@ -269,9 +281,7 @@ a.card__title:hover {
     _articles.scss
 ================================ */
 .article-sidebar {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
+    background-color: var(--platinum-500);
 }
 
 .article-inner pre {
@@ -283,6 +293,14 @@ a.card__title:hover {
     color: var(--red-200);
     background-color: var(--gray-600);
     border: 1px solid var(--gray-500);
+}
+
+.sub-navigation--light {
+    background-color: var(--platinum-600);
+}
+
+.sub-navigation--light:hover {
+    background-color: var(--platinum-700);
 }
 
 

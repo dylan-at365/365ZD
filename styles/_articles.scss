@@ -2,14 +2,15 @@
     position: sticky;
     top: 1rem;
     min-width: 10rem;
-    max-height: 480px;
+    max-height: 100vh;
 
     margin-left: 1rem;
-    padding: 1rem;
-    padding-left: 1.5rem;
+    padding: 2rem;
 
     border-radius: var(--border-radius);
     overflow-y: scroll;
+    scrollbar-width: none;
+
     transition: width var(--transition-time);
 }
 
@@ -18,11 +19,15 @@
     list-style: initial;
 }
 
-.article-sidebar .table-of-contents > li {
-    border-bottom: 1px solid var(--gray-500);
+.article-sidebar .table-of-contents ul {
+    padding-left: 2rem;
 }
 
-.article-sidebar .table-of-contents > li:last-child {
+.article-sidebar .table-of-contents li {
+    border-bottom: 1px solid var(--platinum-500);
+}
+
+.article-sidebar .table-of-contents li:last-child {
     margin-bottom: 2rem;
     border-bottom: none;
 }
@@ -60,9 +65,9 @@
     .article-sidebar {
         position: static;
         width: 100%;
-        max-height: auto;
+        max-height: initial;
         padding: 2rem;
-        margin-left: inherit;
+        margin-left: initial;
         border: none !important;
         overflow-y: scroll;
     }

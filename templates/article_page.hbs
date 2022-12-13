@@ -1,40 +1,39 @@
 <!-- Start Article Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark d-print-none">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row padded-content--no-gap row-light">
+    <div class="row row-light">
         <div class="col-12 heading">
 
             {{#each article.labels}}
 
                 {{#is identifier 'zdfilter365'}}
-                    <img class="brand-article-marker--large" src="{{asset '365-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-365.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilteravanti'}}
-                    <img class="brand-article-marker--large" src="{{asset 'avanti-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-avanti.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterlightspeed'}}
-                    <img class="brand-article-marker--large" src="{{asset 'lightspeed-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-lightspeed.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterstockwell'}}
-                    <img class="brand-article-marker--large" src="{{asset 'stockwell-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-stockwell.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterairvend'}}
-                    <img class="brand-article-marker--large" src="{{asset 'airvend-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-airvend.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterck'}}
-                    <img class="brand-article-marker--large" src="{{asset 'ck-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-ck.svg'}}">
                 {{/is}}
 
             {{/each}}
@@ -55,9 +54,9 @@
     </div>
 
     <div class="row padded-content row-light d-print-none">
-        <a href="#" class="col-3 col-md-2 col-lg-1 button js-print-article">Print</a>
+        <a href="#" class="col-3 col-md-2 col-lg-1 button button--small js-print-article">Print</a>
 
-        <div class="col-3 col-md-2 col-lg-1 button">
+        <div class="col-3 col-md-2 col-lg-1 button button--small button--subscribe">
             {{subscribe}}
         </div>
     </div>
@@ -66,35 +65,55 @@
 
         <div class="col-sm-12 col-md-3 article-sidebar d-print-none">
 
-            <div class="js-scroll-top button">
+            <div class="js-scroll-top button button--small">
                 Scroll to Top
             </div>
 
-            <div class="table-of-contents">
-                <div class="subheading subheading--underline">
+            <details class="table-of-contents">
+                <summary class="subheading">
                     Table of Contents
-                </div>
+                </summary>
 
                 <ul class="js-append-toc">
                 </ul>
-            </div>
+            </details>
 
             {{#if attachments}}
                 <div class="article-attachments">
-                    <div class="subheading subheading--underline">
+                    <div class="subheading">
                         Attachments
                     </div>
 
                     <ul>
                     {{#each attachments}}
                         <li>
-                            <a href="{{url}}" target="_blank" rel="noopener" class="link">
+                            <a href="{{url}}" target="_blank" rel="noopener">
                                 {{name}}
                             </a>
                         </li>
                     {{/each}}
                     </ul>
                 </div>
+            {{/if}}
+
+            {{#if (compare article.content_tags.length ">" 0)}}
+
+                <section class="content-tags">
+
+                    <div class="subheading pb-sm">Related to:</div>
+                    <ul class="content-tag-list">
+                        {{#each article.content_tags}}
+                            <li class="sub-navigation sub-navigation--light" data-content-tag-id="{{id}}">
+                                {{#link "search_result" content_tag_id=id target="_blank"}}
+                                    <div>{{name}}</div>
+                                    <i class="ph-caret-right"></i>
+                                {{/link}}
+                            </li>
+                        {{/each}}
+                    </ul>
+
+                </section>
+
             {{/if}}
 
         </div>
