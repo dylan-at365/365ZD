@@ -1327,6 +1327,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   padding-bottom: 24px;
 }
 
+.article-inner a {
+  text-decoration: underline;
+}
+
 .article-inner img {
   max-width: 100%;
 }
