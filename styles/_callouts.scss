@@ -1,13 +1,14 @@
 /* Banner Callouts/Warnings */
 .banner-callout {
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    max-width: 80ch;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: var(--border-radius--md);
     text-align: center;
 }
 
 .banner-callout:before {
     display: block;
-    padding-right: 0.5rem;
     font-family: "phosphor" !important;
     font-size: 2rem;
     font-weight: normal !important;
@@ -28,15 +29,15 @@
 
 
 .banner-callout__info:before {
-    content: "\ecdd";
+    content: "\f478";
 }
 
 .banner-callout__warning:before {
-    content: "\eef0";
+    content: "\f62c";
 }
 
 .banner-callout__alert:before {
-    content: "\ee8a";
+    content: "\f595";
 }
 
 
@@ -44,5 +45,11 @@
 
 
 .inline-callout {
-    padding: 1rem;
+    max-width: 80ch;
+    padding: 1.5rem;
+    border-radius: var(--border-radius--md);
+}
+
+.inline-callout p {
+    margin-bottom: 0;
 }

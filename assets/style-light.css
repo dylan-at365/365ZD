@@ -28,6 +28,23 @@ details[open] > summary {
 
 
 /* ================================
+    _zendesk-overrides.scss
+================================ */
+.wysiwyg-color-blue,
+.wysiwyg-color-blue70,
+.wysiwyg-color-blue80,
+.wysiwyg-color-blue90,
+.wysiwyg-color-blue110,
+.wysiwyg-color-blue120,
+.wysiwyg-color-blue130 {
+    color: var(--yale-400);
+}
+
+
+
+
+
+/* ================================
     _layout.scss
 ================================ */
 .row-light {
@@ -102,18 +119,18 @@ details[open] > summary {
     _callouts.scss
 ================================ */
 .banner-callout__info {
-    color: var(--gray-700);
-    background-color: var(--blue-400);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 .banner-callout__warning {
-    color: var(--gray-100);
-    background-color: var(--yellow-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
 }
 
 .banner-callout__alert {
-    color: var(--gray-700);
-    background-color: var(--red-200);
+    color: var(--platinum-800);
+    background-color: var(--crimson-400);
 }
 
 
@@ -121,23 +138,27 @@ details[open] > summary {
 
 
 .inline-callout__info {
-    background-color: var(--blue-600);
-    border-left: 12px solid var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--yale-500);
+    border-left: 24px solid var(--yale-400);
 }
 
 .inline-callout__success {
-    background-color: var(--green-300);
-    border-left: 12px solid var(--green-200);
+    color: var(--platinum-800);
+    background-color: var(--jungle-500);
+    border-left: 24px solid var(--jungle-400);
 }
 
 .inline-callout__warning {
-    background-color: var(--yellow-300);
-    border-left: 12px solid var(--yellow-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
+    border-left: 24px solid var(--saffron-400);
 }
 
 .inline-callout__alert {
-    background-color: var(--red-300);
-    border-left: 12px solid var(--red-200);
+    color: var(--platinum-800);
+    background-color: var(--crimson-500);
+    border-left: 24px solid var(--crimson-400);
 }
 
 
@@ -214,18 +235,18 @@ a.card__title:hover {
     _tables.scss
 ================================ */
 .table {
-    color: var(--gray-100);
-    border-color: var(--blue-600);
+    color: var(--raisin-400);
+    border-color: var(--yale-500);
   }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-    color: var(--gray-100);
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
 }
 
 .table__sticky-header {
-    color: var(--gray-700);
-    background-color: var(--blue-400);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 
@@ -284,15 +305,19 @@ a.card__title:hover {
     background-color: var(--platinum-500);
 }
 
+.article-inner img {
+    opacity: 1;
+}
+
 .article-inner pre {
-    color: var(--gray-100);
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
 }
 
 .article-inner code {
-    color: var(--red-200);
-    background-color: var(--gray-600);
-    border: 1px solid var(--gray-500);
+    color: var(--crimson-400);
+    background-color: var(--platinum-600);
+    border: 1px solid var(--platinum-500);
 }
 
 .sub-navigation--light {

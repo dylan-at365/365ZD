@@ -557,7 +557,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .wysiwyg-color-blue110,
 .wysiwyg-color-blue120,
 .wysiwyg-color-blue130 {
-  color: var(--blue-200);
+  color: var(--yale-400);
 }
 
 .wysiwyg-color-red,
@@ -567,7 +567,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .wysiwyg-color-red110,
 .wysiwyg-color-red120,
 .wysiwyg-color-red130 {
-  color: var(--red-200);
+  color: var(--crimson-400);
 }
 
 .wysiwyg-color-yellow,
@@ -577,7 +577,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .wysiwyg-color-yellow110,
 .wysiwyg-color-yellow120,
 .wysiwyg-color-yellow130 {
-  color: var(--yellow-200);
+  color: var(--saffron-400);
 }
 
 .wysiwyg-color-green,
@@ -587,7 +587,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .wysiwyg-color-green110,
 .wysiwyg-color-green120,
 .wysiwyg-color-green130 {
-  color: var(--green-200);
+  color: var(--jungle-400);
 }
 
 .wysiwyg-font-size-x-large {
@@ -633,6 +633,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 /*
     #Margin-Utilities
 */
+.mt-none {
+  margin-top: 0;
+}
+
 .mb-none {
   margin-bottom: 0;
 }
@@ -1366,7 +1370,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 
 .check {
   display: inline-block;
-  color: var(--green-200);
+  color: var(--jungle-400);
   font-size: 1.25rem;
   vertical-align: middle;
 }
@@ -1591,14 +1595,15 @@ summary.padding-bottom-only {
 
 /* Banner Callouts/Warnings */
 .banner-callout {
-  padding: 1rem;
-  border-radius: var(--border-radius);
+  max-width: 80ch;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  border-radius: var(--border-radius--md);
   text-align: center;
 }
 
 .banner-callout:before {
   display: block;
-  padding-right: 0.5rem;
   font-family: "phosphor" !important;
   font-size: 2rem;
   font-weight: normal !important;
@@ -1615,25 +1620,31 @@ summary.padding-bottom-only {
 }
 
 .banner-callout__info:before {
-  content: "\ecdd";
+  content: "\f478";
 }
 
 .banner-callout__warning:before {
-  content: "\eef0";
+  content: "\f62c";
 }
 
 .banner-callout__alert:before {
-  content: "\ee8a";
+  content: "\f595";
 }
 
 .inline-callout {
-  padding: 1rem;
+  max-width: 80ch;
+  padding: 1.5rem;
+  border-radius: var(--border-radius--md);
+}
+
+.inline-callout p {
+  margin-bottom: 0;
 }
 
 .article-inner pre {
   display: block;
-  padding: 1rem;
-  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border-radius: var(--border-radius--md);
   overflow: auto;
 }
 

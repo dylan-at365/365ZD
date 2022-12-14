@@ -43,7 +43,7 @@ $(document).ready(function() {
 
         // Add little note telling users they can click on images to enable the gallery mode
         $( `.article-inner div.fancybox-gallery-${i}` ).after( 
-            '<p class="subheading subheading--annotation">(Click image to open in gallery)</p>' 
+            '<p class="font-body font-body--emphasis mt-none">(Click image to open in gallery)</p>' 
         );
 
     };
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
     // Add a little note telling users they can click on images to enable big mode
     $( '.article-inner img.fancybox' ).after( 
-        '<p class="font-body font-body--emphasis">(Click image to enlarge it)</p>' 
+        '<p class="font-body font-body--emphasis mt-none">(Click image to enlarge it)</p>' 
     );
 
 
