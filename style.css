@@ -637,6 +637,27 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   text-align: center;
 }
 
+.text-columns--sm {
+  column-count: auto;
+  column-width: 20rem;
+  column-gap: 5rem;
+}
+
+@media (min-width: 768px) {
+  .text-columns--sm {
+    column-count: auto;
+    column-width: 20rem;
+    column-gap: 5rem;
+    white-space: nowrap;
+  }
+}
+.text-columns--md {
+  column-count: auto;
+  column-width: 30rem;
+  column-gap: 5rem;
+  white-space: nowrap;
+}
+
 /*
     #Margin-Utilities
 */
@@ -957,7 +978,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   margin: 0 4px;
   padding: 0.5rem;
   box-shadow: var(--shadow-outset);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius--md);
   text-align: center;
   cursor: pointer;
 }

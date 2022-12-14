@@ -248,11 +248,11 @@ a.card__title:hover {
 .table {
     color: var(--platinum-800);
     border-color: var(--yale-500);
-  }
+}
 
 .table-striped > tbody > tr:nth-of-type(odd) {
     color: var(--platinum-800);
-    background-color: var(--platinum-200);
+    background-color: var(--raisin-500);
 }
 
 .table__sticky-header {

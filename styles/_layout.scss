@@ -40,6 +40,29 @@
     text-align: center;
 }
 
+.text-columns--sm {
+    column-count: auto;
+    column-width: 20rem;
+    column-gap: 5rem;
+}
+
+@media (min-width: 768px) {
+
+    .text-columns--sm {
+        column-count: auto;
+        column-width: 20rem;
+        column-gap: 5rem;
+        white-space: nowrap;
+    }
+}
+
+.text-columns--md {
+    column-count: auto;
+    column-width: 30rem;
+    column-gap: 5rem;
+    white-space: nowrap;
+}
+
 
 
 

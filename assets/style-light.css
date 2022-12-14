@@ -203,15 +203,15 @@ a.card__title:hover {
 ================================ */
 .pagination > ul > li {
     
-    background-color: var(--blue-200);
+    background-color: var(--yale-400);
 }
 
 .pagination > ul > li > a {
-    color: var(--gray-700);
+    color: var(--platinum-800);
 }
 
 .pagination > ul > li > a:hover {
-    color: var(--blue-400);
+    color: var(--yale-500);
 }
 
 
