@@ -631,6 +631,13 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 /*
+    #Text-Utilities
+*/
+.text-align--center {
+  text-align: center;
+}
+
+/*
     #Margin-Utilities
 */
 .mt-none {
@@ -1582,10 +1589,6 @@ summary.padding-bottom-only {
   width: 100%;
   height: 80px;
   align-self: center;
-}
-
-.social {
-  text-align: center;
 }
 
 .social-icons {

@@ -408,6 +408,14 @@ select {
 /* ================================
     _footer.scss
 ================================ */
+.footer:first-of-type {
+    background-color: var(--raisin-400);
+}
+
+.footer:last-of-type {
+    background-color: var(--raisin-100);
+}
+
 .social {
     color: var(--platinum-800);
 }
