@@ -10,6 +10,10 @@
     padding: 1.5rem 2.5rem;
 }
 
+
+
+
+
 /*
     #Flex-Alignment
 */
@@ -24,6 +28,21 @@
 .right-align {
     justify-content: end;
 }
+
+
+
+
+
+/*
+    #Text-Utilities
+*/
+.text-align--center {
+    text-align: center;
+}
+
+
+
+
 
 /*
     #Margin-Utilities
@@ -48,6 +67,10 @@
 .me-md {
     margin-right: 1.5rem;
 }
+
+
+
+
 
 /*
     #Padding-Utilities
