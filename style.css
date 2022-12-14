@@ -973,14 +973,23 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   vertical-align: -5px;
 }
 
+.pagination {
+  padding: 2.5rem 0;
+}
+
 .pagination > ul > li {
   display: inline-block;
-  margin: 0 4px;
-  padding: 0.5rem;
-  box-shadow: var(--shadow-outset);
+  margin: 0 0.5rem;
+}
+
+.pagination > ul > li > a {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border: none;
   border-radius: var(--border-radius--md);
-  text-align: center;
   cursor: pointer;
+  text-align: center;
+  transition: var(--transition-time);
 }
 
 .search {

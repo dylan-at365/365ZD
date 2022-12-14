@@ -201,17 +201,14 @@ a.card__title:hover {
 /* ================================
     _pagination.scss
 ================================ */
-.pagination > ul > li {
-    
-    background-color: var(--yale-400);
-}
-
 .pagination > ul > li > a {
     color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
 .pagination > ul > li > a:hover {
-    color: var(--yale-500);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 
