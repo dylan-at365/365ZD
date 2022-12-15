@@ -229,6 +229,17 @@ a.card__title:hover {
 
 
 /* ================================
+    _search-results.scss
+================================ */
+.search-sidebar {
+    background-color: var(--platinum-500);
+}
+
+
+
+
+
+/* ================================
     _tables.scss
 ================================ */
 .table {

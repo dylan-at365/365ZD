@@ -240,6 +240,17 @@ a.card__title:hover {
 
 
 /* ================================
+    _search-results.scss
+================================ */
+.search-sidebar {
+    background-color: var(--raisin-200);
+}
+
+
+
+
+
+/* ================================
     _tables.scss
 ================================ */
 .table {

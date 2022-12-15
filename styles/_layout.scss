@@ -17,8 +17,16 @@
 /*
     #Flex-Alignment
 */
+.d-flex {
+    display: flex;
+}
+
 .center-align {
     justify-content: center;
+}
+
+.align-items--center {
+    align-items: center;
 }
 
 .center-align-self {
@@ -106,8 +114,16 @@
     padding-bottom: 1rem;
 }
 
+.pb-md {
+    padding-bottom: 1.5rem;
+}
+
 .pb-lg {
     padding-bottom: 2.5rem;
+}
+
+.pe-md {
+    padding-right: 1.5rem;
 }
 
 .px-sm {

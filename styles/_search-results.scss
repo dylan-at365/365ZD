@@ -1,16 +1,25 @@
+.source-filters {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
 .search-filters {
     display: flex;
-    column-gap: 1rem;
-    overflow: auto hidden;
-    -webkit-overflow-scrolling: touch;
+    flex-flow: column;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .search-filters > li {
-    display: inline-block;
     white-space: nowrap;
 }
 
 .search-result {
     padding: 1rem 0;
     border-bottom: 1px solid var(--gray-300);
+}
+
+.search-result em {
+    color: var(--crimson-400);
 }
