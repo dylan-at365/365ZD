@@ -1616,7 +1616,7 @@ input[type=checkbox] {
 
 .search-filters {
   display: flex;
-  flex-flow: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
   padding-bottom: 1rem;
 }
@@ -1627,7 +1627,7 @@ input[type=checkbox] {
 
 .search-result {
   padding: 1rem 0;
-  border-bottom: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--platinum-400);
 }
 
 .search-result em {
