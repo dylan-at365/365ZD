@@ -86,6 +86,6 @@
     --transition-time: 0.2s;
 }
 
-/* Set hero banner variable here so SCSS plays nicely with the Zendesk asset reference */
+/* Set manifest variables here so SCSS plays nicely with the Zendesk asset reference */
+$notification_color: '$notification_color';
 $assets-hero_banner-jpg: '$assets-hero_banner-jpg';
-$assets-logo_stacked-png: '$assets-logo_stacked-png';

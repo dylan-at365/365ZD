@@ -24,82 +24,82 @@
                     "label": "Notification Icon",
                     "identifier": "notification_icon",
                     "description": "An icon that appears before the notification banner message",
-                    "value": "<i class=\"ph-hand-waving\"></i>",
+                    "value": "ph-hand-waving",
                     "type": "list",
                     "options": [
                         {
                             "label": "Barricade",
-                            "value": "<i class=\"ph-barricade\"></i>"
+                            "value": "ph-barricade"
                         },
 
                         {
                             "label": "Bell",
-                            "value": "<i class=\"ph-bell-ringing\"></i>"
+                            "value": "ph-bell-ringing"
                         },
 
                         {
                             "label": "Book",
-                            "value": "<i class=\"ph-book-bookmark\"></i>"
+                            "value": "ph-book-bookmark"
                         },
 
                         {
                             "label": "Chat Bubble",
-                            "value": "<i class=\"ph-chat-text\"></i>"
+                            "value": "ph-chat-text"
                         },
 
                         {
                             "label": "Check Circle",
-                            "value": "<i class=\"ph-check-circle\"></i>"
+                            "value": "ph-check-circle"
                         },
 
                         {
                             "label": "Confetti",
-                            "value": "<i class=\"ph-confetti\"></i>"
+                            "value": "ph-confetti"
                         },
 
                         {
                             "label": "Document",
-                            "value": "<i class=\"ph-file-text\"></i>"
+                            "value": "ph-file-text"
                         },
 
                         {
                             "label": "Flag",
-                            "value": "<i class=\"ph-flag\"></i>"
+                            "value": "ph-flag"
                         },
 
                         {
                             "label": "Hand Waving",
-                            "value": "<i class=\"ph-hand-waving\"></i>"
+                            "value": "ph-hand-waving"
                         },
 
                         {
                             "label": "Megaphone",
-                            "value": "<i class=\"ph-megaphone-simple\"></i>"
+                            "value": "ph-megaphone-simple"
                         },
 
                         {
                             "label": "Note",
-                            "value": "<i class=\"ph-note\"></i>"
+                            "value": "ph-note"
                         },
 
                         {
                             "label": "Phone",
-                            "value": "<i class=\"ph-phone-call\"></i>"
+                            "value": "ph-phone-call"
                         },
 
                         {
                             "label": "Smiley",
-                            "value": "<i class=\"ph-smiley\"></i>"
+                            "value": "ph-smiley"
                         },
 
                         {
                             "label": "Thumbs Up",
-                            "value": "<i class=\"ph-thumbs-up\"></i>"
+                            "value": "ph-thumbs-up"
                         },
 
                         {
                             "label": "Warning",
-                            "value": "<i class=\"ph-warning\"></i>"
+                            "value": "ph-warning"
                         }
                     ]
                 },

@@ -5,9 +5,9 @@
         #Alert-Banner
     ================================ -->
     <div class="row banner">
-        <a href="#" class="banner__content">
-            <i class="ph-hand-waving animate-wave-hand"></i>
-            <div>The 365Ops App is HERE!! Get specific data and connectivity info for your locations all from your mobile phone!</div>
+        <a href="{{settings.notification_link}}" class="banner__content">
+            <i class="{{settings.notification_icon}}"></i>
+            <div>{{settings.notification_content}}</div>
         </a>
     </div>
 
@@ -535,5 +535,5 @@
 
 </div>
 
-<script src="{{asset 'home-page-scripts.js'}}"></script>
+<script async src="{{asset 'home-page-scripts.js'}}"></script>
 <!-- End Home Page Template -->
