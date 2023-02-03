@@ -1539,9 +1539,9 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 /* This is the list of options to choose from */
 .nesty-panel li {
   font-family: "Roboto", Arial, sans-serif !important;
-  font-size: 1rem !important;
+  font-size: 0.75rem !important;
   font-weight: normal !important;
-  line-height: 1rem;
+  line-height: 0.75rem;
 }
 
 /*
@@ -1551,7 +1551,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 #request_organization_id_hint,
 #request_description_hint {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-style: italic;
 }
 
@@ -1559,31 +1559,34 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 #request_comment_body {
   height: 8rem;
   font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.75rem;
 }
 
 #request_subject_error,
-#request_description_error {
+#request_description_error,
+.notification-error:not([aria-hidden=true]) {
   padding: 0.5rem;
-  color: var(--gray-700);
-  background-color: var(--red-200);
-  font-size: 0.8rem;
+  color: var(--platinum-800);
+  background-color: var(--crimson-400);
+  font-size: 0.75rem;
   font-style: italic;
 }
 
+/*
+    Request Form final "Submit" button
+*/
 input[name=commit] {
   display: inline-block;
-  padding: 0.5rem;
-  font: var(--font-body) !important;
+  padding: 0.75rem 2rem;
+  font: var(--font-body--large);
   border: none;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-outset);
+  border-radius: var(--border-radius--md);
   cursor: pointer;
   text-align: center;
   transition: var(--transition-time);
 }
 
 input[name=commit]:hover {
-  color: var(--blue-400);
   transition: var(--transition-time);
 }
 
@@ -1595,7 +1598,7 @@ input[name=commit]:disabled:hover {
 .request-form p {
   margin: 0;
   color: var(--gray-300);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-style: italic;
 }
 

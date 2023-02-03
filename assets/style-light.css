@@ -334,26 +334,59 @@ a.card__title:hover {
     _requests.scss
 ================================ */
 ul[data-hc-pills-container] {
-    background-color: var(--gray-700);
+    background-color: var(--platinum-800);
+}
+
+ul[data-hc-pills-container] li[data-hc-pill="true"] {
+    background-color: var(--platinum-800);
+}
+
+ul[data-hc-pills-container] li:last-child input {
+    color: var(--raisin-400);
+    background-color: transparent;
 }
 
 #request_organization_id_hint,
 #request_description_hint {
-    color: var(--gray-300) !important;
+    color: var(--raisin-400) !important;
+}
+
+.upload-dropzone {
+    background-color: var(--platinum-600);
+}
+
+.upload-dropzone span {
+    color: var(--raisin-400);
 }
 
 .request-form > footer > input,
 .requests-filter div > button {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
-#request_subject {
-    color: var(--gray-100);
+.nesty-input,
+select {
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
 }
 
+#request_subject,
 #request_description {
-    color: var(--gray-100);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
+    border: 1px solid var(--raisin-400);
+}
+
+input[name="commit"] {
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
+    transition: var(--transition-time);
+}
+
+input[name="commit"]:hover {
+    background-color: var(--yale-400);
+    transition: var(--transition-time);
 }
 
 

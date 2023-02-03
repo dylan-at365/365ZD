@@ -358,7 +358,7 @@ a.card__title:hover {
     _requests.scss
 ================================ */
 ul[data-hc-pills-container] {
-    background-color: var(--gray-300);
+    background-color: var(--raisin-400);
 }
 
 ul[data-hc-pills-container] li[data-hc-pill="true"] {
@@ -372,7 +372,7 @@ ul[data-hc-pills-container] li:last-child input {
 
 #request_organization_id_hint,
 #request_description_hint {
-    color: var(--gray-500) !important;
+    color: var(--platinum-800) !important;
 }
 
 .upload-dropzone {
@@ -381,22 +381,32 @@ ul[data-hc-pills-container] li:last-child input {
 
 .request-form > footer > input,
 .requests-filter div > button {
-    color: var(--gray-700);
-    background-color: var(--blue-100);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 .nesty-input,
 select {
-    color: var(--gray-700);
-    background-color: var(--gray-300);
+    color: var(--platinum-800);
+    background-color: var(--raisin-300);
 }
 
-#request_subject {
-    color: var(--gray-700);
-}
-
+#request_subject,
 #request_description {
-    color: var(--gray-700);
+    color: var(--platinum-800);
+    background-color: var(--raisin-400);
+    border: 1px solid var(--platinum-800);
+}
+
+input[name="commit"] {
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
+    transition: var(--transition-time);
+}
+
+input[name="commit"]:hover {
+    background-color: var(--yale-500);
+    transition: var(--transition-time);
 }
 
 
