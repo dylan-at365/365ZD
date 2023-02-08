@@ -834,21 +834,6 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   }
 }
 /*
-    #Spinning-Animation
-*/
-.js-spin-button {
-  animation: 0.5s ease-in-out infinite normal rotateButton;
-}
-
-@keyframes spinButton {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-}
-/*
     #Hand-Waving-Animation
 */
 .animate-wave-hand {
@@ -1265,7 +1250,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 .subheader-items li i {
-  padding-right: 0.25rem;
+  padding: 0 0.125rem;
 }
 
 @media (max-width: 576px) {
