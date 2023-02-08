@@ -456,7 +456,7 @@ button:hover {
 }
 
 label {
-  line-height: inherit;
+  align-self: center;
 }
 
 select {
@@ -694,6 +694,22 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 /*
     #Padding-Utilities
 */
+.p-none {
+  padding: 0;
+}
+
+.pt-none {
+  padding-top: 0;
+}
+
+.pt-md {
+  padding-top: 1.5rem;
+}
+
+.pt-lg {
+  padding-top: 2.5rem;
+}
+
 .pb-none {
   padding-bottom: 0;
 }
@@ -798,6 +814,21 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 @keyframes rotateButton {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+/*
+    #Spinning-Animation
+*/
+.js-spin-button {
+  animation: 0.5s ease-in-out infinite normal rotateButton;
+}
+
+@keyframes spinButton {
   0% {
     transform: rotate(0deg);
   }
@@ -997,7 +1028,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 .pagination {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
 }
 
 .pagination > ul > li {
@@ -1481,7 +1512,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   display: inline-block;
   padding: 0.5rem;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius--md);
   box-shadow: var(--shadow-outset);
   cursor: pointer;
   text-align: center;
@@ -1489,7 +1520,6 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 .requests-filter div > button:hover {
-  color: var(--blue-400);
   transition: var(--transition-time);
 }
 

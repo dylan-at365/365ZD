@@ -106,6 +106,22 @@
 /*
     #Padding-Utilities
 */
+.p-none {
+    padding: 0;
+}
+
+.pt-none {
+    padding-top: 0;
+}
+
+.pt-md {
+    padding-top: 1.5rem;
+}
+
+.pt-lg {
+    padding-top: 2.5rem;
+}
+
 .pb-none {
     padding-bottom: 0;
 }
