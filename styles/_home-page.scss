@@ -1,4 +1,54 @@
 /* ================================
+    #Banner-Area
+================================ */
+.banner {
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    
+    transition: var(--transition-time);
+}
+
+.banner__content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 24px 48px;
+
+    color: var(--platinum-800);
+    background-color: #{$notification_color};
+
+    border-radius: 0 0 var(--border-radius--xl) var(--border-radius--xl);
+    box-shadow: var(--shadow-outset);
+}
+
+.banner__content:hover {
+    background-color: var(--platinum-600);
+}
+
+.banner a {
+    transition: var(--transition-time);
+}
+
+.banner a:hover {
+    transition: var(--transition-time);
+}
+
+.banner__content i {
+    align-self: center;
+    padding-right: 12px;
+    font-size: 1.5rem;
+}
+
+.banner__content div {
+    line-height: 26px;
+}
+
+
+
+
+
+/* ================================
     #Hero-Area
 ================================ */
 .hero {

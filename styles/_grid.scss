@@ -40,6 +40,10 @@
     margin-top: var(--bs-gutter-y);
 }
 
+@media (max-width: 768px) {
+    .container, .row { --bs-gutter-x: 2.5rem; }
+}
+
 .col {
     flex: 1 0 0%;
 }
