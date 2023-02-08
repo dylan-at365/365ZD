@@ -10,7 +10,6 @@
 .site-brand {
     display: flex;
     align-items: center;
-    margin-right: auto;
 }
 
 .site-brand:hover {
@@ -33,17 +32,34 @@
 }
 
 .subheader {
-    height: 40px;
+    min-height: 40px;
 }
 
 .subheader-items {
     display: flex;
+    align-items: center;
     margin-left: auto;
 }
 
 .subheader-items li {
     display: inline;
+    padding-left: 1.5rem;
     line-height: 24px;
+}
+
+.subheader-items li a {
+    display: flex;
+    align-items: center;
+}
+
+.subheader-items li i {
+    padding-right: 0.25rem;
+}
+
+@media (max-width: 576px) {
+    ul.subheader-items { 
+        justify-content: center; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -58,5 +74,13 @@
 
     .site-title {
         font-size: 1.25rem;
+    }
+
+    .subheader-items li {
+        padding: 0 0.5rem;
+    }
+
+    .subheader-items li i {
+        display: none;
     }
 }
