@@ -9,20 +9,19 @@
 <!-- Load light mode if "prefers-color-scheme" is not supported -->
 <script>
     if ( window.matchMedia( "(prefers-color-scheme: dark)" ).media === "not all" ) {
-        document.documentElement.style.display = "none";
+        document.documentElement.style.display = 'none';
         document.head.insertAdjacentHTML(
-            "beforeend",
-            "<link id=\"css\" rel=\"stylesheet\" href=\"{{asset 'style-light.css'}}\" onload=\"document.documentElement.style.display = ''\">"
+            'beforeend',
+            '<link id="css" rel="stylesheet" href="{{asset 'style-light.css'}}" onload="document.documentElement.style.display = \'\'">'
         );
     }
 </script>
 
 <!-- Dark/Light CSS Files -->
 <link id="css-dark" rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{asset 'style-dark.css'}}"/>
-<link id="css-light" rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
+<link id="css-light" rel="stylesheet" media="(prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
 
 <!-- Phosphor Icons (https://phosphoricons.com/) -->
-<!-- <link rel="stylesheet" type="text/css" href="{{asset 'phosphor.min.css'}}"/> -->
 <script async src="https://unpkg.com/phosphor-icons"></script>
 
 <!-- Roboto font from Google Fonts -->
