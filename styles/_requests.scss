@@ -14,7 +14,7 @@
     display: inline-block;
     padding: 0.5rem;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius--md);
     box-shadow: var(--shadow-outset);
     cursor: pointer;
     text-align: center;
@@ -22,7 +22,6 @@
 }
 
 .requests-filter div > button:hover {
-    color: var(--blue-400);
     transition: var(--transition-time);
 }
 

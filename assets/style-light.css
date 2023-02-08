@@ -365,6 +365,10 @@ ul[data-hc-pills-container] li:last-child input {
     background-color: var(--space-cadet-400);
 }
 
+.requests-filter div > button:hover {
+    background-color: var(--yale-400);
+}
+
 .nesty-input,
 select {
     color: var(--raisin-400);
