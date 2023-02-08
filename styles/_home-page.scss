@@ -44,6 +44,12 @@
     line-height: 26px;
 }
 
+@media (max-width: 768px) {
+    .banner__content {
+        border-radius: 0;
+    }
+}
+
 
 
 

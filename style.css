@@ -35,6 +35,11 @@
   margin-top: var(--bs-gutter-y);
 }
 
+@media (max-width: 768px) {
+  .container, .row {
+    --bs-gutter-x: 2.5rem;
+  }
+}
 .col {
   flex: 1 0 0%;
 }
@@ -239,6 +244,9 @@
   }
   .d-md-none {
     display: none !important;
+  }
+  .d-md-block {
+    display: block !important;
   }
 }
 @media (min-width: 992px) {
@@ -759,6 +767,10 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   padding-bottom: 2.5rem;
 }
 
+.ps-none {
+  padding-left: 0;
+}
+
 .ps-sm {
   padding-left: 1rem;
 }
@@ -930,6 +942,11 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   border-radius: var(--border-radius--md);
 }
 
+@media (max-width: 768px) {
+  .js-open-menu {
+    margin-right: 1.5rem;
+  }
+}
 /*
     * Extend .card {} in styles-light.css, & styles-dark.css
 */
@@ -1206,7 +1223,6 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .site-brand {
   display: flex;
   align-items: center;
-  margin-right: auto;
 }
 
 .site-brand:hover {
@@ -1228,19 +1244,53 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 }
 
 .subheader {
-  height: 40px;
+  min-height: 40px;
 }
 
 .subheader-items {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
 .subheader-items li {
   display: inline;
+  padding-left: 1.5rem;
   line-height: 24px;
 }
 
+.subheader-items li a {
+  display: flex;
+  align-items: center;
+}
+
+.subheader-items li i {
+  padding-right: 0.25rem;
+}
+
+@media (max-width: 576px) {
+  ul.subheader-items {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    height: 96px;
+  }
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+  .site-title {
+    font-size: 1.25rem;
+  }
+  .subheader-items li {
+    padding: 0 0.5rem;
+  }
+  .subheader-items li i {
+    display: none;
+  }
+}
 /* ================================
     #Banner-Area
 ================================ */
@@ -1255,7 +1305,6 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 50%;
   padding: 24px 48px;
   color: var(--platinum-800);
   background-color: $notification_color;
@@ -1285,6 +1334,11 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
   line-height: 26px;
 }
 
+@media (max-width: 768px) {
+  .banner__content {
+    border-radius: 0;
+  }
+}
 /* ================================
     #Hero-Area
 ================================ */
