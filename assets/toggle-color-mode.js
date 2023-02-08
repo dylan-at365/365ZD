@@ -1,5 +1,5 @@
 /*
-    * This script adds functionality to a "toggle" switch and a "clear" button element in the `header.hbs` file.
+    * This script adds functionality to a "toggle" switch element in the `header.hbs` file.
     * Note that, due to the way scripting in the Zendesk Guide platform works, there is a flash of
     * an alternate theme mode when the page is reloaded, or a new page is navigated to, as the localStorage
     * is accessed. Presently, I do not believe there is a way around this.
@@ -8,7 +8,6 @@
 $(document).ready(function() {
 
     // Update the toggle switch button based on the selected color scheme, either from the OS or the toggle
-    // TODO: Using the `updateToggleButton` function as it is run on each page load. Could maybe use something more specific to the localStorage check? At least rename the function...
     function updateToggleButton() {
 
         // Check localStorage for the desired mode
@@ -17,16 +16,12 @@ $(document).ready(function() {
                 $( '#js-mode-toggle-switch' ).prop( 'checked', true );
                 initColorSchemeCSS('css', 'dark');
                 toggleColorSchemeCSS( 'css', 'dark' );
-
-                $( '.clear-mode-toggle' ).removeClass( 'button--inactive' );
             break;
 
             case 'light':
                 $( '#js-mode-toggle-switch' ).prop( 'checked', false );
                 initColorSchemeCSS('css', 'light');
-                toggleColorSchemeCSS( 'css', 'light' );
-
-                $( '.clear-mode-toggle' ).removeClass( 'button--inactive' );
+                toggleColorSchemeCSS( 'css', 'light' );                
             break;
 
             // Settle for using the OS-defined theme if localStorage is empty or otherwise
@@ -42,7 +37,7 @@ $(document).ready(function() {
     updateToggleButton();
     
     // And whenever it changes
-    if (window.matchMedia) window.matchMedia( '(prefers-color-scheme: dark)' ).addListener( updateToggleButton );
+    if ( window.matchMedia ) window.matchMedia( '(prefers-color-scheme: dark)' ).addEventListener( 'change', updateToggleButton );
 
     // Mode Toggle Button
     // ================================
@@ -98,17 +93,12 @@ $(document).ready(function() {
 
             if( window.matchMedia && window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) $mode = 'dark';
             initColorSchemeCSS('css', $mode);
-
-            // Set the state of the "clear" button to inactive, indicating that no choice has been made again
-            $( '.clear-mode-toggle' ).addClass( 'button--inactive' );
         }
 
         // Swap the current mode
         $mode = ( $mode == 'dark' ) ? 'light' : 'dark';
         localStorage.setItem('colorMode', $mode);
         toggleColorSchemeCSS('css', $mode);
-
-        $( '.clear-mode-toggle' ).removeClass( 'button--inactive' );
         
         $( '.mode-toggle-switch i' ).addClass( 'js-rotate-button' )
         .on( 'animationend', function() {
