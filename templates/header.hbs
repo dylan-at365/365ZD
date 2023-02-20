@@ -17,7 +17,7 @@
 
         <div class="col"></div>
 
-        <div class="col col-md-3 col-lg-2 button button--sm js-open-menu">
+        <div class="col col-md-2 col-lg-1 button button--sm js-open-menu">
             <i class="ph-list"></i>
             Explore
         </div>
@@ -29,25 +29,191 @@
 
     </div>
 
+
+
+
+
+    <nav id="menu-entry-point" class="menu">
+
+        <div class="list-wrapper">
+
+            <ul class="menu__level-1">
+                <li class="menu-item menu-item--user">
+                    {{#my_profile}}
+                        <i class="ph-user-circle menu-item__logo"></i>
+                        Hello,&nbsp;{{user_name}}!
+                    {{/my_profile}}
+                    <ul class="menu__level-2 submenu">
+                        <li class="menu-item">
+                            {{#link 'requests'}}
+                                Tickets
+                            {{/link}}
+                        </li>
+
+                        <li class="menu-item">
+                            {{#my_profile}}
+                                My Account
+                            {{/my_profile}}
+                        </li>
+                        
+                        <li class="menu-item">
+                            <a href="https://status.365retailmarkets.com">
+                                System Status
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="menu-item">
+                    <a href="">
+                        <img class="menu-item__logo" src="{{asset 'article_marker-365.svg'}}">
+                        365 Retail Markets
+                    </a>
+
+                    <ul class="menu__level-2 submenu">
+                        <li class="menu-item">
+                            <a href="">
+                                365 Retail Markets
+                            </a>
+
+                            <ul class="menu__level-3 submenu">
+                                <li class="menu-item">
+                                    <a href="">
+                                        Test Submenu
+                                    </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="">
+                                        Test Submenu
+                                    </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="">
+                                        Test Submenu
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item menu-item--small">
+                            <a href="https://startpage.com">
+                                365 Network Requirements
+                            </a>
+
+                            <ul class="menu__level-3 submenu">
+                                <li class="menu-item">
+                                    <a href="">
+                                            V5 Network Requirements
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item menu-item--small">
+                            <a href="">
+                                V5 / ADM Platform
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <img class="menu-item__logo" src="{{asset 'article_marker-avanti.svg'}}">
+                        Avanti Markets
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph-briefcase menu-item__logo"></i>
+                        CDSI
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph-briefcase menu-item__logo"></i>
+                        CDSI
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph-briefcase menu-item__logo"></i>
+                        CDSI
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph-briefcase menu-item__logo"></i>
+                        CDSI
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="list-wrapper">
+            <div class="menu__navigation">
+                <div class="menu-item menu__back">
+                    <i class="ph-arrow-left"></i>
+                    <span>Back</span>
+                </div>
+
+                <div class="menu-item menu__forward">
+                    <a>to Section</a>
+                </div>
+            </div>
+
+            <div class="submenu-wrapper"></div>
+        </div>
+
+        <div class="list-wrapper">
+            <div class="menu__navigation">
+                <div class="menu-item menu__back">
+                    <i class="ph-arrow-left"></i>
+                    <span>Back</span>
+                </div>
+
+                <div class="menu-item menu__forward">
+                    <a>to Section</a>
+                </div>
+            </div>
+
+            <div class="submenu-wrapper"></div>
+        </div>
+
+    </nav>
+
+
+
+
+
     <div class="row subheader row-dark">
 
         <ul class="subheader-items right-align">
             <li>
-                <a href="#">
+                {{#link 'requests'}}
                     <i class="ph-lifebuoy"></i>
                     Tickets
-                </a>
+                {{/link}}
             </li>
 
             <li>
-                <a href="#">
+                {{#my_profile}}
                     <i class="ph-user-circle"></i>
                     My Account
-                </a>
+                {{/my_profile}}
             </li>
             
             <li>
-                <a href="#">
+                <a href="https://status.365retailmarkets.com">
                     <i class="ph-heartbeat"></i>
                     System Status
                 </a>

@@ -1,35 +1,124 @@
 $(document).ready(function() {
 
-    // Toggle hamburger menu in Header
-    $( '.button--menu' ).click(function toggleMenu() {
-        $( '.header-menu' ).slideToggle(250);
-        $( '.button--menu i' ).toggleClass( 'ph-list ph-x' );
-    });
+
+
+
 
     /*
-        TODO:
-        Menu Notes:
-            Create a JSON document with the layout of the menu
-	        - to add new items, just edit the JSON file
-	        - use the Fetch API to programatically grab and create menu items
+        Navigation Menu Scripts
+        Based off of Envato's Tuts+ tutorial here: https://codepen.io/tutsplus/pen/zYaWXdM
     */
 
+    const menuButton = document.querySelector( '.js-open-menu' );
+    const menuButtonIcon = menuButton.querySelector( 'i' );
+    const navMenu = document.querySelector( '.menu' );
 
+    const level1Links = document.querySelectorAll( '.menu__level-1 > li > a' );
+    const listWrapper2 = document.querySelector( '.list-wrapper:nth-child(2)' );
+    const listWrapper3 = document.querySelector( '.list-wrapper:nth-child(3)' );
 
+    const subMenuWrapper2 = listWrapper2.querySelector( '.submenu-wrapper' );
+    const subMenuWrapper3 = listWrapper3.querySelector( '.submenu-wrapper' );
 
-    // Set {{my_profile}} URL into Dashboard href attribute
-    $.ajax({
-		type: 'GET',
-		url: 'https://help.365retailmarkets.com/api/v2/users/me.json',
-		dataType: 'json',
-		async: true,
-		success: function insertProfileURL(user) {
-			{
-				let userId = user.user.id;
-				$( '#dashboard_link' ).attr('href', 'https://help.365retailmarkets.com/hc/en-us/profiles/' + userId);
-			}
-		}
-	});
+    const backButtons = document.querySelectorAll( '.menu__back' );
+    const forwardButtons = document.querySelectorAll( '.menu__forward' );
+
+    const backLabel2 = listWrapper2.querySelector( '.menu__back span' );
+    const backLabel3 = listWrapper3.querySelector( '.menu__back span' );
+    const forwardLabel2 = listWrapper2.querySelector( '.menu__forward a');
+    const forwardLabel3 = listWrapper3.querySelector( '.menu__forward a');
+
+    const isVisibleClass = 'is-visible';
+    const isActiveClass = 'is-active';
+
+    menuButton.addEventListener( 'click', function() {
+
+        // Toggle button color state
+        menuButton.classList.toggle( 'button--active' );
+
+        // Toggle button icon
+        if ( menuButtonIcon.classList.contains( 'ph-list' ) ) {
+            menuButtonIcon.classList.remove( 'ph-list' );
+            menuButtonIcon.classList.add( 'ph-x' );
+        } else if ( menuButtonIcon.classList.contains ( 'ph-x' ) ) {
+            menuButtonIcon.classList.remove( 'ph-x' );
+            menuButtonIcon.classList.add( 'ph-list' );
+        }
+        
+        // Toggle menu visibility
+        navMenu.classList.toggle( isVisibleClass );
+
+        // Hide submenu items if the menu is closed
+        if ( !this.classList.contains( isVisibleClass )) {
+            listWrapper2.classList.remove( isVisibleClass );
+            listWrapper3.classList.remove( isVisibleClass );
+
+            forwardLabel2.textContent = '';
+            forwardLabel3.textContent = '';
+
+            const menuLinks = document.querySelectorAll( '.is-active' );
+
+            for ( const menuLink of menuLinks ) {
+                menuLink.classList.remove( isActiveClass );
+            }
+        }
+    });
+
+    // Show second-level submenu
+    for ( const level1Link of level1Links ) {
+        level1Link.addEventListener( 'click', function( e ) {
+            const siblingList = level1Link.nextElementSibling;
+
+            if ( siblingList ) {
+                e.preventDefault();
+
+                this.classList.add( isActiveClass );
+                const cloneSiblingList = siblingList.cloneNode( true );
+
+                subMenuWrapper2.innerHTML = '';
+                subMenuWrapper2.append( cloneSiblingList );
+
+                forwardLabel2.textContent = level1Link.textContent;
+                forwardLabel2.href = level1Link.href;
+
+                listWrapper2.classList.add( isVisibleClass );
+            }
+        });
+    }
+
+    // Show third-level submenu
+    listWrapper2.addEventListener( 'click', function( e ) {
+        const target = e.target;
+
+        if ( target.tagName.toLowerCase() === 'a' && target.nextElementSibling ) {
+            const siblingList = target.nextElementSibling;
+
+            e.preventDefault();
+
+            target.classList.add( isActiveClass );
+            const cloneSiblingList = siblingList.cloneNode( true );
+
+            subMenuWrapper3.innerHTML = '';
+            subMenuWrapper3.append( cloneSiblingList );
+
+            forwardLabel3.textContent = target.textContent;
+            forwardLabel3.href = target.href;
+
+            listWrapper3.classList.add( isVisibleClass );
+        }
+    });
+
+    // Back button
+    for ( const backButton of backButtons ) {
+        backButton.addEventListener( 'click', function() {
+            const parent = this.closest( '.list-wrapper' );
+            
+            parent.classList.remove( isVisibleClass );
+            parent.previousElementSibling
+                .querySelector( '.is-active' )
+                .classList.remove( isActiveClass );
+        });
+    }
 
 
 

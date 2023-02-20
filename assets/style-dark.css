@@ -314,6 +314,44 @@ a.card__title:hover {
 
 
 
+.menu {
+    color: var(--platinum-800);
+    background-color: var(--raisin-400);
+}
+
+.menu a {
+    color: inherit;
+}
+
+.menu .list-wrapper:nth-child(2).is-visible,
+.menu .list-wrapper:nth-child(3).is-visible {
+    background-color: var(--raisin-400);
+}
+
+.menu-item {
+    border-bottom: 1px solid var(--platinum-100);
+}
+
+.menu-item:hover {
+    background-color: var(--raisin-200);
+    transition: all var(--transition-time);
+}
+
+.menu-item--user {
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
+    transition: all var(--transition-time);
+}
+
+.menu-item--user:hover {
+    background-color: var(--yale-300);
+    transition: all var(--transition-time);
+}
+
+
+
+
+
 /* =============================
     _home-page.scss
 ================================ */
