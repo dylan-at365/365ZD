@@ -74,11 +74,9 @@ $(document).ready(function() {
     /* 
         Switch over Common Questions categories
     */
-    $( '.js-switch-question' ).click(function (event) {
-        event.preventDefault();
-    });
+    $( '.js-switch-question' ).click(function switchCommonQuestions(event) {
 
-    $( '.js-switch-question' ).click(function switchCommonQuestions() {
+        event.preventDefault();
 
         // Get the ID of the clicked on button so we can use it to assign classes to the right element
         var questionID = $(this).attr( 'href' );
