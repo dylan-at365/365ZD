@@ -68,6 +68,7 @@ $(document).ready(function() {
     for ( const level1Link of level1Links ) {
         level1Link.addEventListener( 'click', function( e ) {
             const siblingList = level1Link.nextElementSibling;
+            const target = e.target;
 
             if ( siblingList ) {
                 e.preventDefault();
@@ -79,7 +80,7 @@ $(document).ready(function() {
                 subMenuWrapper2.append( cloneSiblingList );
 
                 forwardLabel2.textContent = level1Link.textContent;
-                forwardLabel2.href = level1Link.href;
+                forwardLabel2.href = target.closest( 'a' ).attributes.href.nodeValue;
 
                 listWrapper2.classList.add( isVisibleClass );
             }
@@ -102,7 +103,7 @@ $(document).ready(function() {
             subMenuWrapper3.append( cloneSiblingList );
 
             forwardLabel3.textContent = target.textContent;
-            forwardLabel3.href = target.href;
+            forwardLabel3.href = target.attributes.href.nodeValue;
 
             listWrapper3.classList.add( isVisibleClass );
         }
@@ -117,6 +118,8 @@ $(document).ready(function() {
             parent.previousElementSibling
                 .querySelector( '.is-active' )
                 .classList.remove( isActiveClass );
+
+            parent.querySelector( '.menu__forward a' ).removeAttribute( 'href' );
         });
     }
 
