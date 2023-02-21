@@ -42,6 +42,7 @@
                             {{t 'no_activity_yet'}}
                         {{/if}}
                     </li>
+
                     <li class="p-none">
                         {{t 'last_activity'}}:
                         {{#if last_activity_at}}
@@ -50,14 +51,23 @@
                             {{t 'no_activity_yet'}}
                         {{/if}}
                     </li>
+
                     <li class="p-none">
                         {{t 'votes'}}:
                         {{vote_count}}
                     </li>
+
                     <li class="p-none">
                         Saved Articles:
                         {{subscription_count}}
-                    </li>                   
+                    </li>
+
+                    <li id="js-clear-theme" class="p-none pt-md">
+                        <a class="button button--sm">
+                            <i class="ph-paint-brush-household"></i>
+                            Clear saved theme mode
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -275,4 +285,51 @@
     </div>
 </div>
 
+<script>
 
+    $( '#js-clear-theme' ).click( function() {
+        if ( !localStorage.getItem( 'colorMode' )) {
+            $( this )
+                .html(
+                    `<a class="button button--sm button--alert" style="cursor: not-allowed;">
+                        <i class="ph-smiley-x-eyes"></i>
+                        Theme mode not set!
+                    </a>`
+                );
+
+            setTimeout(() => {
+                $( this )
+                    .html( 
+                        `<a class="button button--sm">
+                            <i class="ph-paint-brush-household"></i>
+                            Clear saved theme mode
+                        </a>`
+                        );
+            }, 3000);
+        }
+
+        else {
+            localStorage.removeItem( 'colorMode' );
+            $( this )
+                .html(
+                    `<a class="button button--sm button--success">
+                        <i class="ph-smiley-wink"></i>
+                        Theme mode cleared! Click again to reload.
+                    </a>`
+                );
+
+            $( this ).removeAttr( 'id' );
+            $( this ).click( function() {
+                $( this )
+                .html(
+                    `<a class="button button--sm button--success">
+                        <i class="ph-smiley-wink"></i>
+                        Theme mode cleared! Click again to reload.
+                    </a>`
+                );
+                location.reload();
+            });
+        }
+    });
+
+</script>

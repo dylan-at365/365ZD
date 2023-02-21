@@ -122,6 +122,21 @@ details[open] > summary {
     background-color: var(--saffron-300);
 }
 
+.button--success {
+    background-color: var(--jungle-300);
+}
+
+.button--success:hover {
+    background-color: var(--jungle-400);
+}
+
+.button--alert {
+    background-color: var(--crimson-300);
+}
+.button--alert:hover {
+    background-color: var(--crimson-400);
+}
+
 
 
 
