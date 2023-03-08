@@ -40,12 +40,24 @@
 
             <ul>
                 
-                <li class="menu-item menu-item--user">
-                    {{#my_profile}}
-                        <i class="ph ph-user-circle menu-item__logo"></i>
-                        Hello,&nbsp;{{user_name}}!
-                    {{/my_profile}}
-                </li>
+                {{#if signed_in}}
+                    <li class="menu-item menu-item--user">
+                        {{#my_profile}}
+                            <i class="ph ph-user-circle menu-item__logo"></i>
+                            Hello,&nbsp;{{user_name}}!
+                        {{/my_profile}}
+                    </li>
+
+                {{else}}
+
+                    <li class="menu-item menu-item--user">
+                        <a href="{{page_path 'sign_in'}}">
+                            <i class="ph ph-sign-in menu-item__logo"></i>
+                            Sign In
+                        </a>
+                    </li>
+                
+                {{/if}}
 
                 <li class="menu-item">
                     <a href="https://help.365retailmarkets.com/hc/en-us/categories/9983180724119">
