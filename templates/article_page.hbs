@@ -125,15 +125,15 @@
     </div>
 
     {{#if article.internal}}
-        <div class="row padded-content centered-content row-dark d-print-none">
-            <div class="col-12 heading">
+        <div class="row padded-content center-align row-dark d-print-none">
+            <div class="col-12 heading text-align--center">
                 Was this article helpful?
             </div>
 
-            {{article.vote "up" role="radio" class="col-2 button button--hollow" selected_class="button--active"}}
-            {{article.vote "down" role="radio" class="col-2 button button--hollow" selected_class="button--active"}}
+            {{article.vote "up" role="radio" class="col-1 button" selected_class="button--active"}}
+            {{article.vote "down" role="radio" class="col-1 button" selected_class="button--active"}}
 
-            <div class="col-12">
+            <div class="col-12 text-align--center">
                 {{article.vote 'label' class="subheading"}}
             </div>
         </div>
