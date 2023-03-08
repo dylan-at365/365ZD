@@ -1,7 +1,7 @@
 {
     "name": "Atlas",
     "author": "ohitsdylan",
-    "version": "5.0.1",
+    "version": "5.0.0",
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [
@@ -24,82 +24,82 @@
                     "label": "Notification Icon",
                     "identifier": "notification_icon",
                     "description": "An icon that appears before the notification banner message",
-                    "value": "ph-hand-waving",
+                    "value": "ph ph-hand-waving",
                     "type": "list",
                     "options": [
                         {
                             "label": "Barricade",
-                            "value": "ph-barricade"
+                            "value": "ph ph-barricade"
                         },
 
                         {
                             "label": "Bell",
-                            "value": "ph-bell-ringing"
+                            "value": "ph ph-bell-ringing"
                         },
 
                         {
                             "label": "Book",
-                            "value": "ph-book-bookmark"
+                            "value": "ph ph-book-bookmark"
                         },
 
                         {
                             "label": "Chat Bubble",
-                            "value": "ph-chat-text"
+                            "value": "ph ph-chat-text"
                         },
 
                         {
                             "label": "Check Circle",
-                            "value": "ph-check-circle"
+                            "value": "ph ph-check-circle"
                         },
 
                         {
                             "label": "Confetti",
-                            "value": "ph-confetti"
+                            "value": "ph ph-confetti"
                         },
 
                         {
                             "label": "Document",
-                            "value": "ph-file-text"
+                            "value": "ph ph-file-text"
                         },
 
                         {
                             "label": "Flag",
-                            "value": "ph-flag"
+                            "value": "ph ph-flag"
                         },
 
                         {
                             "label": "Hand Waving",
-                            "value": "ph-hand-waving"
+                            "value": "ph ph-hand-waving"
                         },
 
                         {
                             "label": "Megaphone",
-                            "value": "ph-megaphone-simple"
+                            "value": "ph ph-megaphone-simple"
                         },
 
                         {
                             "label": "Note",
-                            "value": "ph-note"
+                            "value": "ph ph-note"
                         },
 
                         {
                             "label": "Phone",
-                            "value": "ph-phone-call"
+                            "value": "ph ph-phone-call"
                         },
 
                         {
                             "label": "Smiley",
-                            "value": "ph-smiley"
+                            "value": "ph ph-smiley"
                         },
 
                         {
                             "label": "Thumbs Up",
-                            "value": "ph-thumbs-up"
+                            "value": "ph ph-thumbs-up"
                         },
 
                         {
                             "label": "Warning",
-                            "value": "ph-warning"
+                            "value": "ph ph-warning"
                         }
                     ]
                 },
