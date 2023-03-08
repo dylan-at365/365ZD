@@ -59,18 +59,6 @@ $(document).ready(function() {
 
 
 
-    /*
-        Toggle Home Page Category content
-    */
-    $( '.js-expand-category' ).on('keypress click', function toggleHomeCat() {
-        $(this).next( '.category-heading__content' ).slideToggle(250);
-        $(this).find( '.heading i' ).toggleClass( 'ph-plus-bold ph-minus-bold' );
-    });
-
-
-
-
-
     /* 
         Switch over Common Questions categories
     */
