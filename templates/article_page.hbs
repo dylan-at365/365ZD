@@ -40,7 +40,7 @@
 
             {{article.title}}
             {{#if article.internal}}
-                <i class="ph-lock-key-fill"></i>
+                <i class="ph ph-lock-key-fill"></i>
             {{/if}}
         </div>
 
@@ -106,7 +106,7 @@
                             <li class="sub-navigation sub-navigation--light" data-content-tag-id="{{id}}">
                                 {{#link "search_result" content_tag_id=id target="_blank"}}
                                     <div>{{name}}</div>
-                                    <i class="ph-caret-right"></i>
+                                    <i class="ph ph-caret-right"></i>
                                 {{/link}}
                             </li>
                         {{/each}}
@@ -142,7 +142,7 @@
 </div>
 
 <script src="{{asset 'article-page-scripts.js'}}"></script>
-<script src="{{asset 'generate-article-sidebar.js'}}"></script>
+<script src="{{asset 'article-sidebar.js'}}"></script>
 
 <!-- FancyBox Script/Stylesheet -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
