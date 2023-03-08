@@ -18,13 +18,13 @@
         <div class="col"></div>
 
         <div class="col col-md-2 col-lg-1 button button--sm js-open-menu">
-            <i class="ph-list"></i>
+            <i class="ph ph ph-list"></i>
             Explore
         </div>
 
         <form role="search" data-search="" data-instant="false" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get" class="d-none d-md-block col-sm col-md-3 ps-md search-form d-print-none">
             <label class="label--hidden" for="search--header">Search the Three Sixty Five Help Center:</label>
-            <input id="search--header" name="query" type="search" placeholder="&#xf4a8; Search the 365 HelpCenter" class="search">
+            <input id="search--header" name="query" type="search" placeholder="&#xebdd; Search the 365 HelpCenter" class="search">
         </form>
 
     </div>
@@ -39,11 +39,13 @@
         <div class="list-wrapper">
 
             <ul class="menu__level-1">
+                
                 <li class="menu-item menu-item--user">
                     {{#my_profile}}
-                        <i class="ph-user-circle menu-item__logo"></i>
+                        <i class="ph ph ph-user-circle menu-item__logo"></i>
                         Hello,&nbsp;{{user_name}}!
                     {{/my_profile}}
+
                     <ul class="menu__level-2 submenu">
                         <li class="menu-item">
                             {{#link 'requests'}}
@@ -178,31 +180,67 @@
 
                 <li class="menu-item">
                     <a href="#">
-                        <i class="ph-briefcase menu-item__logo"></i>
-                        CDSI
+                        <img class="menu-item__logo" src="{{asset 'article_marker-ck.svg'}}">
+                        CK
                     </a>
                 </li>
 
                 <li class="menu-item">
                     <a href="#">
-                        <i class="ph-briefcase menu-item__logo"></i>
-                        CDSI
+                        <img class="menu-item__logo" src="{{asset 'article_marker-lightspeed.svg'}}">
+                        Lightspeed
                     </a>
                 </li>
 
                 <li class="menu-item">
                     <a href="#">
-                        <i class="ph-briefcase menu-item__logo"></i>
-                        CDSI
+                        <img class="menu-item__logo" src="{{asset 'article_marker-parlevel.svg'}}">
+                        Parlevel
                     </a>
                 </li>
 
                 <li class="menu-item">
                     <a href="#">
-                        <i class="ph-briefcase menu-item__logo"></i>
-                        CDSI
+                        <img class="menu-item__logo" src="{{asset 'article_marker-sentry.svg'}}">
+                        Sentry
                     </a>
                 </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <img class="menu-item__logo" src="{{asset 'article_marker-spoonfed.svg'}}">
+                        Spoonfed
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <img class="menu-item__logo" src="{{asset 'article_marker-stockwell.svg'}}">
+                        Stockwell
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph ph-handshake menu-item__logo"></i>
+                        Crossbrand
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph ph-hand-waving menu-item__logo"></i>
+                        Standalone
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#">
+                        <i class="ph ph-shield-chevron menu-item__logo"></i>
+                        Security
+                    </a>
+                </li>
+
             </ul>
 
         </div>
@@ -216,7 +254,7 @@
         <div class="list-wrapper">
             <div class="menu__navigation">
                 <div class="menu-item menu__back">
-                    <i class="ph-arrow-left"></i>
+                    <i class="ph ph ph-arrow-left"></i>
                     <span>Back</span>
                 </div>
 
@@ -231,7 +269,7 @@
         <div class="list-wrapper">
             <div class="menu__navigation">
                 <div class="menu-item menu__back">
-                    <i class="ph-arrow-left"></i>
+                    <i class="ph ph ph-arrow-left"></i>
                     <span>Back</span>
                 </div>
 
@@ -255,28 +293,28 @@
         <ul class="subheader-items right-align">
             <li>
                 {{#link 'requests'}}
-                    <i class="ph-lifebuoy"></i>
+                    <i class="ph ph ph-lifebuoy"></i>
                     Tickets
                 {{/link}}
             </li>
 
             <li>
                 {{#my_profile}}
-                    <i class="ph-user-circle"></i>
+                    <i class="ph ph ph-user-circle"></i>
                     My Account
                 {{/my_profile}}
             </li>
             
             <li>
                 <a href="https://status.365retailmarkets.com">
-                    <i class="ph-heartbeat"></i>
+                    <i class="ph ph ph-heartbeat"></i>
                     System Status
                 </a>
             </li>
 
             <li>
                 <a id="js-mode-toggle-switch" class="mode-toggle-switch">
-                    <i class="ph-arrows-clockwise"></i>
+                    <i class="ph ph ph-arrows-clockwise"></i>
                     Toggle Theme
                 </a>
             </li>
