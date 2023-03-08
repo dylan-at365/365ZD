@@ -1,24 +1,13 @@
 ![ATLAS - A custom Zendesk theme](thumbnail.png)
 
-## About ATLAS v4:
+## About ATLAS v5:
 This repository contains the [365 Retail Markets HelpCenter](https://help.365retailmarkets.com) theme running on the Zendesk Guide platform.
-
-Version 4 focuses on clean code, BEM-like CSS principles, accessibility, and a dark mode addition.
 
 ### NOTE:
 This repository contains a lot of brand-specific links and styling.  
 It is not intended to be used as a theme on another Zendesk Guide instance.
 
 Even so, I hope that it can act as a reference or starting point for creating your own Guide theme. Questions about scripts, templates, or the strange actions that Zendesk sometimes takes with its products are certainly welcome!
-
-## Some specific points in the new version include:
-- Even more improved template code quality
-- BEM-like naming, reusable & component-ish classes
-- Updated 3rd party utilities to latest versions
-- Dark mode!
-- SCSS templates
-- CSS variables
-- Segmented JS script files
 
 ## Project Structure:
 - `assets/` - contains logos, images, stylesheets, and the segmented script files
@@ -44,7 +33,7 @@ All layout and positioning is written in the SCSS files. Any color/type/design i
 ### Scripts
 The main JavaScript file [`script.js`](script.js) is located in the project root and will be added in the document `<head>` of every page.
 
-JavaScript that you do not think belong in the document `<head>` can be added inline in [templates](#templates) or added as regular `*.js` files in the [assets folder](#assets-folder) and then be included in the appropriate template(s).
+JavaScript that you do not think belongs in the document `<head>` can be added inline in [templates](#templates) or added as regular `*.js` files in the [assets folder](#assets-folder) and then be included in the appropriate template(s).
 
 ## Developing
 To start contributing, clone the repository (`git clone https://github.com/ohitsdylan/365ZD.git`) and create a feature/bug branch (e.g. `git checkout -b feature/that-new-feature` or `bug/fix-for-that-bug`) to work on.
