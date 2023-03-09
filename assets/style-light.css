@@ -278,6 +278,21 @@ a.card__title:hover {
 
 
 /* ================================
+    _typography.scss
+================================ */
+.heading {
+    color: var(--raisin-400);
+}
+
+.subheading {
+    color: var(--raisin-400);
+}
+
+
+
+
+
+/* ================================
     _header.scss
 ================================ */
 .logo path.logo__outer {
@@ -337,14 +352,6 @@ a.card__title:hover {
     background-color: var(--yale-400);
     transition: all var(--transition-time);
 }
-
-
-
-
-
-/* =============================
-    _home-page.scss
-================================ */
 
 
 

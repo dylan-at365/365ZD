@@ -77,17 +77,6 @@ details[open] > summary {
 
 
 /* ================================
-    _breadcrumbs.scss
-================================ */
-.breadcrumbs-container li {
-    color: var(--gray-700);
-}
-
-
-
-
-
-/* ================================
     _buttons.scss
 ================================ */
 .button {
@@ -133,6 +122,7 @@ details[open] > summary {
 .button--alert {
     background-color: var(--crimson-300);
 }
+
 .button--alert:hover {
     background-color: var(--crimson-400);
 }
@@ -367,13 +357,6 @@ a.card__title:hover {
 
 
 
-/* =============================
-    _home-page.scss
-================================ */
-
-
-
-
 /* ================================
     _articles.scss
 ================================ */
@@ -393,6 +376,7 @@ a.card__title:hover {
 .article-inner code {
     color: var(--crimson-500);
     background-color: var(--raisin-500);
+    border: 1px solid var(--platinum-500);
 }
 
 .sub-navigation--light {
@@ -415,11 +399,11 @@ ul[data-hc-pills-container] {
 }
 
 ul[data-hc-pills-container] li[data-hc-pill="true"] {
-    background-color: var(--gray-200);
+    background-color: var(--raisin-400);
 }
 
 ul[data-hc-pills-container] li:last-child input {
-    color: var(--gray-700);
+    color: var(--platinum-800);
     background-color: transparent;
 }
 
@@ -429,7 +413,11 @@ ul[data-hc-pills-container] li:last-child input {
 }
 
 .upload-dropzone {
-    background-color: var(--gray-300);
+    background-color: var(--raisin-300);
+}
+
+.upload-dropzone span {
+    color: var(--platinum-800);
 }
 
 .request-form > footer > input,
