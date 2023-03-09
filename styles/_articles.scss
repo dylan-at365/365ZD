@@ -81,6 +81,12 @@
 
 
 
+.article-heading {
+    display: flex;
+    align-content: center;
+    margin-bottom: 0.5rem;
+}
+
 .article-inner {
     max-width: 1160px;
     padding: 0 40px;
