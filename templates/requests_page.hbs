@@ -9,9 +9,9 @@
 
     <!-- Tickets/CC Link -->
     <div class="row padded-content row-light">
-        <a class="col-sm-12 col-md-2 button" href="/hc/en-us/requests">My Tickets</a>
-        <a class="col-sm-12 col-md-2 button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
-        <a class="col-sm-12 col-md-2 button" href="/hc/en-us/requests/organization">Organization Requests</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests">My Tickets</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests/organization">Organization Requests</a>
     </div>
 
     <!-- Ticket Search/Filter -->
@@ -28,11 +28,11 @@
             {{label 'organization' for='request-organization-select' class='col-sm-12 col-md-1'}}
             {{select 'organization' id='request-organization-select' class='col-sm-12 col-md-3'}}
 
-            <div class="col-3 col-md-2 col-lg-1 button button--sm button--subscribe">
-                {{subscribe}}
-            </div>
-
         {{/if}}
+
+        <div class="col-3 col-md-2 col-lg-1 button--subscribe">
+            {{subscribe}}
+        </div>
 
     {{/form}}
 
