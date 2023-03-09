@@ -7,6 +7,12 @@
         <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
+
+        {{#if category.description}}
+            <div class="col-12 font-body--large pt-md">
+                {{category.description}}
+            </div>
+        {{/if}}
     </div>
 
     <div class="row padded-content row-dark">

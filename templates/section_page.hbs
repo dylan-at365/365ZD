@@ -7,6 +7,12 @@
         <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
+
+        {{#if section.description}}
+            <div class="col-12 font-body--large pt-md">
+                {{section.description}}
+            </div>
+        {{/if}}
     </div>
 
     <div class="row padded-content row-dark">
@@ -16,7 +22,7 @@
             <div class="card">
                 <ul class="col-12 card__body card__body--columns">
                     {{#each section.articles}}
-                        <li class="card__link">
+                        <li class="card__link font-body--large">
                             <a href="{{url}}">
 
                                 {{#each labels}}
