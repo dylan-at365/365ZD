@@ -23,20 +23,10 @@
 
                 <ul class="card__body">
 
-                    <!-- Creates subsection templates -->
-                    {{#each sections}}
-                        <li class="sub-navigation">
-                            <a href="{{url}}">
-                                <div>{{name}}</div>
-                                <i class="ph ph-caret-right"></i>
-                            </a>
-                        </li>
-                    {{/each}}
-
                     <!-- Creates article lists -->
                     {{#if articles}}
                         {{#each articles}}
-                            <li>
+                            <li class="card__link">
                                 <a href="{{url}}">
 
                                     {{#each labels}}
@@ -75,6 +65,16 @@
                             </li>
                         {{/each}}
                     {{/if}}
+
+                    <!-- Creates subsection templates -->
+                    {{#each sections}}
+                        <li class="sub-navigation">
+                            <a href="{{url}}">
+                                <div>{{name}}</div>
+                                <i class="ph ph-caret-right"></i>
+                            </a>
+                        </li>
+                    {{/each}}
 
                 </ul>
 

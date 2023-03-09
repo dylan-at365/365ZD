@@ -42,14 +42,19 @@
     column-width: clamp(10rem, 30rem, 40rem);
 }
 
+.card__link a {
+    display: inline-flex;
+    align-items: center;
+}
+
 .card__action {
     padding: 1.5rem;
     padding-top: 0;
 }
 
 .sub-navigation {
-    margin-bottom: 16px;
-    padding: 4px 8px 4px 24px;
+    margin: 16px 0;
+    padding: 4px 8px 4px 20px;
     border-radius: var(--border-radius--sm);
     transition: background-color var(--transition-time);
 }
