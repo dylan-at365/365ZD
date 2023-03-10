@@ -1,6 +1,6 @@
 /* Banner Callouts/Warnings */
 .banner-callout {
-    max-width: 80ch;
+    max-width: 96ch;
     margin: 1.5rem auto;
     padding: 1.5rem;
     border-radius: var(--border-radius--md);
@@ -45,11 +45,11 @@
 
 
 .inline-callout {
-    max-width: 80ch;
+    max-width: 96ch;
     padding: 1.5rem;
     border-radius: var(--border-radius--md);
 }
 
 .inline-callout p {
-    margin-bottom: 0;
+    margin: 0;
 }
