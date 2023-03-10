@@ -1,53 +1,4 @@
 /*
-    #Loading-Animation
-*/
-.loading-container {
-    position: relative;
-    width: 128px;
-    padding: 16px;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 1.5rem;
-}
-
-.loading-container::before {
-    content: "  ";
-    width: 16px;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-
-    animation: 1s ease-in-out infinite normal moveBorder;
-}
-
-@keyframes moveBorder {
-
-    0% {
-        left: 0%;
-        width: 0;
-    }
-
-    10% {
-        left: 1%;
-        width: 16px;
-    }
-
-    90% {
-        left: 99%;
-        width: 16px;
-    }
-
-    100% {
-        left: 100%;
-        width: 0;
-    }
-
-}
-
-
-
-
-/*
     #Rotation-Animation
 */
 .js-rotate-button {
@@ -62,40 +13,4 @@
     100% {
         transform: rotate(180deg);
     }
-}
-
-
-
-
-
-/*
-    #Hand-Waving-Animation
-*/
-.animate-wave-hand {
-    rotate: 0deg;
-    animation: 5s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite normal waveHand;
-}
-
-@keyframes waveHand {
-
-    0% {
-        rotate: 0deg;
-    }
-
-    10% {
-        rotate: 12deg;
-    }
-
-    20% {
-        rotate: -12deg;
-    }
-
-    30% {
-        rotate: 0deg;
-    }
-
-    100% {
-        rotate: 0deg;
-    }
-
 }
