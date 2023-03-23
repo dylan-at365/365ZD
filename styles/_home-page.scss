@@ -60,10 +60,16 @@
 .hero {
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 136px);
+    height: 65vh;
     background: 
         linear-gradient( rgba(19, 41, 75, 0.75), rgba(19, 41, 75, 0.75) ),
         url($assets-hero_banner-jpg) center center / cover no-repeat fixed;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: calc(100vh - 136px);
+    }
 }
 
 .indicator-arrow {
