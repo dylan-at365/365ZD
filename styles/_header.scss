@@ -42,6 +42,10 @@
 /* ================================
     #Header-Area
 ================================ */
+
+/*
+    Brand Menu
+*/
 .menu {
     display: none;
 
@@ -66,45 +70,32 @@
 
 
 
+.list-wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .menu-item {
-    width: 100%;
+    width: 33%;
     padding: 1rem 1.5rem;
+    text-align: center;
     cursor: pointer;
 }
 
 .menu-item a {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
-.menu-item a::after {
-    content: "\ea00";
-
-    display: inline-flex;
-    margin-left: auto;
-
-    font-family: 'phosphor';
-
-    transition: all var(--transition-time);
-}
-
-.menu-item a:hover::after {
-    margin-right: -0.5rem;
-    transition: all var(--transition-time);
-}
-
 .menu-item__logo {
+    margin-bottom: 0.75rem;
     font-size: 1.5rem;
-    padding-right: 0.75rem;
 }
 
 .menu-item img.menu-item__logo {
     width: 24px;
     height: 24px;
-    margin-right: 0.75rem;
-    padding-right: 0;
 }
 
 @media (max-width: 768px) {
@@ -114,10 +105,26 @@
     }
 }
 
+.menu-item--user {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+}
+
+.menu-item--user a {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-item--user .menu-item__logo {
+    margin: 0.75rem;
+}
 
 
 
 
+/*
+    Subheading Navigation Link
+*/
 .subheader {
     min-height: 40px;
 }
