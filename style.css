@@ -1155,6 +1155,7 @@ ul[data-hc-pills-container] li[data-hc-pill=true][aria-invalid=true] {
 .menu-item--user {
   width: 100%;
   padding: 0.5rem 0.75rem;
+  border-bottom: none !important;
 }
 
 .menu-item--user a {
@@ -1811,5 +1812,3 @@ summary.padding-bottom-only {
 .reel-panning * {
   cursor: grabbing;
 }
-
-/*# sourceMappingURL=style.css.map */
