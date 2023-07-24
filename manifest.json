@@ -5,6 +5,9 @@
     "api_version": 2,
     "default_locale": "en-us",
     "settings": [
+    {
+      "label": "brand_group_label",
+      "variables": [
         {
             "label": "brand_group_label",
             "variables": [

@@ -37,6 +37,7 @@
         <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
+
     </div>
 
     <div class="row row-light pt-md">
@@ -83,14 +84,13 @@
                             </a>
                         </li>
                     {{/each}}
-
                 </ul>
-            {{/if}}
 
             {{#if subfilters}}
                 <ul class="search-filters">
 
                     {{#each subfilters}}
+
                         <li>
                             {{#if selected}}
                                 <a href="{{url}}" aria-current="page" class="button button--xs button--active">
@@ -101,6 +101,7 @@
                                 <span>({{count}})</span>
                             </a>
                         </li>
+                        
                     {{/each}}
 
                 </ul>
