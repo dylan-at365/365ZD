@@ -14,3 +14,27 @@
         transform: rotate(180deg);
     }
 }
+
+/*
+  #Pulse-Animation
+*/
+.animation-pulse {
+    outline: 0 solid rgba(102, 103, 171, 0);
+    animation: 1.5s ease-in-out 1s 5 normal buttonPulse;
+}
+
+@keyframes buttonPulse {
+
+    0% {
+        outline: 0 solid rgba(102, 103, 171, 0);
+    }
+
+    10% {
+        outline: 0 solid rgba(102, 103, 171, 1);
+    }
+
+    100% {
+        outline: 12px solid rgba(102, 103, 171, 0);
+    }
+
+}
