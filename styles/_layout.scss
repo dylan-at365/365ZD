@@ -78,23 +78,33 @@
 /*
     #Margin-Utilities
 */
+
+/* Margin Top */
 .mt-none {
     margin-top: 0;
 }
 
+/* Margin Bottom */
 .mb-none {
     margin-bottom: 0;
 }
 
+.mb-sm {
+    margin-bottom: 1rem;
+}
+
+/* Margin Left/Right */
 .mx-lg {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 }
 
+/* Margin Start (LTR Left) */
 .ms-lg {
     margin-left: 2.5rem;
 }
 
+/* Margin End (LTR Right) */
 .me-md {
     margin-right: 1.5rem;
 }
@@ -110,6 +120,7 @@
     padding: 0;
 }
 
+/* Padding Top */
 .pt-none {
     padding-top: 0;
 }
@@ -122,6 +133,7 @@
     padding-top: 2.5rem;
 }
 
+/* Padding Bottom */
 .pb-none {
     padding-bottom: 0;
 }
@@ -138,10 +150,12 @@
     padding-bottom: 2.5rem;
 }
 
+/* Padding End (LTR Right) */
 .pe-md {
     padding-right: 1.5rem;
 }
 
+/* Padding Left/Right */
 .px-sm {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -154,6 +168,12 @@
 
 .px-md:last-of-type {
     padding-right: 0;
+}
+
+/* Padding Top/Bottom */
+.py-xs {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .py-sm {
@@ -171,6 +191,7 @@
     padding-bottom: 2.5rem;
 }
 
+/* Padding Start (LTR Left) */
 .ps-none {
     padding-left: 0;
 }
