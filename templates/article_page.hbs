@@ -1,47 +1,46 @@
 <!-- Start Article Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark d-print-none">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row padded-content--no-gap row-light">
-        <div class="col-12 heading">
+    <div class="row row-light">
+        <div class="col-12 heading article-heading">
 
             {{#each article.labels}}
 
                 {{#is identifier 'zdfilter365'}}
-                    <img class="brand-article-marker--large" src="{{asset '365-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-365.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilteravanti'}}
-                    <img class="brand-article-marker--large" src="{{asset 'avanti-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-avanti.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterlightspeed'}}
-                    <img class="brand-article-marker--large" src="{{asset 'lightspeed-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-lightspeed.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterstockwell'}}
-                    <img class="brand-article-marker--large" src="{{asset 'stockwell-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-stockwell.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterairvend'}}
-                    <img class="brand-article-marker--large" src="{{asset 'airvend-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-airvend.svg'}}">
                 {{/is}}
 
                 {{#is identifier 'zdfilterck'}}
-                    <img class="brand-article-marker--large" src="{{asset 'ck-article-marker.svg'}}">
+                    <img class="brand-article-marker--large" src="{{asset 'article_marker-ck.svg'}}">
                 {{/is}}
 
             {{/each}}
 
             {{article.title}}
             {{#if article.internal}}
-                <i class="ph-lock-key-fill"></i>
+                <i class="ph ph-lock-key"></i>
             {{/if}}
         </div>
 
@@ -55,9 +54,9 @@
     </div>
 
     <div class="row padded-content row-light d-print-none">
-        <a href="#" class="col-3 col-md-2 col-lg-1 button js-print-article">Print</a>
+        <a href="#" class="col-3 col-md-2 col-lg-1 button button--sm js-print-article">Print</a>
 
-        <div class="col-3 col-md-2 col-lg-1 button">
+        <div class="col-3 col-md-2 col-lg-1 button button--sm button--subscribe">
             {{subscribe}}
         </div>
     </div>
@@ -66,29 +65,29 @@
 
         <div class="col-sm-12 col-md-3 article-sidebar d-print-none">
 
-            <div class="js-scroll-top button">
+            <div class="js-scroll-top button button--sm">
                 Scroll to Top
             </div>
 
-            <div class="table-of-contents">
-                <div class="subheading subheading--underline">
+            <details class="table-of-contents">
+                <summary class="subheading">
                     Table of Contents
-                </div>
+                </summary>
 
                 <ul class="js-append-toc">
                 </ul>
-            </div>
+            </details>
 
             {{#if attachments}}
                 <div class="article-attachments">
-                    <div class="subheading subheading--underline">
+                    <div class="subheading">
                         Attachments
                     </div>
 
                     <ul>
                     {{#each attachments}}
                         <li>
-                            <a href="{{url}}" target="_blank" rel="noopener" class="link">
+                            <a href="{{url}}" target="_blank" rel="noopener">
                                 {{name}}
                             </a>
                         </li>
@@ -101,18 +100,16 @@
 
                 <section class="content-tags">
 
-                    <div>Related to:</div>
-
+                    <div class="subheading pb-sm">Related to:</div>
                     <ul class="content-tag-list">
-
                         {{#each article.content_tags}}
-                            <li class="content-tag-item" data-content-tag-id="{{id}}">
+                            <li class="sub-navigation sub-navigation--light" data-content-tag-id="{{id}}">
                                 {{#link "search_result" content_tag_id=id target="_blank"}}
-                                    {{name}}
+                                    <div>{{name}}</div>
+                                    <i class="ph ph-caret-right"></i>
                                 {{/link}}
                             </li>
                         {{/each}}
-                        
                     </ul>
 
                 </section>
@@ -121,22 +118,22 @@
 
         </div>
 
-        <div class="col-sm col-md-8 article-inner">
+        <div class="col-sm col-md-8 article-inner font-body--large">
             {{article.body}}
         </div>
 
     </div>
 
     {{#if article.internal}}
-        <div class="row padded-content centered-content row-dark d-print-none">
-            <div class="col-12 heading">
+        <div class="row padded-content center-align row-dark d-print-none">
+            <div class="col-12 heading text-align--center">
                 Was this article helpful?
             </div>
 
-            {{article.vote "up" role="radio" class="col-2 button button--hollow" selected_class="button--active"}}
-            {{article.vote "down" role="radio" class="col-2 button button--hollow" selected_class="button--active"}}
+            {{article.vote "up" role="radio" class="col-1 button" selected_class="button--active"}}
+            {{article.vote "down" role="radio" class="col-1 button" selected_class="button--active"}}
 
-            <div class="col-12">
+            <div class="col-12 text-align--center">
                 {{article.vote 'label' class="subheading"}}
             </div>
         </div>
@@ -145,7 +142,7 @@
 </div>
 
 <script src="{{asset 'article-page-scripts.js'}}"></script>
-<script src="{{asset 'generate-article-sidebar.js'}}"></script>
+<script src="{{asset 'article-sidebar.js'}}"></script>
 
 <!-- FancyBox Script/Stylesheet -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">

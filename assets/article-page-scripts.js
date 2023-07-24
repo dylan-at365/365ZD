@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
 
-
+    
     // Add unique class names to div elements used for the Fancybox Gallery feature
     var galleryItems = $('.fancybox-gallery');
 
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
         // Add little note telling users they can click on images to enable the gallery mode
         $( `.article-inner div.fancybox-gallery-${i}` ).after( 
-            '<p class="subheading subheading--annotation">(Click image to open in gallery)</p>' 
+            '<p class="font-body font-body--emphasis mt-none">(Click image to open in gallery)</p>' 
         );
 
     };
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
     // Add a little note telling users they can click on images to enable big mode
     $( '.article-inner img.fancybox' ).after( 
-        '<p class="subheading subheading--annotation">(Click image to enlarge it)</p>' 
+        '<p class="font-body font-body--emphasis mt-none">(Click image to enlarge it)</p>' 
     );
 
 

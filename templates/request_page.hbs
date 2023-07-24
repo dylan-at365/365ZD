@@ -1,9 +1,8 @@
 <!-- Start Request View Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
     </div>
@@ -17,8 +16,8 @@
         </div>
     {{/if}}
 
-    <div class="row padded-content--no-gap row-light">
-        <div class="col-12 heading">
+    <div class="row row-light pb-md">
+        <div class="col-12 subheading subheading--large">
             {{request.subject}}
         </div>
         <div class="col-12">
@@ -28,37 +27,36 @@
 
     <!-- Commenter Info -->
     {{#each comments}}
-        <div class="row padded-content--no-gap row-dark">
-        
-            <div class="col col-md-1">
-                <img src="{{author.avatar_url}}" alt="User avatar"/>
+        <div class="row row-light py-md">
+
+            <div class="col col-md-6 d-flex">
+
+                <img src="{{author.avatar_url}}" width="80" height="80" alt="User avatar"/>
+
+                <div class="ps-md">
+                    <a href="{{link 'user_profile'}}" class="subheading">{{author.name}}</a>
+
+                    {{#if author.agent}}
+                        <div class="">365 Support</div>
+                    {{/if}}
+
+                    <div class="font-body--emphasis">{{date created_at timeago=true}}</div>
+
+                    {{body}}
+
+                    {{#if attachments}}
+                        <div class="col-12">Attachments:</div>
+                        {{#each attachments}}
+                            <div class="col-12">
+                                <a href="{{url}}" target="_blank">{{name}}</a>
+                                <div class="font-body--emphasis">{{size}}</div>
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+
             </div>
 
-            <div class="col col-md-11">
-                <a href="{{link 'user_profile'}}" class="subheading">{{author.name}}</a>
-                {{#if author.agent}}
-                    <div class="">365 Support</div>
-                {{/if}}
-                <div class="subheading--small-italic">{{date created_at timeago=true}}</div>
-            </div>
-
-        </div>
-
-        <!-- Ticket Content -->
-        <div class="row padded-content row-light">
-            <div class="col-12">
-                {{body}}
-            </div>
-
-            {{#if attachments}}
-                <div class="col-12 subheading--underline">Attachments:</div>
-                {{#each attachments}}
-                    <div class="col-12">
-                        <a class="link" href="{{url}}" target="_blank">{{name}}</a>
-                        <div class="subheading--small-italic">{{size}}</div>
-                    </div>
-                {{/each}}
-            {{/if}}
         </div>
     {{/each}}
 
@@ -96,9 +94,6 @@
     </div>
 
     <div class="row padded-content row-light">
-
-        
-        
         <div class="col-3 col-sm-12">
 
                 <!--
@@ -128,14 +123,14 @@
 
 <!-- Ticket details -->
 <div class="container">
-    <div class="row padded-content row-dark">
-        <div class="col-12 heading">
+    <div class="row row-dark">
+        <div class="col-12 py-md subheading--large">
             {{t 'ticket_details'}}
         </div>
     </div>
 
     {{#if request.followup_source_id}}
-        <div class="row padded-content row-dark">
+        <div class="row row-dark">
             <dl class="col-12">
                 <dt>{{t 'followup'}}</dt>
                 <dd>{{link 'request' id=request.followup_source_id}}</dd>
@@ -143,8 +138,8 @@
         </div>
     {{/if}}
 
-    <div class="row padded-content row-light table-responsive">
-        <table class="col-12 table table-striped">
+    <div class="row row-light table-responsive">
+        <table class="col-12 table table-striped py-md">
             <tr>
                 <td>{{t 'requester'}}: {{request.requester.name}}</td>
             </tr>

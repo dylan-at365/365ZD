@@ -1,57 +1,54 @@
 <!-- Start Search Results Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
-            {{breadcrumbs}}
-        </div>
-    </div>
+    <div class="row py-md row-light">
+        <div class="col-12 subheading--large">
+            {{#if results}}
 
-    <div class="row padded-content row-light">
-
-        <div class="col-12 heading">
-            <div>
-                {{#if results}}
-                    {{#is current_filter.identifier 'unified'}}
-                        {{#if content_tag_filters }}
+                {{#is current_filter.identifier 'unified'}}
+                    {{#if content_tag_filters }}
                         {{#each (filter content_tag_filters on="selected" equals=true)}}
                             {{t 'results_content_tag' content_tag=name count=../results_count}}
                         {{/each}}
-                        {{else}}
-                        {{t 'results' query=query count=results_count}}
-                        {{/if}}
                     {{else}}
-                        {{#if content_tag_filters }}
+                        {{t 'results' query=query count=results_count}}
+                    {{/if}}
+                {{else}}
+                    {{#if content_tag_filters }}
                         {{#each (filter content_tag_filters on="selected" equals=true)}}
                             {{t 'results_content_tag' content_tag=name count=../results_count}}
                         {{/each}}
-                        {{else}}
+                    {{else}}
                         {{#unless current_subfilter.identifier}}
                             {{t 'results' query=query count=results_count}}
                         {{else}}
                             {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
                         {{/unless}}
-                        {{/if}}
-                    {{/is}}
-                {{/if}}
-            </div>
+                    {{/if}}
+                {{/is}}
 
-            <form role="search" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
-                <label class="label--hidden" for="article-search">Search the Three Six Five Help Center:</label>
-                <input id="article-search" class="search" id="query" name="query" type="search"
-                    placeholder="&#8981; Search the 365 HelpCenter">
-            </form>
+            {{else}}
+
+                {{t 'results' query=query count=results_count}}
+
+            {{/if}}
+        </div>
+
+        <div class="col-12 breadcrumbs-container">
+            {{breadcrumbs}}
         </div>
 
     </div>
 
-    <div class="row padded-content row-dark">
+    <div class="row row-light pt-md">
 
-        <!-- I don't think this block will show up -->
-        {{#if source_filters}}
-            <div class="col-12">
-                <ul>
+        <div class="col-sm-12 col-md-3 search-sidebar padded-content">
+
+            <div class="subheading">Filter by:</div>
+
+            {{#if source_filters}}
+                <ul class="search-filters">
+
                     {{#each source_filters}}
                         <li class="button">
                             {{#if selected}}
@@ -64,23 +61,20 @@
                             </a>
                         </li>
                     {{/each}}
+                    
                 </ul>
-            </div>
-        {{/if}}
-        
-        {{#if type_filters}}
-            <div class="col-12">
-                <div>Filter results:</div>
+            {{/if}}
 
-                <ul class="search-filters">
+            {{#if type_filters}}
+                <ul class="source-filters">
+
                     {{#each type_filters}}
-
                         <li>
-                            {{#if selected}}
-                                <a href="{{url}}" class="button button--active">
-                            {{else}}
-                                <a href="{{url}}" class="button button--inactive">
-                            {{/if}}
+                        {{#if selected}}
+                            <a href="{{url}}" class="button button--sm button--active">
+                        {{else}}
+                            <a href="{{url}}" class="button button--sm button--inactive">
+                        {{/if}}
 
                                 {{#is name "Articles"}}
                                     <span class="js-article-filter">{{name}}</span>
@@ -89,25 +83,19 @@
                                 {{/is}}
                             </a>
                         </li>
-
                     {{/each}}
                 </ul>
 
-            </div>
-        {{/if}}
-
-
-        {{#if subfilters}}
-            <div class="col-12">
-
+            {{#if subfilters}}
                 <ul class="search-filters">
+
                     {{#each subfilters}}
 
                         <li>
                             {{#if selected}}
-                                <a href="{{url}}" aria-current="page" class="button button--active">
+                                <a href="{{url}}" aria-current="page" class="button button--xs button--active">
                             {{else}}
-                                <a href="{{url}}" class="button button--inactive">
+                                <a href="{{url}}" class="button button--xs button--inactive">
                             {{/if}}
                                 <span>{{name}}</span>
                                 <span>({{count}})</span>
@@ -115,44 +103,43 @@
                         </li>
                         
                     {{/each}}
+
                 </ul>
+            {{/if}}
 
-            </div>
-        {{/if}}
+            {{#if content_tag_filters}}
+                <div class="col-12">
+                    <div>
+                        <div class="subheading">Related to:</div>
 
-        {{#if content_tag_filters}}
-            <div class="col-12">
-                <div style="padding-top: 1.5rem;">
-                    <div>Related to:</div>
+                        <ul class="search-filters">
 
-                    <ul class="search-filters">
+                            {{#each content_tag_filters}}
 
-                        {{#each content_tag_filters}}
+                                {{#if selected}}
+                                    <li>
+                                        <a href="{{url}}" class="button button--sm">
+                                            <i class="ph ph-x"></i>
+                                            <span>{{name}}</span>
+                                        </a>
+                                    </li>
+                                {{/if}}
 
-                            {{#if selected}}
-                                <li>
-                                    <a href="{{url}}" class="button">
-                                        <i class="ph-x"></i>
-                                        <span>{{name}}</span>
-                                    </a>
-                                </li>
-                            {{/if}}
+                            {{/each}}
 
-                        {{/each}}
-
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        {{/if}}
-        
-    </div>
+            {{/if}}
 
-    <div class="row padded-content row-light">
+        </div>
+
         {{#if results}}
-            <ul class="col-12 search-results-container">
+            <ul class="col-sm col-md-8 search-results-container">
+
                 {{#each results}}
                     <li class="search-result">
-                        <a href="{{url}}" class="subheading link">{{title}}</a>
+                        <a href="{{url}}" class="subheading">{{title}}</a>
                         <div>{{text}}</div>
 
                         <div class="subheading--small-italic">Updated {{date edited_at timeago=true}}</div>
@@ -169,15 +156,16 @@
 
                     </li>
                 {{/each}}
+
+                <div class="col-12 col-sm-6">
+                    {{pagination}}
+                </div>
+
             </ul>
         {{/if}}
+        
     </div>
 
-    <div class="row padded-content centered-content row-light">
-        <div class="col-12 col-sm-6">
-            {{pagination}}
-        </div>
-    </div>
 </div>
 
 <!-- Change "Articles" filter button text to "By Category" to make the action clearer -->

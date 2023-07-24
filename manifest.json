@@ -1,20 +1,157 @@
 {
-  "name": "Atlas",
-  "author": "ohitsdylan",
-  "version": "4.9.2",
-  "api_version": 2,
-  "default_locale": "en-us",
-  "settings": [
+    "name": "Atlas",
+    "author": "ohitsdylan",
+    "version": "5.0.0",
+    "api_version": 2,
+    "default_locale": "en-us",
+    "settings": [
     {
       "label": "brand_group_label",
       "variables": [
         {
-          "identifier": "favicon",
-          "type": "file",
-          "description": "favicon_description",
-          "label": "favicon_label"
+            "label": "brand_group_label",
+            "variables": [
+                {
+                    "identifier": "favicon",
+                    "type": "file",
+                    "description": "favicon_description",
+                    "label": "favicon_label"
+                }
+            ]
+        },
+
+        {
+            "label": "Notification Banner",
+            "variables": [
+                {
+                    "label": "Notification Icon",
+                    "identifier": "notification_icon",
+                    "description": "An icon that appears before the notification banner message",
+                    "value": "ph ph-hand-waving",
+                    "type": "list",
+                    "options": [
+                        {
+                            "label": "Barricade",
+                            "value": "ph ph-barricade"
+                        },
+
+                        {
+                            "label": "Bell",
+                            "value": "ph ph-bell-ringing"
+                        },
+
+                        {
+                            "label": "Book",
+                            "value": "ph ph-book-bookmark"
+                        },
+
+                        {
+                            "label": "Chat Bubble",
+                            "value": "ph ph-chat-text"
+                        },
+
+                        {
+                            "label": "Check Circle",
+                            "value": "ph ph-check-circle"
+                        },
+
+                        {
+                            "label": "Confetti",
+                            "value": "ph ph-confetti"
+                        },
+
+                        {
+                            "label": "Document",
+                            "value": "ph ph-file-text"
+                        },
+
+                        {
+                            "label": "Flag",
+                            "value": "ph ph-flag"
+                        },
+
+                        {
+                            "label": "Hand Waving",
+                            "value": "ph ph-hand-waving"
+                        },
+
+                        {
+                            "label": "Megaphone",
+                            "value": "ph ph-megaphone-simple"
+                        },
+
+                        {
+                            "label": "Note",
+                            "value": "ph ph-note"
+                        },
+
+                        {
+                            "label": "Phone",
+                            "value": "ph ph-phone-call"
+                        },
+
+                        {
+                            "label": "Smiley",
+                            "value": "ph ph-smiley"
+                        },
+
+                        {
+                            "label": "Thumbs Up",
+                            "value": "ph ph-thumbs-up"
+                        },
+
+                        {
+                            "label": "Warning",
+                            "value": "ph ph-warning"
+                        }
+                    ]
+                },
+
+                {
+                    "label": "Notification Content",
+                    "identifier": "notification_content",
+                    "description": "Text content for the notification banner",
+                    "value": "The 365Ops App is HERE!! Get specific data and connectivity info for your locations all from your mobile phone!",
+                    "type": "text"
+                },
+        
+                {
+                    "label": "Notification Link",
+                    "identifier": "notification_link",
+                    "description": "The URL to link the notification banner to",
+                    "value": "https://help.365retailmarkets.com/hc/en-us/articles/5963436344855",
+                    "type": "text"
+                },
+
+                {
+                    "label": "Notification Background Color",
+                    "identifier": "notification_color",
+                    "description": "The color of the notification banner background",
+                    "value": "var(--jungle-400)",
+                    "type": "list",
+                    "options": [
+                        {
+                            "label": "Green",
+                            "value": "var(--jungle-400)"
+                        },
+
+                        {
+                            "label": "Yellow",
+                            "value": "var(--saffron-400)"
+                        },
+
+                        {
+                            "label": "Red",
+                            "value": "var(--crimson-400)"
+                        },
+
+                        {
+                            "label": "Blue",
+                            "value": "var(--yale-400)"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

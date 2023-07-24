@@ -2,19 +2,15 @@
     _overrides.scss
 ================================ */
 body {
-    background-color: var(--gray-500);
+    background-color: var(--platinum-800);
 }
 
 a {
-    color: var(--blue-200);
+    color: var(--space-cadet-400);
 }
 
 a:hover {
-    color: var(--blue-400);
-}
-
-textarea, input {
-    border: 1px solid var(--gray-500);
+    color: var(--yale-400);
 }
 
 details[open] {
@@ -32,15 +28,48 @@ details[open] > summary {
 
 
 /* ================================
+    _zendesk-overrides.scss
+================================ */
+.wysiwyg-color-blue,
+.wysiwyg-color-blue70,
+.wysiwyg-color-blue80,
+.wysiwyg-color-blue90,
+.wysiwyg-color-blue110,
+.wysiwyg-color-blue120,
+.wysiwyg-color-blue130 {
+    color: var(--yale-400);
+}
+
+
+
+
+
+/* ================================
     _layout.scss
 ================================ */
 .row-light {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
 }
 
 .row-dark {
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-400);
+}
+
+
+
+
+
+/* ================================
+    _animations.scss
+================================ */
+.loading-container {
+    border-bottom: 2px solid var(--yale-400);
+}
+
+.loading-container::before {
+    border-bottom: 2px solid var(--raisin-400);
 }
 
 
@@ -51,28 +80,51 @@ details[open] > summary {
     _buttons.scss
 ================================ */
 .button {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
-.button--hollow {
-    color: var(--blue-200);
-    background-color: transparent;
-    border: 2px solid var(--blue-200);
-}
-
-/*
-    * Add this input element here to override CSS specificity in _resquests.scss:113
-*/
-.button--inactive,
-input[name="commit"]:disabled {
-    color: var(--blue-200);
-    background-color: var(--blue-700);
+.button:hover {
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 .button--active {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
+}
+
+.button--active:hover {
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
+}
+
+.button--subscribe button[data-selected="true"] {
+    width: 100%;
+    height: 100%;
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
+}
+
+.button--subscribe button[data-selected="true"]:hover {
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
+}
+
+.button--success {
+    background-color: var(--jungle-400);
+}
+
+.button--success:hover {
+    background-color: var(--jungle-500);
+}
+
+.button--alert {
+    background-color: var(--crimson-400);
+}
+
+.button--alert:hover {
+    background-color: var(--crimson-500);
 }
 
 
@@ -83,18 +135,18 @@ input[name="commit"]:disabled {
     _callouts.scss
 ================================ */
 .banner-callout__info {
-    color: var(--gray-700);
-    background-color: var(--blue-400);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 .banner-callout__warning {
-    color: var(--gray-100);
-    background-color: var(--yellow-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-400);
 }
 
 .banner-callout__alert {
-    color: var(--gray-700);
-    background-color: var(--red-200);
+    color: var(--platinum-800);
+    background-color: var(--crimson-400);
 }
 
 
@@ -102,23 +154,27 @@ input[name="commit"]:disabled {
 
 
 .inline-callout__info {
-    background-color: var(--blue-600);
-    border-left: 12px solid var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--yale-500);
+    border-left: 24px solid var(--yale-400);
 }
 
 .inline-callout__success {
-    background-color: var(--green-300);
-    border-left: 12px solid var(--green-200);
+    color: var(--platinum-800);
+    background-color: var(--jungle-500);
+    border-left: 24px solid var(--jungle-400);
 }
 
 .inline-callout__warning {
-    background-color: var(--yellow-300);
-    border-left: 12px solid var(--yellow-200);
+    color: var(--platinum-800);
+    background-color: var(--saffron-500);
+    border-left: 24px solid var(--saffron-400);
 }
 
 .inline-callout__alert {
-    background-color: var(--red-300);
-    border-left: 12px solid var(--red-200);
+    color: var(--platinum-800);
+    background-color: var(--crimson-500);
+    border-left: 24px solid var(--crimson-400);
 }
 
 
@@ -129,11 +185,29 @@ input[name="commit"]:disabled {
     _cards.scss
 ================================ */
 .card {
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
 }
 
-.card--quick-action {
-    border-top: 24px solid var(--blue-200);
+.card__cap {
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
+}
+
+a.card__title {
+    color: var(--platinum-800);
+}
+
+a.card__title:hover {
+    color: var(--yale-500);
+}
+
+.sub-navigation {
+    background-color: var(--platinum-400);
+}
+
+.sub-navigation:hover {
+    background-color: var(--platinum-500);
 }
 
 
@@ -143,17 +217,14 @@ input[name="commit"]:disabled {
 /* ================================
     _pagination.scss
 ================================ */
-.pagination > ul > li {
-    
-    background-color: var(--blue-200);
-}
-
 .pagination > ul > li > a {
-    color: var(--gray-700);
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
 .pagination > ul > li > a:hover {
-    color: var(--blue-400);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
 }
 
 
@@ -164,13 +235,20 @@ input[name="commit"]:disabled {
     _search.scss
 ================================ */
 .search {
-    color: var(--gray-200);
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
+    color: var(--platinum-200);
+    background-color: var(--platinum-800);
+    border: 1px solid var(--platinum-200);
 }
 
-.search--small {
-    border: 1px solid var(--gray-500);
+
+
+
+
+/* ================================
+    _search-results.scss
+================================ */
+.search-sidebar {
+    background-color: var(--platinum-500);
 }
 
 
@@ -181,18 +259,33 @@ input[name="commit"]:disabled {
     _tables.scss
 ================================ */
 .table {
-    color: var(--gray-100);
-    border-color: var(--blue-600);
+    color: var(--raisin-400);
+    border-color: var(--yale-500);
   }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-    color: var(--gray-100);
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
 }
 
 .table__sticky-header {
-    color: var(--gray-700);
-    background-color: var(--blue-400);
+    color: var(--platinum-800);
+    background-color: var(--yale-400);
+}
+
+
+
+
+
+/* ================================
+    _typography.scss
+================================ */
+.heading {
+    color: var(--raisin-400);
+}
+
+.subheading {
+    color: var(--raisin-400);
 }
 
 
@@ -202,40 +295,62 @@ input[name="commit"]:disabled {
 /* ================================
     _header.scss
 ================================ */
-.logo {
-    background-position: top center;
+.logo path.logo__outer {
+    fill: var(--raisin-400);
 }
 
-.title {
-    color: var(--gray-100);
+.logo path.logo__inner {
+    fill: var(--yale-400);
 }
 
-.banner__content {
-    background-color: var(--green-200);
+.logo path.logo__type {
+    fill: var(--raisin-400);
 }
 
-.banner > a {
-    color: var(--gray-700);
+.site-title {
+    color: var(--raisin-400);
 }
 
-.banner > a:hover {
-    color: var(--green-200);
-    background-color: var(--gray-700);
+.subheader {
+    background-color: var(--platinum-500);
 }
 
 
 
 
 
-/* =============================
-    _home-page.scss
-================================ */
-.hero {
-    background-position: top center;
+.menu {
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
 }
 
-.question-block {
-    background-color: var(--gray-600);
+.menu a {
+    color: inherit;
+}
+
+.menu .list-wrapper:nth-child(2).is-visible,
+.menu .list-wrapper:nth-child(3).is-visible {
+    background-color: var(--platinum-800);
+}
+
+.menu-item {
+    border-bottom: 1px solid var(--platinum-400);
+}
+
+.menu-item:hover {
+    background-color: var(--platinum-600);
+    transition: all var(--transition-time);
+}
+
+.menu-item--user {
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
+    transition: all var(--transition-time);
+}
+
+.menu-item--user:hover {
+    background-color: var(--yale-400);
+    transition: all var(--transition-time);
 }
 
 
@@ -246,20 +361,30 @@ input[name="commit"]:disabled {
     _articles.scss
 ================================ */
 .article-sidebar {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
-    border: 1px solid var(--gray-500);
+    background-color: var(--platinum-500);
+}
+
+.article-inner img {
+    opacity: 1;
 }
 
 .article-inner pre {
-    color: var(--gray-100);
-    background-color: var(--gray-600);
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
 }
 
 .article-inner code {
-    color: var(--red-200);
-    background-color: var(--gray-600);
-    border: 1px solid var(--gray-500);
+    color: var(--crimson-400);
+    background-color: var(--platinum-600);
+    border: 1px solid var(--platinum-500);
+}
+
+.sub-navigation--light {
+    background-color: var(--platinum-600);
+}
+
+.sub-navigation--light:hover {
+    background-color: var(--platinum-700);
 }
 
 
@@ -270,26 +395,63 @@ input[name="commit"]:disabled {
     _requests.scss
 ================================ */
 ul[data-hc-pills-container] {
-    background-color: var(--gray-700);
+    background-color: var(--platinum-800);
+}
+
+ul[data-hc-pills-container] li[data-hc-pill="true"] {
+    background-color: var(--platinum-800);
+}
+
+ul[data-hc-pills-container] li:last-child input {
+    color: var(--raisin-400);
+    background-color: transparent;
 }
 
 #request_organization_id_hint,
 #request_description_hint {
-    color: var(--gray-300) !important;
+    color: var(--raisin-400) !important;
+}
+
+.upload-dropzone {
+    background-color: var(--platinum-600);
+}
+
+.upload-dropzone span {
+    color: var(--raisin-400);
 }
 
 .request-form > footer > input,
 .requests-filter div > button {
-    color: var(--gray-700);
-    background-color: var(--blue-200);
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
 }
 
-#request_subject {
-    color: var(--gray-100);
+.requests-filter div > button:hover {
+    background-color: var(--yale-400);
 }
 
+.nesty-input,
+select {
+    color: var(--raisin-400);
+    background-color: var(--platinum-600);
+}
+
+#request_subject,
 #request_description {
-    color: var(--gray-100);
+    color: var(--raisin-400);
+    background-color: var(--platinum-800);
+    border: 1px solid var(--raisin-400);
+}
+
+input[name="commit"] {
+    color: var(--platinum-800);
+    background-color: var(--space-cadet-400);
+    transition: var(--transition-time);
+}
+
+input[name="commit"]:hover {
+    background-color: var(--yale-400);
+    transition: var(--transition-time);
 }
 
 
@@ -299,13 +461,16 @@ ul[data-hc-pills-container] {
 /* ================================
     _footer.scss
 ================================ */
-.footer {
-    background-color: var(--blue-700);
+.footer:first-of-type {
+    background-color: var(--platinum-600);
+}
+
+.footer:last-of-type {
+    background-color: var(--platinum-800);
 }
 
 .social {
-    color: var(--gray-100);
-    background-color: var(--gray-700);
+    color: var(--raisin-400);
 }
 
 

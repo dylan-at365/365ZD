@@ -2,8 +2,11 @@
     * Extend .card {} in styles-light.css, & styles-dark.css
 */
 .card {
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    display: flex;
+    flex-flow: column;
+    padding: 0;
+
+    border-radius: var(--border-radius--lg);
     box-shadow: var(--shadow-outset);
 
     scroll-snap-align: center;
@@ -11,13 +14,60 @@
     scroll-margin: -1rem;
 }
 
-.card__title {
-    font: var(--font-heading);
+.card__cap {
+    padding: 1.5rem;
+    border-radius: var(--border-radius--lg) var(--border-radius--lg) 0 0;
 }
 
-.card i {
-    position: relative;
-    top: 3px;
-    padding-left: 4px;
-    font-size: 1.25rem;
+.card__cap--rounded {
+    border-radius: var(--border-radius--lg);
+}
+
+.card__title {
+    display: flex;
+    font: var(--font-subheading);
+}
+
+.card__title > div {
+    margin-right: auto;
+}
+
+.card__body {
+    margin-bottom: auto;
+    padding: 1.5rem;
+}
+
+.card__body--columns {
+    column-count: auto;
+    column-width: clamp(10rem, 30rem, 40rem);
+}
+
+.card__link a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.card__action {
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+.sub-navigation {
+    margin: 16px 0;
+    padding: 4px 8px 4px 20px;
+    border-radius: var(--border-radius--sm);
+    transition: background-color var(--transition-time);
+}
+
+.sub-navigation:hover {
+    transition: background-color var(--transition-time);
+}
+
+.sub-navigation a {
+    display: flex;
+    align-items: center;
+}
+
+.sub-navigation a > div {
+    margin-right: auto;
 }

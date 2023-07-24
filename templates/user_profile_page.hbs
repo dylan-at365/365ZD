@@ -1,67 +1,89 @@
 <!-- Start User Profile Template -->
 <div class="container">
-    <div class="row padded-content row-light">
-        <div class="col-12">
-            <img class="user-avatar" src="{{user.avatar_url}}" alt="User Avatar" />
-        </div>
+    
+    <div class="row row-light">
 
-        <div class="col-12">
-            <div class="heading">
+        <div class="col col-md-6 d-flex py-lg">
+            <img src="{{user.avatar_url}}" width="80" height="80" alt="User Avatar" />
+
+            <div class="ps-md">
+
                 {{#if user.url}}
-                    <a href="{{user.url}}" target="_zendesk_lotus" title="{{t 'open_user_in_support'}}">{{user.name}}</a>
+
+                    <a 
+                        href="{{user.url}}" 
+                        class="subheading" 
+                        target="_zendesk_lotus" 
+                        title="{{t 'open_user_in_support'}}"
+                    >
+                        {{user.name}}
+                    </a>
+
                 {{else}}
-                    {{user.name}}
+                    <span class="subheading">
+                        {{user.name}}
+                    </span>
                 {{/if}}
 
-                <a role="button" class="profile_info-about_name-edit" title="Opens a dialog" data-action="edit-profile" href="#">
-                    <i class="ph-pencil-line-bold"></i>
+                <a role="button" title="Opens a dialog" data-action="edit-profile" href="#">
+                    <i class="ph ph-pencil-line"></i>
                 </a>
-            </div>
 
-            <ul class="profile_info-about_name-stats">
-                <li>
-                    {{t 'member_since'}}:
-                    {{#if member_since}}
-                        {{date member_since format='medium'}}
-                    {{else}}
-                        {{t 'no_activity_yet'}}
+                <ul>
+                    {{#if description}}
+                        <li class="pb-md pt-none">{{description}}</li>
                     {{/if}}
-                </li>
-                <li>
-                    {{t 'last_activity'}}:
-                    {{#if last_activity_at}}
-                        {{date last_activity_at timeago=true}}
-                    {{else}}
-                        {{t 'no_activity_yet'}}
-                    {{/if}}
-                </li>
-                <li>
-                    {{t 'votes'}}:
-                    {{vote_count}}
-                </li>
-                <li>
-                    Saved Articles:
-                    {{subscription_count}}
-                </li>
 
-                {{#if description}}
-                    <li class="profile_info-about_desc">{{description}}</li>
-                {{/if}}
-            </ul>
+                    <li class="p-none">
+                        {{t 'member_since'}}:
+                        {{#if member_since}}
+                            {{date member_since format='medium'}}
+                        {{else}}
+                            {{t 'no_activity_yet'}}
+                        {{/if}}
+                    </li>
 
-            <div class="profile_info-about_name-recent">
-                {{recent_articles}}
+                    <li class="p-none">
+                        {{t 'last_activity'}}:
+                        {{#if last_activity_at}}
+                            {{date last_activity_at timeago=true}}
+                        {{else}}
+                            {{t 'no_activity_yet'}}
+                        {{/if}}
+                    </li>
+
+                    <li class="p-none">
+                        {{t 'votes'}}:
+                        {{vote_count}}
+                    </li>
+
+                    <li class="p-none">
+                        Saved Articles:
+                        {{subscription_count}}
+                    </li>
+
+                    <li id="js-clear-theme" class="p-none pt-md">
+                        <a class="button button--sm">
+                            <i class="ph ph-paint-brush-household"></i>
+                            Clear saved theme mode
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-        </div>		
+        </div>
+	
 	</div>
 
-    <div class="row padded-content row-light">
+    <div class="row padded-content row-dark">
 
-        <div class="col-12 col-sm-12 col-md-6">          
-            <div class="subheading">Site Links</div>
+        <div class="col-sm-12 col-md-6 col-lg-3 card">
+            <div class="card__cap">
+                <div class="card__title">
+                    Site Links
+                </div>
+            </div>
 
-            <ul>
+            <ul class="card__body">
                 <li>
                     <a href="https://adm.365retailmarkets.com/public/login">ADM</a>
                 </li>
@@ -93,13 +115,18 @@
                 <li>
                     <a href="http://mymarketaccount.net/">MyMarketAccount.net</a>
                 </li>
+
             </ul>
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6">
-            <div class="subheading">Help</div>
+        <div class="col-sm-12 col-md-6 col-lg-3 card">
+            <div class="card__cap">
+                <div class="card__title">
+                    Help
+                </div>
+            </div>
 
-            <ul>
+            <ul class="card__body">
                 <li>
                     <a href="https://365retailmarkets.zendesk.com/access/help">Reset Password</a>
                 </li>
@@ -119,14 +146,18 @@
                 <li>
                     <a href="https://status.365retailmarkets.com">System Status</a>
                 </li>
+
             </ul>
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 js-restricted-internal-content">
-            <div class="subheading">Internal Support</div>
+        <div class="col-sm-12 col-md-6 col-lg-3 card js-restricted-internal-content">
+            <div class="card__cap">
+                <div class="card__title">
+                    Internal Support
+                </div>
+            </div>
 
-            <ul>
-                
+            <ul class="card__body">
                 <li>
                     <a href="https://lastpass.com/misc_download2.php?cmp=1">LastPass</a>
                 </li>
@@ -154,13 +185,18 @@
                 <li>
                     <a href="https://365smartshop1.sharepoint.com/sites/RMALabels">RMA Tracking Log</a>
                 </li>
+
             </ul>
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 js-restricted-internal-content">
-            <div class="subheading">Network &amp; Remote Tools</div>
+        <div class="col-sm-12 col-md-6 col-lg-3 card js-restricted-internal-content">
+            <div class="card__cap">
+                <div class="card__title">
+                    Network &amp; Remote Tools
+                </div>
+            </div>
 
-            <ul>
+            <ul class="card__body">
                 <li>
                     <a href="https://secure.logmein.com/central/Central.aspx">LogMeIn</a>
                 </li>
@@ -196,14 +232,18 @@
                 <li>
                     <a href="https://n158.meraki.com/o/a_MCdb/manage/users/sms_auth_config/">Meraki Dashboard</a>
                 </li>
+
             </ul>
         </div>
 
+        <div class="col-sm-12 col-md-6 col-lg-3 card js-restricted-internal-content">
+            <div class="card__cap">
+                <div class="card__title">
+                    Emulators
+                </div>
+            </div>
 
-        <div class="col-12 col-sm-12 col-md-6 js-restricted-internal-content">
-            <div class="subheading">Emulators</div>
-
-            <ul>
+            <ul class="card__body">
                 <li>
                     <a href="https://www.cisco.com/assets/sol/sb/RV215W_Emulators/RV215W_Emulator_v1.0.0.16/default_EN.asp.htm">Cisco RV215W Emulator</a>
                 </li>
@@ -215,13 +255,18 @@
                 <li>
                     <a href="http://ui.linksys.com/E1200/1.0.00/index.html">Linksys E1200 Emulator</a>
                 </li>
+
             </ul>
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 js-restricted-internal-content">
-            <div class="subheading">Human Resources</div>
+        <div class="col-sm-12 col-md-6 col-lg-3 card js-restricted-internal-content">
+            <div class="card__cap">
+                <div class="card__title">
+                    Human Resources
+                </div>
+            </div>
 
-            <ul>
+            <ul class="card__body">
                 <li>
                     <a href="https://93721.wheniwork.com/login">WhenIWork</a>
                 </li>
@@ -233,23 +278,58 @@
                 <li>
                     <a href="https://access.paylocity.com/">Paylocity</a>
                 </li>
+
             </ul>
         </div>
+
     </div>
 </div>
 
 <script>
-    /* 
-        Show Internal Category if 365 user logged in
-    */
-    if ( HelpCenter.user.organizations[0] === undefined ) {
-        $( '.js-restricted-internal-content' ).remove();
 
-    } else if ( HelpCenter.user.organizations[0].name == '365 Retail Markets' ) {
-        console.log('365RM User');
-        //$( '.js-restricted-internal-content' ).show();
+    $( '#js-clear-theme' ).click( function() {
+        if ( !localStorage.getItem( 'colorMode' )) {
+            $( this )
+                .html(
+                    `<a class="button button--sm button--alert" style="cursor: not-allowed;">
+                        <i class="ph ph-smiley-x-eyes"></i>
+                        Theme mode not set!
+                    </a>`
+                );
 
-    } else {
-        $( '.js-restricted-internal-content' ).remove();
-    };
+            setTimeout(() => {
+                $( this )
+                    .html( 
+                        `<a class="button button--sm">
+                            <i class="ph ph-paint-brush-household"></i>
+                            Clear saved theme mode
+                        </a>`
+                        );
+            }, 3000);
+        }
+
+        else {
+            localStorage.removeItem( 'colorMode' );
+            $( this )
+                .html(
+                    `<a class="button button--sm button--success">
+                        <i class="ph ph-smiley-wink"></i>
+                        Theme mode cleared! Click again to reload.
+                    </a>`
+                );
+
+            $( this ).removeAttr( 'id' );
+            $( this ).click( function() {
+                $( this )
+                .html(
+                    `<a class="button button--sm button--success">
+                        <i class="ph ph-smiley-wink"></i>
+                        Theme mode cleared! Click again to reload.
+                    </a>`
+                );
+                location.reload();
+            });
+        }
+    });
+
 </script>

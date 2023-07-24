@@ -1,36 +1,31 @@
 <!-- Start Subscriptions Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 subheading--large">A list of articles you've saved for future reference</div>
+
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
     </div>
 
-    <div class="row padded-content row-light">
-        <div class="col-12 heading">A list of articles you've saved for future reference</div>
-    </div>
-
 
     {{#if subscriptions}}
-        <div class="row padded-content table-responsive row-light">
-            <table class="col-12 row-light table table-striped">
-
+        <div class="row row-light">
+            <ul class="col-12 text-columns--sm">
                 {{#each subscriptions}}
-                    <tr>
-                        <td>
-                        <a href="{{url}}" class="link">
+                    <li>
+                        <a href="{{url}}">
                             {{title}}
                         </a>
-                        </td>
-                    </tr>
+                    </li>
                 {{/each}}
-            </table>
+            </ul>
         </div>
 
+
     {{else}}
-        <div class="row padded-content row-light">
+        <div class="row row-light">
             <div class="col-12">
                 You haven't saved anything!<br/>
 				Did you know you can save your favorite resources? Select the "Follow" button in any article or category and we'll keep it right here for you.
@@ -38,8 +33,8 @@
         </div>
     {{/if}}
 
-    <div class="row padded-content centered-content row-light">
-        <div class="col-12 col-sm-6">
+    <div class="row center-align row-light">
+        <div class="col-12 text-align--center">
             {{pagination}}
         </div>
     </div>

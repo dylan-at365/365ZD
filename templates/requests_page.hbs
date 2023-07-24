@@ -1,27 +1,26 @@
 <!-- Start Request List Template -->
 <div class="container">
 
-    <!-- Breadcrumbs -->
-    <div class="row breadcrumbs-container row-dark">
-        <div class="col-12">
+    <div class="row py-md row-light">
+        <div class="col-12 breadcrumbs-container">
             {{breadcrumbs}}
         </div>
     </div>
 
     <!-- Tickets/CC Link -->
     <div class="row padded-content row-light">
-        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests">My Tickets</a>
-        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
-        <a class="col-sm-12 col-md-3 button" href="/hc/en-us/requests/organization">Organization Requests</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests">My Tickets</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests/ccd">CC'd Tickets</a>
+        <a class="col-sm-12 col-md-2 button button--sm" href="/hc/en-us/requests/organization">Organization Requests</a>
     </div>
 
     <!-- Ticket Search/Filter -->
     {{#form 'requests_filter' class="row padded-content row-dark requests-filter"}}
 
         <label class="col-12 label--hidden" for="ticket-search">Search through your support tickets:</label>
-        <input type="search" name="query" id="ticket-search" value="" placeholder="&#8981; Search tickets" aria-required="false" class="col-12 search search--small">
+        <input type="search" name="query" id="ticket-search" value="" placeholder="&#xebdd; Search tickets" aria-required="false" class="col-sm-12 col-md-3 search search--inline">
 
-        {{label 'status' for='request-status-select' class='col-sm-12 col-md-1'}}
+        {{label 'status' for='request-status-select' class='col-sm-12 col-md-05'}}
         {{select 'status' id='request-status-select' class='col-sm-12 col-md-3'}}
 
         {{#if help_center.multiple_organizations_enabled}}
@@ -29,9 +28,11 @@
             {{label 'organization' for='request-organization-select' class='col-sm-12 col-md-1'}}
             {{select 'organization' id='request-organization-select' class='col-sm-12 col-md-3'}}
 
-            {{subscribe class="col-3 button"}}
-
         {{/if}}
+
+        <div class="col-3 col-md-2 col-lg-1 button--subscribe">
+            {{subscribe}}
+        </div>
 
     {{/form}}
 
@@ -43,7 +44,7 @@
             </div>
         {{else}}
             {{#unless requests}}
-                <div class="col-12 subheading--underline">
+                <div class="col-12 subheading">
                     {{t 'no_requests'}}
                 </div>
             {{/unless}}
@@ -125,12 +126,13 @@
 
             </table>
         </div>
-    {{/if}}
 
-    <div class="row padded-content centered-content row-light">
-        <div class="col-12 col-sm-6">
-            {{pagination}}
+        <div class="row row-light">
+            <div class="col-12 col-sm-6">
+                {{pagination}}
+            </div>
         </div>
     </div>
+    {{/if}}
     
 </div>

@@ -2,33 +2,26 @@
     font: var(--font-heading);
 }
 
-.heading i {
-    position: relative;
-    top: 3px;
-}
-
 .subheading {
     font: var(--font-subheading);
 }
 
-.subheading--underline {
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--gray-400);
+.subheading--large {
+    font: var(--font-subheading--large);
 }
 
-.subheading--small-italic {
-    padding-bottom: 16px;
-    font-size: 0.8rem;
-    font-style: italic;
+.font-body {
+    font: var(--font-body);
 }
 
-.subheading--annotation {
-    margin-top: 0;
-    font-size: 0.8rem;
-    font-style: italic;
+.font-body--large {
+    font: var(--font-body--large);
 }
 
-.body--small {
-    font-size: 0.75rem;
-    line-height: 0.25rem;
+.font-body--emphasis {
+    font: var(--font-body--emphasis);
+}
+
+.text-align--center {
+    text-align: center;
 }

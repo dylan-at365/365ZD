@@ -4,22 +4,27 @@
 <meta name="color-scheme" content="light dark">
 
 <!-- jQuery -->
-<script	src="{{asset 'jquery-3.6.0.min.js'}}"></script>
+<script	src="{{asset 'jquery-3.6.3.min.js'}}"></script>
 
 <!-- Load light mode if "prefers-color-scheme" is not supported -->
 <script>
     if ( window.matchMedia( "(prefers-color-scheme: dark)" ).media === "not all" ) {
-        document.documentElement.style.display = "none";
+        document.documentElement.style.display = 'none';
         document.head.insertAdjacentHTML(
-            "beforeend",
-            "<link id=\"css\" rel=\"stylesheet\" href=\"{{asset 'style-light.css'}}\" onload=\"document.documentElement.style.display = ''\">"
+            'beforeend',
+            '<link id="css" rel="stylesheet" href="{{asset 'style-light.css'}}" onload="document.documentElement.style.display = \'\'">'
         );
     }
 </script>
 
 <!-- Dark/Light CSS Files -->
 <link id="css-dark" rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{asset 'style-dark.css'}}"/>
-<link id="css-light" rel="stylesheet" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
+<link id="css-light" rel="stylesheet" media="(prefers-color-scheme: light)" href="{{asset 'style-light.css'}}"/>
 
 <!-- Phosphor Icons (https://phosphoricons.com/) -->
-<link rel="stylesheet" type="text/css" href="{{asset 'phosphor.min.css'}}"/>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.1/src/regular/style.css"/>
+
+<!-- Roboto font from Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
